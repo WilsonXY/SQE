@@ -65,7 +65,7 @@ Scale: each methodology is scored **1–5** per criterion. Weight **1 = low, 2 =
 | Risk-driven | Spiral (Boehm, 1988) | Proven, especially in large and high-risk projects. Its risk focus matches financial data integrity, but its heavy risk analysis is a poor fit for volunteers. | Passes the proof rule |
 | Agile | Scrum | Proven and widely studied. Needs committed teams, a product owner and sprints. | Passes the proof rule |
 | Agile | Extreme Programming (XP) | Proven. Engineering practices fit well. Pair programming and an on-site customer don't. | Passes the proof rule |
-| Agile / Lean | Kanban | Proven. Continuous pull-based flow, WIP limits, "start with what you do now". | Passes the proof rule |
+| Agile / Lean | Kanban | Proven. Continuous pull-based flow, WIP limits; "an evolutionary change method" (Anderson, 2010, p. 6, via S38). | Passes the proof rule |
 | Lean | Lean Software Development | Proven principles, but it is more a set of principles than a concrete process. Kanban is its most common concrete implementation. | Passes the proof rule |
 | Ops-extended | DevOps | Proven (e.g. DORA / *Accelerate* research). Strong on automation and CI/CD. Gives little guidance on requirements and prioritisation. | Passes the proof rule |
 | Agile hybrid (established) | Scrumban (Ladas, 2009) | **Evidence exists:** a peer-reviewed case study of a Scrum-to-Scrumban transition (Nikitina, Kajko-Mattsson & Strale, ICSSP 2012) and studies in distributed teams. The evidence base is smaller than for Scrum or Kanban. | Passes the proof rule (moderate evidence) |
@@ -104,7 +104,8 @@ None for planning.
 |---|---|
 | Actual as-is evidence (2.1) | S01–S12 (all live URLs checked). Optional: S15 for the history. |
 | Root and golden source per candidate | Spiral S26 · Scrum S34 · XP S35 · Kanban S28 · DevOps S30 · OSS baseline S24, S25 · Lean (as Kanban's foundation) S29 |
-| Recent evidence (2021+) | S36 Kuhrmann et al. 2022 (hybrids are common; practices matter more than methods → supports tailoring) · S37 Kanban review 2021 · S39 DevOps review 2023 · S41 CI review 2022 · S42 multi-criteria methodology selection 2024 (**supports the weighted matrix**) · S43 GitHub Actions 2023 · S47 LF maintainers report 2023 (to read) · S40 DORA 2024 (to read) |
+| Recent evidence (2021+) | S36 Kuhrmann et al. 2022 (hybrids are common; practices matter more than methods → supports tailoring) · S37 Kanban review 2021 · S39 DevOps review 2023 · S41 CI review 2022 · S42 multi-criteria methodology selection 2024 (**supports the weighted matrix**) · S43 GitHub Actions 2023 · S47 LF maintainers report 2023 (volunteer constraints, burnout, automation) · S40 DORA 2024 (four keys; unstable priorities → burnout) |
+| Golden evidence for Kanban | S38 Ahmad et al. 2018. Benefits and challenges tables. Conclusion: Kanban "is a relatively basic flow tool that needs to be supported by additional practices", which **directly justifies tailoring Kanban with Actual's CI and testing practices** in 2.5. |
 | Screening only | Scrumban S18 (recent) · Shape Up S22, S23 |
 
 Still to do before writing: see `sources.md` → section D.

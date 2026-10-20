@@ -80,3 +80,20 @@ Verification done:
 - Root and golden sources verified for every shortlisted methodology: Spiral S26, Scrum S34, XP S35, Kanban S28, DevOps S30, OSS baseline S24 and S25.
 - Recent sources found and abstracts read: S36 (Kuhrmann et al., 2022, IEEE TSE), S37 (Kanban review, 2021), S39 (DevOps review, 2023, IEEE TSE), S41 (CI review, 2022, EMSE), S42 (methodology selection by multi-criteria decision-making, 2024, IEEE Access), S43 and S44 (GitHub Actions and review bots, EMSE).
 - Remaining items are listed in `sources.md` → section D. They mostly need the APU library: the S38 abstract, book subtitles, and Springer article numbers.
+
+## 2026-10-20 — Session 1 (continued): section D items closed
+
+The author supplied PDFs (XP book excerpt, DORA 2024 report pp. 1–49, LF Open Source Maintainers 2023, Ahmad et al. 2018 Kanban mapping study) and a Google Books link for Anderson's *Kanban*.
+
+Results:
+- **S35 XP:** the year is **2005** (copyright page), not 2004. 2nd ed., Beck with Andres, Addison-Wesley.
+- **S28 Kanban:** full title, publisher (Blue Hole Press) and year (2010) confirmed.
+- **S24 Raymond:** full title, O'Reilly, 1999 confirmed (via Google Books).
+- **S38 Kanban mapping study:** read in full. Key point: Kanban "needs to be supported by additional practices", which supports tailoring.
+- **S40 DORA 2024:** read pp. 1–49. Four keys and rework rate; unstable priorities raise burnout. Also useful for Assignment 2 (metrics).
+- **S47 LF maintainers report:** read in full. 32 maintainer interviews; burnout and automation findings. It **replaces S45** (2020, old).
+- **Correction:** "start with what you do now" (Kanban) came from AI memory and wasn't verified. It is replaced by Anderson's definition "an evolutionary change method" (2010, p. 6), as quoted in S38.
+- New lead: S49 Harzl (2016), *Combining FOSS and Kanban* (old; use only if nothing recent is found).
+- The PDFs are kept out of the repo for copyright reasons.
+
+**No blockers remain for Section 2.** Next: plan Section 3 (Quality Assurance Process).
