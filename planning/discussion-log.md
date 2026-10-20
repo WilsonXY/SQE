@@ -141,3 +141,21 @@ Waiting for the author:
 - the severity-mismatch handling;
 - whether the product has any AI features;
 - the Section 2 matrix placement.
+
+## 2026-10-20 — Session 1 (continued): Section 3 closed
+
+Decisions:
+- Section 3 **agreed**. Standards scope is **option B**.
+- **Security is a top-priority attribute**; the gap is proactive pre-release security verification.
+- Advisories may be cited.
+- Use maintainer severity ratings and GitHub publish dates.
+- ISO/IEC 25059 (AI) is out of scope.
+- Section 2 matrix: the scored table goes in the body, with an optional FYI appendix.
+- **Words in tables count** towards the word limit.
+
+Evidence:
+- The advisory credits (author's screenshots) show that the reporters of GHSA-m2cq (critical), GHSA-prp4 (high) and GHSA-cq9c (high) are **not core maintainers** (iamsilk, Rex50527, pyuysig). All were fixed by MatissJanis. This counts as independent verification, for Section 4.
+- Standards verified (official scope/edition pages): ISO/IEC 25010:2023; IEEE 730-2014 (active; 2026 revision in development); **ISO 9001:2026** (published 16 Sep 2026, superseding the lecture's 2015 edition); ISO/IEC 27001:2022; CMMI V3.0 (2023); OWASP ASVS 5.0.0; **WCAG 2.2** (Actual still targets 2.1); ISO/IEC/IEEE 29119-1:2022.
+- **Actual has no OpenSSF Best Practices badge and no public Scorecard result.**
+
+Next: plan Section 4 (IV&V integrated with Kanban).

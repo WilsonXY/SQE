@@ -1,6 +1,6 @@
 # Section 2 — Software Development Methodology (10 marks)
 
-Status: **Agreed** (2026-10-20), with one follow-up on where the matrix goes (see *Open questions*). The flow may still be adjusted slightly during writing.
+Status: **Agreed** (2026-10-20). The flow may still be adjusted slightly during writing.
 
 ## Agreed
 
@@ -96,12 +96,14 @@ Option C: Spiral, Scrum, Kanban, Scrumban, DevOps. This drops XP, even though XP
 
 ## Open questions
 
-1. **Matrix placement under the new appendix rule (2026-10-20):** appendix content is unmarked, so the decision must be justified in the body. Proposal:
-   - The **scored matrix itself** goes in the **body**: 6 options (5 candidates + baseline) × 10 criteria with weights and totals, as one table.
-   - **The reasons for the decisive scores** go in the body text: the criteria where candidates differ most, e.g. C2 volunteers, C7 overhead, C8 flow.
-   - The appendix holds only an **FYI cell-by-cell note** for every score. Optional; could be dropped.
-   
-   Does that work, and do you know whether tables count towards your word limit?
+None for planning.
+
+## Matrix placement (agreed 2026-10-20, under the appendix rule)
+
+- **The scored matrix itself goes in the body**: 6 options (5 candidates + baseline) × 10 criteria, with weights and totals, as one compact table.
+- **The reasons for the decisive scores** go in the body text, e.g. C2 volunteers, C7 overhead, C8 flow.
+- The appendix holds at most an optional **FYI** cell-by-cell note.
+- **Words in tables count** towards the word limit, so the table stays compact: numbers plus short labels. The ~300-word budget for 2.4 must include it.
 
 ## Sources (verified 2026-10-20; full details in `sources.md`)
 

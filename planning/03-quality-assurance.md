@@ -1,6 +1,6 @@
 # Section 3 — Quality Assurance Process (10 marks)
 
-Status: **In discussion.** Flow and most decisions agreed (2026-10-20). Standards scope and security framing are pending.
+Status: **Agreed** (2026-10-20). The flow may still be adjusted during writing.
 
 ## What the brief asks
 
@@ -29,6 +29,13 @@ Five things must be visible to the marker:
   - The appendix is only for supplementary "FYI" material. It is **not marked** and must not be used to dodge the word count.
   - Anything the argument depends on goes in the **body**.
   - So there is **no "full SQAP in the appendix"**. 3.5 carries the QA plan itself as a compact table in the body.
+- **Words in tables count** towards the word limit (the author confirmed this), so tables must stay compact.
+- **Standards scope: option B.** Evaluate the lecture standards (ISO/IEC 25010, IEEE 730, ISO 9001, ISO/IEC 27001, CMMI) **and** OSS-specific frameworks (OpenSSF Best Practices Badge and Scorecard, OWASP ASVS, WCAG). Adopt what fits; reject heavy certification standards or borrow their principles only, with reasons.
+- **Security is a top-priority attribute.** Actual is a financial system holding sensitive data. The main gap is **proactive security verification before release**, not a missing policy.
+- **Specific advisories may be cited** as evidence (e.g. GHSA-m2cq-xjgm-f668, critical, missing authentication on bank-sync endpoints).
+- **Severity:** use the **maintainers' published rating** (and GitHub publish dates).
+- **AI:** ISO/IEC 25059 (AI quality) is **out of scope**. AI only appears as a development-process topic.
+- The advisory **reporters are outside the core team** (iamsilk, Rex50527, pyuysig; fixed by MatissJanis). **Carry this into Section 4** as evidence of independent verification.
 
 ## Relevant lecture guidance (not cited)
 
@@ -75,31 +82,20 @@ Five things must be visible to the marker:
 
 Total about **1,550 words**, all in the body.
 
-## Context for the pending standards question
+## Standards and frameworks: verified facts for 3.4 (see `sources.md` → D2)
 
-**Why the question matters.** The brief says QA must align with "**industry standards**", and 3.4 says "**critically select**". So the marker expects:
-- a discussion of standards, beyond what Actual already does; and
-- *reasoned choices*: why a standard fits or doesn't.
-
-**The difficulty.** Lecture 4's standards (ISO 9001, ISO/IEC 27001, CMMI) are mostly **organisation-level management systems or maturity appraisals**. They assume a company that pays for audits and certification. Actual has no company behind it: just 8 core volunteers, about USD 3,000–3,500 a month in donations [S08], and stipends for review work.
-
-**Options:**
-- **(A) Lecture standards only.** Discuss ISO 9001, 27001, CMMI and 25010. Risk: the honest conclusion is that most don't fit a volunteer project, which leaves little to *apply*.
-- **(B) Lecture standards + OSS-specific frameworks (my recommendation).** Also evaluate lightweight, free, open-source-specific industry frameworks, e.g.:
-  - **OpenSSF Best Practices Badge / Scorecard**: built specifically for OSS projects;
-  - **OWASP ASVS**: security requirements for the sync server's access-control flaws;
-  - **WCAG**: Actual already claims 2.1 AA.
-  
-  Then **openly adopt the frameworks that fit and reject or "borrow principles only" from the heavy ones**, with reasons. This *is* the critical selection the brief asks for, and it produces concrete standards to apply in 3.5.
-- **(C) OSS frameworks only.** Not recommended. It ignores the lecture standards the marker will look for.
-
-All the standards and frameworks above are still **unverified** [S54–S61]. They will be checked before writing.
+| Standard / framework | Current edition (verified) | Planned judgement |
+|---|---|---|
+| ISO/IEC 25010 | **2023** (replaces 2011) [S53] | **Adopt** as the quality model |
+| IEEE 730 | **2014** (active; a 2026 revision is in development) [S54] | **Adapt**: lightweight SQAP structure for 3.5 |
+| ISO 9001 | **2026** (published 16 Sep 2026; the lecture's 2015 edition is superseded) [S55] | **Reject certification**; borrow principles |
+| ISO/IEC 27001 | **2022** (+ Amd 1:2024) [S57] | **Reject certification**; borrow risk-based thinking |
+| CMMI | **V3.0** (2023) [S56] | **Reject appraisal**; maybe describe maturity informally |
+| OWASP ASVS | **5.0.0** [S58] | **Adopt** for sync-server access control, authentication and sessions (directly matches the advisories) |
+| WCAG | **2.2** (W3C Rec, 12 Dec 2024 version) [S59]; Actual targets 2.1 AA | **Adopt** 2.2 AA plus automated checks |
+| OpenSSF Best Practices Badge / Scorecard | Live programmes [S60]; **Actual has neither** (checked) | **Adopt**: free, OSS-specific, mostly automated |
+| ISO/IEC/IEEE 29119 | **29119-1:2022** [S61] | Mostly Section 4; at most a mention here |
 
 ## Open questions
 
-1. **Standards scope:** A, **B (recommended)** or C, now that the context is above?
-2. **Security framing:** the advisories make security clearly a **top-priority attribute** and show the main gap is **proactive** security assurance (e.g. authorization tests, threat modelling or security review for new multi-user features), not the lack of a policy. Agree with this framing?
-3. **Using the advisories as evidence:** OK to cite specific advisories (e.g. the critical "missing authentication for bank-sync endpoints")? It's strong, concrete evidence. Each would be cited as a GitHub advisory, and the severities taken as published by Actual's maintainers.
-4. **Who reported the vulnerabilities?** This matters for Section 4: external researchers finding flaws = de facto *independent* verification. Could you open 2–3 advisories in your browser (e.g. GHSA-m2cq-xjgm-f668, GHSA-cq9c-6w48-qmfg, GHSA-prp4-2f49-fcgp) and tell me what the **"Credits"** section says?
-5. **Severity mismatch:** GHSA-m62c-5q34-f3cf shows **Low** on Actual's page but **High** in the global database (OSV). I'd use the **maintainers' rating** and mention the difference only if relevant. OK?
-6. **Does Actual's product have any AI features?** I'm not aware of any; please say if you know of one. If not, ISO/IEC 25059 (AI quality) is out of scope, and AI comes up only as a development-process topic.
+None for planning.

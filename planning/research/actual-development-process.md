@@ -136,6 +136,21 @@ Actual Budget does **not** declare or follow any named methodology (no Scrum, no
 
 The screenshot also shows advisories **not** in the OSV npm list (probably not tied to an npm package): "Electron Run As Node" (GHSA-7rvm-xjpp-63r9, Moderate), "Shared users can perform owner-only file management actions" (GHSA-23vm-ffgg-qvjr, High), "OpenID `client_secret` disclosure via broken authorization guard" (GHSA-49v6-pqjq-xw55, High), and "Path traversal vulnerability in actual-server" (GHSA-4wf8-vhhr-4gpv, Moderate).
 
+**Advisory details from the author's browser screenshots (2026-10-20).** Dates are the GitHub repo publish dates, which differ from OSV's dates:
+
+| Advisory | Published (GitHub) | Severity (maintainer) | CVE | CWE | Affected → patched | Reporter (Credits) | Fixed by |
+|---|---|---|---|---|---|---|---|
+| GHSA-m2cq-xjgm-f668, *Missing Authentication for SimpleFIN and Pluggy AI bank sync endpoints* | Feb 21 | **Critical 9.2/10** (CVSS v4: network, low complexity, no privileges, no user interaction, high confidentiality impact) | CVE-2026-27584 | CWE-306 (missing authentication for critical function) | sync-server ≤ 26.2.0 → ≥ 26.2.1 | **iamsilk** | MatissJanis |
+| GHSA-prp4-2f49-fcgp, *Privilege Escalation via 'change-password' Endpoint on OpenID-Migrated Servers* | Apr 24 | **High 8.8/10** (CVSS 3.1) | CVE-2026-33318 | CWE-284, CWE-862 (improper access control, missing authorization) | sync-server ≤ 26.3.0 → ≥ 26.4.0 | **Rex50527** | MatissJanis |
+| GHSA-cq9c-6w48-qmfg, *Disabled OpenID users keep access through existing session tokens* | Jun 13 | **High 8.3/10** (CVSS 3.1) | CVE-2026-49229 | CWE-613 (insufficient session expiration) | ≤ 26.5.2 → ≥ 26.6.0 | **pyuysig** | MatissJanis |
+
+Notes from the advisory texts:
+- **m2cq:** "Missing authentication middleware … allows any unauthenticated user to … read sensitive bank account balance and transaction information". Six SimpleFIN and Pluggy.ai endpoints lacked the middleware that the GoCardless integration *did* implement. This is an **inconsistency between similar integrations**, the kind of defect a review checklist or an authorization test suite would catch.
+- **prp4:** "Three weaknesses combine": no authorization check on `POST /account/change-password`, an inactive password `auth` row not removed during the multi-user migration, and a client-supplied `loginMethod` bypassing the server's auth configuration.
+- **cq9c:** "disabling a user only blocks future OpenID login". The shared session validation path does not perform the same enabled-user check.
+
+**Independence:** none of the three reporters is in the core contributor list [S02] (jfdoming, joel-jeremy, MatissJanis, matt-fidd, MikesGlitch, tabedzki, tim-smart, youngcw). So these flaws were found by **people outside the core team**, i.e. de facto **independent verification**, through the private reporting channel [S62]. Careful wording: we only know they aren't core maintainers. Their roles (security researcher, user, etc.) aren't known.
+
 **Pattern (analysis, to be argued in Section 3/4):**
 - Most advisories are **access-control defects** (missing authentication or authorization, privilege escalation, session handling) in the **sync server**.
 - Many relate to **multi-user/OpenID support**, a 2025 feature [S11]. New features led to new security defects that automated checks (CodeQL, dependency review) did not prevent before release.
