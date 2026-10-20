@@ -1,14 +1,14 @@
 # Section 1 — Introduction (5 marks)
 
-Status: **Agreed.** Only the exact wording of the personal reason and the figure plan are still to confirm.
+Status: **Agreed** (2026-10-20). Ready for writing once the full Assignment 1 plan is aligned.
 
 ## Agreed
 
 - 1.6 "Purpose and scope of this report" is **not** its own subsection. It is a short part of 1.1.
 - Tone: **dead simple and straightforward.** No showing off. Clean and easy to read.
 - Later sections are mentioned only briefly. No detail.
-- **Third person only** throughout the report (no "I"/"we").
-- **Include the personal reason for choosing Actual**, in third person. The author was looking for an open-source financial management app that could be self-hosted on an old laptop at home to manage and track personal finances. They found Actual Budget, became interested in it, and the assignment gave a chance to look at it in depth.
+- **Third person only** throughout the report (no "I"/"we"). **One exception:** the personal-reason sentence in 1.1 uses **"I"**.
+- **Include the personal reason for choosing Actual** (first person, the only exception). The author was looking for an open-source financial management app that could be self-hosted on an old laptop at home to manage and track personal finances. They found Actual Budget, became interested in it, and the assignment gave a chance to look at it in depth.
 - **Include a short history:** very brief, two or three sentences at most.
 - **Diagrams:** only where they really help the reader. Too many diagrams confuse. Balance matters (see the figure plan in `README.md`).
 - 1.4 and 1.5 **stay as separate subsections**.
@@ -26,14 +26,16 @@ Status: **Agreed.** Only the exact wording of the personal reason and the figure
 
 Word target: about **500–700 words**.
 
-## Proposed wording for the personal reason (please confirm)
+## Agreed direction for the personal reason (final wording at the writing stage)
 
-> Actual Budget was selected because the author was looking for an open-source personal finance application that could be self-hosted on an old home laptop to manage and track personal finances. Actual Budget met this need, and this assignment provided an opportunity to examine its development in depth.
+> I chose Actual Budget because I was looking for an open-source personal finance application that I could self-host on an old laptop at home to manage and keep track of my finances. After discovering Actual Budget and becoming interested in it, this assignment gave me the opportunity to examine it in depth.
+
+- **One figure in 1.3** (how Actual works). Agreed for now; see the figure plan in `README.md`.
+- History is written as "early 2022", citing Actual's own blog. The exact day isn't needed for a two-sentence history.
 
 ## Open questions
 
-1. Is the wording above OK? Is "the author" fine as the third-person reference?
-2. Is one figure in 1.3 OK (see the figure plan in `README.md`)?
+None.
 
 ## Evidence
 

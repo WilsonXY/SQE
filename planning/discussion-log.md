@@ -36,3 +36,19 @@ Proposed and waiting for the author:
 - The intro's personal-reason wording and the figure plan.
 
 Noted for Assignment 2: as outside analysts, we need to decide what exactly is estimated and risk-planned. To discuss when Assignment 2 planning starts.
+
+## 2026-10-20 — Session 1 (continued): closing Section 1, narrowing Section 2
+
+Decisions:
+- **Section 1 is agreed.** The personal-reason sentence uses "I" (the only exception to third person). The figure plan (3 figures across Sections 1–2) is OK for now.
+- The history uses "early 2022" from Actual's own blog. James Long's original post returns 404, the archive the author found (archive.jlongster.com) couldn't be reached from the research environment, and the exact date isn't needed.
+- Section 2 agreed: the shortlist and the C1–C10 criteria and weights, Kanban as the working hypothesis, Release Train as a practice (not a candidate), the Bazaar model as a baseline only, and tailoring allowed.
+- **Proof rule:** a candidate must have real-world evidence. An established named combination (e.g. Scrumban) counts if it is proven. Unproven or weird methods are dropped.
+- **Shortlist: 5 candidates + 1 baseline.**
+
+Research done:
+- Scrumban: evidence found (Nikitina et al., ICSSP 2012 case study; studies of distributed teams), so it passes the proof rule.
+- Shape Up: no peer-reviewed evidence, only practitioner blogs, so it is **dropped**.
+- Seven methods pass the proof rule, so 2 must be cut. Proposed **Option A**: Spiral, Scrum, XP, Kanban, DevOps (+ baseline). Lean is folded into Kanban, and Scrumban is cut because its parents are already in.
+
+Waiting for the author: the shortlist choice (Option A, B or C).

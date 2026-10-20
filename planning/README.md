@@ -3,8 +3,8 @@
 | Stage | File | Status |
 |---|---|---|
 | Brief summary | `00-assignment-brief.md` | Done |
-| 1. Introduction | `01-introduction.md` | Agreed (2 small confirmations pending) |
-| 2. Methodology | `02-methodology.md` | In discussion (flow agreed; candidates and criteria next) |
+| 1. Introduction | `01-introduction.md` | **Agreed** |
+| 2. Methodology | `02-methodology.md` | Nearly agreed (final shortlist of 5 pending) |
 | 3. Quality Assurance Process | — | Not started |
 | 4. IV&V with selected methodology | — | Not started |
 | 5. Conclusion (optional) | — | Not started |
@@ -30,7 +30,7 @@ Supporting files:
 - The official cover page templates are `Assignment/Assignment_1_-Cover_-_2026.docx` and `Assignment_2_...`. They need a **title/topic**, hand-out date and hand-in date. Submission is through Moodle.
 - Open question: the report title, e.g. "Software Quality Engineering Evaluation of Actual Budget: Methodology, Quality Assurance and IV&V". To be decided.
 
-## Figure plan (proposed): keep figures few and useful
+## Figure plan (agreed for now): keep figures few and useful
 
 | Fig | Section | Shows | Why it earns its place |
 |---|---|---|---|
@@ -42,6 +42,7 @@ Tables (criteria, the matrix summary, stakeholders) are not counted as figures. 
 
 ## Global writing rules (agreed)
 
-- Third person only.
+- Third person only. **Exception:** the personal-reason sentence in 1.1 uses "I".
+- Methodologies (and later, any technique or practice we recommend) must be **existing and proven in real-world use**, with evidence we can cite.
 - Appendices don't count towards the ~5,000 words (the lecturer confirmed this).
 - Point of view: outside analysts. No contact with the Actual team.
