@@ -97,3 +97,19 @@ Results:
 - The PDFs are kept out of the repo for copyright reasons.
 
 **No blockers remain for Section 2.** Next: plan Section 3 (Quality Assurance Process).
+
+## 2026-10-20 — Session 1 (continued): Section 3 first proposal
+
+Research done (Actual repo at `27290a8`, logged in `research/` → *QA practices as-is*):
+- Mapped the CI workflows (check, build, E2E/VRT, CodeQL, dependency review, CRDT, size), pre-commit hooks, the testing guide, the AI usage policy, release QA, and E2E encryption.
+- **Apparent gaps (no evidence found):** test coverage measurement (disabled in sync-server), automated accessibility testing, `SECURITY.md`, performance testing in CI, and a written QA plan.
+
+Proposed for Section 3 (waiting for the author):
+- Flow 3.1–3.6 (as-is → gaps → to-be, mirroring Section 2).
+- ISO/IEC 25010 (2023, to verify) as the quality model.
+- Boundaries: Section 3 = QA process; Section 4 = IV&V and detailed testing; Assignment 2 = metric details.
+- Evaluate OSS-specific standards (OpenSSF, OWASP, WCAG) alongside ISO/CMMI, and reject heavy certification standards with reasons.
+- Full SQAP in an appendix.
+- Possibly no new figure.
+
+The candidate standards (S53–S61) are **unverified** and must be checked before writing.

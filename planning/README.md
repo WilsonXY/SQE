@@ -5,7 +5,7 @@
 | Brief summary | `00-assignment-brief.md` | Done |
 | 1. Introduction | `01-introduction.md` | **Agreed** |
 | 2. Methodology | `02-methodology.md` | **Agreed** (shortlist: Spiral, Scrum, XP, Kanban, DevOps + OSS baseline) |
-| 3. Quality Assurance Process | — | Not started |
+| 3. Quality Assurance Process | `03-quality-assurance.md` | In discussion (first proposal) |
 | 4. IV&V with selected methodology | — | Not started |
 | 5. Conclusion (optional) | — | Not started |
 | Front matter (title page, executive summary, TOC, lists) | — | Not started |

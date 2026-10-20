@@ -47,6 +47,9 @@ All live URLs below returned **HTTP 200** on 2026-10-20 (curl via proxy). Conten
 | S10 | Aboltins, M. J. (2025, January 2). *Roadmap for 2025*. Actual Budget. https://actualbudget.org/blog/roadmap-for-2025/ | Verified · Recent | "In early 2022 James, the creator of Actual Budget, decided to close-down the commercial product and open source it"; PRs stuck unreviewed for months; about 50 open PRs; core team formed; Discord with over 7,000 members; "upwards of a million docker container clones per month" | 1.2, 2.1, 2.2 |
 | S11 | youngcw. (2025, December 20). *Roadmap for 2026*. Actual Budget. https://actualbudget.org/blog/roadmap-for-2026/ | Verified · Recent | 2025 review; roadmap achieved except plugins; stipends; over 8,000 PikaPods users. (`authors.yml` lists the name only as "youngcw", so APA uses the username.) | 1.4, 2.1 |
 | S12 | Aboltins, M. J. (2025, November 15). *Fighting AI slop*. Actual Budget. https://actualbudget.org/blog/fighting-ai-slop/ | Verified (first part read) · Recent | Policy of closing fully AI-generated PRs and issues to protect maintainer time | possibly 2.2 (risk) |
+| S50 | Actual Budget. (n.d.). *AI usage policy*. Retrieved October 20, 2026, from https://actualbudget.org/docs/contributing/ai-usage-policy | Verified (source file `contributing/ai-usage-policy.md`; live URL not yet curl-checked) · Recent | AI-written code must pass typecheck, lint and tests, follow the code style and translate strings; AI use must be disclosed; interactions must be human | 3.3 |
+| S51 | Actual Budget. (n.d.). *Syncing across devices* [title `to verify`]. Retrieved October 20, 2026, from https://actualbudget.org/docs/getting-started/sync | Verified content (source file `getting-started/sync.md`); title and live URL `[to verify]` · Recent | Optional end-to-end encryption; local data unencrypted; bank-sync tokens stored on the server outside E2EE; encryption can't be turned off; a lost password means unrecoverable data | 1.3, 3.2, 3.3 |
+| S52 | Actual Budget. (n.d.). *Architecture notes*. Retrieved October 20, 2026, from https://actualbudget.org/docs/contributing/project-details/architecture | Verified content (source file `project-details/architecture.md`); live URL `[to verify]` · Recent | Front end plus a local in-browser "backend"; web worker vs Electron child process; strict TypeScript; SQLite with migrations | 1.3, 3.3 |
 | S13 | Actual Budget. (n.d.). *Welcome to Actual Budget Open Source*. https://actualbudget.org/blog/welcome-actualbudget-os | Read · **Not used** | Only covers the move to actualbudget.org | — |
 
 > Correction (2026-10-20): S10 and S12 were first logged as "Janis, M.". The blog's `authors.yml` gives the full name **Matiss Janis Aboltins**, so the APA form is **Aboltins, M. J.** and the in-text form is **(Aboltins, 2025)**.
@@ -137,6 +140,22 @@ The author supplied these PDFs on 2026-10-20. They are **not committed to the re
 - `Kanban_in_software_engineering__A_systematic_mapping_study_-_1-s2.0-S0164121217302820-main.pdf` (S38)
 
 ---
+
+## D2. Candidate standards for Section 3: UNVERIFIED (AI memory)
+
+These were named in `03-quality-assurance.md` from memory. **Each must be checked** (official page, version, year) before it is used. The recency rule applies: use the **current** version of each standard. A standard is the "root" source for itself.
+
+| ID | Draft reference | Check |
+|---|---|---|
+| S53 | ISO/IEC 25010 (product quality model), believed revised in **2023** (ISO/IEC 25010:2023) | Year, title, characteristics list |
+| S54 | IEEE 730 (software quality assurance processes), believed current version 2014 | Current version; whether an older standard is still "root" |
+| S55 | ISO 9001:2015 (quality management systems) | Current version (an amendment may exist) |
+| S56 | CMMI (believed to be V3.0, 2023, ISACA/CMMI Institute) | Version and publisher |
+| S57 | ISO/IEC 27001:2022 (information security management) | Version |
+| S58 | OWASP Application Security Verification Standard (ASVS), believed v4.0.3 / v5.0 | Current version |
+| S59 | W3C Web Content Accessibility Guidelines (WCAG) 2.1 / 2.2 | Current Recommendation |
+| S60 | OpenSSF Best Practices Badge; OpenSSF Scorecard | Official pages; criteria |
+| S61 | ISO/IEC/IEEE 29119 (software testing) | Parts and years |
 
 ## E. Module materials (not cited)
 

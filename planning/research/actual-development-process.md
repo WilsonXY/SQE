@@ -62,6 +62,52 @@ Actual Budget does **not** declare or follow any named methodology (no Scrum, no
 - Donations run through Open Collective at about USD 3,000–3,500 a month. A USD 2,000/month stipend pool pays core maintainers for **reviews and triage**, using points weighted by lines of code reviewed, counted automatically by `.github/workflows/count-points.yml`. `contributing/leadership/paying-contributors.md`
 - Hosting partners such as PikaPods share revenue ("over 8000 Pikapods users"). `blog/2025-12-20-roadmap-for-2026.md`
 
+### QA practices as-is (for Section 3), checked at commit `27290a8`
+
+**Automated checks on every PR** (`.github/workflows/`):
+- `check.yml` ("Test"), on push, PR and merge queue:
+  - `yarn constraints`, tsconfig reference check, `yarn lint` (oxfmt and oxlint), `yarn knip` (unused code/dependencies), `yarn typecheck`, `yarn test` (Vitest across all packages via Lage);
+  - a database **migration check** (`check-migrations.ts`).
+- `build.yml`: builds the API, CRDT, web, mobile, CLI and sync-server, and records build stats.
+- `e2e-test.yml`, on PR and merge queue: Playwright **functional E2E** (sharded), **desktop-app E2E**, and **visual regression** (sharded, merged HTML report).
+- `codeql.yml`: **CodeQL security analysis** on push to master, on PRs, and weekly (Saturday cron).
+- `dependency-review.yml` on PRs. `crdt-version-check.yml` ensures the CRDT package version is bumped on PRs. `size-compare.yml` compares bundle sizes.
+
+**Pre-commit hook:** `.husky/pre-commit` → `nano-staged`, which runs a formatter (oxfmt) and linter (oxlint --fix --type-aware) on staged files and validates package imports and tsconfig references.
+
+**Testing guide** (S09, `contributing/testing.md`):
+- Vitest unit tests, Playwright E2E, VRT; the monorepo runner is Lage.
+- Best practice is "Minimize mocking".
+- The PR **testing checklist**: all tests pass; "New functionality has appropriate test coverage"; E2E passes if the UI changed.
+
+**Review standards:**
+- `CODE_REVIEW_GUIDELINES.md` (S01): no new `@ts-strict-ignore`, no lint suppressions, avoid `any`, i18n for all strings, minimise mocks.
+- PR template checklist (release notes, no regressions, self-review).
+- AI usage policy (S50): AI-written code must still pass typecheck, lint and tests, follow the code style, and translate strings. AI use must be disclosed. Interactions with maintainers must be human.
+
+**Release QA** (S03): at least 2 maintainer approvals plus a **manual smoke test** of the Docker server and desktop app.
+
+**Other QA-relevant practices:**
+- Feature flags (S07).
+- ADRs (S06).
+- Triage labels (S05).
+- The design and accessibility target is WCAG 2.1 AA (`PRODUCT.md`, S01).
+- Strict TypeScript (S52: "All code is written in TypeScript with strict type checking").
+- SQLite with schema migrations (S52).
+
+**Security and privacy features** (S51, `getting-started/sync.md`):
+- Optional **end-to-end encryption** of budget data ("so that hosted services can't read your budget data").
+- Local data is unencrypted (full-disk encryption is recommended).
+- Bank-sync tokens are stored on the server outside E2EE.
+- Encryption can't be turned off once on, and a lost password means unrecoverable data.
+
+**Apparent gaps** (found by file search at commit `27290a8`; worded carefully as "no evidence found"):
+- **No test coverage measurement or reporting.** There is no coverage setting in the root `vitest.config.ts`. `packages/sync-server/vitest.config.ts` has `coverage: { enabled: false }`. No coverage scripts or Codecov config. This sits oddly with the checklist item "appropriate test coverage", which has no measure behind it.
+- **No automated accessibility testing.** No axe/Lighthouse dependency or config in the desktop-client, loot-core, sync-server or desktop-electron `package.json` files, despite the WCAG 2.1 AA target.
+- **No `SECURITY.md`** (security or vulnerability-disclosure policy) in the repo root or `.github/`. *To verify:* the GitHub "Security" tab in a browser (it needs JavaScript, so it couldn't be checked from here).
+- **No automated performance testing in CI.** Only `packages/loot-core/src/server/bench.ts` exists, and it isn't wired into workflows.
+- **No written QA plan / SQAP.** Quality practices are spread across the docs, templates and CI.
+
 ### Product facts (for the Introduction)
 - "a local-first personal finance tool. It is 100% free and open-source" with sync between devices. `README.md`
 - Built around **envelope budgeting**. Users include privacy-minded budgeters, self-hosters and families. Success means "users trusting the numbers". `PRODUCT.md`
