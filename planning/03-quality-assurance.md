@@ -1,6 +1,6 @@
 # Section 3 — Quality Assurance Process (10 marks)
 
-Status: **In discussion.** First proposal, 2026-10-20.
+Status: **In discussion.** Flow and most decisions agreed (2026-10-20). Standards scope and security framing are pending.
 
 ## What the brief asks
 
@@ -13,77 +13,93 @@ Five things must be visible to the marker:
 4. Alignment with **industry standards**.
 5. **Critical** thinking throughout.
 
-## Relevant lecture guidance (not cited; see the AGENTS.md rule)
+## Agreed
 
-- L1: views of quality (transcendent, product, user, process, value); functional, structural and process quality.
-- L3: SQAP definition, 10 preparation steps, SQAP sections (management, documentation, standards and conventions, reviews and audits, testing, problem reporting and corrective action, other: tools, CM, training, risk).
+- **Flow 3.1–3.6** as below (as-is → gaps → to-be, mirroring Section 2). Provisional, like Section 2.
+- **Quality model: ISO/IEC 25010:2023** (published 15 Nov 2023; replaces the 2011 edition taught in the lecture) [S53].
+  - Correction to an assumption: 25010:2023 does **not** cover AI. AI system quality is a separate standard, **ISO/IEC 25059:2023** [S64].
+  - Actual's *product* has no AI features (to confirm). AI shows up in Actual's *development process* (AI usage policy [S50], "AI slop" policy [S12]). That is a **process-quality** topic, which could be a nice point in 3.3 or 3.6, but it is not a 25010 attribute.
+- **Attributes:** rate **all nine** 25010:2023 characteristics briefly in one table, then go deep on the **top 4–5**.
+- **Boundaries:**
+  - Section 3 = the QA *process* (attributes, practices, standards, quality gates, plan).
+  - Section 4 = IV&V and detailed testing.
+  - Assignment 2 = metric details. Section 3 names **at most one measure per attribute**.
+- **No figures** for Section 3 for now. The author may reconsider later.
+- **Appendix rule** (see `AGENTS.md`):
+  - The appendix is only for supplementary "FYI" material. It is **not marked** and must not be used to dodge the word count.
+  - Anything the argument depends on goes in the **body**.
+  - So there is **no "full SQAP in the appendix"**. 3.5 carries the QA plan itself as a compact table in the body.
+
+## Relevant lecture guidance (not cited)
+
+- L1: views of quality; functional, structural and process quality.
+- L3: SQAP definition, 10 steps, SQAP sections.
 - L4: ISO 9001, ISO/IEC 25010, 27001, 25022, CMMI, IEEE 1012/1059.
-- L5: QA vs quality planning vs quality control; process vs product quality.
+- L5: QA vs quality planning vs QC; process vs product quality.
 - L6: configuration management; V&V.
 
-## Evidence already gathered (verified, see `research/actual-development-process.md` → *QA practices as-is*)
+## Evidence (verified; see `research/actual-development-process.md`)
 
-**Actual already has a lot of automated QA:**
-- type checking, lint and format;
-- unit tests, E2E tests and visual regression;
-- CodeQL security scanning and dependency review;
+**Actual already has strong automated QA:**
+- typecheck, lint and format;
+- Vitest unit tests, Playwright E2E and visual regression;
+- CodeQL and dependency review;
 - migration and CRDT checks;
 - pre-commit hooks;
-- review guidelines;
+- review guidelines and an AI usage policy;
 - 2-maintainer release approval plus a manual smoke test;
-- optional end-to-end encryption.
+- optional E2E encryption.
 
-**Apparent gaps (no evidence found):**
-- no test coverage measurement (coverage is explicitly disabled in sync-server);
-- no automated accessibility testing despite the WCAG 2.1 AA target;
-- no `SECURITY.md`;
-- no performance testing in CI;
-- no written QA plan.
+**Security process (corrected 2026-10-20):**
+- A **security policy exists** (org-level `SECURITY.md`, private vulnerability reporting, coordinated disclosure) [S62].
+- **At least 10–14 published advisories** in the last year [S63]. The npm packages alone have 1 critical, 3 high and 6 moderate. **Mostly access-control flaws in the sync server**, many linked to the multi-user/OpenID feature added in 2025.
+- Policy weaknesses: no response-time commitment, and a broken link (404).
 
-## Proposed flow (pending approval)
+**Apparent gaps (no evidence found in the repository, October 2026):**
+- test coverage measurement (explicitly disabled in sync-server);
+- automated accessibility testing (despite the WCAG 2.1 AA target);
+- performance testing in CI;
+- a written QA plan;
+- **proactive** security verification (security is mostly handled reactively, after reports).
 
-Same pattern as Section 2: **as-is → gaps → to-be**, so the two sections read as one argument.
+## Flow
 
 | # | Subsection | Purpose | Main content | ~Words |
 |---|---|---|---|---|
-| 3.1 | What "quality" means for Actual | Define quality in context | The quality views (L1) applied to Actual. Its own definition of success: "users trusting the numbers" (`PRODUCT.md`). Which stakeholder cares about which view. | 200 |
-| 3.2 | Key quality attributes | Pick and prioritise attributes | ISO/IEC 25010 quality model. Rate every characteristic for Actual; deep-dive the top 4–5 (likely **functional suitability/correctness**, **reliability/data integrity**, **security/privacy**, **maintainability**, **interaction capability/usability and accessibility**). Table: attribute → why it matters for Actual → stakeholder → priority. | 300 |
-| 3.3 | Current QA practices (as-is) and gaps | Evidence-based assessment | Map Actual's existing practices to each key attribute in a coverage table, so the gaps show up (coverage, accessibility, security policy, performance, no QA plan). | 300 |
-| 3.4 | Selecting QA practices and standards | The "critically select" part | For each gap or attribute: candidate practices and standards, with keep, adopt or reject plus a reason. Includes judging which industry standards actually fit a volunteer OSS project (e.g. heavy certification standards vs lightweight OSS-specific frameworks). | 300 |
-| 3.5 | Applying the QA process within Kanban (to-be) | The "apply" part | A lightweight SQAP for Actual following L3's SQAP sections, built into the Kanban workflow from Section 2: explicit policies and a **Definition of Done** per board column, quality gates, roles, defect handling. One table in the body, the full SQAP in an appendix. | 250 |
-| 3.6 | Critical evaluation | Where most marks come from | Strengths, costs and limits for a volunteer team; risks (e.g. automation fatigue, bots slowing PRs [S43]); what still isn't covered. | 200 |
+| 3.1 | What "quality" means for Actual | Define quality in context | Quality views (L1) applied to Actual; "users trusting the numbers" [S01 `PRODUCT.md`]; which stakeholder cares about which view. | 200 |
+| 3.2 | Key quality attributes | Pick and prioritise | One table rating all **9** ISO/IEC 25010:2023 characteristics for Actual (why it matters, stakeholder, priority). Deep-dive the top 4–5, likely **functional suitability (calculation correctness)**, **reliability (data integrity, sync)**, **security** (now strongly evidenced by the advisories), **maintainability** (volunteer contributors), and **interaction capability** (incl. inclusivity, i.e. accessibility). | 300 |
+| 3.3 | Current QA practices (as-is) and gaps | Evidence-based assessment | Coverage table: practice → attributes it protects. Gaps: coverage, accessibility automation, performance, no QA plan, reactive-only security. | 300 |
+| 3.4 | Selecting QA practices and standards | The "critically select" part | For each gap or attribute: candidate practices and standards → adopt / adapt / reject, with reasons. (Scope of standards: pending, question 1.) | 300 |
+| 3.5 | Applying the QA process within Kanban (to-be) | The "apply" part | A **compact QA plan in the body** (table), structured by L3's SQAP sections and built into the Kanban workflow from Section 2: explicit policies and a **Definition of Done** per board column, quality gates, roles, defect and vulnerability handling. | 250 |
+| 3.6 | Critical evaluation | Where most marks come from | Strengths, cost and limits for volunteers; risks (automation overhead, e.g. bots and CI slowing PRs [S43]); what still isn't covered. | 200 |
 
-Total about **1,550 words**, plus an appendix (full SQAP table, full attribute rating).
+Total about **1,550 words**, all in the body.
 
-## Proposed boundaries with other sections
+## Context for the pending standards question
 
-- **Section 3 (QA)** = the overall quality *process*: attributes, practices, standards, quality gates, the plan. Testing appears as a QA/QC practice at a summary level.
-- **Section 4 (IV&V)** = *independent* verification and validation activities per lifecycle phase (requirements, design, code, test, release, maintenance), with roles and independence. **Detailed testing activities go here, not in Section 3.**
-- **Assignment 2 (Software Metrics)** = detailed metric definitions and calculations. **Section 3 names one measure per attribute at most** and leaves the details to Assignment 2.
+**Why the question matters.** The brief says QA must align with "**industry standards**", and 3.4 says "**critically select**". So the marker expects:
+- a discussion of standards, beyond what Actual already does; and
+- *reasoned choices*: why a standard fits or doesn't.
 
-## Candidate standards and frameworks to evaluate in 3.4
+**The difficulty.** Lecture 4's standards (ISO 9001, ISO/IEC 27001, CMMI) are mostly **organisation-level management systems or maturity appraisals**. They assume a company that pays for audits and certification. Actual has no company behind it: just 8 core volunteers, about USD 3,000–3,500 a month in donations [S08], and stipends for review work.
 
-All from AI memory, **unverified**. To be checked and logged in `sources.md` before writing.
+**Options:**
+- **(A) Lecture standards only.** Discuss ISO 9001, 27001, CMMI and 25010. Risk: the honest conclusion is that most don't fit a volunteer project, which leaves little to *apply*.
+- **(B) Lecture standards + OSS-specific frameworks (my recommendation).** Also evaluate lightweight, free, open-source-specific industry frameworks, e.g.:
+  - **OpenSSF Best Practices Badge / Scorecard**: built specifically for OSS projects;
+  - **OWASP ASVS**: security requirements for the sync server's access-control flaws;
+  - **WCAG**: Actual already claims 2.1 AA.
+  
+  Then **openly adopt the frameworks that fit and reject or "borrow principles only" from the heavy ones**, with reasons. This *is* the critical selection the brief asks for, and it produces concrete standards to apply in 3.5.
+- **(C) OSS frameworks only.** Not recommended. It ignores the lecture standards the marker will look for.
 
-| Standard / framework | Likely judgement for Actual (to test) |
-|---|---|
-| ISO/IEC 25010 (quality model; the lecture cites the 2011 version, a **2023 revision** is believed to exist) | **Adopt** as the attribute model |
-| IEEE 730 (SQA processes; the SQAP structure in L3 follows it) | **Adopt (lightweight)** as the plan structure |
-| ISO 9001 (QMS certification) | Probably **reject**: a certification-oriented organisational QMS with no fit for a volunteer OSS project. Borrow its principles only. |
-| CMMI (maturity appraisal) | Probably **reject** an appraisal; maybe use the maturity levels to describe where Actual sits |
-| ISO/IEC 27001 (ISMS) | Probably **reject** certification; borrow risk-based security thinking |
-| OWASP ASVS / OWASP Top 10 | Possibly **adopt** for the security requirements of the sync server |
-| WCAG 2.1/2.2 | **Adopt**. Actual already targets 2.1 AA; the gap is automated checking |
-| OpenSSF Best Practices Badge / OpenSSF Scorecard | Possibly **adopt**: OSS-specific, lightweight, industry-backed |
-| ISO/IEC/IEEE 29119 (software testing) | Maybe reference for test documentation. Possibly too heavy. |
+All the standards and frameworks above are still **unverified** [S54–S61]. They will be checked before writing.
 
 ## Open questions
 
-1. **Flow and framing:** OK with as-is → gaps → to-be (3.1–3.6), mirroring Section 2?
-2. **Quality model:** use the **latest ISO/IEC 25010 (2023)**, mentioning that it updated the 2011 version taught in the lecture, or stick to 2011 to match the lecture? I'd recommend 2023 because of your recency rule, once verified.
-3. **Attribute depth:** rate all characteristics briefly (table) and deep-dive the **top 4–5**? Or only discuss the top ones?
-4. **Section 3 / 4 / Assignment 2 boundaries** (above): agree?
-5. **Standards scope:** include OSS-specific industry frameworks (OpenSSF, OWASP, WCAG) alongside the lecture's ISO/CMMI standards, and openly **reject** heavy certification standards for a volunteer project, with reasons?
-6. **SQAP in the appendix:** put the full lightweight SQAP table in an appendix, with a summary table in 3.5?
-7. **Figures:** Sections 1–2 already have 3 figures. For Section 3, I suggest **no new figure**, only tables. Or one figure showing quality gates on the Kanban board? This could be merged with Figure 3 (2.5) so one picture serves both sections.
-8. **Gap claims:** the gaps come from a file search of the repo. Are you comfortable stating them as "no evidence found in the repository (as of October 2026)"? Can you check one thing in a browser: does https://github.com/actualbudget/actual/security show a security policy?
+1. **Standards scope:** A, **B (recommended)** or C, now that the context is above?
+2. **Security framing:** the advisories make security clearly a **top-priority attribute** and show the main gap is **proactive** security assurance (e.g. authorization tests, threat modelling or security review for new multi-user features), not the lack of a policy. Agree with this framing?
+3. **Using the advisories as evidence:** OK to cite specific advisories (e.g. the critical "missing authentication for bank-sync endpoints")? It's strong, concrete evidence. Each would be cited as a GitHub advisory, and the severities taken as published by Actual's maintainers.
+4. **Who reported the vulnerabilities?** This matters for Section 4: external researchers finding flaws = de facto *independent* verification. Could you open 2–3 advisories in your browser (e.g. GHSA-m2cq-xjgm-f668, GHSA-cq9c-6w48-qmfg, GHSA-prp4-2f49-fcgp) and tell me what the **"Credits"** section says?
+5. **Severity mismatch:** GHSA-m62c-5q34-f3cf shows **Low** on Actual's page but **High** in the global database (OSV). I'd use the **maintainers' rating** and mention the difference only if relevant. OK?
+6. **Does Actual's product have any AI features?** I'm not aware of any; please say if you know of one. If not, ISO/IEC 25059 (AI quality) is out of scope, and AI comes up only as a development-process topic.

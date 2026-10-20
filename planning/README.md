@@ -5,7 +5,7 @@
 | Brief summary | `00-assignment-brief.md` | Done |
 | 1. Introduction | `01-introduction.md` | **Agreed** |
 | 2. Methodology | `02-methodology.md` | **Agreed** (shortlist: Spiral, Scrum, XP, Kanban, DevOps + OSS baseline) |
-| 3. Quality Assurance Process | `03-quality-assurance.md` | In discussion (first proposal) |
+| 3. Quality Assurance Process | `03-quality-assurance.md` | In discussion (flow agreed; standards scope and security framing pending) |
 | 4. IV&V with selected methodology | — | Not started |
 | 5. Conclusion (optional) | — | Not started |
 | Front matter (title page, executive summary, TOC, lists) | — | Not started |
@@ -45,5 +45,5 @@ Tables (criteria, the matrix summary, stakeholders) are not counted as figures. 
 
 - Third person only. **Exception:** the personal-reason sentence in 1.1 uses "I".
 - Methodologies (and later, any technique or practice we recommend) must be **existing and proven in real-world use**, with evidence we can cite.
-- Appendices don't count towards the ~5,000 words (the lecturer confirmed this).
+- Appendices don't count towards the ~5,000 words (the lecturer confirmed this), and **appendix content earns no marks**. Use appendices only for supplementary "FYI" material. Never move essential content there to save words.
 - Point of view: outside analysts. No contact with the Actual team.

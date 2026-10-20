@@ -113,3 +113,31 @@ Proposed for Section 3 (waiting for the author):
 - Possibly no new figure.
 
 The candidate standards (S53–S61) are **unverified** and must be checked before writing.
+
+## 2026-10-20 — Session 1 (continued): Section 3 decisions; security correction
+
+Decisions:
+- **Never commit the PDFs the author supplies** (rule added to `AGENTS.md`).
+- Section 3:
+  - flow 3.1–3.6 OK (provisional);
+  - **ISO/IEC 25010:2023**;
+  - rate all 9 characteristics and go deep on the top 4–5;
+  - boundaries agreed (3 = QA process, 4 = IV&V and detailed testing, Assignment 2 = metric details);
+  - **no figures** for now.
+- **Appendix rule:** appendices are unmarked "FYI" only; never move essential content there to save words (added to `AGENTS.md` and `README.md`). Consequences:
+  - no full SQAP in the appendix (the compact QA plan goes in the 3.5 body);
+  - the Section 2 matrix placement needs revisiting (question added to `02-methodology.md`).
+
+Corrections and verification:
+- **Correction:** "no SECURITY.md" was **wrong**. The author's screenshot showed a security policy and published advisories. The policy is an **org-level** file (`actualbudget/.github/SECURITY.md`), which the repo-only search missed. Verified (raw file fetched). Its release-notes link is broken (404).
+- Advisories verified via the OSV.dev API: 10 for the npm packages (Oct 2025–Oct 2026), 1 critical, 3 high and 6 moderate, mostly sync-server access-control flaws. The screenshot shows a few more.
+- ISO/IEC 25010:2023 verified (evs.ee: 9 characteristics, published 15.11.2023, replaces 2011). The changes come from the arc42 secondary source. **The author assumed 25010:2023 covers AI; it doesn't.** AI quality is ISO/IEC 25059:2023.
+
+Waiting for the author:
+- standards scope (A / B / C, with context given);
+- the security framing (proactive vs reactive);
+- using the advisories as evidence;
+- advisory credits (who reported them);
+- the severity-mismatch handling;
+- whether the product has any AI features;
+- the Section 2 matrix placement.

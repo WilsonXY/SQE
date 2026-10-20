@@ -104,9 +104,44 @@ Actual Budget does **not** declare or follow any named methodology (no Scrum, no
 **Apparent gaps** (found by file search at commit `27290a8`; worded carefully as "no evidence found"):
 - **No test coverage measurement or reporting.** There is no coverage setting in the root `vitest.config.ts`. `packages/sync-server/vitest.config.ts` has `coverage: { enabled: false }`. No coverage scripts or Codecov config. This sits oddly with the checklist item "appropriate test coverage", which has no measure behind it.
 - **No automated accessibility testing.** No axe/Lighthouse dependency or config in the desktop-client, loot-core, sync-server or desktop-electron `package.json` files, despite the WCAG 2.1 AA target.
-- **No `SECURITY.md`** (security or vulnerability-disclosure policy) in the repo root or `.github/`. *To verify:* the GitHub "Security" tab in a browser (it needs JavaScript, so it couldn't be checked from here).
+- ~~No `SECURITY.md`~~: **WRONG, corrected 2026-10-20.** A security policy **does exist**. It is an organisation-level file in `actualbudget/.github/SECURITY.md` [S62], which GitHub applies to all repos in the org, so a search of the `actual` repo alone missed it. The author confirmed it in a browser (GitHub Security tab screenshot). See *Security process* below.
 - **No automated performance testing in CI.** Only `packages/loot-core/src/server/bench.ts` exists, and it isn't wired into workflows.
 - **No written QA plan / SQAP.** Quality practices are spread across the docs, templates and CI.
+
+### Security process (verified 2026-10-20)
+
+**Security policy** [S62] (`actualbudget/.github/SECURITY.md`, raw file fetched, HTTP 200):
+- Security support covers "the latest stable release of Actual and Actual Server only".
+- Reports of vulnerabilities in unreleased builds are welcome.
+- Reports go through **GitHub private vulnerability reporting** (`/security/advisories/new`).
+- "**Do not** open a pull request with a fix or otherwise advertise the vulnerability publicly until we have had a chance to coordinate disclosure", i.e. coordinated disclosure.
+- **Weaknesses:** no response-time commitment and no severity/triage process described. The policy's link to the current stable version (`https://actualbudget.github.io/docs/Release-Notes`) is **broken**: it redirects to `actualbudget.org/docs/Release-Notes`, which returns **HTTP 404** (checked 2026-10-20).
+
+**Published security advisories.** Two sources:
+- The author's screenshot of the GitHub Security tab (2026-10-20). Page 1 shows 10 advisories and there is more than one page. Severities are as published by maintainers (MatissJanis, jfdoming).
+- OSV.dev API query of Actual's npm packages [S63] (2026-10-20):
+
+| Published | ID | Severity (OSV) | Package | Summary |
+|---|---|---|---|---|
+| 2025-10-20 | GHSA-xvp7-8vm8-xfxx | Moderate | sync-server | GoCardless service logs sensitive data incl. bearer tokens |
+| 2026-02-24 | GHSA-m2cq-xjgm-f668 | **Critical** | sync-server | Missing authentication for SimpleFIN and Pluggy AI bank-sync endpoints |
+| 2026-02-27 | GHSA-qmjj-p7m9-wjrv | Moderate | sync-server | Missing authorization in sync endpoints allows cross-user budget access |
+| 2026-03-10 | GHSA-27vg-33gh-4hwg | Moderate | sync-server | Authenticated path traversal |
+| 2026-04-23 | GHSA-prp4-2f49-fcgp | High | sync-server | Privilege escalation via `change-password` on OpenID-migrated servers |
+| 2026-06-22 | GHSA-3f62-qv96-4p78 | Moderate | sync-server | Missing authorization on `GET /secret/:name` (non-admin users can enumerate bank-sync secrets) |
+| 2026-06-22 | GHSA-cq9c-6w48-qmfg | High | sync-server | Disabled OpenID users keep access through existing session tokens |
+| 2026-06-22 | GHSA-xqjm-27pc-rvwm | Moderate | web | CSV formula injection in transaction export |
+| 2026-06-22 | GHSA-7gh7-258j-4mpq | Moderate | cli | CSV formula injection in `--format csv` output |
+| 2026-10-07 | GHSA-m62c-5q34-f3cf | High (OSV) / **Low** (repo, per screenshot) | sync-server | CORS proxy allowlist prefix bypass leaks private repos via the server's GitHub token |
+
+The screenshot also shows advisories **not** in the OSV npm list (probably not tied to an npm package): "Electron Run As Node" (GHSA-7rvm-xjpp-63r9, Moderate), "Shared users can perform owner-only file management actions" (GHSA-23vm-ffgg-qvjr, High), "OpenID `client_secret` disclosure via broken authorization guard" (GHSA-49v6-pqjq-xw55, High), and "Path traversal vulnerability in actual-server" (GHSA-4wf8-vhhr-4gpv, Moderate).
+
+**Pattern (analysis, to be argued in Section 3/4):**
+- Most advisories are **access-control defects** (missing authentication or authorization, privilege escalation, session handling) in the **sync server**.
+- Many relate to **multi-user/OpenID support**, a 2025 feature [S11]. New features led to new security defects that automated checks (CodeQL, dependency review) did not prevent before release.
+- *To verify:* who reported them (the credits on each advisory page). That matters for Section 4: external reporters would be a form of *independent* verification.
+
+**Implication for QA:** security QA today is mostly **reactive**: a good disclosure and fix process, but no evidence of proactive security testing such as authorization test suites, threat modelling or security review for features like multi-user.
 
 ### Product facts (for the Introduction)
 - "a local-first personal finance tool. It is 100% free and open-source" with sync between devices. `README.md`

@@ -55,3 +55,11 @@ The university requires **APA 7th edition** referencing. Plagiarism risk is take
    
    Tag every entry in `sources.md` as *Recent*, *Root*, *Golden* or *Old*, and avoid citing *Old*.
 8. **Lecture slides are not cited** in the report. They are used only as guidance. If a slide reproduces content from another source (e.g. a website), cite that original source directly after checking it.
+9. **Never commit reference files the author supplies** (PDFs of books, papers, reports, etc.). They are shared for reading only, because of copyright and licensing. Log them in `sources.md` instead.
+
+## Report writing rules
+
+- **Appendices are not marked and don't count towards the word limit.** Use them **only** for supplementary "FYI" material.
+  - Never move content the argument depends on into an appendix to save words.
+  - Everything needed to understand and justify a section goes in the body.
+- Third person throughout. The only exception is the personal-reason sentence in 1.1, which uses "I".
