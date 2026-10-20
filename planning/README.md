@@ -4,7 +4,7 @@
 |---|---|---|
 | Brief summary | `00-assignment-brief.md` | Done |
 | 1. Introduction | `01-introduction.md` | **Agreed** |
-| 2. Methodology | `02-methodology.md` | Nearly agreed (final shortlist of 5 pending) |
+| 2. Methodology | `02-methodology.md` | **Agreed** (shortlist: Spiral, Scrum, XP, Kanban, DevOps + OSS baseline) |
 | 3. Quality Assurance Process | — | Not started |
 | 4. IV&V with selected methodology | — | Not started |
 | 5. Conclusion (optional) | — | Not started |
@@ -14,6 +14,7 @@
 Supporting files:
 - `research/actual-development-process.md`: verified facts about Actual's development process and product, with sources.
 - `discussion-log.md`: dated record of each session.
+- `sources.md`: register of **every** source consulted (APA 7), with IDs, status and where each is used. The report's References list is built only from the sources actually cited.
 
 ## Draft A1 table of contents (current)
 

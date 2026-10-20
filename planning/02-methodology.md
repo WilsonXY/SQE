@@ -1,6 +1,6 @@
 # Section 2 — Software Development Methodology (10 marks)
 
-Status: **Nearly agreed.** Only the final shortlist of 5 is left to confirm (see *Open questions*).
+Status: **Agreed** (2026-10-20). The flow may still be adjusted slightly during writing.
 
 ## Agreed
 
@@ -79,9 +79,13 @@ Scale: each methodology is scored **1–5** per criterion. Weight **1 = low, 2 =
 
 Seven methodologies pass the proof rule (Spiral, Scrum, XP, Kanban, Lean, DevOps, Scrumban), so **2 must be cut** to reach 5.
 
-## Proposed shortlist (pending approval)
+## Shortlist (agreed: Option A)
 
-**Option A (recommended): Spiral, Scrum, XP, Kanban, DevOps, plus the Bazaar baseline**
+**Final shortlist: Spiral, Scrum, XP, Kanban, DevOps, plus the open-source (Bazaar) model as the baseline.**
+
+Options considered:
+
+**Option A (chosen): Spiral, Scrum, XP, Kanban, DevOps, plus the Bazaar baseline**
 - **Lean is cut** because it overlaps heavily with Kanban. Kanban is the concrete method built on Lean principles, so Lean is covered as Kanban's foundation (one sentence in 2.3).
 - **Scrumban is cut** because both of its parents (Scrum and Kanban) are already shortlisted, and its evidence base is the thinnest of the seven.
 - **Spiral is kept** so that the matrix includes one non-agile, risk-driven option. A comparison of agile methods only would look one-sided, and Spiral's risk focus is directly relevant to a finance app.
@@ -92,9 +96,8 @@ Option C: Spiral, Scrum, Kanban, Scrumban, DevOps. This drops XP, even though XP
 
 ## Open questions
 
-1. **Shortlist:** Option A, B or C, or a different five?
+None for planning. Before writing, the authoritative sources for each shortlisted methodology must be found and verified: see `sources.md` section D (S24–S32 are still unverified, and Scrum, XP and DevOps sources are still needed).
 
-## Sources found in this round (for References later)
+## Sources
 
-- Nikitina, N., Kajko-Mattsson, M., & Strale, M. (2012). From Scrum to Scrumban: A case study of a process transition. *Proceedings of the 2012 International Conference on Software and System Process (ICSSP)*, 140–149. (Bibliographic details from DBLP; full text not read yet.)
-- Singer, R. (2019). *Shape Up: Stop running in circles and ship work that matters*. Basecamp. (Recorded only to justify dropping it.)
+All sources for this section are logged in `sources.md`: Actual's evidence S01–S12, Scrumban screening S17–S21, Shape Up screening S22–S23, and methodology literature S24–S32 (unverified).

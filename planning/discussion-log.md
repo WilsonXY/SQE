@@ -52,3 +52,16 @@ Research done:
 - Seven methods pass the proof rule, so 2 must be cut. Proposed **Option A**: Spiral, Scrum, XP, Kanban, DevOps (+ baseline). Lean is folded into Kanban, and Scrumban is cut because its parents are already in.
 
 Waiting for the author: the shortlist choice (Option A, B or C).
+
+## 2026-10-20 — Session 1 (continued): Section 2 closed; citation rules
+
+Decisions:
+- **Shortlist: Option A**: Spiral, Scrum, XP, Kanban, DevOps, plus the open-source (Bazaar) baseline. **Section 2 is agreed.**
+- **Citation rules** (added to `AGENTS.md`):
+  - Every source from web search, fetched pages, the repo, papers or slides is logged in `planning/sources.md`, with an APA 7 reference, URL, access date, what was taken, where it is used, and its status.
+  - The report's References list contains only the sources actually cited.
+  - The university requires APA 7th edition.
+  - AI-memory references are flagged *unverified* until checked.
+- Created `planning/sources.md` and back-filled every source from this session (S01–S33, plus a search log).
+
+Next: plan Section 3 (Quality Assurance Process).
