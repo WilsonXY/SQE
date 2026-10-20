@@ -47,5 +47,11 @@ The university requires **APA 7th edition** referencing. Plagiarism risk is take
 2. **Reference by ID in planning notes,** e.g. `[S05]`, so every fact can be traced back to its source.
 3. **AI prior knowledge is not a source.** Anything the assistant states from memory, such as a paper, an author, a date or a statistic, is marked *unverified* in `sources.md`. It must be checked against the actual source before it is used in the report.
 4. **Search snippets and summaries are not enough.** Read the actual source (or at least its abstract or official page) before citing it in the report.
-5. **Report References list = only what is cited.** The References section of each submitted report lists only the works actually cited in that report's text. Each in-text citation uses APA 7 author–date format, e.g. (Janis, 2025) or Janis (2025). `sources.md` is the wider research log, not the reference list.
-6. **Paraphrase properly and quote sparingly.** Direct quotes go in quotation marks with a page or paragraph number, e.g. (Janis, 2025, para. 3).
+5. **Report References list = only what is cited.** The References section of each submitted report lists only the works actually cited in that report's text. Each in-text citation uses APA 7 author–date format, e.g. (Aboltins, 2025) or Aboltins (2025). `sources.md` is the wider research log, not the reference list.
+6. **Paraphrase properly and quote sparingly.** Direct quotes go in quotation marks with a page or paragraph number, e.g. (Aboltins, 2025, para. 3).
+7. **Recency: prefer sources from the last 5 years** (university preference). An older source is acceptable **only** if it is:
+   - a **root** source (the original or defining source of the concept, e.g. the creator's own paper, book or guide); or
+   - a **golden** source (seminal or highly cited in the field).
+   
+   Tag every entry in `sources.md` as *Recent*, *Root*, *Golden* or *Old*, and avoid citing *Old*.
+8. **Lecture slides are not cited** in the report. They are used only as guidance. If a slide reproduces content from another source (e.g. a website), cite that original source directly after checking it.

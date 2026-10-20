@@ -24,7 +24,7 @@ Decisions:
 - Methodology: weighted matrix with the full version in an appendix (appendices excluded from the word count; the lecturer confirmed this). Flow 2.1–2.6 accepted provisionally. **No hybrid**: one existing, proven methodology. DevOps is a candidate. Point of view: outside analysts (this also applies to Assignment 2).
 
 Research done:
-- Verified the history from Actual's blog (Roadmap for 2025, M. Janis): the commercial product closed and was open-sourced in early 2022, and PRs went unreviewed for months before the volunteer core team formed. The exact date of James Long's announcement is still *to verify*.
+- Verified the history from Actual's blog (Roadmap for 2025, M. J. Aboltins; first logged as "M. Janis", corrected later): the commercial product closed and was open-sourced in early 2022, and PRs went unreviewed for months before the volunteer core team formed. The exact date of James Long's announcement is still *to verify*.
 
 Proposed and waiting for the author:
 - Release Train is a release practice, not a candidate.
@@ -65,3 +65,18 @@ Decisions:
 - Created `planning/sources.md` and back-filled every source from this session (S01–S33, plus a search log).
 
 Next: plan Section 3 (Quality Assurance Process).
+
+## 2026-10-20 — Session 1 (continued): source verification for Section 2
+
+Decisions:
+- **Lecture slides are not cited** in the report (the author confirmed this). They are used as guidance only.
+- **Recency rule:** prefer sources from the last 5 years (2021 or later). Older sources are allowed only if they are a **root** source (the original or defining source) or a **golden** source (seminal or highly cited). Added to `AGENTS.md`.
+- **Verify sources first,** before planning Section 3.
+
+Verification done:
+- **Correction:** the author of the Actual blog posts S10 and S12 is **Matiss Janis Aboltins** (from the blog's `authors.yml`). APA: Aboltins, M. J. (2025). This replaces "Janis, M.".
+- All Actual docs and blog URLs return 200 (S02–S12).
+- The Changelog #495 is verified (S15). James Long's 2022 post is unreachable, and archive.jlongster.com only goes to 2020. History stays "early 2022" (S10).
+- Root and golden sources verified for every shortlisted methodology: Spiral S26, Scrum S34, XP S35, Kanban S28, DevOps S30, OSS baseline S24 and S25.
+- Recent sources found and abstracts read: S36 (Kuhrmann et al., 2022, IEEE TSE), S37 (Kanban review, 2021), S39 (DevOps review, 2023, IEEE TSE), S41 (CI review, 2022, EMSE), S42 (methodology selection by multi-criteria decision-making, 2024, IEEE Access), S43 and S44 (GitHub Actions and review bots, EMSE).
+- Remaining items are listed in `sources.md` → section D. They mostly need the APU library: the S38 abstract, book subtitles, and Springer article numbers.

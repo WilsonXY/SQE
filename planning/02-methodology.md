@@ -96,8 +96,15 @@ Option C: Spiral, Scrum, Kanban, Scrumban, DevOps. This drops XP, even though XP
 
 ## Open questions
 
-None for planning. Before writing, the authoritative sources for each shortlisted methodology must be found and verified: see `sources.md` section D (S24–S32 are still unverified, and Scrum, XP and DevOps sources are still needed).
+None for planning.
 
-## Sources
+## Sources (verified 2026-10-20; full details in `sources.md`)
 
-All sources for this section are logged in `sources.md`: Actual's evidence S01–S12, Scrumban screening S17–S21, Shape Up screening S22–S23, and methodology literature S24–S32 (unverified).
+| Use | Sources |
+|---|---|
+| Actual as-is evidence (2.1) | S01–S12 (all live URLs checked). Optional: S15 for the history. |
+| Root and golden source per candidate | Spiral S26 · Scrum S34 · XP S35 · Kanban S28 · DevOps S30 · OSS baseline S24, S25 · Lean (as Kanban's foundation) S29 |
+| Recent evidence (2021+) | S36 Kuhrmann et al. 2022 (hybrids are common; practices matter more than methods → supports tailoring) · S37 Kanban review 2021 · S39 DevOps review 2023 · S41 CI review 2022 · S42 multi-criteria methodology selection 2024 (**supports the weighted matrix**) · S43 GitHub Actions 2023 · S47 LF maintainers report 2023 (to read) · S40 DORA 2024 (to read) |
+| Screening only | Scrumban S18 (recent) · Shape Up S22, S23 |
+
+Still to do before writing: see `sources.md` → section D.

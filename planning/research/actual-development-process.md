@@ -24,11 +24,12 @@ Actual Budget does **not** declare or follow any named methodology (no Scrum, no
 - The original author is James Long (the copyright in `LICENSE.txt`, which is MIT licence text).
 
 ### History (verified)
-- "In early 2022 James, the creator of Actual Budget, decided to close-down the commercial product and open source it." Source: Janis, M. (2025, January 2). *Roadmap for 2025*. Actual Budget blog. `packages/docs/blog/2025-01-02-roadmap-for-2025.md` (https://actualbudget.org/blog/roadmap-for-2025)
+- "In early 2022 James, the creator of Actual Budget, decided to close-down the commercial product and open source it." Source: [S10] Aboltins, M. J. (2025, January 2). *Roadmap for 2025*. Actual Budget. `packages/docs/blog/2025-01-02-roadmap-for-2025.md` (https://actualbudget.org/blog/roadmap-for-2025/)
 - From the same post: after an initial burst of activity, "The PRs were stuck waiting for a review for months with nobody around to review them." A small volunteer group then got access to the core repositories, worked through about 50 open PRs, and built the core maintainer team. Members joined and left over time. The post also reports a Discord community of over 7,000 and "upwards of a million docker container clones per month". **This is useful evidence for 2.1 and 2.2, because review capacity is the bottleneck.**
 - James Long's own announcement, "Actual is going open-source" (https://jlongster.com/actual-open-source), says Actual had been in development for over 4 years as a paid product, the hosted service would end, and users should self-host the sync server. **Exact date not verifiable:** the original URL now returns 404 (checked by the author in a browser, 2026-10-20). The author found an archive at https://archive.jlongster.com/#posts, but it couldn't be reached from the research environment, and neither could the Wayback Machine.
   - **Decision:** the report says "early 2022" and cites Actual's own blog (above), which is enough for a brief history.
-  - Secondary corroboration: The Changelog podcast, episode 495 (July 2022), describes Actual as built "as a business for over 4 years before recently opening it up and making it 100% free" (https://changelog.com/podcast/495).
+  - Secondary corroboration [S15]: *Actual(ly) opening up with James Long*, The Changelog #495 (published July 1, 2022; recorded June 15, 2022). It describes Actual as built "as a business for over 4 years before" being opened up. Verified from the episode page and transcript. The transcript gives no exact open-source date.
+  - The archive at archive.jlongster.com only goes up to May 2020, so it doesn't contain the 2022 post.
 
 ### Requirements and prioritisation
 - Feature requests use a **voting system**: issues typed "Feature" are auto-labelled `needs votes`, auto-commented and auto-closed. The backlog is the list of `needs votes` issues sorted by 👍. `.github/workflows/issues-close-feature-requests.yml`
