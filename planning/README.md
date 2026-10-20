@@ -24,3 +24,8 @@ Supporting files:
 - 4 Integrating IV&V with [Selected Methodology]: *to be planned*
 - 5 Conclusion: *optional, to be decided*
 - References · Appendices
+
+## Front matter notes
+
+- The official cover page templates are `Assignment/Assignment_1_-Cover_-_2026.docx` and `Assignment_2_...`. They need a **title/topic**, hand-out date and hand-in date. Submission is through Moodle.
+- Open question: the report title, e.g. "Software Quality Engineering Evaluation of Actual Budget: Methodology, Quality Assurance and IV&V". To be decided.
