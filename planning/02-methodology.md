@@ -1,87 +1,99 @@
 # Section 2 — Software Development Methodology (10 marks)
 
-Status: **In discussion**
+Status: **In discussion.** The flow is agreed. Candidates and criteria are next.
 
 ## Agreed
 
-- Candidates are **not** limited to the common list (Waterfall, V-Model, Spiral, RAD, RUP, Scrum, Kanban, XP). Less mainstream methodologies can be candidates too.
-- Selection is based on **how effective the methodology would be for this project**, not on how popular or widely accepted it is.
-- The section starts from **Actual's current (as-is) development workflow**, then asks: *if a proper methodology were adopted, which would suit Actual best, given its goals, constraints, risks and stakeholders?*
+- Candidates are **not** limited to the common list. Less mainstream methodologies can be candidates too.
+- Selection is based on **how effective the methodology would be for this project**, not on how popular it is.
+- The section starts from **Actual's current (as-is) workflow**, then asks which methodology would suit Actual best if a proper one were adopted.
+- Wording of the as-is finding: **"a defined workflow but no deliberate methodology"**.
+- **Flow 2.1–2.6 as below**, provisionally. It may change slightly once writing starts.
+- **Use a weighted decision matrix.** The full matrix goes in an appendix (appendices don't count towards the word limit; the lecturer confirmed this). A summary goes in the body.
+- **No hybrid.** The selected methodology must be one that already exists and has been **proven in real-world use**, not something invented for this report.
+- **DevOps is a candidate.** The author studied it as a methodology last semester.
+- **Point of view: outside analysts recommending a methodology.** This is a university assignment only, and there is no contact with the Actual team. This also applies to Assignment 2.
 
-## Verified finding: the as-is state
-
-Actual does **not** follow a named methodology. It **does** have a clear, documented, heavily automated workflow:
-
-- **Prioritisation:** voting-based feature backlog.
-- **Work allocation:** none. Volunteers choose their own work.
-- **Delivery:** pull requests, CI, peer review and feature flags.
-- **Release:** an automatic monthly release train, cut on the 25th, needing 2 maintainer approvals and a smoke test.
-- **Funding:** a paid review stipend.
-
-Full evidence and sources: `research/actual-development-process.md`.
-
-So "no methodology" is true. "No process" would be **false**. The report should say: *there is an emergent process but no deliberate methodology*.
-
-## Proposed flow (pending approval)
+## Flow
 
 The logic runs: **what they do → what the project needs → what options exist → which fits best → how it would work → honest limits.**
 
 | # | Subsection | Purpose | Main content |
 |---|---|---|---|
-| 2.1 | Current development process of Actual (as-is) | Ground the section in evidence | How work flows today: idea or vote → issue/PR → CI → review → merge → monthly release. A workflow figure. Conclusion: no deliberate methodology, an emergent OSS process. |
-| 2.2 | Project characteristics and selection criteria | Turn the brief's four lenses into criteria | Goals, constraints, risks and stakeholder expectations (the brief's own words), plus the 8 selection factors from Lecture 2. These give a short list of criteria, with weights if we keep the matrix. |
-| 2.3 | Candidate methodologies | Show the options considered | A longlist covering plan-driven, agile/lean and less-common methods. A quick screening removes the clearly unfit ones, with one line each on why. A shortlist of about 4–6 gets a short description each. |
-| 2.4 | Evaluation and selection | Make the choice traceable | Compare the shortlist against the criteria (matrix or table), pick one, and justify it against goals, constraints, risks and stakeholders. |
-| 2.5 | Applying the methodology to Actual (to-be) | Show it is practical, not just theory | Roles, cadence, artefacts and workflow under the chosen methodology. What changes compared with today. A figure. This is also what Section 4 (IV&V) builds on. |
+| 2.1 | Current development process of Actual (as-is) | Ground the section in evidence | How work flows today: vote or issue → PR → CI → review → merge → monthly release. A workflow figure. Conclusion: a defined workflow but no deliberate methodology. |
+| 2.2 | Project characteristics and selection criteria | Turn the brief's four lenses into criteria | Goals, constraints, risks and stakeholder expectations, plus the 8 selection factors from Lecture 2. These give weighted criteria (draft below). |
+| 2.3 | Candidate methodologies | Show the options considered | Longlist → screening (one line each) → shortlist with a short description each. |
+| 2.4 | Evaluation and selection | Make the choice traceable | Matrix summary (full version in an appendix), the selected methodology, and its justification against goals, constraints, risks and stakeholders. |
+| 2.5 | Applying the methodology to Actual (to-be) | Show it is practical | Roles, cadence, artefacts and workflow under the chosen methodology. What changes compared with today. Section 4 (IV&V) builds on this. |
 | 2.6 | Critical evaluation | Where most marks come from | Strengths, weaknesses, risks, mitigations, and the conditions under which this choice would stop being right. |
 
-Approximate words: 2.1 ≈ 250 · 2.2 ≈ 250 · 2.3 ≈ 300 · 2.4 ≈ 300 · 2.5 ≈ 200 · 2.6 ≈ 250, about **1,500 in total**.
+Approximate words: 2.1 ≈ 250 · 2.2 ≈ 250 · 2.3 ≈ 300 · 2.4 ≈ 300 · 2.5 ≈ 200 · 2.6 ≈ 250, about **1,500 in total**, plus the appendix matrix.
 
-## About the "scoring matrix"
+## Proposed (pending approval)
 
-A **weighted decision matrix**, also called multi-criteria decision analysis:
+### A. Release Train: not a candidate
 
-1. Take the criteria from 2.2, e.g. "copes with changing requirements" or "works with volunteers who can't commit time".
-2. Give each criterion a weight for how important it is to Actual, e.g. 1–3.
-3. Score each shortlisted methodology 1–5 on each criterion.
-4. Multiply each score by its weight and add them up. The highest total is the most suitable.
+A **release train** means shipping on a fixed calendar, e.g. every month. Whatever is finished and tested by the cut-off date goes in, and anything unfinished waits for the next "train". Firefox (from 2011) and Chrome are well-known examples. The term "Agile Release Train" also comes from SAFe, where it means a team of agile teams.
 
-**Why use it:** it makes the choice *traceable* (criteria → scores → decision) rather than "I like Kanban", which suits "select, justify, critically evaluate".
-**Weakness:** the scores are subjective. Each important score needs a sentence of justification, or it looks made up. The full matrix could go in an appendix, with a summary in the body.
-**Alternative:** a qualitative comparison table with good/partial/poor ratings and reasons. It is less numeric and easier to defend.
+It only covers **when to release**. It doesn't tell you how to gather requirements, plan, design, build or test, so it is a **release-management practice, not a development methodology**. Actual already does this (the automatic cut on the 25th of every month), so it belongs in **2.1 (as-is)** and possibly **2.5 (to-be)**, not in the candidate list.
 
-## Candidate longlist (draft, for discussion)
+### B. The current open-source ("Bazaar") model: a baseline only
 
-| Family | Methodology | First impression for Actual |
-|---|---|---|
-| Plan-driven | Waterfall | Likely screened out. Requirements change constantly through votes, and releases are monthly. |
-| Plan-driven | V-Model | Likely screened out as a methodology because it is too rigid. Its V&V pairing is still useful for Section 4. |
-| Plan-driven | Incremental | Generic. Partly matches feature flags. |
-| Risk-driven | Spiral (Boehm) | Interesting because financial data integrity is high-risk. Heavy risk analysis each loop may not suit volunteers. |
-| Plan-driven / iterative | RUP | Likely screened out: heavy roles and artefacts. |
-| Agile | Scrum | Needs committed teams, a product owner and sprints. Volunteers can't commit. Should still be evaluated on its merits. |
-| Agile | Extreme Programming (XP) | Engineering practices (CI, tests, small releases, collective ownership) already match well. Pair programming and an on-site customer don't. |
-| Agile / Lean | Kanban | Continuous pull-based flow, no fixed roles or iterations. Close to how Actual already works. |
-| Agile / Lean | Scrumban | A Scrum/Kanban hybrid. |
-| Lean | Lean Software Development (Poppendieck) | Principles: eliminate waste, build quality in, deliver fast, decide late, respect people. A strong fit for a small, time-poor team. |
-| Agile | Feature-Driven Development (FDD) | Probably screened out: class ownership and a chief-programmer role clash with open-source contribution. |
-| Agile | DSDM | Probably screened out: enterprise governance overhead. Its MoSCoW prioritisation is useful. |
-| Agile | Crystal Clear | Probably screened out: assumes a small co-located team. |
-| Product-cycle | **Shape Up** (Basecamp, Singer 2019) | Interesting: fixed time, variable scope; "appetite"; a betting table instead of a backlog; cool-down periods. Its weakness is that it expects dedicated teams for 6-week cycles. |
-| Open-source | **Open-source ("Bazaar") development model** (Raymond 1999; Mockus et al. 2002) | The "native" model: release early and often, peer review, self-selected work. Arguably what Actual already does. |
-| Practice set | DevOps / Continuous Delivery | More a culture and practice set than an SDLC. Probably a complement, not a candidate. |
-| Practice | Release Train (as used in Firefox/Chrome rapid release) | Actual's monthly cut already is one. Probably a component, not a candidate. |
-| Scaled | SAFe / LeSS / Disciplined Agile | Screened out: built for large enterprises with many teams. |
+It **does make sense** to include it purely for comparison. This is standard practice in decision analysis, sometimes called the "do-nothing" or "status quo" option:
 
-**Current leaning (not decided, to be tested by 2.2–2.4):** a **hybrid**, probably Kanban/Lean flow plus XP engineering practices plus a monthly release train. Shape Up and the Bazaar model are the most interesting challengers.
+- It is scored in the matrix with the same criteria, so readers can see whether each candidate actually **improves on today**.
+- It is **not eligible to be selected**, because the brief asks for a proper methodology to be selected.
+- Risk: the baseline might score close to the winner. That is still a valid finding. The criteria should fairly capture the as-is weaknesses already in the evidence: the PR review backlog that left PRs waiting for months in 2022, no explicit risk management, no assigned work.
+
+### C. Updated longlist (with screening view)
+
+| Family | Methodology | First view | Proposed status |
+|---|---|---|---|
+| Plan-driven | Waterfall | Requirements change constantly through votes, and releases are monthly. | Screen out |
+| Plan-driven | V-Model | Too rigid as a whole methodology. Its V&V pairing is still useful in Section 4. | Screen out |
+| Plan-driven | Incremental | Generic. Too broad to be distinct. | Screen out |
+| Plan-driven / iterative | RUP | Heavy roles and artefacts for a volunteer team. | Screen out |
+| Risk-driven | Spiral (Boehm) | Financial data integrity is high-risk, but heavy risk analysis each loop doesn't suit volunteers. | **Shortlist** |
+| Agile | Scrum | Needs committed teams, a product owner and sprints. Evaluate on its merits. | **Shortlist** |
+| Agile | Extreme Programming (XP) | Engineering practices fit well. Pair programming and an on-site customer don't. | **Shortlist** |
+| Agile / Lean | Kanban | Continuous pull-based flow and WIP limits. "Start with what you do now." | **Shortlist** |
+| Lean | Lean Software Development | Eliminate waste, build quality in, respect people. | **Shortlist** |
+| Agile | Scrumban | Essentially a Scrum/Kanban hybrid. The "no hybrid" rule probably excludes it. | Screen out? |
+| Agile | FDD | Class ownership and a chief-programmer role clash with open-source contribution. | Screen out |
+| Agile | DSDM | Enterprise governance overhead. | Screen out |
+| Agile | Crystal Clear | Assumes a small co-located team. | Screen out |
+| Product-cycle | Shape Up (Basecamp) | Fixed time, variable scope, no backlog. Expects dedicated 6-week teams. | **Shortlist** |
+| Ops-extended | DevOps | Strong automation and CI/CD culture, which Actual already partly has. Gives little guidance on requirements and prioritisation, which is good material for evaluation. | **Shortlist** |
+| Scaled | SAFe / LeSS / Disciplined Agile | Built for large multi-team enterprises. | Screen out |
+| Open-source | Bazaar / OSS model (Raymond, 1999; Mockus et al., 2002) | Describes today's process. | **Baseline only** |
+
+Proposed shortlist: **Spiral, Scrum, XP, Kanban, Lean, Shape Up, DevOps** (7 candidates) plus the Bazaar baseline.
+
+Current leaning (only a hypothesis): **Kanban**. Its principle "start with what you do now" fits a project that already has a working process. WIP limits and flow management directly target the review bottleneck. It has a documented track record. The strongest challengers are Lean and DevOps.
+
+### D. Draft selection criteria for 2.2 (for the next discussion)
+
+Scale: each methodology is scored **1–5** per criterion. Weight **1 = low, 2 = medium, 3 = high** importance to Actual.
+
+| # | Criterion | Comes from (brief lens / Lecture 2 factor) | Draft weight |
+|---|---|---|---|
+| C1 | Copes with evolving, community-voted requirements | Goals, stakeholders / Project requirements, Flexibility | 3 |
+| C2 | Works with volunteer, part-time, self-selected work (no fixed commitment) | Constraints / Team expertise, Time constraints | 3 |
+| C3 | Supports distributed, asynchronous collaboration | Constraints / Team expertise | 2 |
+| C4 | Builds quality in: defect prevention for financial correctness and data integrity | Goals ("users trust the numbers"), Risks | 3 |
+| C5 | Explicit risk management (data loss, security, migrations) | Risks / Risk tolerance | 2 |
+| C6 | Predictable, frequent delivery | Stakeholders / Time constraints | 2 |
+| C7 | Low process overhead and ceremony (small core team, burnout risk) | Constraints, Risks / Project size & complexity | 3 |
+| C8 | Manages flow and bottlenecks (e.g. the review backlog) | Risks, Constraints | 2 |
+| C9 | Stakeholder and community involvement and feedback | Stakeholders / Customer involvement | 2 |
+| C10 | Proven real-world use in comparable projects (open-source, distributed) | Your "proven to work" requirement | 2 |
+| — | Regulatory compliance (Lecture 2 factor) | Low relevance: Actual is not a regulated bank and users self-host. Mentioned in the text, not scored. | — |
 
 ## Open questions
 
-1. **Flow 2.1–2.6:** happy with this order? Note that 2.6 is now a separate subsection, so Section 2 has six subsections instead of five.
-2. **Framing:** the as-is finding is "a well-defined workflow but no deliberate methodology". Agree with this wording, rather than "no proper workflow"?
-3. **Scoring matrix:** keep the weighted matrix (with justification and the full version in an appendix), or use a qualitative comparison table?
-4. **Hybrid allowed?** The brief says "the most appropriate software development methodology" (singular). Is a hybrid acceptable to your lecturer, or must we name one base methodology (e.g. "Kanban, tailored with XP practices")?
-5. **Longlist:** anything to add or remove? Should DevOps and Release Train count as candidates or as supporting practices?
-6. **Shortlist size:** 4–6 shortlisted methods, with one-line screening for the rest. OK?
-7. **Should "keep the current Bazaar model" be a candidate?** If it scores highest, the conclusion becomes "formalise what Actual already does". That is a valid but less exciting answer.
-8. **Point of view:** is the report written as if *we* were Actual's maintainers adopting the methodology, or as an outside analyst recommending one? This also affects Assignment 2 (estimation and the risk plan).
+1. **Release Train:** agree it is a practice (covered in 2.1/2.5), not a candidate?
+2. **Bazaar baseline:** agree it is scored for comparison but not selectable?
+3. **Tailoring vs hybrid:** "no hybrid" means we pick one existing methodology. Is it OK for 2.5 to show that methodology **tailored** to Actual and keeping its existing good practices (e.g. CI and automated tests), as long as we don't claim a second methodology? Almost every methodology expects some tailoring. Kanban says so explicitly.
+4. **Scrumban:** screen it out under the no-hybrid rule?
+5. **Shortlist:** are the 7 candidates OK (Spiral, Scrum, XP, Kanban, Lean, Shape Up, DevOps)? Seven makes a big matrix, so it could be cut to about 5, but the matrix sits in an appendix.
+6. **Criteria and weights (D):** add, remove or re-weight anything?

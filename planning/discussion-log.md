@@ -15,3 +15,24 @@ Research done:
 - Verified Actual's development process from its repo and docs. See `research/actual-development-process.md`. Result: no named methodology, but a documented, automated, volunteer-driven workflow with a monthly release train.
 
 Open questions: see the *Open questions* lists in `01-introduction.md` and `02-methodology.md`.
+
+## 2026-10-20 — Session 1 (continued): answers on Sections 1 and 2
+
+Decisions:
+- Third person only throughout.
+- Introduction: include the personal reason (finding a self-hostable open-source finance app for an old home laptop) and a very brief history. Use diagrams only where they add value. Keep 1.4 and 1.5 separate. Signposting to later sections is nice to have.
+- Methodology: weighted matrix with the full version in an appendix (appendices excluded from the word count; the lecturer confirmed this). Flow 2.1–2.6 accepted provisionally. **No hybrid**: one existing, proven methodology. DevOps is a candidate. Point of view: outside analysts (this also applies to Assignment 2).
+
+Research done:
+- Verified the history from Actual's blog (Roadmap for 2025, M. Janis): the commercial product closed and was open-sourced in early 2022, and PRs went unreviewed for months before the volunteer core team formed. The exact date of James Long's announcement is still *to verify*.
+
+Proposed and waiting for the author:
+- Release Train is a release practice, not a candidate.
+- The Bazaar/OSS model is a baseline only.
+- Tailoring vs hybrid.
+- Scrumban screened out.
+- Shortlist of 7.
+- Draft criteria C1–C10 with weights.
+- The intro's personal-reason wording and the figure plan.
+
+Noted for Assignment 2: as outside analysts, we need to decide what exactly is estimated and risk-planned. To discuss when Assignment 2 planning starts.

@@ -21,7 +21,12 @@ Actual Budget does **not** declare or follow any named methodology (no Scrum, no
 - "We do not assign issues to specific people." "All issues are open to be worked on by anyone." `contributing/index.md`
 - "The mental health of the maintainers will be prioritized above all else." `contributing/index.md`
 - `CODEOWNERS` maps 6 code areas to individual maintainers, who are notified of PRs in those areas.
-- The original author is James Long (the copyright in `LICENSE.txt`, which is MIT licence text). *To verify (external source):* the open-sourcing date (believed to be 2022) and the earlier commercial history.
+- The original author is James Long (the copyright in `LICENSE.txt`, which is MIT licence text).
+
+### History (verified)
+- "In early 2022 James, the creator of Actual Budget, decided to close-down the commercial product and open source it." Source: Janis, M. (2025, January 2). *Roadmap for 2025*. Actual Budget blog. `packages/docs/blog/2025-01-02-roadmap-for-2025.md` (https://actualbudget.org/blog/roadmap-for-2025)
+- From the same post: after an initial burst of activity, "The PRs were stuck waiting for a review for months with nobody around to review them." A small volunteer group then got access to the core repositories, worked through about 50 open PRs, and built the core maintainer team. Members joined and left over time. The post also reports a Discord community of over 7,000 and "upwards of a million docker container clones per month". **This is useful evidence for 2.1 and 2.2, because review capacity is the bottleneck.**
+- James Long's own announcement, "Actual is going open-source" (https://jlongster.com/actual-open-source), says Actual had been in development for over 4 years as a paid product, the hosted service would end, and users should self-host the sync server. *To verify:* the exact publication date, believed to be April 2022. The page couldn't be reached from this environment. Please check it in a browser.
 
 ### Requirements and prioritisation
 - Feature requests use a **voting system**: issues typed "Feature" are auto-labelled `needs votes`, auto-commented and auto-closed. The backlog is the list of `needs votes` issues sorted by 👍. `.github/workflows/issues-close-feature-requests.yml`

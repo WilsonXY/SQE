@@ -3,8 +3,8 @@
 | Stage | File | Status |
 |---|---|---|
 | Brief summary | `00-assignment-brief.md` | Done |
-| 1. Introduction | `01-introduction.md` | In discussion |
-| 2. Methodology | `02-methodology.md` | In discussion |
+| 1. Introduction | `01-introduction.md` | Agreed (2 small confirmations pending) |
+| 2. Methodology | `02-methodology.md` | In discussion (flow agreed; candidates and criteria next) |
 | 3. Quality Assurance Process | — | Not started |
 | 4. IV&V with selected methodology | — | Not started |
 | 5. Conclusion (optional) | — | Not started |
@@ -29,3 +29,19 @@ Supporting files:
 
 - The official cover page templates are `Assignment/Assignment_1_-Cover_-_2026.docx` and `Assignment_2_...`. They need a **title/topic**, hand-out date and hand-in date. Submission is through Moodle.
 - Open question: the report title, e.g. "Software Quality Engineering Evaluation of Actual Budget: Methodology, Quality Assurance and IV&V". To be decided.
+
+## Figure plan (proposed): keep figures few and useful
+
+| Fig | Section | Shows | Why it earns its place |
+|---|---|---|---|
+| 1 | 1.3 | How Actual works: device ↔ optional self-hosted sync server ↔ bank-sync provider | Explains "local-first" plus optional sync faster than text |
+| 2 | 2.1 | As-is workflow: vote/issue → PR → CI → review → merge → monthly release | The evidence base for the whole of Section 2 |
+| 3 | 2.5 | To-be workflow under the selected methodology | Shows what changes; Section 4 builds on it |
+
+Tables (criteria, the matrix summary, stakeholders) are not counted as figures. More figures for Sections 3 and 4 will be decided when those sections are planned.
+
+## Global writing rules (agreed)
+
+- Third person only.
+- Appendices don't count towards the ~5,000 words (the lecturer confirmed this).
+- Point of view: outside analysts. No contact with the Actual team.
