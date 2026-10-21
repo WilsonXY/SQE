@@ -193,3 +193,13 @@ Decisions:
 The author asked for more context on Q2 (independence model) and Q3 (risk tiers / integrity levels). Plain-language explanations with Actual examples were added to `04-ivv.md`.
 
 Still open: Q2, Q3, and whether the executive summary counts towards the word limit.
+
+## 2026-10-21 — Section 4: independence agreed; IEEE 1012 check; executive summary
+
+Decisions:
+- **Independence model agreed:** internal reviews give technical independence only, and full independence needs outsiders. This must be explained honestly in the report.
+- **Risk tiers:** the author will check the APU library (IEEE Xplore) for IEEE 1012-2024 first. If it's not obtainable, we use our own three tiers, labelled "inspired by IEEE 1012". The steps are in `04-ivv.md`.
+- The author asked what the "executive summary" is. It is required by the brief's deliverables (a one-page summary of the whole report). It was added to `README.md`, with the word-count implication. Still open: whether it counts towards the ~5,000.
+
+Research done:
+- The APU Library switched to IEEE Xplore on 1 Jan 2022 [S73]. Standards access is not yet confirmed.

@@ -1,6 +1,6 @@
 # Section 4 — Integrating IV&V with Kanban (10 marks)
 
-Status: **In discussion.** Most items agreed (2026-10-21). Two concept questions remain (independence model, risk tiers); explanations are below.
+Status: **In discussion.** Nearly agreed (2026-10-21). Only the risk-tier source is pending: the author is checking the APU library for IEEE 1012-2024.
 
 ## What the brief asks
 
@@ -21,6 +21,8 @@ The selected methodology is **Kanban**, tailored (Section 2).
 - **External audit:** recommend an optional, periodic **funded external security audit** (OSTIF model [S72]). The report must also **briefly state the cost limitation**: Actual is a donation-funded OSS project (about USD 3,000–3,500/month in donations, USD 2,000/month already committed to maintainer stipends [S08]), so an audit depends on donor or third-party funding. The actual cost estimate belongs to Assignment 2.
 - **No figure** for Section 4 by default. The author may add one during writing if it really earns its place.
 - **No Assignment 1 conclusion** for now (optional; revisit during writing depending on the word count).
+- **Independence model (Q2): agreed.** Internal reviews give **technical independence only**. Full independence (technical + managerial + financial) needs **outsiders** (vulnerability reporters, a funded audit). The report must **explain this situation honestly** (e.g. "a maintainer review is not full IV&V in the IEEE sense").
+- **Risk tiers (Q3): conditional.** The author will first try to get **IEEE 1012-2024** through the APU library (IEEE Xplore) so the tiers can follow IEEE's actual integrity-level scheme. **If that isn't possible, use our own three tiers (high / standard / low), labelled "inspired by IEEE 1012".**
 
 ## Relevant lecture guidance (not cited)
 
@@ -116,8 +118,20 @@ Everyday analogy: a hospital checks heart-surgery equipment far more strictly th
 - So the report would say: "inspired by IEEE 1012's integrity-level concept, this report proposes the following tiers for Actual". In other words, our own design, honestly labelled, not presented as IEEE's.
 - Alternative: get the full IEEE 1012-2024 text (e.g. through the APU library's IEEE Xplore access, if available) and base the tiers on IEEE's actual scheme.
 
+## How to check IEEE 1012-2024 (for the author)
+
+APU's library announced that it replaced IEEE CSDL with **IEEE Xplore** from 1 January 2022, and IEEE Xplore covers "technical standards" [S73]. Not every IEEE Xplore subscription includes the **standards** collection, so this needs checking.
+
+Steps:
+1. Go to the APU Library website (https://library.apiit.edu.my/) → **E-Resources** → subscribed e-databases. Log in with your APU account (off-campus access is offered).
+2. Open **IEEE Xplore** through the library link, so the university subscription is recognised. The top of the page should show "Access provided by: Asia Pacific University…" (or similar).
+3. Search for **"IEEE 1012-2024"** or "IEEE Standard for System, Software, and Hardware Verification and Validation".
+4. If the PDF opens (you have access):
+   - send it the same way as the other PDFs (it won't be committed);
+   - the useful parts are the **integrity level** section (how many levels, how they're assigned: consequence × likelihood?) and the table of **minimum V&V tasks per integrity level**;
+   - if it also defines **independence** (technical/managerial/financial), we can cite IEEE directly instead of NASA's summary.
+5. If you see "Purchase" or "Sign in to access" instead, the subscription doesn't include standards. Optionally ask the librarians; otherwise we use our own tiers.
+
 ## Open questions
 
-1. **Independence model (Q2):** with the context above, agree that the internal reviewer role gives technical independence only, and full independence comes from outsiders?
-2. **Risk tiers (Q3):** OK with three tiers (high / standard / low) as *our own design inspired by IEEE 1012*? Or would you prefer to try to get IEEE 1012-2024 through the APU library so the tiers follow IEEE's actual scheme?
-3. **Executive summary and word count:** does the executive summary count towards the ~5,000? (The current body budget is ~4,850, see `README.md` → *Word budget*.)
+1. **IEEE 1012-2024 access:** waiting for the author's library check (steps above).

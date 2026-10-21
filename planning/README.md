@@ -6,7 +6,7 @@
 | 1. Introduction | `01-introduction.md` | **Agreed** |
 | 2. Methodology | `02-methodology.md` | **Agreed** (shortlist: Spiral, Scrum, XP, Kanban, DevOps + OSS baseline) |
 | 3. Quality Assurance Process | `03-quality-assurance.md` | **Agreed** |
-| 4. IV&V with selected methodology | `04-ivv.md` | In discussion (two concept questions pending) |
+| 4. IV&V with selected methodology | `04-ivv.md` | Nearly agreed (waiting on IEEE 1012-2024 library check) |
 | 5. Conclusion (optional) | — | **Excluded for now** (revisit during writing, depending on the word count) |
 | Front matter (title page, executive summary, TOC, lists) | — | Not started |
 | References (APA 7th) | — | Not started |
@@ -64,4 +64,7 @@ Tables (criteria, the matrix summary, stakeholders) are not counted as figures. 
 | (5 Conclusion) | excluded for now |
 | **Total body** | **~4,850** |
 
-- *Open:* does the executive summary count towards the ~5,000? If it does, trim the body by about 150–200 words.
+- **Executive summary:** required by the brief ("a title page, an executive summary page, a table of contents and figures, the report itself, and appendices"). It is one page of about 200–250 words that summarises the whole report for a busy reader. It is **not** one of the marked sections.
+- *Open:* whether the executive summary counts towards the ~5,000.
+  - If it **doesn't** count: the body stays at ~4,850.
+  - If it **does** count: 4,850 + ~200 = ~5,050. That is still within ±5%, but over the author's "slightly under 5,000" preference, so trim the body to ~4,700.

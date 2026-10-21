@@ -172,6 +172,8 @@ The full texts of ISO/IEEE standards are paywalled. "Verified" here means the **
 | S72 | Open Source Technology Improvement Fund. (2026). *2025 annual report*. https://ostif.org/2025-annual-report/ `[publication date to verify]` | **Verified** (page read) · Recent. **Self-reported figures.** | In 2025 OSTIF "published 24 audits, worked on behalf of almost 50 projects", with "10 different funding bodies"; "231 findings with security impact"; "over 98% of those have been fixed, including all reported critical, high, or medium findings". | 4.3/4.4: real-world proof that **funded external security audits** work for OSS |
 | S38 (reuse) | Ahmad et al. (2018) | Verified | Kanban principle "**Make process policies explicit**": "establishing explicit policies, also referred to as 'entry' and 'exit' criteria is required to determine when a work item can be pulled from one state to another" (p. 98, citing Power, 2014) | **4.3: the mechanism for embedding IV&V gates in Kanban** |
 
+| S73 | APU Library. (2021, December 30). *Introducing IEEE Xplore*. Asia Pacific University. https://library.apiit.edu.my/2021/12/30/introducing-ieee-xplore/ | Verified (page read) · Not for citation (internal library notice; used only to guide the author's access) | APU replaced IEEE CSDL with IEEE Xplore from 1 Jan 2022; Xplore includes "technical standards". The library's E-Resources page mentions off-campus access to its subscribed e-databases. | Access route for IEEE 1012-2024 |
+
 Search log entries for D3 are in section F.
 
 ## E. Module materials (not cited)
@@ -225,3 +227,4 @@ Search log entries for D3 are in section F.
 | 2026-10-21 | curl (page.py) | nasa.gov/ivv-overview; ostif.org 2025 report; connect.snv.ch IEEE 1012-2024 and 1012-2016 | S68, S72, S67 verified |
 | 2026-10-21 | Crossref API (2021+) | IV&V agile; IV&V DevOps; V&V agile SLR; OSS vulnerability disclosure; requirements traceability | Picked S69, S70, (S71). Seen, not used: Das 2024 (agile regression testing), Karapantelakis 2021, Venkatesan 2022, Liang 2021 (CD 2.0 chapters), Khan 2023, Jadhav et al. 2023, Isbitski 2023, Rodriguez et al. 2026 (SSRN preprint), Al-Msie'deen 2023, Munna 2026 (SSRN), Hartgerink 2024 |
 | 2026-10-21 | Semantic Scholar API | Abstracts for S69, S70, S71 | S69 and S70 read; S71 abstract unavailable |
+| 2026-10-21 | WebSearch | APU library e-resources IEEE Xplore | library.apiit.edu.my (?p=537 used: S73; ?p=348 E-Resources page read); aau.ac.ae, unisg.ch, zut.edu.pl, india.ieee.org, libguides.uml.edu, hkbu.edu.hk (other universities; not used) |
