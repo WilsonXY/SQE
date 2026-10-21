@@ -252,3 +252,10 @@ Flagged for the writing thread:
 
 - **Decision (author):** the executive summary **counts** towards the ~5,000 words.
 - Budget rebalanced to stay slightly under 5,000: executive summary ~200, Intro ~530, S2 ~1,400, S3 ~1,400, S4 ~1,370 = **~4,900**. The sub-budgets were updated in every planning file, `README.md` and `05-writing-handoff.md`.
+
+## 2026-10-21 — Lecturer feedback: only 3 quality attributes
+
+- The author confirmed with the lecturer that Section 3 needs **only 3 quality attributes** (examples given: security, performance).
+- The author asked what "rating in a table" meant. Shown: a 9-row ISO/IEC 25010:2023 table (characteristic, one-line reason for Actual, High/Medium/Low priority) whose purpose is to show deliberate selection.
+- Proposed: **Security, Reliability, Functional suitability**. Performance is not recommended (low risk, little evidence). Alternatives: Interaction capability, Maintainability.
+- Pending: the author's choice of the 3, whether to keep the short rating table, and confirmation of the knock-on effects on 3.3–3.5.

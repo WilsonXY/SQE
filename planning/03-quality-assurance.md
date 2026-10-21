@@ -1,6 +1,6 @@
 # Section 3 — Quality Assurance Process (10 marks)
 
-Status: **Agreed** (2026-10-20). The flow may still be adjusted during writing.
+Status: **Re-opened** (2026-10-21): the lecturer confirmed only **3 quality attributes** are needed. Which 3 is pending; the rest of the plan stands.
 
 ## What the brief asks
 
@@ -19,7 +19,7 @@ Five things must be visible to the marker:
 - **Quality model: ISO/IEC 25010:2023** (published 15 Nov 2023; replaces the 2011 edition taught in the lecture) [S53].
   - Correction to an assumption: 25010:2023 does **not** cover AI. AI system quality is a separate standard, **ISO/IEC 25059:2023** [S64].
   - Actual's *product* has no AI features (to confirm). AI shows up in Actual's *development process* (AI usage policy [S50], "AI slop" policy [S12]). That is a **process-quality** topic, which could be a nice point in 3.3 or 3.6, but it is not a 25010 attribute.
-- **Attributes:** rate **all nine** 25010:2023 characteristics briefly in one table, then go deep on the **top 4–5**.
+- ~~**Attributes:** rate all nine 25010:2023 characteristics briefly in one table, then go deep on the top 4–5.~~ **Superseded 2026-10-21:** the lecturer confirmed that **only 3 quality attributes** are needed. See *Open questions* for which 3, and whether to keep a short selection table.
 - **Boundaries:**
   - Section 3 = the QA *process* (attributes, practices, standards, quality gates, plan).
   - Section 4 = IV&V and detailed testing.
@@ -98,4 +98,12 @@ Total about **1,400 words**, all in the body (rebalanced 2026-10-21 after the ex
 
 ## Open questions
 
-None for planning.
+1. **Which 3 attributes?** (Lecturer: "only needs 3", e.g. security, performance.)
+   - **Recommended: Security, Reliability (data integrity, sync, recovery), Functional suitability (calculation correctness).** These have the strongest evidence and are what users care about most ("users trusting the numbers").
+   - **Performance efficiency is not recommended:** low risk (small personal datasets, runs locally) and almost no evidence.
+   - Alternatives: **Interaction capability** (accessibility: WCAG 2.1 target vs current 2.2; no automated accessibility tests) or **Maintainability** (volunteer contributors).
+2. **Keep the short 9-row "rating" table** (one line and High/Medium/Low per characteristic, about 120 words) to show the 3 were selected deliberately from ISO/IEC 25010:2023? Or drop it and justify the choice in two or three sentences?
+3. **Knock-on effects (to confirm):**
+   - 3.3–3.5 focus on the chosen 3 (e.g. Security → OWASP ASVS, OpenSSF; Reliability → recovery and migration checks; Functional suitability → test coverage);
+   - WCAG/accessibility and performance testing shrink to a brief mention (or drop) unless their attribute is chosen;
+   - the freed words (~100–150) go to critical evaluation.

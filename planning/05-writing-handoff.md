@@ -154,6 +154,7 @@ The two are **not interchangeable**:
 ### Section 3 — QA Process (~1,400 words) · `03-quality-assurance.md`
 
 - **3.1 Quality for Actual:** views of quality applied (L1 guidance, not cited); "users trusting the numbers" [S01].
+- **⚠ Update 2026-10-21: the lecturer wants only 3 quality attributes.** Which 3 is pending (see `03-quality-assurance.md` → *Open questions*). The bullets below are the earlier plan, to be updated once decided.
 - **3.2 Attributes:**
   - rate all **9 ISO/IEC 25010:2023** characteristics [S53] in one compact table;
   - deep-dive the top 4–5: functional suitability (calculation correctness), reliability (data integrity, sync), **security (top priority** [S63]**)**, maintainability, interaction capability (incl. inclusivity/accessibility);
