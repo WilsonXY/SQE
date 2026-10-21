@@ -5,7 +5,7 @@
 | Brief summary | `00-assignment-brief.md` | Done |
 | 1. Introduction | `01-introduction.md` | **Agreed** |
 | 2. Methodology | `02-methodology.md` | **Agreed** (shortlist: Spiral, Scrum, XP, Kanban, DevOps + OSS baseline) |
-| 3. Quality Assurance Process | `03-quality-assurance.md` | **Re-opened**: only 3 quality attributes needed (lecturer); choosing which 3 |
+| 3. Quality Assurance Process | `03-quality-assurance.md` | **Agreed** (3 attributes: Security, Reliability, Interaction capability) |
 | 4. IV&V with selected methodology | `04-ivv.md` | **Agreed** |
 | 5. Conclusion (optional) | — | **Excluded for now** (revisit during writing, depending on the word count) |
 | Front matter | `05-writing-handoff.md` §1 | Cover page: **the author handles it**. Executive summary: **required by the brief**, written last. TOC and lists: generated at assembly. |

@@ -259,3 +259,11 @@ Flagged for the writing thread:
 - The author asked what "rating in a table" meant. Shown: a 9-row ISO/IEC 25010:2023 table (characteristic, one-line reason for Actual, High/Medium/Low priority) whose purpose is to show deliberate selection.
 - Proposed: **Security, Reliability, Functional suitability**. Performance is not recommended (low risk, little evidence). Alternatives: Interaction capability, Maintainability.
 - Pending: the author's choice of the 3, whether to keep the short rating table, and confirmation of the knock-on effects on 3.3–3.5.
+
+## 2026-10-21 — Section 3 re-agreed with 3 attributes
+
+- **Attributes:** Security, Reliability, **Interaction capability** (the author swapped functional suitability for interaction capability).
+- Keep the short 9-row ISO/IEC 25010:2023 rating table (~120 words).
+- Knock-on effects agreed: 3.3–3.5 focus on the 3, and freed words go to 3.6. Because interaction capability was chosen, **accessibility/WCAG 2.2 stays in full**; **functional suitability and performance** drop to brief mentions.
+- Writing-thread caution recorded: the reason for leaving out functional suitability must be evidence-based.
+- Section 3 is **Agreed** again. The handoff has been updated.

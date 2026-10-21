@@ -154,14 +154,20 @@ The two are **not interchangeable**:
 ### Section 3 — QA Process (~1,400 words) · `03-quality-assurance.md`
 
 - **3.1 Quality for Actual:** views of quality applied (L1 guidance, not cited); "users trusting the numbers" [S01].
-- **⚠ Update 2026-10-21: the lecturer wants only 3 quality attributes.** Which 3 is pending (see `03-quality-assurance.md` → *Open questions*). The bullets below are the earlier plan, to be updated once decided.
+- **Update 2026-10-21: the lecturer wants only 3 quality attributes.** The author chose **Security, Reliability, Interaction capability**.
 - **3.2 Attributes:**
-  - rate all **9 ISO/IEC 25010:2023** characteristics [S53] in one compact table;
-  - deep-dive the top 4–5: functional suitability (calculation correctness), reliability (data integrity, sync), **security (top priority** [S63]**)**, maintainability, interaction capability (incl. inclusivity/accessibility);
+  - a **short 9-row rating table** of ISO/IEC 25010:2023 characteristics [S53] (one-line reason and High/Medium/Low each, ~120 words) showing the deliberate selection;
+  - then go deep on the **3: Security** (top priority [S63]), **Reliability** (data integrity, sync, recovery), **Interaction capability** (incl. inclusivity/accessibility);
+  - functional suitability and performance get one table row each, plus at most a sentence. Give an **evidence-based** reason why functional suitability isn't in the top 3 (see the caution in `03-quality-assurance.md`);
   - ISO/IEC 25059 (AI) is out of scope.
 - **3.3 As-is QA and gaps:**
   - existing practices [S01, S03, S09, S50, S51, S62];
-  - gaps, stated as "**no evidence found in the repository (October 2026)**": coverage measurement (disabled in sync-server), automated accessibility testing, performance testing in CI, a written QA plan, **proactive pre-release security verification**;
+  - gaps, stated as "**no evidence found in the repository (October 2026)**", **mapped to the 3 attributes**:
+    - Security → **proactive pre-release security verification**;
+    - Reliability → coverage measurement (disabled in sync-server);
+    - Interaction capability → automated accessibility testing;
+    - plus a written QA plan overall.
+    - Performance testing gets a brief mention only;
   - advisories as evidence: e.g. **GHSA-m2cq-xjgm-f668 (critical, CVSS 9.2, missing authentication on bank-sync endpoints)** [S63]. Use maintainer severities and GitHub publish dates;
   - the security policy's broken link (404) [S62].
 - **3.4 Selection (option B):**
@@ -178,6 +184,7 @@ The two are **not interchangeable**:
   | OpenSSF Best Practices Badge + Scorecard [S60] (Actual has neither) | Adopt |
   | ISO/IEC/IEEE 29119 [S61] | Mainly for Section 4 |
 
+- **Focus 3.3–3.5 on the 3 chosen attributes. Freed words go to 3.6.**
 - **3.5 Apply:** a **compact QA plan table in the body**, structured by the L3/IEEE 730 SQAP sections and built into the Kanban columns (**Definition of Done**, quality gates, roles, defect and vulnerability handling).
 - **3.6 Critical evaluation:** volunteer cost and limits; automation overhead (CI and bots can slow PRs [S43]; bots also help [S44]); remaining gaps.
 - **Pre-writing checks:**
