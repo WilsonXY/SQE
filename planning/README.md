@@ -8,8 +8,9 @@
 | 3. Quality Assurance Process | `03-quality-assurance.md` | **Agreed** |
 | 4. IV&V with selected methodology | `04-ivv.md` | **Agreed** |
 | 5. Conclusion (optional) | — | **Excluded for now** (revisit during writing, depending on the word count) |
-| Front matter (title page, executive summary, TOC, lists) | — | Not started |
-| References (APA 7th) | — | Not started |
+| Front matter | `05-writing-handoff.md` §1 | Cover page: **the author handles it**. Executive summary: **required by the brief**, written last. TOC and lists: generated at assembly. |
+| References (APA 7th) | — | Built at the end from cited sources only |
+| **Writing handoff** | `05-writing-handoff.md` | **Ready.** Writing starts in a new thread. |
 
 Supporting files:
 - `research/actual-development-process.md`: verified facts about Actual's development process and product, with sources.
@@ -74,6 +75,6 @@ Tables (criteria, the matrix summary, stakeholders) are not counted as figures. 
 | Item | Owner | Status | If resolved |
 |---|---|---|---|
 | IEEE 1012-2024 full text via APU IEEE Xplore | Author (contacting the APU library) | **Error 418** directly, via EZproxy, and in a clean Chrome (2026-10-21) → likely an IEEE/APU-side block; the subscription may not include Standards anyway | Revisit the Section 4 risk tiers (switch from our own tiers to IEEE's integrity-level scheme); cite IEEE directly for independence |
-| Does the executive summary count towards ~5,000 words? | Author (ask lecturer) | Open | If yes, trim the body plan from ~4,850 to ~4,700 |
+| Does the executive summary count towards ~5,000 words? (It is **required** by the brief either way.) | Author (ask lecturer) | Open | If yes, trim the body plan from ~4,850 to ~4,700 |
 | Smith & Hayes (2024) full text (S69) | Author | Blocked by the same IEEE 418 | Cite beyond the abstract |
 | Article numbers for S41, S43, S44 | Author / writing stage | Open | Complete the APA references |

@@ -226,3 +226,24 @@ Research done:
 
 - The author tried a brand-new Chrome browser, and Xplore via EZproxy (`ieeexplore-ieee-org.ezproxy.apu.edu.my`) still returned **Error 418**. So the problem is on IEEE's or APU's side, not the browser.
 - **Decision:** go with **our own risk tiers** for now. The author will keep trying and will contact the APU library. Revisit if access works (tracked in `README.md` → *Pending follow-ups*).
+
+## 2026-10-21 — End of the planning thread; writing handoff
+
+Decisions:
+- **Cover page:** the author will handle it.
+- **Executive summary:** the author asked whether the introduction can replace it. **No.** The brief lists "an executive summary page" as a required deliverable, and the two do different jobs (the executive summary summarises the whole report *including results* and is written last; the introduction sets up the topic, with no results). Still open: whether it counts towards ~5,000 words (the author will ask the lecturer).
+- **Writing will start in a new thread.** Created `planning/05-writing-handoff.md`, covering:
+  - the final structure;
+  - the word budget;
+  - all writing rules;
+  - a brief per section with its sources;
+  - the pre-writing source checks;
+  - source readiness;
+  - the per-section workflow;
+  - a suggested opening message.
+- `AGENTS.md` now points to the handoff ("Start here"), and the draft location is `report/assignment-1/`.
+
+Flagged for the writing thread:
+- Section 2 **matrix scores are not yet agreed** (propose and get approval before drafting 2.4).
+- The **spelling convention** (British vs American) is to be decided with the author.
+- The final assembly format/tool is to be decided with the author.

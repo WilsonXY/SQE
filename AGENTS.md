@@ -20,6 +20,13 @@ Every change, edit or piece of documentation is pushed straight to `main`. This 
 | `planning/research/` | Verified facts about Actual Budget, with sources |
 | `planning/sources.md` | Register of **every** source consulted (APA 7), with status and where it's used |
 | `planning/discussion-log.md` | Dated log of what was discussed and decided in each session |
+| `planning/05-writing-handoff.md` | **Start here for writing:** structure, word budget, rules, section briefs, workflow |
+| `report/assignment-1/` | Report drafts, one Markdown file per section (created during writing) |
+
+## Start here
+
+- **Writing Assignment 1:** read `planning/05-writing-handoff.md` first.
+- **Planning status and pending follow-ups:** `planning/README.md`.
 
 ## How to work in this repo
 
