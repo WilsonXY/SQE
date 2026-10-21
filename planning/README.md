@@ -6,7 +6,7 @@
 | 1. Introduction | `01-introduction.md` | **Agreed** |
 | 2. Methodology | `02-methodology.md` | **Agreed** (shortlist: Spiral, Scrum, XP, Kanban, DevOps + OSS baseline) |
 | 3. Quality Assurance Process | `03-quality-assurance.md` | **Agreed** |
-| 4. IV&V with selected methodology | — | Not started |
+| 4. IV&V with selected methodology | `04-ivv.md` | In discussion (first proposal) |
 | 5. Conclusion (optional) | — | Not started |
 | Front matter (title page, executive summary, TOC, lists) | — | Not started |
 | References (APA 7th) | — | Not started |

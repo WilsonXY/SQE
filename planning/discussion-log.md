@@ -159,3 +159,23 @@ Evidence:
 - **Actual has no OpenSSF Best Practices badge and no public Scorecard result.**
 
 Next: plan Section 4 (IV&V integrated with Kanban).
+
+## 2026-10-21 — Section 4 first proposal
+
+Research done:
+- IEEE 1012-2024 is the current V&V standard (published 22 Aug 2025; replaces 1012-2016; abstract mentions integrity levels) [S67].
+- NASA IV&V overview: technical, managerial and financial independence [S68].
+- Smith & Hayes (2024), IV&V for agile projects [S69].
+- Liu et al. (2025) on OSS vulnerability disclosure [S70].
+- OSTIF 2025 report on funded OSS audits [S72].
+- The Kanban "explicit policies" (entry/exit criteria) mechanism, from Ahmad et al. (2018) [S38].
+- Actual: PR preview and nightly builds [S66]; **no evidence of an external security audit**.
+
+Proposed (waiting for the author), see `04-ivv.md`:
+- flow 4.1–4.6;
+- the independence model (internal independent reviewer + external augmentation);
+- integrity-level tiering;
+- mapping Lecture 6's six phases onto six Kanban stages;
+- an optional funded external audit;
+- figure choice;
+- the A1 word budget (~5,300 planned) and whether to include an A1 conclusion.

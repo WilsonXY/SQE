@@ -158,6 +158,16 @@ Notes from the advisory texts:
 
 **Implication for QA:** security QA today is mostly **reactive**: a good disclosure and fix process, but no evidence of proactive security testing such as authorization test suites, threat modelling or security review for features like multi-user.
 
+### Validation by the community and external review (for Section 4)
+
+- **PR preview builds** [S66] (`contributing/preview-builds.md`):
+  - "Each pull request automatically deploys preview builds to Netlify". There are three previews per PR (demo app, Storybook, website), and the URLs are posted on the PR by a bot.
+  - Anyone can try a change before it merges. This is a validation opportunity for people who are not the author.
+- **Nightly builds** [S66]: web (nightly.actualbudget.org), desktop (GitHub Actions artifacts) and Docker `nightly` images. "a testing ground for upcoming features before they are included in official monthly releases".
+- **No evidence of an independent/external security audit.** A search of the docs and blog (`packages/docs/`) for "security audit", "penetration", "pentest", "OSTIF" and "audit" found only one hit: a 2026 release note about satisfying the *zizmor* (GitHub Actions security linter) audit for CI workflows (`blog/2026-06-01-release-26-6-0.md`, PR #7856).
+- **Independent reporters of vulnerabilities:** see *Security process* (iamsilk, Rex50527, pyuysig are not core maintainers).
+- **Who reviews:** PR review by core contributors, who are not the PR author unless self-merged; the *non-controversial changes may be approved and merged straight away* policy [S04]. Release approval needs "at least 2 other maintainers" [S03]. `CODEOWNERS` routes PRs to area owners [S01].
+
 ### Product facts (for the Introduction)
 - "a local-first personal finance tool. It is 100% free and open-source" with sync between devices. `README.md`
 - Built around **envelope budgeting**. Users include privacy-minded budgeters, self-hosters and families. Success means "users trusting the numbers". `PRODUCT.md`
