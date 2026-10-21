@@ -221,3 +221,8 @@ Research done:
 - The author retried in a private window. The APU login worked (the URL became `ieeexplore-ieee-org.ezproxy.apu.edu.my`), but IEEE Xplore still returned **Error 418**. Since 418 appears both directly and via EZproxy, the cause is likely browser-level bot protection.
 - Suggested next steps: a clean browser with no extensions (Chrome/Edge); "Institutional Sign In" on IEEE Xplore (not ieee.org); otherwise the library's Get Help.
 - Fallback unchanged: our own three risk tiers ("inspired by IEEE 1012").
+
+## 2026-10-21 — IEEE access: final attempt for now
+
+- The author tried a brand-new Chrome browser, and Xplore via EZproxy (`ieeexplore-ieee-org.ezproxy.apu.edu.my`) still returned **Error 418**. So the problem is on IEEE's or APU's side, not the browser.
+- **Decision:** go with **our own risk tiers** for now. The author will keep trying and will contact the APU library. Revisit if access works (tracked in `README.md` → *Pending follow-ups*).

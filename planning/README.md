@@ -68,3 +68,12 @@ Tables (criteria, the matrix summary, stakeholders) are not counted as figures. 
 - *Open:* whether the executive summary counts towards the ~5,000.
   - If it **doesn't** count: the body stays at ~4,850.
   - If it **does** count: 4,850 + ~200 = ~5,050. That is still within ±5%, but over the author's "slightly under 5,000" preference, so trim the body to ~4,700.
+
+## Pending follow-ups (non-blocking)
+
+| Item | Owner | Status | If resolved |
+|---|---|---|---|
+| IEEE 1012-2024 full text via APU IEEE Xplore | Author (contacting the APU library) | **Error 418** directly, via EZproxy, and in a clean Chrome (2026-10-21) → likely an IEEE/APU-side block; the subscription may not include Standards anyway | Revisit the Section 4 risk tiers (switch from our own tiers to IEEE's integrity-level scheme); cite IEEE directly for independence |
+| Does the executive summary count towards ~5,000 words? | Author (ask lecturer) | Open | If yes, trim the body plan from ~4,850 to ~4,700 |
+| Smith & Hayes (2024) full text (S69) | Author | Blocked by the same IEEE 418 | Cite beyond the abstract |
+| Article numbers for S41, S43, S44 | Author / writing stage | Open | Complete the APA references |
