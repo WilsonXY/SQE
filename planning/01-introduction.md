@@ -24,7 +24,7 @@ Status: **Agreed** (2026-10-20). Ready for writing once the full Assignment 1 pl
 | 1.4 | Who is involved | Users, self-hosters, maintainers, contributors, donors/hosting partners. A small table. |
 | 1.5 | Main challenges | 3–5 plain bullets. Where it's natural, each one points to the section that handles it (e.g. volunteers and changing requirements → Section 2; "users must trust the numbers" → Section 3; calculation or sync defects → Section 4). |
 
-Word target: about **550 words** (rebalanced 2026-10-21; see `README.md` → *Word budget*).
+Word target: about **530 words** (rebalanced 2026-10-21 after the executive summary was confirmed to count); see `README.md` → *Word budget*.
 
 ## Agreed direction for the personal reason (final wording at the writing stage)
 

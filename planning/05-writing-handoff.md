@@ -22,7 +22,7 @@ Delivered as a **PDF**, formatted as a business report (brief → Deliverables).
 | Part | Status / owner | Notes |
 |---|---|---|
 | Cover / title page | **Author handles it** (APU template `Assignment/Assignment_1_-Cover_-_2026.docx`) | Not part of the writing work |
-| Executive summary | **Required by the brief.** Write it **last**. | ~200 words, one page. See §1.1 |
+| Executive summary | **Required by the brief.** Write it **last**. **Counts towards the word limit.** | ~200 words, one page. See §1.1 |
 | Table of contents; list of figures; list of tables | Generated at final assembly | — |
 | List of abbreviations | Optional | Useful: SQA, IV&V, V&V, CI, PR, WIP, CVD, E2EE, OSS, ASVS, WCAG, CRDT |
 | 1 Introduction | Agreed | `01-introduction.md` |
@@ -46,20 +46,21 @@ The two are **not interchangeable**:
 | When to write | **Last** | First |
 | Marked? | Not a marked criterion, but required by the brief | Yes (5 marks) |
 
-Still open: whether it counts towards ~5,000 words. **The author will ask the lecturer.**
+**It counts towards the ~5,000 words** (author's decision, 2026-10-21). Budget: about **200 words**.
 
 ## 2. Word budget (agreed)
 
 - Target: **~5,000 ± 5% (4,750–5,250)**. The author **prefers slightly under 5,000**.
 - **Words in tables count.** Appendices don't count.
 
-| Section | Budget | Sub-budgets |
+| Part | Budget | Sub-budgets |
 |---|---|---|
-| 1 Introduction | ~550 | 1.1–1.5 (no fixed split) |
-| 2 Methodology | ~1,450 | 2.1 230 · 2.2 230 · 2.3 280 · 2.4 290 (incl. matrix) · 2.5 200 · 2.6 220 |
-| 3 QA Process | ~1,450 | 3.1 180 · 3.2 280 · 3.3 280 · 3.4 280 · 3.5 250 (incl. QA plan table) · 3.6 180 |
-| 4 IV&V | ~1,400 | 4.1 180 · 4.2 230 · 4.3 230 · 4.4 400 (incl. table) · 4.5 150 · 4.6 210 |
-| **Body total** | **~4,850** | If the executive summary counts, trim to ~4,700 |
+| Executive summary | ~200 | Counts towards the limit; written last |
+| 1 Introduction | ~530 | 1.1–1.5 (no fixed split) |
+| 2 Methodology | ~1,400 | 2.1 220 · 2.2 220 · 2.3 270 · 2.4 290 (incl. matrix) · 2.5 190 · 2.6 210 |
+| 3 QA Process | ~1,400 | 3.1 170 · 3.2 270 · 3.3 270 · 3.4 270 · 3.5 250 (incl. QA plan table) · 3.6 170 |
+| 4 IV&V | ~1,370 | 4.1 170 · 4.2 220 · 4.3 220 · 4.4 400 (incl. table) · 4.5 150 · 4.6 210 |
+| **Total** | **~4,900** | Within 4,750–5,250, slightly under 5,000 as preferred |
 
 ## 3. Writing rules (all agreed)
 
@@ -97,7 +98,7 @@ Still open: whether it counts towards ~5,000 words. **The author will ask the le
 
 ## 4. Section briefs
 
-### Section 1 — Introduction (~550 words) · `01-introduction.md`
+### Section 1 — Introduction (~530 words) · `01-introduction.md`
 
 - **1.1 Background and purpose:**
   - what personal finance apps are and why their quality matters (money and data);
@@ -119,7 +120,7 @@ Still open: whether it counts towards ~5,000 words. **The author will ask the le
   - escaped defects and security flaws → S4.
 - **Pre-writing checks:** none blocking. Optionally re-check the install options and feature list against the current docs.
 
-### Section 2 — Methodology (~1,450 words) · `02-methodology.md`
+### Section 2 — Methodology (~1,400 words) · `02-methodology.md`
 
 - **2.1 As-is:**
   - "a **defined workflow but no deliberate methodology**";
@@ -150,7 +151,7 @@ Still open: whether it counts towards ~5,000 words. **The author will ask the le
   - **S28 Anderson:** cite via S38 ("as cited in"), or the author checks p. 6 directly.
   - Article numbers for **S41, S43, S44** (SpringerLink).
 
-### Section 3 — QA Process (~1,450 words) · `03-quality-assurance.md`
+### Section 3 — QA Process (~1,400 words) · `03-quality-assurance.md`
 
 - **3.1 Quality for Actual:** views of quality applied (L1 guidance, not cited); "users trusting the numbers" [S01].
 - **3.2 Attributes:**
@@ -183,7 +184,7 @@ Still open: whether it counts towards ~5,000 words. **The author will ask the le
   - read the OpenSSF badge criteria page [S60] and the ASVS chapter names [S58] before referring to specific requirements;
   - optionally run Lenarduzzi et al. (2021) and Hendrick & Ramaswami (2023) through the verify and log process if they're useful (they're in the search log, not yet evaluated).
 
-### Section 4 — IV&V with Kanban (~1,400 words) · `04-ivv.md`
+### Section 4 — IV&V with Kanban (~1,370 words) · `04-ivv.md`
 
 - **4.1 Concepts:**
   - V&V definition [S67, IEEE 1012-2024 abstract; 2016 superseded];

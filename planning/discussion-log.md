@@ -247,3 +247,8 @@ Flagged for the writing thread:
 - Section 2 **matrix scores are not yet agreed** (propose and get approval before drafting 2.4).
 - The **spelling convention** (British vs American) is to be decided with the author.
 - The final assembly format/tool is to be decided with the author.
+
+## 2026-10-21 — Executive summary counts towards the word limit
+
+- **Decision (author):** the executive summary **counts** towards the ~5,000 words.
+- Budget rebalanced to stay slightly under 5,000: executive summary ~200, Intro ~530, S2 ~1,400, S3 ~1,400, S4 ~1,370 = **~4,900**. The sub-budgets were updated in every planning file, `README.md` and `05-writing-handoff.md`.

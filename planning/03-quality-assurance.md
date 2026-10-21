@@ -73,14 +73,14 @@ Five things must be visible to the marker:
 
 | # | Subsection | Purpose | Main content | ~Words |
 |---|---|---|---|---|
-| 3.1 | What "quality" means for Actual | Define quality in context | Quality views (L1) applied to Actual; "users trusting the numbers" [S01 `PRODUCT.md`]; which stakeholder cares about which view. | 180 |
-| 3.2 | Key quality attributes | Pick and prioritise | One table rating all **9** ISO/IEC 25010:2023 characteristics for Actual (why it matters, stakeholder, priority). Deep-dive the top 4–5, likely **functional suitability (calculation correctness)**, **reliability (data integrity, sync)**, **security** (now strongly evidenced by the advisories), **maintainability** (volunteer contributors), and **interaction capability** (incl. inclusivity, i.e. accessibility). | 280 |
-| 3.3 | Current QA practices (as-is) and gaps | Evidence-based assessment | Coverage table: practice → attributes it protects. Gaps: coverage, accessibility automation, performance, no QA plan, reactive-only security. | 280 |
-| 3.4 | Selecting QA practices and standards | The "critically select" part | For each gap or attribute: candidate practices and standards → adopt / adapt / reject, with reasons. (Scope of standards: pending, question 1.) | 280 |
+| 3.1 | What "quality" means for Actual | Define quality in context | Quality views (L1) applied to Actual; "users trusting the numbers" [S01 `PRODUCT.md`]; which stakeholder cares about which view. | 170 |
+| 3.2 | Key quality attributes | Pick and prioritise | One table rating all **9** ISO/IEC 25010:2023 characteristics for Actual (why it matters, stakeholder, priority). Deep-dive the top 4–5, likely **functional suitability (calculation correctness)**, **reliability (data integrity, sync)**, **security** (now strongly evidenced by the advisories), **maintainability** (volunteer contributors), and **interaction capability** (incl. inclusivity, i.e. accessibility). | 270 |
+| 3.3 | Current QA practices (as-is) and gaps | Evidence-based assessment | Coverage table: practice → attributes it protects. Gaps: coverage, accessibility automation, performance, no QA plan, reactive-only security. | 270 |
+| 3.4 | Selecting QA practices and standards | The "critically select" part | For each gap or attribute: candidate practices and standards → adopt / adapt / reject, with reasons. (Scope of standards: pending, question 1.) | 270 |
 | 3.5 | Applying the QA process within Kanban (to-be) | The "apply" part | A **compact QA plan in the body** (table), structured by L3's SQAP sections and built into the Kanban workflow from Section 2: explicit policies and a **Definition of Done** per board column, quality gates, roles, defect and vulnerability handling. | 250 |
-| 3.6 | Critical evaluation | Where most marks come from | Strengths, cost and limits for volunteers; risks (automation overhead, e.g. bots and CI slowing PRs [S43]); what still isn't covered. | 180 |
+| 3.6 | Critical evaluation | Where most marks come from | Strengths, cost and limits for volunteers; risks (automation overhead, e.g. bots and CI slowing PRs [S43]); what still isn't covered. | 170 |
 
-Total about **1,450 words**, all in the body (rebalanced 2026-10-21). The 3.5 table counts towards this.
+Total about **1,400 words**, all in the body (rebalanced 2026-10-21 after the executive summary was confirmed to count). The 3.5 table counts towards this.
 
 ## Standards and frameworks: verified facts for 3.4 (see `sources.md` → D2)
 

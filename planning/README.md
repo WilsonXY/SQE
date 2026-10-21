@@ -50,31 +50,30 @@ Tables (criteria, the matrix summary, stakeholders) are not counted as figures. 
 - Appendices don't count towards the ~5,000 words (the lecturer confirmed this), and **appendix content earns no marks**. Use appendices only for supplementary "FYI" material. Never move essential content there to save words.
 - Point of view: outside analysts. No contact with the Actual team.
 
-## Word budget for Assignment 1 (agreed 2026-10-21)
+## Word budget for Assignment 1 (agreed 2026-10-21; updated after the executive summary decision)
 
 - Target: **about 5,000 words ± 5%** (4,750–5,250). The author prefers **slightly under 5,000**.
+- **The executive summary counts** towards the ~5,000 (author's decision, 2026-10-21).
 - **Words in tables count.** Appendices don't count (and aren't marked).
-- Body budget, roughly proportional to marks (Intro 5; Sections 2–4 10 each):
+- Budget, roughly proportional to marks (Intro 5; Sections 2–4 10 each):
 
-| Section | Budget |
+| Part | Budget |
 |---|---|
-| 1 Introduction | ~550 |
-| 2 Methodology | ~1,450 |
-| 3 Quality Assurance Process | ~1,450 |
-| 4 IV&V with Kanban | ~1,400 |
+| Executive summary | ~200 |
+| 1 Introduction | ~530 |
+| 2 Methodology | ~1,400 |
+| 3 Quality Assurance Process | ~1,400 |
+| 4 IV&V with Kanban | ~1,370 |
 | (5 Conclusion) | excluded for now |
-| **Total body** | **~4,850** |
+| **Total** | **~4,900** |
 
-- **Executive summary:** required by the brief ("a title page, an executive summary page, a table of contents and figures, the report itself, and appendices"). It is one page of about 200–250 words that summarises the whole report for a busy reader. It is **not** one of the marked sections.
-- *Open:* whether the executive summary counts towards the ~5,000.
-  - If it **doesn't** count: the body stays at ~4,850.
-  - If it **does** count: 4,850 + ~200 = ~5,050. That is still within ±5%, but over the author's "slightly under 5,000" preference, so trim the body to ~4,700.
+- **Executive summary:** required by the brief ("a title page, an executive summary page, a table of contents and figures, the report itself, and appendices"). One page that summarises the whole report, including results, for a busy reader. **Written last.** Not a marked section, but its words count.
 
 ## Pending follow-ups (non-blocking)
 
 | Item | Owner | Status | If resolved |
 |---|---|---|---|
 | IEEE 1012-2024 full text via APU IEEE Xplore | Author (contacting the APU library) | **Error 418** directly, via EZproxy, and in a clean Chrome (2026-10-21) → likely an IEEE/APU-side block; the subscription may not include Standards anyway | Revisit the Section 4 risk tiers (switch from our own tiers to IEEE's integrity-level scheme); cite IEEE directly for independence |
-| Does the executive summary count towards ~5,000 words? (It is **required** by the brief either way.) | Author (ask lecturer) | Open | If yes, trim the body plan from ~4,850 to ~4,700 |
+| ~~Does the executive summary count towards ~5,000 words?~~ | Author | **Resolved 2026-10-21: it counts.** Body trimmed to ~4,700 (+ ~200 summary = ~4,900). | — |
 | Smith & Hayes (2024) full text (S69) | Author | Blocked by the same IEEE 418 | Cite beyond the abstract |
 | Article numbers for S41, S43, S44 | Author / writing stage | Open | Complete the APA references |
