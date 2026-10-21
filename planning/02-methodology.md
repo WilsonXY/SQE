@@ -34,7 +34,7 @@ The logic runs: **what they do → what the project needs → what options exist
 | 2.5 | Applying the methodology to Actual (to-be) | Show it is practical | The chosen methodology tailored to Actual: roles, cadence, artefacts and workflow. What changes compared with today. Section 4 (IV&V) builds on this. |
 | 2.6 | Critical evaluation | Where most marks come from | Strengths, weaknesses, risks, mitigations, and the conditions under which this choice would stop being right. |
 
-Approximate words: 2.1 ≈ 250 · 2.2 ≈ 250 · 2.3 ≈ 300 · 2.4 ≈ 300 · 2.5 ≈ 200 · 2.6 ≈ 250, about **1,500 in total**, plus the appendix matrix.
+Approximate words (rebalanced 2026-10-21): 2.1 ≈ 230 · 2.2 ≈ 230 · 2.3 ≈ 280 · 2.4 ≈ 290 (**including the matrix table**) · 2.5 ≈ 200 · 2.6 ≈ 220, about **1,450 in total**.
 
 ## Selection criteria (agreed)
 

@@ -179,3 +179,17 @@ Proposed (waiting for the author), see `04-ivv.md`:
 - an optional funded external audit;
 - figure choice;
 - the A1 word budget (~5,300 planned) and whether to include an A1 conclusion.
+
+## 2026-10-21 — Section 4 answers; word budget
+
+Decisions:
+- Section 4 flow 4.1–4.6 OK.
+- Phase mapping (Lecture 6's six phases → six Kanban stages) OK.
+- Recommend an optional funded external audit, **and briefly state the cost limitation** of a donation-funded OSS project.
+- **No figure** for Section 4 by default.
+- **No Assignment 1 conclusion** for now.
+- **Word count:** about 5,000 ± 5%, preferably slightly under. Budgets rebalanced: Intro 550, S2 1,450, S3 1,450, S4 1,400 = **~4,850**.
+
+The author asked for more context on Q2 (independence model) and Q3 (risk tiers / integrity levels). Plain-language explanations with Actual examples were added to `04-ivv.md`.
+
+Still open: Q2, Q3, and whether the executive summary counts towards the word limit.

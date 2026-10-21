@@ -1,6 +1,6 @@
 # Section 4 — Integrating IV&V with Kanban (10 marks)
 
-Status: **In discussion.** First proposal, 2026-10-21.
+Status: **In discussion.** Most items agreed (2026-10-21). Two concept questions remain (independence model, risk tiers); explanations are below.
 
 ## What the brief asks
 
@@ -13,6 +13,14 @@ The marker will look for:
 4. Critical evaluation.
 
 The selected methodology is **Kanban**, tailored (Section 2).
+
+## Agreed (2026-10-21)
+
+- **Flow 4.1–4.6** (provisional).
+- **Phase mapping:** Lecture 6's six phases → six Kanban stages (requirements/triage, design, build/PR, verify, release train, operate/maintain).
+- **External audit:** recommend an optional, periodic **funded external security audit** (OSTIF model [S72]). The report must also **briefly state the cost limitation**: Actual is a donation-funded OSS project (about USD 3,000–3,500/month in donations, USD 2,000/month already committed to maintainer stipends [S08]), so an audit depends on donor or third-party funding. The actual cost estimate belongs to Assignment 2.
+- **No figure** for Section 4 by default. The author may add one during writing if it really earns its place.
+- **No Assignment 1 conclusion** for now (optional; revisit during writing depending on the word count).
 
 ## Relevant lecture guidance (not cited)
 
@@ -54,22 +62,62 @@ Same as-is → to-be logic as Sections 2 and 3.
 
 | # | Subsection | Purpose | Main content | ~Words |
 |---|---|---|---|---|
-| 4.1 | V&V, IV&V and why Actual needs it | Concepts, briefly | V vs V [S67]; three kinds of independence [S68]; integrity levels [S67]; agile still needs IV&V, especially for security [S69]. Why for Actual: financial data, and real escaped vulnerabilities [S63]. | 200 |
-| 4.2 | Current V&V in Actual and how independent it is (as-is) | The "analyse" part | Table: each existing V&V activity → who does it → technical / managerial / financial independence (yes / partial / no). Finding: real but ad hoc, and the strongest independence (external reporters) happens **after** release. | 250 |
-| 4.3 | IV&V integration model for Kanban (to-be) | The "implement" part: design decisions | (a) **Independence level** Actual can realistically afford: an **internal independent reviewer role** plus **external augmentation** (the existing disclosure channel and an optional funded audit [S72]). (b) **Risk-tiering by integrity level** [S67]: e.g. *high* = authentication/authorization, sync, money calculations, migrations, bank sync; *standard* = UI and copy. (c) **Embedded as Kanban explicit policies** (entry and exit criteria per column) [S38], running in Kanban's cadence [S69]. | 250 |
+| 4.1 | V&V, IV&V and why Actual needs it | Concepts, briefly | V vs V [S67]; three kinds of independence [S68]; integrity levels [S67]; agile still needs IV&V, especially for security [S69]. Why for Actual: financial data, and real escaped vulnerabilities [S63]. | 180 |
+| 4.2 | Current V&V in Actual and how independent it is (as-is) | The "analyse" part | Table: each existing V&V activity → who does it → technical / managerial / financial independence (yes / partial / no). Finding: real but ad hoc, and the strongest independence (external reporters) happens **after** release. | 230 |
+| 4.3 | IV&V integration model for Kanban (to-be) | The "implement" part: design decisions | (a) **Independence level** Actual can realistically afford: an **internal independent reviewer role** plus **external augmentation** (the existing disclosure channel and an optional funded audit [S72]). (b) **Risk-tiering by integrity level** [S67]: e.g. *high* = authentication/authorization, sync, money calculations, migrations, bank sync; *standard* = UI and copy. (c) **Embedded as Kanban explicit policies** (entry and exit criteria per column) [S38], running in Kanban's cadence [S69]. | 230 |
 | 4.4 | IV&V activities across the Kanban workflow | The core table (Lecture 6 format) | One table: Lecture 6's six phases mapped to Kanban stages (requirements/triage → design → build/PR → verify → release train → operate/maintain), with **IV&V activities, tools, independent role, exit criterion** for each. E.g. high-integrity items need an independent reviewer (not the author, not the area owner) using an OWASP ASVS checklist; authorization tests; a threat-model note in the ADR; validation on the preview build; an independent release smoke test; a regression test for every fixed advisory. | 400 (table words count) |
 | 4.5 | How the integration achieves the three goals | Show the brief's goals explicitly | **Early defect detection:** e.g. GHSA-m2cq (missing auth middleware) would be caught at the design/PR gate by the ASVS authentication checklist and authorization tests. **Requirements compliance:** traceability chain feature request → acceptance criteria → PR "Fixes #" → tests → release note (Actual already has most links). **Overall quality:** fewer escaped defects; measured in Assignment 2. | 150 |
-| 4.6 | Critical evaluation | Where most marks come from | Full IEEE independence (managerial, financial) is not achievable inside a volunteer project. Independence vs flow: extra gates risk recreating the 2022 review backlog [S10] and adding to maintainer burnout [S47], mitigated by tiering and WIP limits. Audit cost vs donations [S08]. Rubber-stamp risk. Tool false positives. | 200 |
+| 4.6 | Critical evaluation | Where most marks come from | Full IEEE independence (managerial, financial) is not achievable inside a volunteer project. Independence vs flow: extra gates risk recreating the 2022 review backlog [S10] and adding to maintainer burnout [S47], mitigated by tiering and WIP limits. Audit cost vs donations [S08]. Rubber-stamp risk. Tool false positives. | 210 |
 
-Total about **1,450 words**.
+Total about **1,400 words** (rebalanced 2026-10-21).
+
+## Explanations for the two pending concept questions
+
+### Q2: Independence model (where the question comes from)
+
+IV&V means *independent* V&V. The standard definition (IEEE, as explained by NASA [S68]) says independence has **three dimensions**, and full IV&V needs all three:
+
+| Dimension | Meaning (paraphrased from S68) | NASA example | What it protects against |
+|---|---|---|---|
+| **Technical** | The checker is not the developer and uses their own expertise (and ideally their own tools) to judge the work | IV&V analysts who didn't build the software | "Author blindness": people miss their own mistakes |
+| **Managerial** | The checker belongs to a *separate organisation* from the developers, and decides what to check, how and when | The NASA IV&V Facility is separate from the project teams | Pressure from the dev team or its managers to skip or soften checks (e.g. to hit a release date) |
+| **Financial** | The checker's budget is controlled by someone other than the developers | IV&V is funded separately from the project | Money pressure: "we pay you, so go easy on us" |
+
+Applied to Actual, with evidence:
+- **A maintainer reviewing another maintainer's PR:** technically independent (a different person). **Not** managerially independent: same 8-person core team, same leadership, same release goals [S02, S04]. **Not** financially independent: reviewers are paid from the same donation-funded stipend pool, and points are based on lines of code reviewed [S08].
+- **Outside vulnerability reporters** (iamsilk, Rex50527, pyuysig [S63]): not part of the team, chose what to examine themselves, not paid by Actual. All three dimensions are satisfied.
+- **A funded external audit** (OSTIF model [S72]): a separate organisation with its own audit process. Financial independence depends on who pays (better if a third-party funder pays rather than Actual).
+
+**So the question was:** should the report state honestly that Actual can only achieve *technical* independence internally, and needs *outsiders* for full independence, with the to-be model combining (a) an internal independent-reviewer role, for technical independence, and (b) external parties, for full independence?
+
+**Why this matters for marks:** the brief says "*Independent* Verification and Validation". A marker who knows the IEEE definition would mark down a report that calls a colleague's code review "IV&V" without qualification. Stating the limits is also good material for 4.6 (critical evaluation).
+
+### Q3: Risk tiers / "integrity levels" (what they are)
+
+**The idea:** not every part of a system deserves the same amount of checking. IEEE 1012-2024 handles this with **integrity levels** [S67]:
+- each component gets a level based on **how bad it would be if it failed**;
+- higher levels get **more and stricter** V&V tasks.
+
+Everyday analogy: a hospital checks heart-surgery equipment far more strictly than the TV in the waiting room.
+
+**For Actual, a possible tiering** (our own proposal, for discussion):
+
+| Tier (proposed) | Example parts of Actual | Why | Extra IV&V (on top of normal review and CI) |
+|---|---|---|---|
+| **High** | Login, permissions and sessions (sync server); bank-sync endpoints; budget and balance calculations; database migrations; sync/CRDT; encryption | A failure means strangers read bank data (real case: GHSA-m2cq, critical [S63]), wrong money figures, or lost data | An independent reviewer who is not the author and not the area owner; an OWASP ASVS security checklist; authorization and regression tests; a short threat note in the ADR |
+| **Standard** | Most features: reports, rules, UI components | A failure is annoying but recoverable | Normal review and CI, plus preview-build validation |
+| **Low** | Themes, wording, docs | Cosmetic | Normal review only |
+
+**Benefit:** scarce volunteer reviewing time goes where the risk is, instead of slowing *every* PR (which would recreate the 2022 review backlog [S10]).
+
+**What "we can only cite its abstract" means:**
+- The IEEE standard is behind a paywall. We have only read its official abstract, which confirms that V&V requirements are "specified for different integrity levels".
+- We do **not** know IEEE's exact level scheme (e.g. how many levels it uses or how they're assigned).
+- So the report would say: "inspired by IEEE 1012's integrity-level concept, this report proposes the following tiers for Actual". In other words, our own design, honestly labelled, not presented as IEEE's.
+- Alternative: get the full IEEE 1012-2024 text (e.g. through the APU library's IEEE Xplore access, if available) and base the tiers on IEEE's actual scheme.
 
 ## Open questions
 
-1. **Flow 4.1–4.6:** OK?
-2. **Independence model:** agree with the honest position that Actual can achieve **technical independence** internally, but full **managerial and financial** independence only through external parties (vulnerability reporters, a funded audit)? The design is "internal independent reviewer + external augmentation".
-3. **Integrity-level tiering:** the concept comes from IEEE 1012-2024 (we can only cite its abstract, because the full text is paywalled). The actual tiers for Actual would be **our own design, clearly labelled as such**. OK?
-4. **Phase mapping:** map Lecture 6's six phases onto **six Kanban stages** (requirements/triage, design, build/PR, verify, release train, operate/maintain)? This keeps the lecture's structure and stays inside Kanban.
-5. **External audit recommendation:** include an optional, periodic **funded external security audit** (OSTIF model) paid from the donation surplus? It's strong real-world proof, but it adds a cost claim. The cost would only be estimated properly in Assignment 2 (Estimation).
-6. **Figure:** Sections 1–2 plan 3 figures and Section 3 has none. Should Section 4 have **no new figure** (the 4.4 table carries it), or should the 2.5 to-be workflow figure show the IV&V gates so one figure serves both sections?
-7. **Word budget for Assignment 1:** the current plan adds up to about **5,300 words**: Intro ~600 + Section 2 ~1,500 + Section 3 ~1,550 + Section 4 ~1,450 + optional conclusion ~200. Does the **executive summary** count towards the ~5,000? Is 5,300 acceptable as "approximately 5,000", or should we trim each section by about 5–10%?
-8. **Conclusion (Section 5) in Assignment 1:** include a short one (~150–200 words) or not? The brief doesn't require it for Assignment 1, but it helps the report end cleanly.
+1. **Independence model (Q2):** with the context above, agree that the internal reviewer role gives technical independence only, and full independence comes from outsiders?
+2. **Risk tiers (Q3):** OK with three tiers (high / standard / low) as *our own design inspired by IEEE 1012*? Or would you prefer to try to get IEEE 1012-2024 through the APU library so the tiers follow IEEE's actual scheme?
+3. **Executive summary and word count:** does the executive summary count towards the ~5,000? (The current body budget is ~4,850, see `README.md` → *Word budget*.)

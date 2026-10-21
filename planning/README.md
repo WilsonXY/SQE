@@ -6,8 +6,8 @@
 | 1. Introduction | `01-introduction.md` | **Agreed** |
 | 2. Methodology | `02-methodology.md` | **Agreed** (shortlist: Spiral, Scrum, XP, Kanban, DevOps + OSS baseline) |
 | 3. Quality Assurance Process | `03-quality-assurance.md` | **Agreed** |
-| 4. IV&V with selected methodology | `04-ivv.md` | In discussion (first proposal) |
-| 5. Conclusion (optional) | — | Not started |
+| 4. IV&V with selected methodology | `04-ivv.md` | In discussion (two concept questions pending) |
+| 5. Conclusion (optional) | — | **Excluded for now** (revisit during writing, depending on the word count) |
 | Front matter (title page, executive summary, TOC, lists) | — | Not started |
 | References (APA 7th) | — | Not started |
 
@@ -48,3 +48,20 @@ Tables (criteria, the matrix summary, stakeholders) are not counted as figures. 
 - **Words in tables count** towards the word limit.
 - Appendices don't count towards the ~5,000 words (the lecturer confirmed this), and **appendix content earns no marks**. Use appendices only for supplementary "FYI" material. Never move essential content there to save words.
 - Point of view: outside analysts. No contact with the Actual team.
+
+## Word budget for Assignment 1 (agreed 2026-10-21)
+
+- Target: **about 5,000 words ± 5%** (4,750–5,250). The author prefers **slightly under 5,000**.
+- **Words in tables count.** Appendices don't count (and aren't marked).
+- Body budget, roughly proportional to marks (Intro 5; Sections 2–4 10 each):
+
+| Section | Budget |
+|---|---|
+| 1 Introduction | ~550 |
+| 2 Methodology | ~1,450 |
+| 3 Quality Assurance Process | ~1,450 |
+| 4 IV&V with Kanban | ~1,400 |
+| (5 Conclusion) | excluded for now |
+| **Total body** | **~4,850** |
+
+- *Open:* does the executive summary count towards the ~5,000? If it does, trim the body by about 150–200 words.
