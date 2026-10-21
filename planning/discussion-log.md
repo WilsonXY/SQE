@@ -215,3 +215,9 @@ Research done:
 - The author's IEEE Xplore attempt gave **"Error 418"**, and the APU subscription lists no Standards anyway. As agreed beforehand, we **use our own three risk tiers**, labelled "inspired by IEEE 1012".
 - **Section 4 is agreed.** All four Assignment 1 sections are now planned and agreed.
 - Still open (not blocking planning): whether the **executive summary** counts towards the ~5,000 words.
+
+## 2026-10-21 — IEEE Xplore retry
+
+- The author retried in a private window. The APU login worked (the URL became `ieeexplore-ieee-org.ezproxy.apu.edu.my`), but IEEE Xplore still returned **Error 418**. Since 418 appears both directly and via EZproxy, the cause is likely browser-level bot protection.
+- Suggested next steps: a clean browser with no extensions (Chrome/Edge); "Institutional Sign In" on IEEE Xplore (not ieee.org); otherwise the library's Get Help.
+- Fallback unchanged: our own three risk tiers ("inspired by IEEE 1012").
