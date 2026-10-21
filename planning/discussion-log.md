@@ -203,3 +203,9 @@ Decisions:
 
 Research done:
 - The APU Library switched to IEEE Xplore on 1 Jan 2022 [S73]. Standards access is not yet confirmed.
+
+## 2026-10-21 — Locating IEEE Xplore at APU
+
+- The author couldn't find IEEE Xplore on the E-Resources page. It sits under the **"APU E-databases"** box (https://library.apiit.edu.my/apu-e-databases/) → "IEEE Xplore®" → "Access Here" (EZproxy).
+- The library page lists APU's IEEE subscription as **POP conference proceedings (2017+) and STEM25 journals only, with no Standards**. IEEE 1012-2024 is probably not accessible, so the likely outcome is our own three tiers. The author will confirm with a quick search.
+- Side benefit: through EZproxy the author can probably read S69 in full and fill in the S41/S43/S44 article numbers (SpringerLink).

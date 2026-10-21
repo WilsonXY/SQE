@@ -174,6 +174,8 @@ The full texts of ISO/IEEE standards are paywalled. "Verified" here means the **
 
 | S73 | APU Library. (2021, December 30). *Introducing IEEE Xplore*. Asia Pacific University. https://library.apiit.edu.my/2021/12/30/introducing-ieee-xplore/ | Verified (page read) · Not for citation (internal library notice; used only to guide the author's access) | APU replaced IEEE CSDL with IEEE Xplore from 1 Jan 2022; Xplore includes "technical standards". The library's E-Resources page mentions off-campus access to its subscribed e-databases. | Access route for IEEE 1012-2024 |
 
+| S74 | APU Library. (n.d.). *APU e-databases*. Retrieved October 21, 2026, from https://library.apiit.edu.my/apu-e-databases/ | Verified (page read) · Not for citation (internal library page) | Subscribed databases with EZproxy links: ACM DL, EBSCOhost, Emerald, **IEEE Xplore (POP Online conference proceedings from 2017 + STEM25 journals; standards not listed)**, ProQuest, ProQuest Ebook Central, ScienceDirect, SpringerLink | Access route for full texts; IEEE 1012-2024 probably **not** included |
+
 Search log entries for D3 are in section F.
 
 ## E. Module materials (not cited)
@@ -227,4 +229,5 @@ Search log entries for D3 are in section F.
 | 2026-10-21 | curl (page.py) | nasa.gov/ivv-overview; ostif.org 2025 report; connect.snv.ch IEEE 1012-2024 and 1012-2016 | S68, S72, S67 verified |
 | 2026-10-21 | Crossref API (2021+) | IV&V agile; IV&V DevOps; V&V agile SLR; OSS vulnerability disclosure; requirements traceability | Picked S69, S70, (S71). Seen, not used: Das 2024 (agile regression testing), Karapantelakis 2021, Venkatesan 2022, Liang 2021 (CD 2.0 chapters), Khan 2023, Jadhav et al. 2023, Isbitski 2023, Rodriguez et al. 2026 (SSRN preprint), Al-Msie'deen 2023, Munna 2026 (SSRN), Hartgerink 2024 |
 | 2026-10-21 | Semantic Scholar API | Abstracts for S69, S70, S71 | S69 and S70 read; S71 abstract unavailable |
+| 2026-10-21 | curl | library.apiit.edu.my/e-resources/ and /apu-e-databases/ | S74: IEEE Xplore subscription = POP + STEM25 only |
 | 2026-10-21 | WebSearch | APU library e-resources IEEE Xplore | library.apiit.edu.my (?p=537 used: S73; ?p=348 E-Resources page read); aau.ac.ae, unisg.ch, zut.edu.pl, india.ieee.org, libguides.uml.edu, hkbu.edu.hk (other universities; not used) |

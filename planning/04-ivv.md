@@ -122,8 +122,14 @@ Everyday analogy: a hospital checks heart-surgery equipment far more strictly th
 
 APU's library announced that it replaced IEEE CSDL with **IEEE Xplore** from 1 January 2022, and IEEE Xplore covers "technical standards" [S73]. Not every IEEE Xplore subscription includes the **standards** collection, so this needs checking.
 
+**Update (2026-10-21):** the library's *APU E-databases* page [S74] says APU's IEEE Xplore subscription includes **only**:
+- **POP Online**: conference proceedings from 100 IEEE conference series, back to 2017;
+- the **STEM25 Journals Collection**: 25 IEEE journals and magazines.
+
+**It does not list IEEE Standards.** So IEEE 1012-2024 is **probably not accessible**, but a quick search will confirm it.
+
 Steps:
-1. Go to the APU Library website (https://library.apiit.edu.my/) → **E-Resources** → subscribed e-databases. Log in with your APU account (off-campus access is offered).
+1. Go to https://library.apiit.edu.my/apu-e-databases/ (E-Resources page → the **"APU E-databases"** box). Scroll down to **"IEEE Xplore®"** and click **"Access Here"**. This is the EZproxy link `https://login.ezproxy.apu.edu.my/login?url=https://ieeexplore.ieee.org/`. Log in with your APU account.
 2. Open **IEEE Xplore** through the library link, so the university subscription is recognised. The top of the page should show "Access provided by: Asia Pacific University…" (or similar).
 3. Search for **"IEEE 1012-2024"** or "IEEE Standard for System, Software, and Hardware Verification and Validation".
 4. If the PDF opens (you have access):
@@ -134,4 +140,10 @@ Steps:
 
 ## Open questions
 
-1. **IEEE 1012-2024 access:** waiting for the author's library check (steps above).
+1. **IEEE 1012-2024 access:** waiting for the author's library check (steps above). The library page suggests standards aren't included, so the expected outcome is to **use our own three tiers**.
+
+## Side benefit of the library check
+
+The same APU E-databases page lists EZproxy access to **ScienceDirect**, **SpringerLink**, **ACM Digital Library** and **IEEE Xplore conference proceedings (POP, from 2017)**. This may let the author:
+- read the **full text of S69** (Smith & Hayes, 2024, IEEE Aerospace Conference), if that conference is in APU's POP package;
+- get the **missing article numbers** for S41, S43 and S44 (SpringerLink).
