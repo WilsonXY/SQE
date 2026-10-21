@@ -229,5 +229,6 @@ Search log entries for D3 are in section F.
 | 2026-10-21 | curl (page.py) | nasa.gov/ivv-overview; ostif.org 2025 report; connect.snv.ch IEEE 1012-2024 and 1012-2016 | S68, S72, S67 verified |
 | 2026-10-21 | Crossref API (2021+) | IV&V agile; IV&V DevOps; V&V agile SLR; OSS vulnerability disclosure; requirements traceability | Picked S69, S70, (S71). Seen, not used: Das 2024 (agile regression testing), Karapantelakis 2021, Venkatesan 2022, Liang 2021 (CD 2.0 chapters), Khan 2023, Jadhav et al. 2023, Isbitski 2023, Rodriguez et al. 2026 (SSRN preprint), Al-Msie'deen 2023, Munna 2026 (SSRN), Hartgerink 2024 |
 | 2026-10-21 | Semantic Scholar API | Abstracts for S69, S70, S71 | S69 and S70 read; S71 abstract unavailable |
+| 2026-10-21 | Author's browser | APU EZproxy → ieeexplore.ieee.org | **"Error 418" (Unable to Load Page)**; address bar showed plain ieeexplore.ieee.org (EZproxy session probably not applied). IEEE 1012-2024 not obtained → own tiers. |
 | 2026-10-21 | curl | library.apiit.edu.my/e-resources/ and /apu-e-databases/ | S74: IEEE Xplore subscription = POP + STEM25 only |
 | 2026-10-21 | WebSearch | APU library e-resources IEEE Xplore | library.apiit.edu.my (?p=537 used: S73; ?p=348 E-Resources page read); aau.ac.ae, unisg.ch, zut.edu.pl, india.ieee.org, libguides.uml.edu, hkbu.edu.hk (other universities; not used) |

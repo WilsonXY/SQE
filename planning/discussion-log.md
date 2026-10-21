@@ -209,3 +209,9 @@ Research done:
 - The author couldn't find IEEE Xplore on the E-Resources page. It sits under the **"APU E-databases"** box (https://library.apiit.edu.my/apu-e-databases/) → "IEEE Xplore®" → "Access Here" (EZproxy).
 - The library page lists APU's IEEE subscription as **POP conference proceedings (2017+) and STEM25 journals only, with no Standards**. IEEE 1012-2024 is probably not accessible, so the likely outcome is our own three tiers. The author will confirm with a quick search.
 - Side benefit: through EZproxy the author can probably read S69 in full and fill in the S41/S43/S44 article numbers (SpringerLink).
+
+## 2026-10-21 — IEEE 1012 check result; Section 4 agreed
+
+- The author's IEEE Xplore attempt gave **"Error 418"**, and the APU subscription lists no Standards anyway. As agreed beforehand, we **use our own three risk tiers**, labelled "inspired by IEEE 1012".
+- **Section 4 is agreed.** All four Assignment 1 sections are now planned and agreed.
+- Still open (not blocking planning): whether the **executive summary** counts towards the ~5,000 words.

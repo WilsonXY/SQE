@@ -1,6 +1,6 @@
 # Section 4 — Integrating IV&V with Kanban (10 marks)
 
-Status: **In discussion.** Nearly agreed (2026-10-21). Only the risk-tier source is pending: the author is checking the APU library for IEEE 1012-2024.
+Status: **Agreed** (2026-10-21). The flow may still be adjusted during writing.
 
 ## What the brief asks
 
@@ -22,7 +22,8 @@ The selected methodology is **Kanban**, tailored (Section 2).
 - **No figure** for Section 4 by default. The author may add one during writing if it really earns its place.
 - **No Assignment 1 conclusion** for now (optional; revisit during writing depending on the word count).
 - **Independence model (Q2): agreed.** Internal reviews give **technical independence only**. Full independence (technical + managerial + financial) needs **outsiders** (vulnerability reporters, a funded audit). The report must **explain this situation honestly** (e.g. "a maintainer review is not full IV&V in the IEEE sense").
-- **Risk tiers (Q3): conditional.** The author will first try to get **IEEE 1012-2024** through the APU library (IEEE Xplore) so the tiers can follow IEEE's actual integrity-level scheme. **If that isn't possible, use our own three tiers (high / standard / low), labelled "inspired by IEEE 1012".**
+- **Risk tiers (Q3): own design.** The author tried the APU library (2026-10-21). IEEE Xplore returned **"Error 418"** (a block page), and APU's subscription lists **no IEEE Standards** [S74]. So, as agreed beforehand, we **use our own three tiers (high / standard / low), labelled "inspired by IEEE 1012's integrity-level concept"** [S67, abstract only]. We must not present the tiers as IEEE's scheme.
+  - Optional later: if the author ever gets IEEE 1012-2024 (e.g. via a librarian), revisit.
 
 ## Relevant lecture guidance (not cited)
 
@@ -140,10 +141,10 @@ Steps:
 
 ## Open questions
 
-1. **IEEE 1012-2024 access:** waiting for the author's library check (steps above). The library page suggests standards aren't included, so the expected outcome is to **use our own three tiers**.
+None for planning.
 
 ## Side benefit of the library check
 
 The same APU E-databases page lists EZproxy access to **ScienceDirect**, **SpringerLink**, **ACM Digital Library** and **IEEE Xplore conference proceedings (POP, from 2017)**. This may let the author:
-- read the **full text of S69** (Smith & Hayes, 2024, IEEE Aerospace Conference), if that conference is in APU's POP package;
+- read the **full text of S69** (only if EZproxy works; the 2026-10-21 attempt hit IEEE "Error 418") (Smith & Hayes, 2024, IEEE Aerospace Conference), if that conference is in APU's POP package;
 - get the **missing article numbers** for S41, S43 and S44 (SpringerLink).
