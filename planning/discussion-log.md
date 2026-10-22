@@ -315,3 +315,11 @@ Writing-tool source note: all three original section writers and the root writer
 - Created that local branch from the existing checkout and preserved all tracked and untracked experiment files. The main branch pointer is to remain unchanged.
 - Added a Git attribute to preserve experiment artifact bytes, because core.autocrlf is enabled and the frozen input contains mixed original line endings. This keeps recorded hashes valid in future checkouts.
 - The local commit includes report variants, research records, the reusable protocol and planning updates. Remote push remains prohibited.
+
+## 2026-10-22 — Writing experiment repeated with Claude Opus 5.5 (branch `writing-experiment-opus5.5`)
+
+- The author asked for the same writing experiment to be repeated with Claude Opus 5.5, following `WRITING-EXPERIMENT-PROTOCOL.md`. The branch was created from `writing-experiment-6.1sol` at `dab5f8a`, so the planning inputs are identical.
+- Design: own raw draft per model, with a close replication of the agent arrangement. The coordinator wrote Section 1, the executive summary and the references; three fresh writers wrote Sections 2–4; the same writers then applied Humanizer; one fresh agent applied technical-writing then unslop. The installed skill hashes match the original run.
+- The agents were told not to open `report/assignment-1/**`, and no new sources were allowed. The raw draft was frozen at 4,961 words; the reviewed Humanizer version is 5,069 words and the reviewed pstack version 5,063.
+- An extension to the original procedure: two blind reviewers, one per condition, with a shared correction policy. They found 8 required corrections in Humanizer and 1 in pstack, all applied, with pre-review drafts kept.
+- All outputs, records and the comparison are in `writing-experiments/claude-opus-5-5/run-1/`. Everything stays local: no commit or push has been made in this session yet.
