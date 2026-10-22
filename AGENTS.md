@@ -1,5 +1,17 @@
 # AGENTS.md
 
+## Current writing-thread instructions (22 October 2026)
+
+The author's instructions for this thread override the remote-publishing rules below:
+
+- Work locally only. Do not push, open a pull request, or publish repository changes.
+- Scope is Assignment 1. Deliver writing as Markdown; no PDF assembly is requested.
+- Use British English, confirmed by the author.
+- Preserve a complete normal draft under `report/assignment-1/before/` before reading or applying Humanizer. Then use the installed Humanizer skill to rewrite the whole report under `report/assignment-1/after/`.
+- Preserve three versions and provide a Markdown comparison: raw, Humanizer, and a separate pstack `technical-writing` plus `unslop` rewrite from the same raw input. Keep the pstack output under `report/assignment-1/pstack/`; do not pass it through Humanizer. Humanizer is installed at `C:/Users/xingy/.codex/skills/humanizer/SKILL.md`, shared by the writing agents. The two pstack skills are installed alongside it.
+- Delegated writing is authorised. The author approved the revised scores and retained Kanban with mandatory QA gates on 22 October 2026; Section 2.4 may be completed without further approval.
+- The author subsequently requested a local commit of this work on `writing-experiment-6.1sol`. This commit is authorised; do not push or change `main`.
+
 Every change, edit or piece of documentation is pushed straight to `main`. This repo is entirely for my individual assignment, and no coding is involved.
 
 ## What this repo is

@@ -1,5 +1,7 @@
 # Section 3 — Quality Assurance Process (10 marks)
 
+Writing status, 22 October 2026: all three report versions are complete. The approved Kanban flow and mandatory QA requirements are integrated. Source checks corrected IEEE 730 to the published 2026 edition, verified all nine characteristic names and retained public-evidence limitations. See `research/qa-writing-evidence.md` and `../report/assignment-1/README.md`. The report remains a draft for author review.
+
 Status: **Agreed** (re-agreed 2026-10-21 after the lecturer's 3-attribute feedback). The flow may still be adjusted during writing.
 
 ## What the brief asks

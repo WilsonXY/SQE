@@ -267,3 +267,51 @@ Flagged for the writing thread:
 - Knock-on effects agreed: 3.3–3.5 focus on the 3, and freed words go to 3.6. Because interaction capability was chosen, **accessibility/WCAG 2.2 stays in full**; **functional suitability and performance** drop to brief mentions.
 - Writing-thread caution recorded: the reason for leaving out functional suitability must be evidence-based.
 - Section 3 is **Agreed** again. The handoff has been updated.
+
+## 2026-10-22 — Local Assignment 1 writing thread
+
+- Author overrides the repository push rule: all changes remain local; no push or publication.
+- Deliver writing as Markdown, with complete before-and-after versions. Assignment 1 only.
+- Author authorised delegated writers and requested installation of https://github.com/blader/humanizer . Installed using the skill-installer helper into the shared skills directory for all writers.
+- Strict order: first complete normal writing without Humanizer; then read/apply the skill to rewrite the whole report.
+- British English confirmed.
+- Three section writers started (methodology, QA, IV&V); root handles introduction, assembly and references. Detailed decisions and evidence corrections: `research/writing-session-decisions.md`.
+- Initial matrix proposed and saved to `research/methodology-matrix-proposal.md`. Author requested revisions and will explain. No approval recorded; Section 2.4 held while independent source checks and writing continue.
+
+## 2026-10-22 — Methodology quality concern and revised proposal
+
+- Author questioned Kanban's 3/5 quality-support score in an SQE assignment and asked whether a stronger-quality method could have fewer trade-offs.
+- Reopened selection. Prepared `research/methodology-quality-reassessment.md` with fairer scores, a common retained technical baseline, mandatory proposed QA coverage and sensitivity checks. Reader-facing response: `../report/assignment-1/methodology-decision.md`.
+- Corrected initial over-penalties for DevOps pipeline adoption and XP remote collaboration. Consistently distinguished explicit quality policies from prescribed engineering checks; neither Scrum nor Kanban automatically verifies all selected attributes.
+- Revised unapproved totals /120: Kanban 102, baseline 95 (non-selectable), DevOps 94, XP 82, Scrum 81, Spiral 72. A quality-heavy scenario can favour DevOps by one point; that fragile difference is not evidence for a switch by itself.
+- Normal drafts saved for Sections 1, 3 and 4 and for Section 2 except 2.4. Method-specific prose remains provisional. No executive summary or complete report has been frozen. Humanizer remains unread and unused until normal writing is complete.
+- Await author's direction on methodology and revised scoring before dependent writing continues. No commits, pushes or publication of repository changes.
+
+## 2026-10-22 — Completed Assignment 1 and three-version writing experiment
+
+- Author approved the recommended revised matrix, retained Kanban and made QA checks mandatory. Section 2.4 completed under the original agreed weights.
+- Author added a third, separate writing process using pstack technical-writing and unslop. Installed both from the official cursor/plugins pstack paths. Their shared instructions are available to the dedicated agent; no extra dependency was required.
+- Completed and froze the normal report before applying writing skills to prose. Raw body plus executive summary: 4,873 approximate words. Raw hashes recorded in `../report/assignment-1/raw-manifest.md`.
+- Original section writers read and used Humanizer 3.1.0 for complete prose rewrites, with final draft/rewrite/self-audit records. Humanizer total: 4,934.
+- A separate agent used technical-writing then unslop on the same frozen raw draft, without reading Humanizer instructions, output or notes. Pstack total: 4,905. Academic third person, required APA citations and the agreed report structure override generic skill defaults.
+- All versions preserve the 43 cited references, headings, captions, tables and text diagrams. Citation review passed; 82 mechanical checks had no failures. Semantic review corrected intermediate wording that overstated evidential certainty. No new facts or research were introduced by the style passes.
+- Final reader files: `../report/assignment-1/before/report.md`, `after/report.md`, `pstack/report.md`; comparison and validation are linked from the reading guide.
+- Author review is outstanding. The delivered Markdown is complete; no PDF or cover page was assembled. No commits, pushes, pull requests or upstream software changes were made.
+
+Writing-tool source note: all three original section writers and the root writer read the installed Humanizer skill only after the full raw report was frozen. The dedicated pstack writer read the two installed pstack skills, applying them in that branch only. The root writer read pstack's instructions for comparative review only after the Humanizer prose was complete. Tooling sources remain outside report References; source register entries S124/S125 and installation hashes document provenance.
+
+## 2026-10-22 — Standalone methodology for repeating the writing experiment
+
+- Author requested one document about the experiment procedure, independent of assignment subject matter and output results, for reuse with another LLM.
+- Created `../WRITING-EXPERIMENT-PROTOCOL.md` and linked it from the root README and existing experiment note.
+- Recorded actual preparation, normal drafting, skill installation, frozen baseline, branch isolation, Humanizer and pstack application order, review/correction process and historical limitations.
+- Included reusable prompts, input/agent controls, skill provenance, a run-record template and two distinct cross-model designs: each model's own raw draft or one shared editing baseline. Future refinements are explicitly distinguished from what occurred in this thread.
+- Used the already-read technical-writing and unslop skills for the methodology document. No experimental report was restyled or modified. Frozen raw hashes were rechecked and match.
+- All work remains local; no new model experiment, commit, push or publication was performed.
+
+## 2026-10-22 — Local branch commit authorised
+
+- Author requested moving the experiment work off main, then explicitly requested a commit on `writing-experiment-6.1sol`.
+- Created that local branch from the existing checkout and preserved all tracked and untracked experiment files. The main branch pointer is to remain unchanged.
+- Added a Git attribute to preserve experiment artifact bytes, because core.autocrlf is enabled and the frozen input contains mixed original line endings. This keeps recorded hashes valid in future checkouts.
+- The local commit includes report variants, research records, the reusable protocol and planning updates. Remote push remains prohibited.

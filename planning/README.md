@@ -1,5 +1,11 @@
 # Planning — Assignment 1
 
+## Writing completed — 22 October 2026
+
+Three complete Markdown drafts are available: [raw](../report/assignment-1/before/report.md), [Humanizer](../report/assignment-1/after/report.md), and [pstack technical-writing + unslop](../report/assignment-1/pstack/report.md). Approximate counts are 4,873, 4,934 and 4,905 words. [Comparison and reading guide](../report/assignment-1/README.md). These are complete drafts for author review, not author-approved final submissions.
+
+The author approved the revised scores, Kanban and mandatory QA gates. Section 2.4, executive summary and 43-entry References are complete. All work remains local; no commit, push, pull request or PDF assembly was performed. IEEE 730-2026 replaces the handoff's 2014 edition. The broader historical planning notes below remain useful, with current decisions taking precedence.
+
 | Stage | File | Status |
 |---|---|---|
 | Brief summary | `00-assignment-brief.md` | Done |

@@ -1,5 +1,11 @@
 # Section 2 — Software Development Methodology (10 marks)
 
+## Writing-thread decision — 22 October 2026
+
+The author approved the revised scores and retained Kanban with mandatory QA gates after considering the quality-focused reassessment. Approved totals out of 120: Kanban 102, DevOps 94, XP 82, Scrum 81, Spiral 72; the existing OSS baseline scores 95 but is not selectable. Original agreed weights are retained. Security, reliability and interaction capability checks are essential requirements before preferences are scored. The 3/5 quality score rates methodology support, not Actual's software quality.
+
+Section 2.4 has been drafted. The complete raw report is frozen under `report/assignment-1/before/`; Humanizer and pstack rewrites use that same input. This is a drafted recommendation, not a claim that Actual adopted it. The older discussion below records planning history; current approved scoring is in `research/methodology-quality-reassessment.md`.
+
 Status: **Agreed** (2026-10-20). The flow may still be adjusted slightly during writing.
 
 ## Agreed

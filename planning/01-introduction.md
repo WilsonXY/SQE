@@ -1,5 +1,7 @@
 # Section 1 — Introduction (5 marks)
 
+Writing status, 22 October 2026: normal draft, Humanizer rewrite and separate pstack rewrite completed. British English and the agreed personal-reason exception are retained. Files and checks are linked from `../report/assignment-1/README.md`; author review remains outstanding.
+
 Status: **Agreed** (2026-10-20). Ready for writing once the full Assignment 1 plan is aligned.
 
 ## Agreed

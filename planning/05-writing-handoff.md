@@ -1,5 +1,7 @@
 # Assignment 1 — Writing Handoff
 
+**Completion update, 22 October 2026:** The author approved revised methodology scores and Kanban with mandatory QA gates. Three complete Markdown versions now exist under `report/assignment-1/`: `before/report.md` (raw), `after/report.md` (Humanizer), and `pstack/report.md` (technical-writing + unslop from the same frozen raw input). Start with `report/assignment-1/README.md` and `comparison.md`. The original draft was frozen before skill-based prose editing. The author requires all work to remain local and requests Markdown deliverables; no push or PDF assembly is authorised for this thread. The historical workflow below records the original handoff, with these later instructions taking precedence. Full drafts await author review.
+
 Prepared 2026-10-21, at the end of the planning thread. **A new writing thread starts here.**
 
 Planning for Assignment 1 is complete: Sections 1–4 are all **Agreed**. This file collects everything needed to write the report. It summarises; the detailed decisions live in the per-section planning files.

@@ -1,5 +1,7 @@
 # Section 4 — Integrating IV&V with Kanban (10 marks)
 
+Writing status, 22 October 2026: all three report versions are complete using the approved Kanban workflow. Independence claims are limited to what public evidence establishes, risk tiers are explicitly this report's proposal, and security discovery is not treated as confirmed compromise. See `research/ivv-writing-evidence.md` and `../report/assignment-1/README.md`. Author review remains outstanding.
+
 Status: **Agreed** (2026-10-21). The flow may still be adjusted during writing.
 
 ## What the brief asks
