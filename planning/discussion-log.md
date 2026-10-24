@@ -331,3 +331,9 @@ Writing-tool source note: all three original section writers and the root writer
 - The weighted matrix was replaced with Boehm and Turner's (2004) five home-ground factors (new source S126, Chapter 2 read in full from the publisher's sample chapter), five derived needs (N1–N5) and a conflict/gap test against each method's defining source. Kanban with mandatory QA gates is still the outcome. The executive summary was updated to match, and the references were updated: Boehm & Turner (2004) added, Song et al. (2024) and Alaidaros et al. (2021) removed.
 - S34, S105 and S109 were re-opened to confirm quoted wording. The new section totals 1,748 words and the document 5,246 (limit 5,250).
 - The approach is recorded as *Proposed* in `02-methodology.md`, pending author confirmation. The changes were committed and pushed to `writing-experiment-opus5.5`, as authorised for this branch.
+
+## 2026-10-24 — Direction after reviewing the Section 2 revision
+
+- The author is dropping the other versions (the Humanizer and pstack conditions, and the planning matrix files). Further modifications continue from the revised raw document only: `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md`. No files were deleted.
+- Word count is deferred: don't constrain edits by length for now; the author will deal with it later.
+- `.obsidian/` was added to `.gitignore`. The change was pushed to `writing-experiment-opus5.5` for review.

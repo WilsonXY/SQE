@@ -26,7 +26,8 @@ Scope: `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` only.
 **Open questions:**
 - Is the five-factor framework acceptable as the selection basis, or would the author prefer another established framework?
 - The document sits at 5,246 of the 5,250 maximum, above the author's preferred "slightly under 5,000". Should other sections be trimmed?
-- Should this approach also be carried back into the other runs and the planning matrix files? It has not been, pending the author's decision.
+- ~~Should this approach also be carried back into the other runs and the planning matrix files?~~ **Answered 24 Oct 2026:** no. The author is dropping the other versions and will continue from the revised raw document only.
+- ~~Word count~~ **Deferred by the author (24 Oct 2026):** don't optimise for length for now; the author will handle it later.
 
 Status: **Agreed** (2026-10-20). The flow may still be adjusted slightly during writing.
 
