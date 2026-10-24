@@ -65,4 +65,5 @@ Completion or failure status: complete (22 October 2026). Raw 4,961; Humanizer 5
 | `humanizer/process/` | Per-editor Humanizer process notes |
 | `pstack/draft/`, `pstack/reviewed/`, `pstack/document.md`, `pstack/process.md` | pstack versions and process note |
 | `review/review-A.md`, `review/review-B.md` | Blind reviews |
+| `raw-revised/document.md`, `raw-revised/revision-notes.md` | Author-requested revision of the raw document's Section 2 (24 Oct 2026), made after the experiment; not part of the three-condition comparison |
 | `review/corrections.md`, `review/checks.md`, `review/comparison.md` | Corrections applied, mechanical checks, three-way comparison |

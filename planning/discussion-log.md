@@ -323,3 +323,11 @@ Writing-tool source note: all three original section writers and the root writer
 - The agents were told not to open `report/assignment-1/**`, and no new sources were allowed. The raw draft was frozen at 4,961 words; the reviewed Humanizer version is 5,069 words and the reviewed pstack version 5,063.
 - An extension to the original procedure: two blind reviewers, one per condition, with a shared correction policy. They found 8 required corrections in Humanizer and 1 in pstack, all applied, with pre-review drafts kept.
 - All outputs, records and the comparison are in `writing-experiments/claude-opus-5-5/run-1/`. Everything stays local: no commit or push has been made in this session yet.
+
+## 2026-10-24 — Section 2 rewritten after author feedback (Opus 5.5 run-1 raw only)
+
+- The author reviewed `writing-experiments/claude-opus-5-5/run-1/raw/document.md` and asked for changes to Section 2 only: better flow between sentences for a reader new to the report; no self-made numeric weights; grounded statements throughout.
+- The frozen raw file was kept byte-identical because the experiment hashes depend on it. The revision lives in `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md`, with notes in `raw-revised/revision-notes.md`.
+- The weighted matrix was replaced with Boehm and Turner's (2004) five home-ground factors (new source S126, Chapter 2 read in full from the publisher's sample chapter), five derived needs (N1–N5) and a conflict/gap test against each method's defining source. Kanban with mandatory QA gates is still the outcome. The executive summary was updated to match, and the references were updated: Boehm & Turner (2004) added, Song et al. (2024) and Alaidaros et al. (2021) removed.
+- S34, S105 and S109 were re-opened to confirm quoted wording. The new section totals 1,748 words and the document 5,246 (limit 5,250).
+- The approach is recorded as *Proposed* in `02-methodology.md`, pending author confirmation. The changes were committed and pushed to `writing-experiment-opus5.5`, as authorised for this branch.

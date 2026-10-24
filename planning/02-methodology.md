@@ -6,6 +6,28 @@ The author approved the revised scores and retained Kanban with mandatory QA gat
 
 Section 2.4 has been drafted. The complete raw report is frozen under `report/assignment-1/before/`; Humanizer and pstack rewrites use that same input. This is a drafted recommendation, not a claim that Actual adopted it. The older discussion below records planning history; current approved scoring is in `research/methodology-quality-reassessment.md`.
 
+## Author feedback on the Opus 5.5 run-1 raw draft — 24 October 2026
+
+Scope: `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` only. The frozen raw draft and the other runs are unchanged.
+
+**Feedback (author):**
+- Sentences jump from one point to the next without building context. Readers don't know where the section is going.
+- The weighted matrix rests on self-made weights and scores, which feels weak. Drop the numeric weighting and show the selection as a reasoned flow.
+- Writing must be grounded: every statement needs enough context and evidence behind it.
+
+**Proposed (applied in the revised draft; author to confirm):**
+- Replace C1–C10, the weights and the 1–5 scores with Boehm and Turner's (2004) five home-ground factors [S126]: size, criticality, dynamism, personnel, culture. Table 2.1 profiles Actual qualitatively from cited evidence. Size, dynamism and culture are agile; personnel is agile but strained (few expert reviewers); criticality is mid-scale (financial data, the 2026 advisories). Boehm and Turner's rule that mismatched factors are "sources of risk" needing some disciplined practice is what grounds the mandatory QA gates.
+- Derive five needs (N1–N5) from the profile; these replace the criteria.
+- Evaluation rule: each candidate's required elements, taken from its defining source, are set against the documented facts about Actual. A contradiction rejects the candidate; an unmet need is a gap for tailoring. Table 2.2 records the conflicts and gaps, with no numbers.
+- The outcome is unchanged. Scrum (Sprint commitment and a single Product Owner), XP (sitting together and pairing) and Spiral (expert risk analysis loaded onto the review bottleneck) conflict with Actual. DevOps does not conflict but adds little, because Actual's automation already exists and it runs no operations of its own. Kanban is selected because it targets the review queue, with mandatory QA gates covering criticality.
+- Each subsection now opens by linking back to the step before it.
+- Song et al. (2024) [S42] and Alaidaros et al. (2021) [S37] are no longer cited.
+
+**Open questions:**
+- Is the five-factor framework acceptable as the selection basis, or would the author prefer another established framework?
+- The document sits at 5,246 of the 5,250 maximum, above the author's preferred "slightly under 5,000". Should other sections be trimmed?
+- Should this approach also be carried back into the other runs and the planning matrix files? It has not been, pending the author's decision.
+
 Status: **Agreed** (2026-10-20). The flow may still be adjusted slightly during writing.
 
 ## Agreed
