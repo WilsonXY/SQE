@@ -23,6 +23,8 @@ Scope: `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` only.
 - Each subsection now opens by linking back to the step before it.
 - Song et al. (2024) [S42] and Alaidaros et al. (2021) [S37] are no longer cited.
 
+**Agreed (author, 24 Oct 2026): 2.3 screening simplified.** The longlist paragraph (Waterfall, V-Model, RUP, FDD, Crystal Clear, DSDM, SAFe/LeSS, Shape Up, Lean, Scrumban, release train) read out of context, so it was removed. It is replaced by one sentence explaining that the five candidates each represent a different approach (risk-driven, agile framework, agile engineering, flow management, dev+ops), plus one grounded sentence on why plan-driven methods such as Waterfall were not shortlisted (stable requirements; Boehm & Turner, 2004, p. 31). Singer (2019) [S22] and Meireles et al. (2026) [S18] are no longer cited. The proof rule and the screening table above remain as planning history.
+
 **Open questions:**
 - Is the five-factor framework acceptable as the selection basis, or would the author prefer another established framework?
 - The document sits at 5,246 of the 5,250 maximum, above the author's preferred "slightly under 5,000". Should other sections be trimmed?

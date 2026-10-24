@@ -344,3 +344,10 @@ Writing-tool source note: all three original section writers and the root writer
 - Kept in place: `writing-experiments/claude-opus-5-5/run-1/raw-revised/` (`document.md` and `revision-notes.md`).
 - Moved with `git mv`, keeping relative paths: `report/` → `archived/report/`; `WRITING-EXPERIMENT-PROTOCOL.md` → `archived/`; `writing-experiments/README.md` and `tools/` → `archived/writing-experiments/`; the run-1 `raw/`, `humanizer/`, `pstack/`, `review/`, `input/`, `run-record.md` and `blind-key.md` → `archived/writing-experiments/claude-opus-5-5/run-1/`. Nothing was deleted.
 - Updated pointers in `README.md`, `planning/README.md`, the `AGENTS.md` layout table, `.gitattributes` and the revision files. Older dated log entries keep their original paths as history. `planning/` and the source register stay where they are.
+
+## 2026-10-24 — Section 2.3 screening paragraph replaced
+
+- The author found the 2.3 longlist paragraph out of context. They agreed to replace it with one sentence giving the reason for the five candidates (each represents a different approach) and one plain sentence on why plan-driven methods such as Waterfall were not shortlisted, citing Boehm & Turner (2004, p. 31).
+- "kept because" in the Spiral bullet became "included because", since the screening step is no longer shown.
+- Shape Up (Singer, 2019) and Scrumban (Meireles et al., 2026) are no longer cited and were removed from the References. Both stay in `sources.md` (S22, S18).
+- Word count was not considered, per the author's earlier instruction.

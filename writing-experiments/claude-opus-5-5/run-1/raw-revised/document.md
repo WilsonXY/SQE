@@ -128,11 +128,9 @@ Boehm and Turner treat such mismatches "as sources of risk" (p. 57), noting that
 
 ## 2.3 Candidate methodologies
 
-These needs narrow the field. Waterfall, the V-Model and RUP expect stable requirements, with change of about 1% a month (Boehm & Turner, 2004, p. 31), which a continuously re-ranked backlog is unlikely to respect (N1). FDD, Crystal Clear, DSDM and SAFe/LeSS assume class ownership, co-location or enterprise governance (N2, N3). A proof rule removed Shape Up (Singer, 2019), for which no peer-reviewed evaluation was found. Lean overlaps with Kanban, Scrumban (Meireles et al., 2026) combines two shortlisted methods, and the release train is a scheduling practice rather than a methodology.
+Many methodologies exist, so the comparison focuses on five established ones that each represent a different approach: risk-driven (Spiral), agile frameworks (Scrum), agile engineering practice (XP), flow management (Kanban) and joint development and operations (DevOps). Plan-driven methods such as Waterfall were not shortlisted, because they expect requirements to stay stable (Boehm & Turner, 2004, p. 31), while Actual's change with every vote. Each candidate is described below by what its defining source requires, because those requirements are what 2.4 tests against Actual's needs.
 
-Five candidates remain, each described by what its defining source requires, which 2.4 then tests:
-
-- **Spiral:** risk-driven cycles relying on risk-assessment expertise (Boehm, 1988), kept because criticality is Actual's main non-agile factor.
+- **Spiral:** risk-driven cycles relying on risk-assessment expertise (Boehm, 1988), included because criticality is Actual's main non-agile factor.
 - **Scrum:** Sprints of one month or less, a Sprint Goal the Developers commit to, one Product Owner who orders the backlog, and a Daily Scrum (Schwaber & Sutherland, 2020).
 - **XP:** weekly planning, test-first programming, pair programming and a team that sits together, presented as practices to adapt rather than rules (Beck & Andres, 2005).
 - **Kanban:** visualise work, limit work in progress (WIP), manage flow and make policies explicit; a management method applied to an existing way of working, not a complete methodology (Kanban University, n.d.).
@@ -192,7 +190,7 @@ Volunteering adds risk, because a WIP limit cannot compel anyone to review, and 
 
 The evidence is limited too. Boehm and Turner's framework addresses agile and plan-driven methods generally, not volunteer open source, and Actual publishes no change-rate figures for its partly numerical scales, so Table 2.1 is qualitative. No study found shows Kanban improving a project like Actual, so the gain is plausible but unproven. Tailoring one named method is still defensible, because processes commonly mutate into hybrids and practices matter more than labels (Kuhrmann et al., 2022). The choice should be revisited if Actual gained paid staff or its own hosted service, either of which would change the conditions it rests on.
 
-<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S18, S22, S25, S26, S34, S36, S38, S39, S47, S105, S108, S109, S121, S126, S63-m2cq -->
+<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S39, S47, S105, S108, S109, S121, S126, S63-m2cq -->
 
 # 3 Quality Assurance Process
 
@@ -420,8 +418,6 @@ Lear, R. (2023, April 10). *CMMI updates take performance improvements to the ne
 
 Liu, S., Zhou, J., Hu, X., Côgo, F. R., Xia, X., & Yang, X. (2025). An empirical study on vulnerability disclosure management of open source software systems. *ACM Transactions on Software Engineering and Methodology*. Advance online publication. https://doi.org/10.1145/3716822
 
-Meireles, M. A. C., Soares, K., Afonso, Á., Lobão de Araújo, L., Lobão, L., & Pinheiro, G. (2026). Scrumban in hybrid environments: An empirical investigation of organizational use and impact in development teams. *Journal of Software Engineering Research and Development, 14*(1), 498–516. https://doi.org/10.5753/jserd.2026.7887
-
 Mockus, A., Fielding, R. T., & Herbsleb, J. D. (2002). Two case studies of open source software development: Apache and Mozilla. *ACM Transactions on Software Engineering and Methodology, 11*(3), 309–346. https://doi.org/10.1145/567793.567795
 
 National Aeronautics and Space Administration. (n.d.). *IV&V overview*. Retrieved October 22, 2026, from https://www.nasa.gov/ivv-overview/
@@ -439,8 +435,6 @@ Raymond, E. S. (2000). *The cathedral and the bazaar* (Version 3.0). https://web
 Salkever, A. (2023). *Open source maintainers: Exploring the people, practices, and constraints facing the world's most critical open source software projects*. The Linux Foundation. https://doi.org/10.70828/lddj8886
 
 Schwaber, K., & Sutherland, J. (2020). *The Scrum guide*. https://scrumguides.org/scrum-guide.html
-
-Singer, R. (2019). *Shape Up: Stop running in circles and ship work that matters*. Basecamp. https://basecamp.com/shapeup
 
 Smith, J., & Hayes, W. (2024). Independent verification & validation (IV&V) for agile developed projects. In *2024 IEEE Aerospace Conference* (pp. 1–10). IEEE. https://doi.org/10.1109/AERO58975.2024.10521415
 
