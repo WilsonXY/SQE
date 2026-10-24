@@ -1,6 +1,6 @@
 # Revision notes: raw document, Section 2 (24 October 2026)
 
-`document.md` here is the run-1 raw document with Section 2 rewritten after the author's feedback. The executive summary and references were updated to match. Sections 1, 3 and 4 are unchanged. The frozen original stays at `../raw/document.md` and still matches the hashes in `../raw/manifest.md`. The Humanizer and pstack conditions were not touched.
+`document.md` here is the run-1 raw document with Section 2 rewritten after the author's feedback. The executive summary and references were updated to match. Sections 1, 3 and 4 are unchanged. The frozen original is now at `archived/writing-experiments/claude-opus-5-5/run-1/raw/document.md` and still matches the hashes in `raw/manifest.md` there. The Humanizer and pstack conditions were not touched; they are archived too.
 
 ## Feedback addressed
 
@@ -26,7 +26,7 @@
 - No longer cited: S42 Song et al. (2024), which had supported the weighted matrix, and S37 Alaidaros et al. (2021), cut for length.
 - Inferences labelled as analyst judgement in the text: Actual's position on each factor (2.6 says the positions are qualitative), and DevOps' operations side having "little to join" (from S10 plus S121).
 
-## Counts (`writing-experiments/tools/count_words.py`)
+## Counts (`archived/writing-experiments/tools/count_words.py`)
 
 | Part | Frozen raw | Revised |
 |---|---:|---:|

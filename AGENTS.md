@@ -34,7 +34,8 @@ Every change, edit or piece of documentation is pushed straight to `main`. This 
 | `planning/sources.md` | Register of **every** source consulted (APA 7), with status and where it's used |
 | `planning/discussion-log.md` | Dated log of what was discussed and decided in each session |
 | `planning/05-writing-handoff.md` | **Start here for writing:** structure, word budget, rules, section briefs, workflow |
-| `report/assignment-1/` | Report drafts, one Markdown file per section (created during writing) |
+| `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` | **Current working report** (Assignment 1). All further edits go here |
+| `archived/` | Superseded versions and experiment records (former `report/`, the other `writing-experiments/` material, `WRITING-EXPERIMENT-PROTOCOL.md`). Reference only |
 
 ## Start here
 

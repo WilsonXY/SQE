@@ -337,3 +337,10 @@ Writing-tool source note: all three original section writers and the root writer
 - The author is dropping the other versions (the Humanizer and pstack conditions, and the planning matrix files). Further modifications continue from the revised raw document only: `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md`. No files were deleted.
 - Word count is deferred: don't constrain edits by length for now; the author will deal with it later.
 - `.obsidian/` was added to `.gitignore`. The change was pushed to `writing-experiment-opus5.5` for review.
+
+## 2026-10-24 — Other versions archived
+
+- The author asked to keep only the version in focus and move everything else into a new `archived/` folder.
+- Kept in place: `writing-experiments/claude-opus-5-5/run-1/raw-revised/` (`document.md` and `revision-notes.md`).
+- Moved with `git mv`, keeping relative paths: `report/` → `archived/report/`; `WRITING-EXPERIMENT-PROTOCOL.md` → `archived/`; `writing-experiments/README.md` and `tools/` → `archived/writing-experiments/`; the run-1 `raw/`, `humanizer/`, `pstack/`, `review/`, `input/`, `run-record.md` and `blind-key.md` → `archived/writing-experiments/claude-opus-5-5/run-1/`. Nothing was deleted.
+- Updated pointers in `README.md`, `planning/README.md`, the `AGENTS.md` layout table, `.gitattributes` and the revision files. Older dated log entries keep their original paths as history. `planning/` and the source register stay where they are.

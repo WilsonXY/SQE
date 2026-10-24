@@ -1,5 +1,5 @@
 # SQE
 
-Assignment 1 report drafts and the writing experiment are complete as local Markdown files. Start with [the reading guide](report/assignment-1/README.md) or [the three-version comparison](report/assignment-1/comparison.md).
+The working Assignment 1 report is [writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md](writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md). All further modifications build on this version.
 
-To repeat the experiment with another model, use the standalone [writing experiment protocol](WRITING-EXPERIMENT-PROTOCOL.md). It documents the procedure and includes reusable agent prompts.
+Every other version, including the earlier drafts, the Humanizer and pstack rewrites, the experiment records, the comparison tools and the protocol, was moved to [`archived/`](archived/) on 24 October 2026. Their internal paths are unchanged under that folder.

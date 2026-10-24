@@ -1,5 +1,5 @@
 # Preserve experiment artifact bytes so recorded hashes survive checkouts.
-report/assignment-1/** -text
+archived/** -text
 
-# Same protection for the cross-model experiment runs.
+# Same protection for the current working version's folder.
 writing-experiments/** -text

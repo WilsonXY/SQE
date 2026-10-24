@@ -1,5 +1,9 @@
 # Planning — Assignment 1
 
+## Current working version — 24 October 2026
+
+The author is continuing from one version only: [`writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md`](../writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md). Everything else was moved to [`archived/`](../archived/), so the links in the 22 October note below now resolve under `archived/` (for example, `../archived/report/assignment-1/...`).
+
 ## Writing completed — 22 October 2026
 
 Three complete Markdown drafts are available: [raw](../report/assignment-1/before/report.md), [Humanizer](../report/assignment-1/after/report.md), and [pstack technical-writing + unslop](../report/assignment-1/pstack/report.md). Approximate counts are 4,873, 4,934 and 4,905 words. [Comparison and reading guide](../report/assignment-1/README.md). These are complete drafts for author review, not author-approved final submissions.

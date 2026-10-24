@@ -1,6 +1,6 @@
 # Software Quality Engineering Evaluation of Actual Budget: Methodology, Quality Assurance and IV&V
 
-*Assignment 1 — raw condition (run claude-opus-5-5/run-1), revised 24 October 2026 after author feedback on Section 2. The frozen original is `../raw/document.md`. Working title; cover page, table of contents and lists are added at final assembly.*
+*Assignment 1 — raw condition (run claude-opus-5-5/run-1), revised 24 October 2026 after author feedback on Section 2. The frozen original is `archived/writing-experiments/claude-opus-5-5/run-1/raw/document.md`. Working title; cover page, table of contents and lists are added at final assembly.*
 
 # Executive Summary
 
