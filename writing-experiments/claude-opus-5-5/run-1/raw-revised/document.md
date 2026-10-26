@@ -1,12 +1,12 @@
 # Software Quality Engineering Evaluation of Actual Budget: Methodology, Quality Assurance and IV&V
 
-*Assignment 1 — raw condition (run claude-opus-5-5/run-1), revised 24 October 2026 after author feedback on Section 2. The frozen original is `archived/writing-experiments/claude-opus-5-5/run-1/raw/document.md`. Working title; cover page, table of contents and lists are added at final assembly.*
+*Assignment 1 — raw condition (run claude-opus-5-5/run-1), revised 24–26 October 2026 after author feedback on Section 2. The frozen original is `archived/writing-experiments/claude-opus-5-5/run-1/raw/document.md`. Working title; cover page, table of contents and lists are added at final assembly.*
 
 # Executive Summary
 
 This report evaluates Actual Budget, a free, open-source, local-first personal finance application run by a small volunteer team. Its users need to trust the numbers it shows and the security of their financial data.
 
-Actual has a defined workflow but no deliberate methodology. Boehm and Turner's five factors place it on agile ground, except for scarce reviewers and financial criticality. Kanban fits these conditions best because it targets the review bottleneck, and mandatory quality gates cover its lack of technical quality practices.
+Actual has a defined workflow but no deliberate methodology. Judged with Boehm and Turner's framework for comparing agile and plan-driven methods, Actual suits an agile approach, except that its few reviewers are overloaded and its defects can affect users' money and data. Of five candidates, Kanban fits best because it directly limits the review backlog. Mandatory quality gates are added because Kanban itself prescribes no quality practices.
 
 The QA process focuses on three ISO/IEC 25010:2023 characteristics: Security, Reliability and Interaction capability. Public evidence shows gaps in proactive security verification, coverage measurement and accessibility testing. The proposed QA plan adopts OWASP ASVS 5.0.0, WCAG 2.2 and OpenSSF tools and embeds a Definition of Done in each Kanban stage.
 
@@ -72,19 +72,26 @@ A server is not required for basic budgeting, but syncing between devices and ba
 
 # 2 Software Development Methodology
 
+A software development methodology is the agreed way a team organises its work, from deciding what to build to releasing it. This section recommends one for Actual. Because a methodology can only be judged against the project it must serve, the section first describes how Actual works today (2.1) and what kind of project it is (2.2). It then introduces five candidate methodologies (2.3), tests them against Actual's needs and selects one (2.4), shows how the choice would work in practice (2.5) and examines its weaknesses (2.6).
+
 ## 2.1 Current development process of Actual (as-is)
 
-A methodology can only be judged against the project it must serve, and Actual already has an established process that any methodology would change rather than replace. Its contributing documentation names no methodology (no evidence found, October 2026), but it describes a consistent route for every change.
+Actual's contributor documentation does not name any methodology (no evidence found, October 2026). It does, however, describe the same route for every change, shown in Figure 2.
 
-Figure 2 traces that route. Feature requests are labelled "needs votes", so the backlog is effectively ranked by community votes (Actual Budget, 2026a), and contributors choose their own work rather than being assigned it (Actual Budget, n.d.-a, n.d.-e). Each pull request (PR) passes continuous integration (CI) checks and then maintainer review (Actual Budget, 2026a, n.d.-e), with large features merged behind feature flags (Actual Budget, n.d.-b). Merged work leaves on a monthly release train that needs two further approvals and smoke tests (Actual Budget, n.d.-c).
+Work starts from users' requests. Feature requests are automatically labelled "needs votes", so the list of planned work is in effect ranked by the number of votes each request receives (Actual Budget, 2026a). Nobody is assigned to a request; contributors choose what they want to work on (Actual Budget, n.d.-a, n.d.-e). A contributor submits a change as a pull request (PR), which asks for the change to be merged into the project's main code on GitHub. Small changes go straight to a PR, while larger features are discussed in an issue first (Actual Budget, n.d.-a).
 
-Review is the weak point, because only maintainers can do it. After the 2022 open-sourcing, PRs waited months for a reviewer (Aboltins, 2025), and the project now pays for review and triage from a USD 2,000 monthly pool (Actual Budget, n.d.-f). Actual therefore has **a defined workflow but no deliberate methodology** (Figure 2): the steps are clear, but nothing limits how much work waits for the few people who can approve it.
+Every PR then passes two checks. First, continuous integration (CI) automatically builds the code and runs linting, type-checking, unit, end-to-end and visual tests, together with CodeQL security scanning (Actual Budget, 2026a). Second, a core maintainer reviews the change and may merge it straight away if it is uncontroversial (Actual Budget, n.d.-e). Large features are merged behind feature flags, so that they can ship in small parts as experimental features that users choose to switch on (Actual Budget, n.d.-b). Finally, merged work reaches users through a monthly release train. On the 25th of each month a release branch is cut automatically from whatever is ready, two other maintainers approve it, and smoke tests run before the release is announced (Actual Budget, n.d.-c).
+
+The step that has caused trouble is review. Only maintainers can approve a PR, and the project lists eight of them (Actual Budget, n.d.-a). After Actual became open source in 2022, PRs waited months because nobody was available to review them (Aboltins, 2025). The project now pays maintainers for review and triage from a USD 2,000 monthly pool funded by donations (Actual Budget, n.d.-f), which shows that review time is its scarcest resource.
+
+Actual therefore has **a defined workflow but no deliberate methodology**. The steps are clear, but nothing manages how work moves through them. In particular, nothing limits how many PRs can pile up waiting for the few people able to review them.
 
 ```
 Feature request --> "needs votes" backlog (ranked by votes)
                            |
-                           v
-                     Pull request
+  small change             | larger feature: issue discussion first
+        \                  v
+         +--------> Pull request
                            |
                            v
           CI: lint, typecheck, unit, E2E, visual, CodeQL
@@ -104,64 +111,97 @@ Feature request --> "needs votes" backlog (ranked by votes)
 
 ## 2.2 Project characteristics and selection criteria
 
-Choosing a method requires describing Actual's conditions in terms that methods can be tested against; Boehm and Turner (2004) supply them. They identified the "home ground" of agile and of plan-driven methods, the conditions in which each is most likely to succeed (p. 51), and condensed these into five factors (pp. 54–55). They also cover the brief's lenses: criticality reflects goals and risks, size and personnel the constraints, and dynamism and culture stakeholder expectations.
+To choose fairly between methodologies, Actual's situation must first be described in a form that methodologies can be compared against. Using an established framework for this, rather than the report's own scoring, makes the comparison easier to check.
+
+Methodologies broadly fall into two families. Agile methodologies aim for rapid value and quick responses to change, working in short cycles and relying on people sharing knowledge directly. Plan-driven methodologies aim for predictability, stability and high assurance, relying on detailed plans and documents agreed in advance (Boehm & Turner, 2004, pp. 26–27, 35). Boehm and Turner (2004) compared the two families and found that each succeeds best under particular conditions, which they call its "home ground" (p. 51). They reduced these conditions to five factors that can be checked for any project (pp. 54–56):
+
+- **size:** how many people work on the project;
+- **criticality:** how much harm a defect can cause;
+- **dynamism:** how fast the requirements change;
+- **personnel:** how many experienced people are available;
+- **culture:** whether people work best with freedom or with clear rules.
+
+Table 2.1 applies the five factors to Actual. The second column states the conditions in which agile methods do best; the third gives the evidence for Actual; the last shows where Actual sits as a result.
 
 *Table 2.1. Actual against Boehm and Turner's five factors.*
 
-| Factor | Agile home ground (Boehm & Turner, 2004, pp. 55–56) | Evidence for Actual | Position |
+| Factor | Agile methods suit (Boehm & Turner, 2004, pp. 55–56) | Actual | Result |
 |---|---|---|---|
 | Size | Small teams | Eight core maintainers plus volunteers (Actual Budget, n.d.-a) | Agile |
-| Dynamism | Frequent requirement change | Backlog re-ranked by votes; monthly releases | Agile |
-| Culture | Many degrees of freedom | No assigned roles (Actual Budget, n.d.-e) | Agile |
-| Personnel | Scarce experts continuously present | Few expert volunteers, already the review bottleneck | Agile, strained |
-| Criticality | Low loss from defects (scale centre) | Defects affect money decisions and private data | Middle |
+| Dynamism | Frequently changing requirements | Priorities change with every vote (Actual Budget, 2026a) | Agile |
+| Culture | People who prefer freedom | No assigned roles or tasks (Actual Budget, n.d.-e) | Agile |
+| Personnel | Experienced people available at all times | A few experienced volunteers, already overloaded by review (Aboltins, 2025) | Agile, but under strain |
+| Criticality | Defects that cause little harm | Defects can mislead money decisions and expose financial data (Actual Budget, 2026c) | Between the two |
 
-Size, dynamism and culture put Actual on agile ground; the last two rows show where agile methods are exposed. Agile methods need continuously available experts (Boehm & Turner, 2004, p. 55), yet Actual's experts are the small group whose review time has already run out once. Criticality is the loss that defects can cause, on a scale from comfort through funds to lives (p. 56). Actual's defects cannot cost lives, but a wrong balance can mislead a household, and a critical 2026 advisory exposed bank balances and transactions without authentication (Actual Budget, 2026c). Actual therefore sits mid-scale.
+Three factors point clearly to an agile methodology, but the other two need explanation. On personnel, agile methods depend on experienced people being continuously available (Boehm & Turner, 2004, p. 55). Actual has such people, but they are few, they are volunteers, and their review time has already run out once. On criticality, Boehm and Turner rank the harm a defect can cause on a scale running from loss of comfort, through loss of money, to loss of life (p. 56). Actual's defects cannot cost lives. However, a wrong balance can lead a household to a poor spending decision, and in 2026 a critical security flaw allowed anyone to read users' bank balances and transactions without logging in (Actual Budget, 2026c). This places Actual in the middle of the scale, away from the low-harm end where agile methods are most at home.
 
-Boehm and Turner treat such mismatches "as sources of risk" (p. 57), noting that a project fitting four factors but not the fifth needs "risk assessment and likely some mix of agile and plan-driven methods" (p. 54). Actual's methodology should therefore be agile in shape, with explicit discipline where personnel and criticality are exposed. Five needs follow and serve as the selection criteria:
+Boehm and Turner advise that each factor that does not fit should be treated as a risk to be managed (p. 57). A project that matches one family on most factors but not all is likely to need "some mix of agile and plan-driven methods" (p. 54). For Actual, this means an agile methodology at its core, with stricter, written controls added where personnel and criticality leave it exposed.
 
-- **N1.** Absorb vote-driven changes in priority without a fixed plan (dynamism).
-- **N2.** Work with self-selected contributors who are not assigned roles or tasks (culture, size).
-- **N3.** Keep coordination written: unwritten knowledge grows riskier as people rotate (Boehm & Turner, 2004, p. 35), and Actual's core team has changed over time (Aboltins, 2025).
-- **N4.** Protect maintainers' review time; maintainer interviews link administrative overhead and consensus-heavy decision-making to burnout (Salkever, 2023, pp. 26–27).
-- **N5.** Provide explicit quality and risk controls, where Boehm and Turner judge plan-driven methods well ahead (2004, p. 39).
+Five requirements follow from this profile. Table 2.2 lists them, with the reason Actual needs each one and the part of the brief it answers: Actual's goals, constraints, risks or stakeholder expectations. Section 2.4 tests every candidate against these requirements.
+
+*Table 2.2. Requirements for Actual's methodology.*
+
+| Requirement | Why Actual needs it | Brief's lens |
+|---|---|---|
+| Handles changing priorities | Users' votes re-rank the work continuously (dynamism) | Stakeholder expectations |
+| Works with self-chosen tasks | Volunteers choose their own work and cannot be assigned it (culture, size) | Constraints |
+| Keeps its rules written down | Knowledge held only in people's heads is lost as they leave (Boehm & Turner, 2004, p. 35), and Actual's core team has changed over time (Aboltins, 2025) | Risks |
+| Protects review time | Reviewers are the bottleneck, and maintainers link administrative overload to burnout (Salkever, 2023, pp. 26–27) | Constraints, risks |
+| Includes quality and risk controls | Defects affect money and private data, and plan-driven methods handle quality requirements such as reliability better (Boehm & Turner, 2004, p. 39) | Goals, risks |
 
 ## 2.3 Candidate methodologies
 
-Many methodologies exist, so the comparison focuses on five established ones that each represent a different approach: risk-driven (Spiral), agile frameworks (Scrum), agile engineering practice (XP), flow management (Kanban) and joint development and operations (DevOps). Plan-driven methods such as Waterfall were not shortlisted, because they expect requirements to stay stable (Boehm & Turner, 2004, p. 31), while Actual's change with every vote. Each candidate is described below by what its defining source requires, because those requirements are what 2.4 tests against Actual's needs.
+Many methodologies exist, so the comparison focuses on five established ones that each represent a different approach: risk-driven development (Spiral), an agile framework (Scrum), agile engineering practice (XP), flow management (Kanban), and the joining of development with operations (DevOps). Plan-driven methods such as Waterfall were not shortlisted, because they expect requirements to stay largely stable (Boehm & Turner, 2004, p. 31), whereas Actual's change with every vote. Spiral is included although it is not agile, because criticality is the one factor on which Actual leans away from agile methods.
 
-- **Spiral:** risk-driven cycles relying on risk-assessment expertise (Boehm, 1988), included because criticality is Actual's main non-agile factor.
-- **Scrum:** Sprints of one month or less, a Sprint Goal the Developers commit to, one Product Owner who orders the backlog, and a Daily Scrum (Schwaber & Sutherland, 2020).
-- **XP:** weekly planning, test-first programming, pair programming and a team that sits together, presented as practices to adapt rather than rules (Beck & Andres, 2005).
-- **Kanban:** visualise work, limit work in progress (WIP), manage flow and make policies explicit; a management method applied to an existing way of working, not a complete methodology (Kanban University, n.d.).
-- **DevOps:** capabilities shared across development and operations; a review of 93 documents found 37 capabilities but inconsistent adoption (Amaro et al., 2023).
+Each candidate is summarised below by what its own defining source says a team must do, because Section 2.4 compares those demands with how Actual works.
 
-The **OSS ("Bazaar") model** (Raymond, 2000; Mockus et al., 2002) describes Actual today, so it is a baseline that cannot be selected: the question is what a deliberate methodology would add.
+- **Spiral** develops software in repeated cycles, each of which starts by identifying and reducing the largest remaining risk. It depends on people with the expertise to assess risk (Boehm, 1988).
+- **Scrum** organises work into Sprints, fixed periods of one month or less. The developers commit to a goal for each Sprint, a single Product Owner decides the order of the work, and the team meets for 15 minutes every working day (Schwaber & Sutherland, 2020).
+- **XP (Extreme Programming)** is built on engineering practices: weekly planning, writing tests before code, pair programming (two developers working together at one computer) and a team that sits together. Its creators present these practices as ideas to adapt rather than fixed rules (Beck & Andres, 2005).
+- **Kanban** shows work on a board, limits how much work can be in progress at once (a work-in-progress, or WIP, limit), manages the flow of work and writes down the rules for moving work between stages. Its official guide describes it as a way of improving an existing process rather than a complete methodology (Kanban University, n.d.).
+- **DevOps** brings software development together with operations, the work of running the software for its users. A review of 93 sources identified 37 DevOps capabilities but found that adoption and definitions remain inconsistent (Amaro et al., 2023).
+
+Actual's current way of working is also kept in the comparison as a reference point. It follows the open-source "bazaar" model, in which many volunteers contribute openly with little central planning (Raymond, 2000; Mockus et al., 2002). It is not a candidate, because the aim is to improve on it, but comparing against it shows whether a change would actually be better than today.
 
 ## 2.4 Evaluation and selection
 
-Each candidate's required elements are set against Actual's evidence. A candidate is rejected only where a required element contradicts a documented fact; an unmet need is a gap for tailoring to fill. Every option keeps Actual's CI, tests, review and release train, so none earns credit for them, and each must pass a **mandatory QA gate** stating who checks Security, Reliability and Interaction capability (Section 3) and what blocks a release.
+Each candidate is now compared with how Actual works, using the requirements in Table 2.2. The comparison can produce two kinds of finding:
 
-*Table 2.2. Candidates tested against Actual's needs.*
+- a **clash**, where the methodology demands something Actual cannot provide. A clash rules the candidate out, because removing it would mean abandoning the methodology itself;
+- a **gap**, where the methodology does not cover one of the requirements. A gap does not rule a candidate out, because a missing practice can be added.
 
-| Option | Conflict with Actual | Gap left open |
+Every candidate is assumed to keep Actual's existing automated checks, review and monthly release, so none is credited for what Actual already does. Table 2.3 summarises the findings, and the paragraphs that follow explain them.
+
+*Table 2.3. Clashes and gaps for each candidate.*
+
+| Candidate | Clash with how Actual works | Requirement left uncovered (gap) |
 |---|---|---|
-| Spiral | Expert risk analysis each cycle (N4) | Voted priorities (N1) |
-| Scrum | Sprint commitment; one Product Owner (N2) | Review queue (N4) |
-| XP | Sitting together; pairing (N2, N3) | Security, accessibility (N5) |
-| **Kanban** | None found | Quality practices (N5) |
-| DevOps | None found | Review queue (N4) |
-| OSS baseline | None (today's process) | Flow control (N4) |
+| Spiral | Needs expert risk analysis every cycle from the overloaded reviewers | Handles changing priorities |
+| Scrum | Needs a committed Sprint goal and a single Product Owner | Protects review time |
+| XP | Needs developers working side by side at the same time | Includes quality and risk controls (security, accessibility) |
+| **Kanban** | None found | Includes quality and risk controls |
+| DevOps | None found | Protects review time |
+| Current process (reference) | None | Protects review time; includes quality and risk controls |
 
-Three candidates conflict with Actual in ways that tailoring could not remove. Scrum's Sprint Goal "is a commitment by the Developers", and its Product Owner "is one person, not a committee" (Schwaber & Sutherland, 2020), whereas Actual's contributors choose their own work and votes set priorities. XP permits remote pairing (Beck & Andres, 2005), but pairing still needs two people working at once, which self-selected volunteers cannot guarantee, and it keeps knowledge in conversation, which Boehm and Turner (2004) call fragile when people rotate (p. 35). Spiral suits criticality best, but it adds expert risk analysis to every cycle (Boehm, 1988) for the maintainers who already limit review.
+First, three candidates clash with how Actual works. Scrum depends on commitment: its Sprint Goal "is a commitment by the Developers", and its Product Owner "is one person, not a committee" (Schwaber & Sutherland, 2020). Actual has neither. Volunteers choose their own work and cannot be asked to commit to a Sprint, and priorities come from users' votes rather than from one person.
 
-Kanban and DevOps raise no conflict, so the question is what each would add. DevOps' automated feedback largely exists, because every PR runs CI, and its operations side has little to join: after the commercial product closed (Aboltins, 2025), users have run the server themselves or on third-party hosting (Actual Budget, n.d.-d). Neither addresses the review queue. Kanban supplies what 2.1 found missing: a WIP limit stops new work starting while reviews pile up (N4), written pull criteria replace knowledge held only by maintainers (N3), and pulling from a voted backlog needs no Sprint commitment (N1, N2).
+XP depends on developers working closely together at the same time. Its creators allow pairs to work remotely (Beck & Andres, 2005), but pairing still needs two people available at once, which volunteers who choose their own work cannot promise. What a pair learns is also shared by talking rather than in writing, and Boehm and Turner (2004) warn that such unwritten knowledge is lost when people leave a team (p. 35).
 
-Compared with the baseline, this gain is narrow: flow control and explicit policies, not a new way of working. Kanban also prescribes no tests, which leaves N5 open. That gap is the criticality mismatch that Boehm and Turner say needs disciplined practices, so mandatory QA gates close it. **Kanban, tailored with mandatory QA gates, is selected.**
+Spiral fits Actual's criticality best, because every cycle starts with risk analysis. That analysis, however, needs expert judgement (Boehm, 1988), and in Actual the experts are the same few maintainers whose review time is already the bottleneck.
+
+Next, Kanban and DevOps have no clash, so the question becomes which would add more to what Actual already does. DevOps' main contributions are automation and closer work between developers and the people who run the software. DORA, the research programme behind the State of DevOps reports (DORA, 2024), recommends fast, reliable automated tests that run continuously as changes are delivered (DORA, n.d.), but Actual already runs such tests on every PR. The operations side has little to connect to, because since the commercial product closed (Aboltins, 2025), users run the server themselves or through a hosting provider (Actual Budget, n.d.-d). Neither contribution addresses review, Actual's real bottleneck, since automated tests cannot decide which PRs a person reviews first.
+
+Kanban, by contrast, adds what Section 2.1 found missing. A WIP limit on review stops new work from starting while PRs are piling up, which protects review time. Written rules for moving work between stages keep knowledge out of individual heads. And because volunteers pull work from the voted list whenever they are free, nobody has to commit to a Sprint.
+
+Finally, Kanban is compared with Actual's current process. The improvement is real but modest: today's process already suits volunteers, and Kanban adds control over the review queue and written rules rather than a new way of working. Kanban also leaves one gap, because it does not prescribe quality practices such as testing. That gap corresponds to the criticality factor in Table 2.1, the factor for which Boehm and Turner advise adding stricter controls. It is therefore filled with **mandatory quality gates (QA gates)**: checkpoints, defined in Section 3, that every change must pass before it moves on. **Kanban, tailored with mandatory QA gates, is selected.**
 
 ## 2.5 Applying Kanban to Actual (to-be)
 
-Kanban is layered over the route in Figure 2 rather than replacing it (Kanban University, n.d.). Each of six columns has an **explicit policy**, an exit criterion that must hold before work is pulled onward (Ahmad et al., 2018, p. 98; Figure 3). Verify carries a WIP limit set from observed review throughput (N4), and its exit policy is Section 3's QA gate (N5); Section 4 attaches IV&V activities to each column. The monthly cut remains the cadence and hosts a short flow review of limits and policies. What changes is a visible review queue, enforced limits and written, mandatory pull criteria.
+In practice, Kanban would be added on top of Actual's existing route rather than replacing it (Kanban University, n.d.). Figure 3 shows the proposed board. Each column is a stage that work passes through, and each has an **exit policy**: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98).
+
+The Verify column, where review happens, carries the WIP limit. The limit should be set from the number of reviews the maintainers actually complete, so that new work stops entering once reviews start to pile up. Verify's exit policy is the QA gate from Section 3, which covers security, reliability and interaction capability, and Section 4 adds independent checks to each column. The monthly release stays as it is, and each release becomes the point at which the team checks whether the limits and policies need adjusting.
+
+Compared with today, three things change: the review queue becomes visible on the board, the number of PRs waiting for review is limited, and the conditions for moving work forward are written down and mandatory.
 
 ```
 Rule: pull work only when the next column is under its WIP limit
@@ -184,13 +224,15 @@ Rule: pull work only when the next column is under its WIP limit
 
 ## 2.6 Critical evaluation
 
-Kanban's main weakness is the N5 gap. It is "a relatively basic flow tool that needs to be supported by additional practices" (Ahmad et al., 2018, p. 110), so without the QA gate and retained CI the board would only display the existing queue. Reported challenges include set-up, organisational culture, supporting practices and training (Ahmad et al., 2018, p. 106).
+Kanban's main weakness is the gap identified in Section 2.4. A mapping study of Kanban in software engineering concludes that it is "a relatively basic flow tool that needs to be supported by additional practices" (Ahmad et al., 2018, p. 110). Without the QA gates and Actual's existing automated tests, the board would only display the queue rather than improve the work passing through it. The same study also reports difficulties with setting up and maintaining Kanban, organisational culture, missing supporting practices and training (Ahmad et al., 2018, p. 106).
 
-Volunteering adds risk, because a WIP limit cannot compel anyone to review, and blocked PRs may discourage newcomers as unanswered PRs do (Salkever, 2023). Limits should therefore act as signals, with the review stipend (Actual Budget, n.d.-f) directed at Verify.
+Second, volunteering limits what a WIP limit can achieve. A limit cannot force anyone to review, and holding back new PRs may discourage newcomers, just as unanswered PRs do (Salkever, 2023). The limit should therefore act as a signal to the team rather than a hard block, and the paid review pool (Actual Budget, n.d.-f) should be directed at the Verify column.
 
-The evidence is limited too. Boehm and Turner's framework addresses agile and plan-driven methods generally, not volunteer open source, and Actual publishes no change-rate figures for its partly numerical scales, so Table 2.1 is qualitative. No study found shows Kanban improving a project like Actual, so the gain is plausible but unproven. Tailoring one named method is still defensible, because processes commonly mutate into hybrids and practices matter more than labels (Kuhrmann et al., 2022). The choice should be revisited if Actual gained paid staff or its own hosted service, either of which would change the conditions it rests on.
+Third, the evidence behind the choice has limits. Boehm and Turner's framework was written in 2004 to compare agile and plan-driven methods in general, not for volunteer open-source projects. Some of its scales are numerical, such as the share of requirements that change each month, but Actual publishes no such figures, so Table 2.1 rests on qualitative judgement from the cited evidence. No study was found showing Kanban improving a project like Actual, so its benefit over today's process is plausible but unproven. Adapting one named methodology, rather than following it exactly, is still reasonable: a large international survey found that few projects follow a single approach in pure form, and that the practices a team uses shape how agile it is more than the methodology's name does (Kuhrmann et al., 2022).
 
-<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S39, S47, S105, S108, S109, S121, S126, S63-m2cq -->
+Finally, the recommendation depends on Actual's present situation. If Actual gained paid staff, the strain on personnel would ease and Scrum's commitments could become realistic. If it began running its own hosted service, DevOps would have operations to integrate. Either change would mean repeating the comparison.
+
+<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S39, S40, S47, S105, S108, S109, S121, S123, S126, S63-m2cq -->
 
 # 3 Quality Assurance Process
 
@@ -397,6 +439,10 @@ Beck, K., & Andres, C. (2005, June 10). *Getting started with eXtreme Programmin
 Boehm, B. W. (1988). A spiral model of software development and enhancement. *Computer, 21*(5), 61–72. https://doi.org/10.1109/2.59
 
 Boehm, B., & Turner, R. (2004). *Balancing agility and discipline: A guide for the perplexed*. Addison-Wesley.
+
+DORA. (n.d.). *Test automation*. Retrieved October 26, 2026, from https://dora.dev/capabilities/test-automation/
+
+DORA. (2024). *Accelerate state of DevOps report 2024* (Version 2024.3). Google Cloud. https://dora.dev/research/2024/dora-report/
 
 Institute of Electrical and Electronics Engineers. (2025). *IEEE standard for system, software, and hardware verification and validation* (IEEE Std 1012-2024). https://standards.ieee.org/ieee/1800.2/7324/
 

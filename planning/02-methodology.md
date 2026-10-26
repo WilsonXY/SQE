@@ -25,6 +25,14 @@ Scope: `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` only.
 
 **Agreed (author, 24 Oct 2026): 2.3 screening simplified.** The longlist paragraph (Waterfall, V-Model, RUP, FDD, Crystal Clear, DSDM, SAFe/LeSS, Shape Up, Lean, Scrumban, release train) read out of context, so it was removed. It is replaced by one sentence explaining that the five candidates each represent a different approach (risk-driven, agile framework, agile engineering, flow management, dev+ops), plus one grounded sentence on why plan-driven methods such as Waterfall were not shortlisted (stable requirements; Boehm & Turner, 2004, p. 31). Singer (2019) [S22] and Meireles et al. (2026) [S18] are no longer cited. The proof rule and the screening table above remain as planning history.
 
+**Applied (author feedback, 26 Oct 2026): Section 2 rewritten for a fresh reader.** The author found Section 2 written "for yourself": context missing where needed, over-explanation elsewhere, and insider shorthand. Changes:
+- A short introduction defines "methodology" and gives the section's route.
+- Every term is explained at first use (PR, CI, feature flag, release train, agile and plan-driven, home ground, Sprint, Product Owner, pair programming, WIP, exit policy, QA gate).
+- The N1–N5 codes are replaced by named requirements in a new Table 2.2 (requirement, why Actual needs it, the brief's lens). The evaluation table is now Table 2.3: clash versus gap, with both terms defined before the table.
+- 2.4 is signposted: first the three clashes, next Kanban versus DevOps, finally Kanban versus the current process and the verdict.
+- The DevOps automation point is grounded with DORA (n.d.; 2024) [S123, S40].
+- Shorthand such as "earns credit", "documented fact" and "keeps knowledge in conversation" has been removed.
+
 **Open questions:**
 - Is the five-factor framework acceptable as the selection basis, or would the author prefer another established framework?
 - The document sits at 5,246 of the 5,250 maximum, above the author's preferred "slightly under 5,000". Should other sections be trimmed?

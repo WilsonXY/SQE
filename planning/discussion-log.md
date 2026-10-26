@@ -351,3 +351,15 @@ Writing-tool source note: all three original section writers and the root writer
 - "kept because" in the Spiral bullet became "included because", since the screening step is no longer shown.
 - Shape Up (Singer, 2019) and Scrumban (Meireles et al., 2026) are no longer cited and were removed from the References. Both stay in `sources.md` (S22, S18).
 - Word count was not considered, per the author's earlier instruction.
+
+## 2026-10-26 — Section 2 rewritten for a fresh reader
+
+- Author feedback: Section 2 read as if written for the writer, not a new reader. Needed context was missing, some points were over-explained, and insider terms went unexplained. The author confirmed the diagnosis: shorthand phrases, table headings not explained, and no signposting between methods.
+- Rewrote all of Section 2 in `raw-revised/document.md`:
+  - added an introduction;
+  - defined terms at first use;
+  - turned the requirements into named rows of a table, with the brief's lens column;
+  - defined clash and gap before the evaluation table;
+  - signposted 2.4 with first, next and finally;
+  - added plain-language explanations of 2.5 and 2.6.
+- The executive summary's methodology paragraph was rewritten in plain terms. DORA (n.d.) and DORA (2024) were added to the References (existing sources S123 and S40). Word count was not constrained, per the author.
