@@ -370,3 +370,8 @@ Writing-tool source note: all three original section writers and the root writer
 - The five bullet descriptions were replaced with Table 2.3 (candidate, approach, what it requires of the team). The evaluation table was renumbered to Table 2.4.
 - Amaro et al. (2023) [S39] is no longer cited and was removed from the References. Boehm (1988), Schwaber & Sutherland (2020), Beck & Andres (2005) and Kanban University (n.d.) are still cited in 2.4 and 2.5.
 - Guidance noted for later edits: write for a technical reader who is new to the report. Don't define basic software terms.
+
+## 2026-10-26 — Section 2.4 tightened
+
+- Merged the Scrum and XP clash paragraphs into one summary: both assume team members who commit their time together, which Actual's self-selecting volunteers and vote-driven priorities cannot provide. The Boehm & Turner p. 35 point was dropped from this paragraph; it is still cited in Table 2.2.
+- Simplified the DevOps paragraph to its SQE point. DevOps adds automated testing, which Actual's CI already provides, and operations integration, which has little to attach to. Neither of these addresses human review. DORA (2024) [S40] is no longer cited and was removed from the References; DORA (n.d.) [S123] is still cited.

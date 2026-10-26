@@ -187,13 +187,11 @@ Every candidate is assumed to keep Actual's existing automated checks, review an
 | DevOps | None found | Protects review time |
 | Current process (reference) | None | Protects review time; includes quality and risk controls |
 
-First, three candidates clash with how Actual works. Scrum depends on commitment: its Sprint Goal "is a commitment by the Developers", and its Product Owner "is one person, not a committee" (Schwaber & Sutherland, 2020). Actual has neither. Volunteers choose their own work and cannot be asked to commit to a Sprint, and priorities come from users' votes rather than from one person.
-
-XP depends on developers working closely together at the same time. Its creators allow pairs to work remotely (Beck & Andres, 2005), but pairing still needs two people available at once, which volunteers who choose their own work cannot promise. What a pair learns is also shared by talking rather than in writing, and Boehm and Turner (2004) warn that such unwritten knowledge is lost when people leave a team (p. 35).
+First, three candidates clash with how Actual works. Scrum and XP both assume team members who commit their time together. Scrum's Sprint Goal "is a commitment by the Developers" and its Product Owner "is one person, not a committee" (Schwaber & Sutherland, 2020), while XP's pair programming needs two developers available at once, even when pairs work remotely (Beck & Andres, 2005). Actual's volunteers choose their own work and cannot promise to be available together, and its priorities come from users' votes, so neither assumption holds.
 
 Spiral fits Actual's criticality best, because every cycle starts with risk analysis. That analysis, however, needs expert judgement (Boehm, 1988), and in Actual the experts are the same few maintainers whose review time is already the bottleneck.
 
-Next, Kanban and DevOps have no clash, so the question becomes which would add more to what Actual already does. DevOps' main contributions are automation and closer work between developers and the people who run the software. DORA, the research programme behind the State of DevOps reports (DORA, 2024), recommends fast, reliable automated tests that run continuously as changes are delivered (DORA, n.d.), but Actual already runs such tests on every PR. The operations side has little to connect to, because since the commercial product closed (Aboltins, 2025), users run the server themselves or through a hosting provider (Actual Budget, n.d.-d). Neither contribution addresses review, Actual's real bottleneck, since automated tests cannot decide which PRs a person reviews first.
+Next, Kanban and DevOps have no clash, so the question becomes which would add more to what Actual already does. DevOps mainly adds automated testing throughout delivery (DORA, n.d.), which Actual's CI already provides, and integration with operations, which has little to attach to because users run the server themselves or through a hosting provider (Actual Budget, n.d.-d). Neither of these addresses Actual's real bottleneck: human review.
 
 Kanban, by contrast, adds what Section 2.1 found missing. A WIP limit on review stops new work from starting while PRs are piling up, which protects review time. Written rules for moving work between stages keep knowledge out of individual heads. And because volunteers pull work from the voted list whenever they are free, nobody has to commit to a Sprint.
 
@@ -236,7 +234,7 @@ Third, the evidence behind the choice has limits. Boehm and Turner's framework w
 
 Finally, the recommendation depends on Actual's present situation. If Actual gained paid staff, the strain on personnel would ease and Scrum's commitments could become realistic. If it began running its own hosted service, DevOps would have operations to integrate. Either change would mean repeating the comparison.
 
-<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S40, S47, S105, S108, S109, S121, S123, S126, S63-m2cq -->
+<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S47, S105, S108, S109, S121, S123, S126, S63-m2cq -->
 
 # 3 Quality Assurance Process
 
@@ -443,8 +441,6 @@ Boehm, B. W. (1988). A spiral model of software development and enhancement. *Co
 Boehm, B., & Turner, R. (2004). *Balancing agility and discipline: A guide for the perplexed*. Addison-Wesley.
 
 DORA. (n.d.). *Test automation*. Retrieved October 26, 2026, from https://dora.dev/capabilities/test-automation/
-
-DORA. (2024). *Accelerate state of DevOps report 2024* (Version 2024.3). Google Cloud. https://dora.dev/research/2024/dora-report/
 
 Institute of Electrical and Electronics Engineers. (2025). *IEEE standard for system, software, and hardware verification and validation* (IEEE Std 1012-2024). https://standards.ieee.org/ieee/1800.2/7324/
 
