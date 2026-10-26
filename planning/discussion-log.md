@@ -363,3 +363,10 @@ Writing-tool source note: all three original section writers and the root writer
   - signposted 2.4 with first, next and finally;
   - added plain-language explanations of 2.5 and 2.6.
 - The executive summary's methodology paragraph was rewritten in plain terms. DORA (n.d.) and DORA (2024) were added to the References (existing sources S123 and S40). Word count was not constrained, per the author.
+
+## 2026-10-26 — Section 2.3 candidates turned into a table
+
+- Author feedback: the candidate descriptions should be a simple table without citations. The report's focus is SQE, not teaching methodologies, and the reader is new to the report but technical.
+- The five bullet descriptions were replaced with Table 2.3 (candidate, approach, what it requires of the team). The evaluation table was renumbered to Table 2.4.
+- Amaro et al. (2023) [S39] is no longer cited and was removed from the References. Boehm (1988), Schwaber & Sutherland (2020), Beck & Andres (2005) and Kanban University (n.d.) are still cited in 2.4 and 2.5.
+- Guidance noted for later edits: write for a technical reader who is new to the report. Don't define basic software terms.

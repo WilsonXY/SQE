@@ -151,15 +151,19 @@ Five requirements follow from this profile. Table 2.2 lists them, with the reaso
 
 ## 2.3 Candidate methodologies
 
-Many methodologies exist, so the comparison focuses on five established ones that each represent a different approach: risk-driven development (Spiral), an agile framework (Scrum), agile engineering practice (XP), flow management (Kanban), and the joining of development with operations (DevOps). Plan-driven methods such as Waterfall were not shortlisted, because they expect requirements to stay largely stable (Boehm & Turner, 2004, p. 31), whereas Actual's change with every vote. Spiral is included although it is not agile, because criticality is the one factor on which Actual leans away from agile methods.
+Many methodologies exist, so the comparison focuses on five established ones, each representing a different approach. Plan-driven methods such as Waterfall were not shortlisted, because they expect requirements to stay largely stable (Boehm & Turner, 2004, p. 31), whereas Actual's change with every vote. Spiral is included although it is not agile, because criticality is the one factor on which Actual leans away from agile methods.
 
-Each candidate is summarised below by what its own defining source says a team must do, because Section 2.4 compares those demands with how Actual works.
+Table 2.3 summarises what each candidate requires of a team, because Section 2.4 compares those demands with how Actual works.
 
-- **Spiral** develops software in repeated cycles, each of which starts by identifying and reducing the largest remaining risk. It depends on people with the expertise to assess risk (Boehm, 1988).
-- **Scrum** organises work into Sprints, fixed periods of one month or less. The developers commit to a goal for each Sprint, a single Product Owner decides the order of the work, and the team meets for 15 minutes every working day (Schwaber & Sutherland, 2020).
-- **XP (Extreme Programming)** is built on engineering practices: weekly planning, writing tests before code, pair programming (two developers working together at one computer) and a team that sits together. Its creators present these practices as ideas to adapt rather than fixed rules (Beck & Andres, 2005).
-- **Kanban** shows work on a board, limits how much work can be in progress at once (a work-in-progress, or WIP, limit), manages the flow of work and writes down the rules for moving work between stages. Its official guide describes it as a way of improving an existing process rather than a complete methodology (Kanban University, n.d.).
-- **DevOps** brings software development together with operations, the work of running the software for its users. A review of 93 sources identified 37 DevOps capabilities but found that adoption and definitions remain inconsistent (Amaro et al., 2023).
+*Table 2.3. Candidate methodologies.*
+
+| Candidate | Approach | What it requires of the team |
+|---|---|---|
+| Spiral | Risk-driven | Repeated cycles, each starting with expert analysis of the largest remaining risk |
+| Scrum | Agile framework | Sprints of up to one month, a Sprint goal the team commits to, a single Product Owner who orders the work, a daily 15-minute meeting |
+| XP | Agile engineering | Weekly planning, test-first development, pair programming, a team that sits together |
+| Kanban | Flow management | A visible board, work-in-progress (WIP) limits and written rules for moving work, applied on top of an existing process |
+| DevOps | Development and operations | Shared responsibility and automation across building and running the software |
 
 Actual's current way of working is also kept in the comparison as a reference point. It follows the open-source "bazaar" model, in which many volunteers contribute openly with little central planning (Raymond, 2000; Mockus et al., 2002). It is not a candidate, because the aim is to improve on it, but comparing against it shows whether a change would actually be better than today.
 
@@ -170,9 +174,9 @@ Each candidate is now compared with how Actual works, using the requirements in 
 - a **clash**, where the methodology demands something Actual cannot provide. A clash rules the candidate out, because removing it would mean abandoning the methodology itself;
 - a **gap**, where the methodology does not cover one of the requirements. A gap does not rule a candidate out, because a missing practice can be added.
 
-Every candidate is assumed to keep Actual's existing automated checks, review and monthly release, so none is credited for what Actual already does. Table 2.3 summarises the findings, and the paragraphs that follow explain them.
+Every candidate is assumed to keep Actual's existing automated checks, review and monthly release, so none is credited for what Actual already does. Table 2.4 summarises the findings, and the paragraphs that follow explain them.
 
-*Table 2.3. Clashes and gaps for each candidate.*
+*Table 2.4. Clashes and gaps for each candidate.*
 
 | Candidate | Clash with how Actual works | Requirement left uncovered (gap) |
 |---|---|---|
@@ -232,7 +236,7 @@ Third, the evidence behind the choice has limits. Boehm and Turner's framework w
 
 Finally, the recommendation depends on Actual's present situation. If Actual gained paid staff, the strain on personnel would ease and Scrum's commitments could become realistic. If it began running its own hosted service, DevOps would have operations to integrate. Either change would mean repeating the comparison.
 
-<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S39, S40, S47, S105, S108, S109, S121, S123, S126, S63-m2cq -->
+<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S40, S47, S105, S108, S109, S121, S123, S126, S63-m2cq -->
 
 # 3 Quality Assurance Process
 
@@ -431,8 +435,6 @@ Actual Budget. (n.d.-j). *Testing*. Retrieved October 22, 2026, from https://act
 Actual Budget. (n.d.-k). *A tour of Actual*. Retrieved October 22, 2026, from https://actualbudget.org/docs/tour/
 
 Ahmad, M. O., Dennehy, D., Conboy, K., & Oivo, M. (2018). Kanban in software engineering: A systematic mapping study. *Journal of Systems and Software, 137*, 96–113. https://doi.org/10.1016/j.jss.2017.11.045
-
-Amaro, R., Pereira, R., & da Silva, M. M. (2023). Capabilities and practices in DevOps: A multivocal literature review. *IEEE Transactions on Software Engineering, 49*(2), 883–901. https://doi.org/10.1109/TSE.2022.3166626
 
 Beck, K., & Andres, C. (2005, June 10). *Getting started with eXtreme Programming: Toe dipping, racing dives, and cannonballs: Appendix: Primary practices*. InformIT. https://www.informit.com/articles/article.aspx?p=390816&seqNum=3
 
