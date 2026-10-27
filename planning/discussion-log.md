@@ -672,3 +672,19 @@ Writing-tool source note: all three original section writers and the root writer
   - risk tiers, linked to Section 2's reviewer bottleneck.
 - The IEEE integrity-level disclaimer is now stated once. A closing paragraph places the checks in exit policies, cites Smith and Hayes (2024), and states the WIP-limit rule. The Ahmad et al. (2018) citation was dropped from 4.2; it is still cited in 2.5 and 3.5. 4.2 is about 480 words (was about 405).
 - At the author's request, the bracketed glosses were removed from Table 4.1's headings, which are back to Technical / Managerial / Financial. The bulleted definitions above the table stay.
+
+## 2026-10-27 — 4.4 and 4.5 rewritten in concrete terms
+
+- The author said 4.4 and 4.5 had the same problem as the old 4.2. Diagnosis: slogan topic sentences ("Cost is a binding constraint", "exit policies can become ritual", "gains an independent assessment"), no concrete scene, and 4.5 opening with a repeat of 4.2. Applied directly; the author's stated workflow is to review afterwards.
+- 4.4:
+  - A one-line intro names the three goals.
+  - Early detection replays GHSA-m2cq through the board (Design, then Verify).
+  - Requirements compliance names the trail the templates already record, the gap (nobody checks that it holds together) and the two added checks, with an untestable-criterion example. "Fixes #" was not quoted in the report.
+  - Overall quality states the before/after concretely.
+  - The bold goal labels were kept so the marker can find each goal.
+- 4.5:
+  - Each paragraph now opens with a concrete claim.
+  - The independence limit is shown as release pressure on the same team.
+  - Expertise, audit money, rubber stamps, then the ASVS blind spot (now its own paragraph).
+  - No citation added or removed.
+- Word count: 4.4 is about 350 (was about 225) and 4.5 about 340 (was about 265). Section 4 is now about 2,150 words.
