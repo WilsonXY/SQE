@@ -393,17 +393,7 @@ The integration of IV&V is meant to achieve three goals: early defect detection,
 
 **Overall quality.** The model improves overall quality by moving independent checking to the code where Actual's worst flaws have been, and to before release rather than after. Section 4.1 showed that the critical and high-severity flaws of 2026 were found by outsiders once the software had already been released. Under the model, that code is High tier and gets an independent reviewer before release, while the rest of the project is not slowed: a theme or wording change still needs only one ordinary review. Defects that still escape are put to use. The Operate/maintain column turns each one into a regression test and asks whether its area was tiered too low, so the process checks for that kind of defect next time.
 
-## 4.4 Critical evaluation
-
-The model's main limit is that independence stops at the edge of Actual's team. The independent reviewer and the maintainers who approve each release are the same small group, paid from the same stipend pool. If a release is due and a High-tier card's evidence is incomplete, the people deciding whether to wait are the people who want to ship. Only outsiders escape that pressure, and they are either volunteers or must be paid.
-
-Excluding the code owner also trades expertise for independence. Actual's CODEOWNERS file names one maintainer each for the sync server and the server-side budget code (Actual Budget, 2026a), both High-tier areas, so their reviewer is by design not the person who knows the code best. Reviews may be slower or miss subtle flaws, and High-tier cards could queue at Verify, as PRs did for months after open-sourcing (Aboltins, 2025). The WIP limit makes such a queue visible but does not add reviewers.
-
-Money limits the outside checks. Donations average about USD 3,000–3,500 a month, and USD 2,000 of that already funds the stipend pool (Actual Budget, n.d.-f), so the audit happens only if a donor or third-party funder pays; its cost is estimated in Assignment 2.
-
-The checks themselves have two weaknesses. First, an approval can be given without real checking: Actual pays stipends in points calculated from pull request size, and its payment guide concedes that rubber-stamp reviews to earn points are theoretically possible (Actual Budget, n.d.-f). Naming the ASVS requirements and tests checked makes an empty approval easier to spot, but cannot prevent it. Second, ASVS covers technical security controls only (OWASP Foundation, 2025), so migrations and calculations rely on synthetic-budget tests, which miss bugs that only unusual real budgets trigger.
-
-<!-- Cited: S01, S03, S04, S08, S10, S58, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S72 -->
+<!-- Cited: S01, S03, S04, S08, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S72 -->
 
 # References
 

@@ -783,3 +783,11 @@ Writing-tool source note: all three original section writers and the root writer
   - No facts or citations changed.
 - 4.4 is about 300 words (was about 570 in the rejected version, and about 340 before that). Section 4 is about 2,070 words.
 - Lesson for later sections: guide the reader with topic sentences and transitions, not bold run-in labels, and don't let guidance add length.
+
+## 2026-10-27 — 4.4 Critical evaluation deleted
+
+- The author asked whether 4.4 had any point. Answer: the brief's IV&V task is "analyse and implement the integration … to facilitate early defect detection, ensure requirements compliance, and improve overall software quality". Unlike the methodology and QA tasks, it does not say "critically evaluate". 4.4 came from a planning assumption, not the brief. Its points repeated 4.2 and 3.6, or are risks that belong to Assignment 2.
+- Deleted at the author's request, including its "cost is estimated in Assignment 2" pointer. No reference lost its last citation (Aboltins, 2025, OWASP Foundation, 2025 and Actual Budget, n.d.-f are all still cited elsewhere).
+- Its points were saved in `04-ivv.md` under "Carried forward to Assignment 2", as candidate risks for the Risk Management Plan and the audit cost for Estimation.
+- Section 4 now has three subsections and is about 1,790 words (was about 2,080).
+- Not changed: the executive summary's IV&V sentence ("Internal review gives technical independence only, and volunteer time and donation funding remain the main limits"). 4.2 still supports it, but the author may want to recheck it now that there is no evaluation subsection.

@@ -160,6 +160,19 @@ Applied at the author's request ("do all"); the author will review the result. S
 
 - **4.3 merged into 4.2 (2026-10-27, author approved).** Table 4.2 now closes 4.2, after the paragraph on exit policies, which introduces it and defines the threat note. Section 4 now has four subsections: 4.1 as-is, 4.2 model (including Table 4.2), 4.3 three goals, 4.4 critical evaluation.
 
+- **4.4 Critical evaluation deleted (2026-10-27, author approved).** The IV&V brief asks to "analyse and implement" the integration for the three goals; unlike the methodology and QA briefs, it does not ask for a critical evaluation. The 4.4 points either repeated 4.2 and 3.6 or are really risks. Section 4 now has three subsections (4.1 as-is, 4.2 model with Table 4.2, 4.3 three goals), about 1,790 words.
+
+## Carried forward to Assignment 2 (from the deleted 4.4)
+
+Candidate risks for the **Risk Management Plan**, with the evidence already verified:
+- **Independence limited to the team.** The independent reviewer and the release approvers are the same team and stipend pool, so release pressure can override incomplete High-tier evidence [S08, S68].
+- **Reviewer expertise and queueing.** CODEOWNERS lists one maintainer each for `/packages/sync-server/` and `/packages/loot-core/src/server/budget` [S01]. Excluding them may slow High-tier reviews or let subtle flaws through, and cards may queue at Verify. There is a precedent: PRs waited months for review after open-sourcing [S10].
+- **Audit funding.** Donations average about USD 3,000–3,500 a month, with USD 2,000 committed to the stipend pool [S08], so an audit needs a donor or third-party funder [S72].
+- **Rubber-stamp approvals.** Points are calculated automatically from PR size, and the payment guide concedes that rubber-stamping is "theoretically" possible [S08]. Mitigation in the model: approvals name the ASVS requirements and tests checked.
+- **Check blind spots.** ASVS covers technical security controls only [S58]. Synthetic-budget tests miss bugs that only unusual real budgets trigger.
+
+For **Estimation**: the cost of a funded external security audit of the sync server.
+
 ## Open questions
 
 None for planning.
