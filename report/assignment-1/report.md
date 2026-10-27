@@ -119,7 +119,7 @@ Kanban does not, however, meet the fifth need: it does not say how quality shoul
 
 Appendix A sets out how this choice was reached: Actual was profiled against eight standard selection factors, and Kanban was compared with Spiral, Scrum, Extreme Programming (XP) and DevOps. In brief, Scrum and XP require team members to commit their time together, which volunteers cannot do; Spiral would place expert risk analysis on the already overloaded reviewers; and DevOps mainly adds automated testing, which Actual's CI already provides.
 
-## 2.3 Applying Kanban to Actual (to-be)
+## 2.3 Applying Kanban to Actual
 
 Figure 3 shows the proposed board. Each piece of work, such as a bug fix or a new feature, is a card that moves left to right through six columns, from triage to operation. Each column has an **exit policy**: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98).
 

@@ -897,3 +897,4 @@ Writing-tool source note: all three original section writers and the root writer
 - The author queried "Actual can accept little risk, because defects can mislead money decisions and expose financial data".
 - Rewritten to state the two concrete harms (a wrong balance leading to a poor spending decision; a security flaw exposing financial data). The 2026 critical-flaw example is restored as the evidence (Actual Budget, 2026c). Table A.1's risk row was reworded to match.
 - Follow-up: the author pointed out that "can accept little risk" / "can afford few mistakes" reads as if Actual can accept *some* risk, which contradicts the harms that follow. Now: "Actual cannot accept much risk, because a wrong balance could lead… and a security flaw can expose…".
+- 2.3 heading: "(to-be)" removed at the author's request.
