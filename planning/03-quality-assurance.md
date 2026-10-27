@@ -170,3 +170,11 @@ Total about **1,400 words**, all in the body (rebalanced 2026-10-21 after the ex
 ## Open questions
 
 None for planning.
+
+## Agreed: consistency fixes (27 October 2026)
+
+- **Authorisation test matrix** is a list that endpoints are added to (Table 3.2), not an automatic list of every endpoint. 3.3 now says the test would have caught GHSA-m2cq "had the six endpoints been listed", matching 4.3's point that an implementer could forget to add them.
+- 3.5 opens by calling its checks "the QA gates of Section 2.2".
+- Reliability evidence: 3.3 says no coverage setting or report was found in the repository, and the sync-server configuration explicitly disables it (the overflow bug was in `loot-core`, not the sync server) [S01, S137]. 3.2's Reliability bullet now points to that defect instead of the password-loss example.
+- ASVS scope: high-risk changes to authentication, sessions and bank sync (Table 3.1); "High-tier security changes" (Table 3.2).
+- Release approvals: "at least two other maintainers", as in the release guide [S03].

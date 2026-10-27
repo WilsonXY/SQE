@@ -922,3 +922,44 @@ Writing-tool source note: all three original section writers and the root writer
   - Other items: 2.2 says team expertise pulls against agile, but Table A.1 says "Agile, but under strain"; Table A.3 doesn't list "keeps its rules written down" as a gap of the current process; Figure 2 shows feature flags, but their source was removed; ASVS scope differs (Table 3.1, 3.2 and 4.2); 4.3's Verify matrix check isn't in Table 4.2; executive summary's "donation funding remain the main limits" (still open from the 4.4 deletion); Section 4 has no intro; heading case, "(as-is)/(to-be)", "exit criterion", "developer", "OSS", approval counts, cross-reference loop (3.3/4.1).
 - Checked and consistent: every reference is cited and every citation has a reference; the IEEE 1012 URL with the 1800.2 path is the verified official page [S67]; "review and triage" matches the stipend source [S08]; Pluggy spelling; the 2.2 wording of the critical flaw matches the advisory.
 - Awaiting the author's decisions on which fixes to apply.
+
+## 2026-10-27 — Consistency fixes applied
+
+- The author found the first proposals for the five major fixes too verbose. Shorter versions were proposed (each about the same length as the current text or shorter) and approved, with fixes 6–29 as first proposed.
+- Applied:
+  - **Majors:**
+    1. 2.4: WIP limit is a hard stop.
+    2. QA gates are risk-scaled checks in each exit policy (2.2, A.3, Figure 3, 3.5).
+    3. 3.3: the test matrix catches the flaw "had the six endpoints been listed".
+    4. 4.2: "only High-tier cards get an independent reviewer".
+    5. 4.3: "A high-risk requirement…".
+  - **Mediums:**
+    - executive summary limits sentence;
+    - "complicate" (2.2, A.1);
+    - Table A.3 current-process gap;
+    - Figure 2 feature flag removed;
+    - coverage evidence (3.3) and Reliability bullet (3.2);
+    - ASVS scope (Tables 3.1, 3.2, 4.2);
+    - matrix check added to Table 4.2 Verify;
+    - Section 4 introduction, with the 4.3 lead-in shortened.
+  - **Minors:**
+    - "at least two other maintainers";
+    - executive summary gaps and "column";
+    - "maintainers" (1.4, A.1);
+    - 1.5 bullet endings;
+    - "salaried staff";
+    - headings in Title Case without "(as-is)/(to-be)";
+    - "check added to an exit policy" (3.6);
+    - 3.1 named views;
+    - "coverage gap" (3.4);
+    - triage criteria "where the change affects them";
+    - cross-references point to 3.3;
+    - "PR template asks for the related issue";
+    - "implementer", "open-source", "critical or high";
+    - Table 4.1 cites all three advisories;
+    - design reviews count towards the WIP limit.
+- One follow-up: 4.2 had "(Section 3.3)" twice in one sentence after the cross-reference fix; the first was removed.
+- **Not applied:** fix 20 ("This assignment proposes" back to "This report proposes"). It reverses the author's own earlier wording choice, so it is left for the author to confirm.
+- Decisions recorded in `02-methodology.md`, `03-quality-assurance.md` and `04-ivv.md`.
+- No reference lost its last citation (Actual Budget, n.d.-h is still cited in 1.3 and 3.2).
+- The body grew by about 96 words, to about 4,790 on the earlier count, within the 4,750–5,250 range.

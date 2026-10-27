@@ -181,3 +181,11 @@ Still to do before writing: see `sources.md` → section D.
   - one line on why Spiral, Scrum, XP and DevOps lost, pointing to Appendix A.
 - Old 2.5 and 2.6 are now 2.3 and 2.4.
 - **Risk noted to the author before applying:** the brief marks "select, justify, and critically evaluate", appendices are not marked, and AGENTS.md says not to move argument into appendices. The author chose to proceed.
+
+## Agreed: consistency fixes (27 October 2026)
+
+- **WIP limit is a hard stop**, not a signal: new PRs are held out of review once the Verify limit is reached. 2.4 now states the weakness as "holds new PRs back but cannot make anyone review". This replaces the earlier "signal rather than a hard block" wording, which contradicted 2.2, 2.3, Figure 3 and 4.2.
+- **QA gates** are defined as "risk-scaled checks, defined in Section 3, added to each column's exit policy" (2.2 and A.3), not checks "every change must pass". Figure 3 now says QA gates apply to every exit policy, not only Verify.
+- Team expertise and risk tolerance "complicate" the agile case (2.2, A.1), matching Table A.1's "Agile, but under strain".
+- Table A.3: the current process partly lacks "keeps its rules written down" (route documented, exit conditions not).
+- Figure 2: "(feature flag if large)" removed; its source was dropped in the trim.

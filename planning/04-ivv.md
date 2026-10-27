@@ -182,3 +182,12 @@ None for planning.
 The same APU E-databases page lists EZproxy access to **ScienceDirect**, **SpringerLink**, **ACM Digital Library** and **IEEE Xplore conference proceedings (POP, from 2017)**. This may let the author:
 - read the **full text of S69** (only if EZproxy works; the 2026-10-21 attempt hit IEEE "Error 418") (Smith & Hayes, 2024, IEEE Aerospace Conference), if that conference is in APU's POP package;
 - get the **missing article numbers** for S41, S43 and S44 (SpringerLink).
+
+## Agreed: consistency fixes (27 October 2026)
+
+- Independent checking is scaled by tier: only High-tier cards get an independent reviewer (4.2); the all-card triage check and Standard-tier preview validation stay as in Table 4.2.
+- 4.3's requirements-compliance claim is limited to high-risk requirements.
+- Table 4.2: Verify now checks that every new endpoint is in the authorisation test matrix; Design checks endpoints and permissions against ASVS and asks the migration and sync impact to name the totals compared at Verify. Severity threshold is "critical or high".
+- Independent design reviews count towards the same review WIP limit.
+- Section 4 now has a short introduction naming the three goals; the 4.3 lead-in was cut to one sentence.
+- Executive summary: "volunteer time and donation funding remain the main limits" replaced with what 4.2 supports (managerial and financial independence must come from outside reporters and a third-party-funded audit). This closes the open item from the 4.4 deletion.
