@@ -381,3 +381,19 @@ Writing-tool source note: all three original section writers and the root writer
 - The author asked whether the lecture slides cover how to choose a methodology, preferring material the lecturer is familiar with over a less familiar theory.
 - Lecture 2 has "how to choose" slides with eight factor pairs: requirements clarity; size and complexity; flexibility; customer involvement; risk tolerance; time constraints; team expertise; regulatory compliance. Their text matches GeeksforGeeks (2025), *How to choose the best SDLC model for your project*, logged as S128 (low credibility; not yet cited).
 - Options presented to the author. Decision pending.
+
+## 2026-10-27 — Lecture-first rule added; Section 2 retailored
+
+- The author chose option 1: Lecture 2's eight selection factors as the framework (cited to GeeksforGeeks, 2025), backed by Boehm & Turner (2004).
+- The author added a rule, now item 5 under "How to work in this repo" in AGENTS.md: when the lecture slides cover something, use or tailor it rather than introducing an unfamiliar outside theory.
+- All twelve lecture decks were converted to text to rescan Section 2. Changes:
+  - lecture definition of a process model in the section opening;
+  - "linear" versus "iterative/agile" vocabulary;
+  - Table 2.1 rebuilt on the eight factors plus culture;
+  - 2.3 screens Waterfall, V-Model, RAD and RUP;
+  - Table 2.3 takes the lecture comparison table's suitability and drawback columns;
+  - 2.4 cites the Spiral and Kanban entries from that table;
+  - 2.5 uses Lecture 7's lead time and cycle time.
+- Flagged to the author:
+  - DevOps is not in the lecture comparison.
+  - The RAD and RUP screening sentence draws on lecture content and has no citation.

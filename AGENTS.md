@@ -50,7 +50,8 @@ Every change, edit or piece of documentation is pushed straight to `main`. This 
    - the section's `planning/NN-*.md` file, under its *Agreed*, *Proposed* and *Open questions* headings;
    - `planning/discussion-log.md`, with a dated entry.
 4. **Verify facts about Actual Budget** against primary sources (its repo, docs and blog) and record each one in `planning/research/` with its source. Mark anything unverified as *to verify*.
-5. **Commit and push straight to `main`** after every change, with a clear commit message.
+5. **Use the lecture material first.** When the lecture slides already cover something (a framework, selection factors, a model, a definition, terminology or a metric), use it or tailor it. Don't bring in an unfamiliar theory from outside that the lecturer and readers won't recognise. Outside sources may back up, strengthen or extend the lecture content, but they should not replace it. Slides are still not cited (see *Citations* rule 8): cite the original source the slide draws on, after checking it.
+6. **Commit and push straight to `main`** after every change, with a clear commit message.
 
 ## Citations and sources (plagiarism protection)
 

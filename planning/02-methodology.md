@@ -33,6 +33,15 @@ Scope: `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` only.
 - The DevOps automation point is grounded with DORA (n.d.; 2024) [S123, S40].
 - Shorthand such as "earns credit", "documented fact" and "keeps knowledge in conversation" has been removed.
 
+**Agreed (author, 27 Oct 2026): use the lecture's selection factors, backed by Boehm & Turner.** Table 2.1 now uses Lecture 2's eight factors ("Factors to remember when selecting software process model"), cited to the slides' original source, GeeksforGeeks (2025) [S128]. Boehm & Turner (2004) [S126] backs them where the factors overlap and adds culture. Section 2 was then rescanned under the new AGENTS.md rule ("use the lecture material first"):
+- The opening defines a methodology as a process model, using Lecture 2's SDLC-model definition.
+- Lecture 2's vocabulary is used: "linear" versus "iterative/agile".
+- 2.3 now screens out the models the lecture covers (Waterfall, V-Model, RAD, RUP). Table 2.3 adds the lecture comparison table's "suited to" and "drawback" columns (GeeksforGeeks).
+- 2.4 uses the lecture table's "Spiral: complex, may require expertise" and "Kanban: efficient workflow management".
+- 2.5 measures the WIP limit with Lecture 7's process metrics (lead time, cycle time).
+- DevOps is not in Lecture 2's comparison. It stays because the author chose it (studied last semester).
+- Context: Lecture 9's risk-management slides use Boehm's risk-driven spiral and tailoring material, so Boehm is not unfamiliar to the module.
+
 **Open questions:**
 - Is the five-factor framework acceptable as the selection basis, or would the author prefer another established framework?
 - The document sits at 5,246 of the 5,250 maximum, above the author's preferred "slightly under 5,000". Should other sections be trimmed?
