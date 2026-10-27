@@ -270,7 +270,7 @@ Actual already runs substantial automated QA. Every pull request triggers lintin
 Comparing these practices with the three attributes shows four gaps. They rest on public evidence only: the repository, documentation and advisories were searched in October 2026, and any checks the team runs privately would not appear there.
 
 - **Security: no proactive check of access control before release.** Critical and high-severity access-control flaws in the sync server were published in 2026 (Actual Budget, 2026b, 2026d). GHSA-m2cq-xjgm-f668, published on 20 February 2026 and rated critical (CVSS 9.2), reported missing authentication on the SimpleFIN and Pluggy AI bank-sync endpoints, although the GoCardless integration had that protection (Actual Budget, 2026c). A check that existed for one bank-sync provider was therefore missing for two others, and the flaw was found only after release. This report proposes an **authorisation test matrix**: an automated test that lists every server endpoint and confirms that each one refuses requests without a valid login or the right permission. Such a test could have caught this inconsistency before release. The security policy also states no response time for reports (Actual Budget, n.d.-h).
-- **Reliability: no coverage measurement.** The sync-server test configuration disables coverage (Actual Budget, 2026a), yet the testing checklist asks for "appropriate test coverage" (Actual Budget, n.d.-j, Testing Checklist section). Without a measure, nobody can tell how much of the sync and migration code the tests actually exercise.
+- **Reliability: no coverage measurement.** Defects in sync and bank-sync data handling are still being found and fixed. Recent releases fixed a timestamp overflow when downloading a large sync, the command-line tool failing to push changes to end-to-end encrypted budgets (Fiddaman, 2026) and Pluggy bank sync repeatedly rewriting existing transactions (Aboltins, 2026). Yet the sync-server test configuration disables coverage (Actual Budget, 2026a), even though the testing checklist asks for "appropriate test coverage" (Actual Budget, n.d.-j, Testing Checklist section). Without a measure, nobody can tell how much of the sync and migration code the tests actually exercise. Coverage shows only which code is untested, not whether tested code is correct, so it is a starting point rather than proof of reliability.
 - **Interaction capability: no automated accessibility testing** was found, despite the WCAG target (Actual Budget, 2026a).
 - **Process: no written QA plan.** Quality rules are spread across documentation, templates and CI files, so no single place states what must be checked before work moves on.
 
@@ -329,7 +329,7 @@ The plan also adds automation: a coverage report, accessibility checks and the a
 
 Two limits remain. First, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed. Second, the evidence is public only: the gaps in Section 3.3 may be partly covered by private practices.
 
-<!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129 -->
+<!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129, S134, S135 -->
 
 # 4 Integrating IV&V with Kanban
 
@@ -407,6 +407,8 @@ Finally, gates can become ritual. Actual's own payment guide concedes that rubbe
 
 Aboltins, M. J. (2025, January 2). *Roadmap for 2025*. Actual Budget. https://actualbudget.org/blog/roadmap-for-2025/
 
+Aboltins, M. J. (2026, August 2). *Release 26.8.0*. Actual Budget. https://actualbudget.org/blog/release-26.8.0
+
 Actual Budget. (2026a). *Actual* [Computer software]. GitHub. https://github.com/actualbudget/actual
 
 Actual Budget. (2026b, June 12). *Disabled OpenID users keep access through existing session tokens* (GHSA-cq9c-6w48-qmfg) [Security advisory]. GitHub. https://github.com/actualbudget/actual/security/advisories/GHSA-cq9c-6w48-qmfg
@@ -444,6 +446,8 @@ Beck, K., & Andres, C. (2005, June 10). *Getting started with eXtreme Programmin
 Boehm, B. W. (1988). A spiral model of software development and enhancement. *Computer, 21*(5), 61–72. https://doi.org/10.1109/2.59
 
 DORA. (n.d.). *Test automation*. Retrieved October 26, 2026, from https://dora.dev/capabilities/test-automation/
+
+Fiddaman, M. (2026, October 2). *Release 26.10.0*. Actual Budget. https://actualbudget.org/blog/release-26.10.0
 
 Garvin, D. A. (1984). What does "product quality" really mean? *Sloan Management Review, 26*(1), 25–43. https://sloanreview.mit.edu/article/what-does-product-quality-really-mean/
 

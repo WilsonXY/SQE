@@ -562,3 +562,16 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — "Implementer" used throughout
 
 - At the author's request, the remaining uses of "author" for the person who builds a change were changed to "implementer": the 2.5 column list (Design, Build/PR), Figure 3 (Verify row; the ASCII alignment was kept), 4.3 (independent reviewer definition) and Table 4.2 (Build/PR and Verify roles). No body uses of "author" in that sense remain.
+
+## 2026-10-27 — Reliability gap strengthened with release-note evidence
+
+- The author approved option 1 (look for real reliability defects), with option 2 (admit the limit) as the fallback.
+- Findings (S134–S136): the official 2026 release notes list sync and bank-sync data fixes:
+  - a timestamp overflow when downloading a large sync, and the CLI failing to push changes to E2EE budgets (26.10.0);
+  - Pluggy bank sync repeatedly rewriting transactions (26.8.0).
+- None was reported as user data loss, and the notes do not say whether each bug reached an earlier release.
+- Applied to the 3.3 reliability bullet: these fixes are cited as evidence that defects in this area are still being found, followed by the coverage gap. **Option 2's sentence was also added** (coverage shows only untested code, not correctness).
+- Two references added: Fiddaman (2026) and Aboltins (2026).
+- Flagged to the author, not changed:
+  - 26.7.0 and 26.8.0 also fixed Balance Forecast double-counting and running-balance refresh bugs. This weakens 3.2's claim that functional suitability is "already checked".
+  - 26.8.0 added a CI check that protects shipped migration files. This is an existing reliability practice that 3.3 could mention.
