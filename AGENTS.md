@@ -35,6 +35,7 @@ Every change, edit or piece of documentation is pushed straight to `main`. This 
 | `planning/discussion-log.md` | Dated log of what was discussed and decided in each session |
 | `planning/05-writing-handoff.md` | **Start here for writing:** structure, word budget, rules, section briefs, workflow |
 | `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` | **Current working report** (Assignment 1). All further edits go here |
+| `.claude/skills/report-review/SKILL.md` | Review-stage checklist (six problem areas found in Section 2). Use **only** when the author says they are reviewing the report, never while writing |
 | `archived/` | Superseded versions and experiment records (former `report/`, the other `writing-experiments/` material, `WRITING-EXPERIMENT-PROTOCOL.md`). Reference only |
 
 ## Start here
@@ -51,7 +52,8 @@ Every change, edit or piece of documentation is pushed straight to `main`. This 
    - `planning/discussion-log.md`, with a dated entry.
 4. **Verify facts about Actual Budget** against primary sources (its repo, docs and blog) and record each one in `planning/research/` with its source. Mark anything unverified as *to verify*.
 5. **Use the lecture material first.** When the lecture slides already cover something (a framework, selection factors, a model, a definition, terminology or a metric), use it or tailor it. Don't bring in an unfamiliar theory from outside that the lecturer and readers won't recognise. Outside sources may back up, strengthen or extend the lecture content, but they should not replace it. Slides are still not cited (see *Citations* rule 8): cite the original source the slide draws on, after checking it.
-6. **Commit and push straight to `main`** after every change, with a clear commit message.
+6. **Review stage.** When the author says they are reviewing the work or report, follow `.claude/skills/report-review/SKILL.md`. Don't apply it while drafting.
+7. **Commit and push straight to `main`** after every change, with a clear commit message.
 
 ## Citations and sources (plagiarism protection)
 
