@@ -1,6 +1,6 @@
 # Assignment 1 — Trim Plan (word-count review)
 
-Prepared 2026-10-27. **Status: Proposed. Nothing has been applied yet.** The author decides item by item.
+Prepared 2026-10-27. **Status: Round 1 applied (2026-10-27).** All A and B items except 2-18 were applied, and the tier definition moved to 3.5. Result: 7,037 → 5,981 words (same counting method throughout). Round 2 (Section 8) needs the author's decisions.
 
 ## 1. The problem in numbers
 
@@ -136,3 +136,34 @@ The estimates are rough (±10% per item). The real number is measured after each
 2. Apply Section 2 first (largest cut), measure, report.
 3. Then Section 3, then Section 4, then 1.1 and the executive summary.
 4. After each section: log in `discussion-log.md`, update `sources.md` if a citation leaves the References, commit and push.
+
+## 8. Round 2 (proposed 2026-10-27, after measuring round 1)
+
+Round 1 saved about 1,050 words, not the 2,000 estimated. The safe cuts each saved less than predicted. The report is now **5,981** words (Exec 186 · Intro 521 · S2 2,084 · S3 1,825 · S4 1,365). Reaching 5,250 needs about 730 more; reaching 5,000 needs about 980.
+
+### 8.1 Recommended: repetition and lower-priority detail (~400)
+
+| # | Proposal | What the reader loses | Saves |
+|---|---|---|---|
+| R1 | 2.1: replace the two route paragraphs (124) with one sentence summarising Figure 2 and citing its sources; keep the review-bottleneck paragraph and the conclusion | Nothing; Figure 2 shows the route | ~90 |
+| R2 | 2-18: fold Table 2.2 into a last column of Table 2.1 ("So the methodology must…"); the burnout and team-change reasons go into the Team expertise row | The separate Brief's lens column | ~90 |
+| R3 | One full walkthrough of the bank-sync case, not two: keep 4.3's (the marked IV&V goal) and cut the 3.5 worked example to the Build/PR test failing plus the typo contrast | The column-by-column walk in 3.5 (4.3 still has it) | ~60 |
+| R4 | 2.3: say why Waterfall, V-Model, RAD and RUP were excluded in one sentence instead of two | Some explanation; the reasons stay | ~35 |
+| R5 | 2.4/2.5: drop Kanban's "third thing" (self-chosen tasks, already shown by "None found" in Table 2.3) and 2.5's repeat of "added on top rather than replacing" | Nothing | ~45 |
+| R6 | 2.2: shorten the "two pull against agile" paragraph; Table 2.1 rows already say both | Nothing | ~35 |
+| R7 | 3.4: rejected standards in one sentence | Some wording; all four stay named and cited | ~25 |
+| R8 | Tables 2.1 and 4.1: drop citations already given for the same fact in 2.1's prose (skill area 3: summary tables need no per-cell citation when the claim is cited elsewhere). Every fact stays cited somewhere | Nothing | ~30 |
+
+Total about **410**, giving about **5,570**.
+
+### 8.2 Content choices: needed to get within 5,250 (author decides)
+
+| # | Option | Cost | Saves |
+|---|---|---|---|
+| C1 | Remove the definitions opening Sections 2 and 3 (methodology, QA). The reader is technical | Loses a lecture-term anchor | ~65 |
+| C2 | Drop DevOps from the shortlist (row, paragraph, 2.6 revisit clause) | The comparison of the two no-clash candidates goes; Kanban wins by default | ~100 |
+| C3 | Drop Spiral from the shortlist (screening sentence, row, paragraph) | The only non-agile candidate goes, which is the one that tests the risk-tolerance factor | ~100 |
+| C4 | Remove the 3.5 worked example entirely (beyond R3) | The example the author asked for in order to read Table 3.2 | ~60 more |
+| C5 | Shorten the executive summary to about 150 | Less detail per finding | ~35 |
+
+**Honest floor:** after 8.1 and C1 the report is about **5,500**. Getting under 5,250 needs C2 or C3 as well, which removes analysis, not words. Alternatively, accept about 5,400–5,500, which is about 10% over the target.
