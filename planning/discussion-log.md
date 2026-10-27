@@ -600,3 +600,7 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — 3.6 simplification reverted
 
 - At the author's request, the 3.6 simplification (commit 0c51861) was reverted with `git revert`. The author will simplify 3.6 themselves later. 3.6 is back to its previous three-paragraph version (about 230 words).
+
+## 2026-10-27 — Section 3 review branch merged to main
+
+- At the author's request, `claude/great-shannon-hm15ak` was fast-forwarded into `main` and pushed. It carries all of this session's Section 3 review changes.
