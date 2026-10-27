@@ -764,3 +764,12 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Table 4.2 caption shortened
 
 - At the author's request, "(High-tier cards unless stated)" was removed from the Table 4.2 caption. To keep the meaning, the lead-in sentence now says the table shows "who checks a High-tier card independently". Rows that apply more widely are still marked "(all cards)" or "(Standard and High)", and the note after the table covers Standard and Low tiers.
+
+## 2026-10-27 — 4.4 rewritten to guide the reader
+
+- The author said 4.4 had the same note-taking problem as 4.3. Applied the same treatment:
+  - An intro names the five weaknesses, grouped by cause (team, budget, the checks themselves), and says each will be given as what goes wrong, how far the model limits it, and what is left.
+  - Each paragraph has a bold claim label, explains the mechanism (e.g. release pressure on the same team; CODEOWNERS areas being High-tier), states the mitigation and the residue.
+  - A closing sentence ties the limits together.
+- No facts or citations changed; "its cost is estimated in Assignment 2" is kept.
+- 4.4 is about 520 words (was about 340). Section 4 is about 2,290 words.
