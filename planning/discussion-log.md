@@ -597,10 +597,6 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked what the closing 3.5 paragraph was. It named one measure per attribute for Assignment 2: endpoint coverage of the authorisation matrix, test coverage, and accessibility violations. The author asked for it to be removed because it belongs to Assignment 2. Removed.
 
-## 2026-10-27 — 3.6 simplified
+## 2026-10-27 — 3.6 simplification reverted
 
-- The author found 3.6 verbose for a point outside the report's main flow. It was cut from about 230 to about 110 words in three short paragraphs:
-  - the volunteer-time cost, with the risk tiers as mitigation and their weakness;
-  - automation's mixed effects (Wessel et al., 2022, 2023) and the keep-only-if-useful rule;
-  - the accessibility-automation and public-evidence limits.
-- The stipend citation was dropped from 3.6 (still cited in 3.4), and the detail of the two Wessel studies was condensed to "mixed effects". All references stay cited.
+- At the author's request, the 3.6 simplification (commit 0c51861) was reverted with `git revert`. The author will simplify 3.6 themselves later. 3.6 is back to its previous three-paragraph version (about 230 words).
