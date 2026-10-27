@@ -434,3 +434,8 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Branch merged to main
 
 - The author asked to merge `writing-experiment-opus5.5` into `main` before starting the Section 3 review in a new session. `main` was an ancestor of the branch, so it was fast-forwarded and pushed.
+
+## 2026-10-27 — AGENTS.md cleaned up for single-version work
+
+- The author asked to remove the "Current writing-thread instructions (22 October 2026)" block. Those rules applied only to the multi-model writing experiment (raw/Humanizer/pstack versions, the 6.1sol and Opus 5.5 branches and their push restrictions). From now on the author works on one version only.
+- The block was removed. "Use British English", a standing author decision, moved to "Report writing rules". "Commit and push straight to `main`" became "Commit and push straight to the remote", both in the intro sentence and in rule 7.
