@@ -416,3 +416,8 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author found the last two paragraphs of 2.4 unclear ("talking to yourself").
 - They were rewritten as plain statements. The Kanban paragraph now names the problem it fixes, then lists its three additions (review WIP limit, written stage rules, self-chosen tasks) with "first, second, third". The verdict paragraph now separates three things: the comparison with today's process, the one unmet requirement (no quality checks) and why it matters (low risk tolerance), and the QA gates that fill it.
+
+## 2026-10-27 — WIP-limit sentence in 2.4 clarified
+
+- The author asked where the WIP-limit sentence comes from. The answer: limiting WIP is a core Kanban practice (Kanban University, n.d. [S109]; Ahmad et al., 2018, pp. 97–98 [S38]). Placing the limit on review is this report's proposal, based on Actual's review bottleneck (S02, S08, S10).
+- The sentence now defines WIP, cites the Kanban guide and states that placing the limit on review is the report's proposal.
