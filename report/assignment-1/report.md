@@ -319,11 +319,11 @@ Table 3.2 is the resulting plan, and it is also the written QA plan that Section
 
 ## 3.6 Critical Evaluation
 
-The plan's main cost is volunteer time. Every new exit criterion adds work for a small team. Reviewers are paid from a USD 2,000 monthly stipend pool (Actual Budget, n.d.-f), the project has already had pull requests waiting months for review (Aboltins, 2025), and maintainers identify administrative overhead as a burnout risk (Salkever, 2023). The risk tiers in Section 3.5 limit this cost, because documentation and styling changes skip the security and data criteria. The tier, however, is a judgement made at triage: a change placed in too low a tier passes with fewer checks.
+The plan's main cost is volunteer time. Every new check adds work for a small team whose pull requests have already waited months for review (Aboltins, 2025), and maintainers name administrative overhead as a burnout risk (Salkever, 2023). The risk tiers limit this cost, but a change placed in too low a tier gets fewer checks.
 
-The plan also adds automation: a coverage report, accessibility checks and the authorisation test matrix. Automation is not free. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests and less discussion (Wessel et al., 2022). These observational studies cannot predict Actual's results, so each new check should be monitored for its effect on review time and tuned or removed if it slows the flow without finding defects.
+The new automated checks also carry a cost: studies of GitHub projects found that automation had mixed effects on pull requests (Wessel et al., 2022, 2023). Each check should therefore stay only if it finds defects without slowing reviews.
 
-Two limits remain. First, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed. Second, the evidence is public only: the gaps in Section 3.3 may be partly covered by private practices.
+Finally, automated accessibility checks cannot judge whether a budgeting task is easy to understand, so manual review is still needed, and the gaps in Section 3.3 rest on public evidence only.
 
 <!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129, S137 -->
 
