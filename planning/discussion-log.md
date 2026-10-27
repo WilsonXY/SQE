@@ -592,3 +592,7 @@ Writing-tool source note: all three original section writers and the root writer
   - the 3.3 reliability bullet now cites #8706 (Brown, 2026) instead of the release-note examples;
   - the functional suitability paragraph in 3.2 was deleted, and there are no other mentions;
   - References: Brown (2026) added; Fiddaman (2026) and Aboltins (2026) removed.
+
+## 2026-10-27 — Measures paragraph removed from 3.5
+
+- The author asked what the closing 3.5 paragraph was. It named one measure per attribute for Assignment 2: endpoint coverage of the authorisation matrix, test coverage, and accessibility violations. The author asked for it to be removed because it belongs to Assignment 2. Removed.

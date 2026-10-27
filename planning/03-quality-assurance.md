@@ -104,6 +104,10 @@ The author asked for all ten Section 3 review findings to be applied (see `discu
 - The 3.3 reliability gap now opens with the #8706 sync counter-overflow defect ("the budget never opens"; faulty code released since at least 2023) [S137].
 - The migration-protection CI check (26.8.0) is **not** added (author decision).
 
+## Agreed: measures paragraph removed (27 October 2026)
+
+- The author removed the 3.5 paragraph naming one measure per attribute, because metrics belong to Assignment 2. This supersedes the boundary note "Section 3 names **at most one measure per attribute**". Section 3 now names no measures.
+
 ## Relevant lecture guidance (not cited)
 
 - L1: views of quality; functional, structural and process quality.
