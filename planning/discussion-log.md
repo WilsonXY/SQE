@@ -760,3 +760,7 @@ Writing-tool source note: all three original section writers and the root writer
   - Each goal paragraph now opens with its claim ("two chances to be caught before release"; "checks that what users asked for is what was built and tested"; "moves independent checking … to before release"), walks through the steps with signposts ("The first time… The second…"; "at both ends of the board"), and closes by tying back to the goal.
   - No facts or citations changed.
 - 4.3 is about 490 words (was about 330). Section 4 is about 2,110 words.
+
+## 2026-10-27 — Table 4.2 caption shortened
+
+- At the author's request, "(High-tier cards unless stated)" was removed from the Table 4.2 caption. To keep the meaning, the lead-in sentence now says the table shows "who checks a High-tier card independently". Rows that apply more widely are still marked "(all cards)" or "(Standard and High)", and the note after the table covers Standard and Low tiers.
