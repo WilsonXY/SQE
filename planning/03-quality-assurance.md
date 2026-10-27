@@ -49,6 +49,23 @@ Five things must be visible to the marker:
 - **AI:** ISO/IEC 25059 (AI quality) is **out of scope**. AI only appears as a development-process topic.
 - The advisory **reporters are outside the core team** (iamsilk, Rex50527, pyuysig; fixed by MatissJanis). **Carry this into Section 4** as evidence of independent verification.
 
+## Agreed at review (27 October 2026)
+
+The author asked for all ten Section 3 review findings to be applied (see `discussion-log.md`, 27 October 2026). Decisions that change the plan above:
+
+- **QA defined** in a new Section 3 opening paragraph that also signposts 3.1–3.6 (mirrors Section 2's opening).
+- **3.1 uses Garvin's (1984) five approaches** [S129] (Lecture 1's viewpoints). Transcendent is set aside; user, product, manufacturing (process) and value-based views are applied to Actual.
+- **3.2 rating rule made explicit:** two checkable questions, *harm* and *current checks*. Limited harm = Low; serious harm and already covered = Medium; serious harm with a gap = High. Ratings unchanged. "Release baseline" wording removed.
+- **3.3:** the authorisation test matrix is defined and marked as this report's proposal ("could have caught"). The security policy's broken (404) link is **dropped** as low-value; the missing response time stays. Performance-testing sentence moved out of the QA-plan bullet.
+- **3.4:** two selection tests (fit, cost) and the decision labels are defined before Table 3.2; text after the table no longer repeats it; edition trivia removed.
+- **3.5:** "exit policy" used throughout (no "Definition of Done"; also in the executive summary). Risk tiers (Section 4.3) now decide which criteria apply. OpenSSF Scorecard placed in the Release train exit policy. Owners stated as existing roles. The "separate server with synthetic data" criterion left to Section 4, which gives its reason. New **Table 3.4** maps Lecture 3's SQAP sections to where the plan covers them; IEEE 730-2026 is cited only for its scope.
+- **3.6:** automation paragraph names the checks it applies to; limits paragraph rewritten as three numbered limits; the "standards read only at scope level" sentence narrowed to IEEE 730-2026.
+
+## Open questions (from the review, 27 October 2026)
+
+- The SQAP section list (Table 3.4) and the QA definition in the Section 3 opening are **lecture content without a citation**: their original sources (S131, S132) could not be reached. Keep uncited, find the originals, or rephrase?
+- Section 3 grew from about 1,550 to about 2,570 words (tables included) because clarity came first. Trimming is for the author's word-count pass.
+
 ## Relevant lecture guidance (not cited)
 
 - L1: views of quality; functional, structural and process quality.

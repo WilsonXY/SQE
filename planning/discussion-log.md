@@ -445,3 +445,21 @@ Writing-tool source note: all three original section writers and the root writer
 - At the author's request, the single working report moved from `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` to `report/assignment-1/report.md`. Its experiment header line ("raw condition (run claude-opus-5-5/run-1) …") was replaced with the plain working-title note.
 - The Section 2 revision notes were moved to `archived/writing-experiments/claude-opus-5-5/run-1/raw-revised/revision-notes.md`. The empty `writing-experiments/` folder is gone, and its `.gitattributes` rule was removed.
 - Pointers updated in `AGENTS.md`, `README.md`, `planning/README.md` and the report-review skill. Older log entries keep their original paths as history.
+
+## 2026-10-27 — Section 3 review: all ten findings applied
+
+- New session on `claude/great-shannon-hm15ak` (level with `main`). The author moved from the Section 2 review to Section 3. Section 3 was checked against the `report-review` skill and lecture decks L1, L3, L4 and L5 (converted to text in the scratchpad).
+- Ten findings were reported; the author asked for all of them to be applied and pushed for their review:
+  1. 3.5 now uses Lecture 3's SQAP sections (new Table 3.4) instead of an undefined "IEEE 730 planning-and-control concern".
+  2. 3.2 states the rating rule (harm and current checks) before Table 3.1, which now has *Harm* and *Current checks* columns. Ratings unchanged.
+  3. 3.4 states the fit and cost tests and defines the decision labels before Table 3.2. The text after it no longer repeats the table.
+  4. OpenSSF Scorecard and the badge are tied to the security gap and placed in the plan (Release train).
+  5. Risk tiers moved into 3.5 (from 3.6), with a new *Applies to* column in Table 3.3.
+  6. A Section 3 opening defines QA and signposts the section. 3.1 uses Garvin's (1984) five approaches (S129).
+  7. "Exit policy" is used throughout (3.5 and the executive summary), replacing "Definition of Done".
+  8. The authorisation test matrix is defined and marked as this report's proposal. The 3.2 advisory claim is cited. Owners are stated as existing roles. The synthetic-data criterion is left to Section 4.
+  9. Shorthand removed ("release baseline", "advisory pattern", "planning-and-control idea"). The performance sentence moved out of the QA-plan bullet. The 404 link detail dropped.
+  10. 3.6 links the automation evidence to the proposed checks and gives three numbered limits.
+- Sources: S129 Garvin (partially verified, official page) is added to References. S130 (Sommerville), S131 (origin of the SQAP sections) and S132 (IEEE QA definition) could not be reached and are logged as unverified. The SQAP section list and the QA definition are used **without a citation** and flagged to the author.
+- Section 3 grew from about 1,550 to about 2,570 words. Clarity came first; the author handles word count.
+- Out of scope, noted for the Section 4 review: the IEEE 1012 reference URL points to `standards.ieee.org/ieee/1800.2/7324/`, a different standard.

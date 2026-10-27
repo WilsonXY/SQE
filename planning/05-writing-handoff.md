@@ -187,7 +187,7 @@ The two are **not interchangeable**:
   | ISO/IEC/IEEE 29119 [S61] | Mainly for Section 4 |
 
 - **Focus 3.3–3.5 on the 3 chosen attributes. Freed words go to 3.6.**
-- **3.5 Apply:** a **compact QA plan table in the body**, structured by the L3/IEEE 730 SQAP sections and built into the Kanban columns (**Definition of Done**, quality gates, roles, defect and vulnerability handling).
+- **3.5 Apply:** a **compact QA plan table in the body**, structured by the L3/IEEE 730 SQAP sections and built into the Kanban columns (**exit policies**, quality gates, roles, defect and vulnerability handling).
 - **3.6 Critical evaluation:** volunteer cost and limits; automation overhead (CI and bots can slow PRs [S43]; bots also help [S44]); remaining gaps.
 - **Pre-writing checks:**
   - **verify the exact names of the 9 ISO/IEC 25010:2023 characteristics** from an authoritative source (currently derived from the official scope [S53] plus a secondary summary [S65]);
