@@ -430,3 +430,7 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author finished reviewing Section 2 and asked for the recurring problems to be summarised. Six areas: weak grounding; writing for the writer, not the reader; wrong focus or reader level; unfamiliar theory instead of lecture material; citation and accuracy slips; compression, verbosity and repetition.
 - Created the repo skill `.claude/skills/report-review/SKILL.md`. It triggers only when the author says they are reviewing the work or report, never during writing. It holds the six areas as a checklist, with examples from Section 2 and a short review procedure. Pointers added to the `AGENTS.md` layout table and to "How to work in this repo" (item 6).
+
+## 2026-10-27 — Branch merged to main
+
+- The author asked to merge `writing-experiment-opus5.5` into `main` before starting the Section 3 review in a new session. `main` was an ancestor of the branch, so it was fast-forwarded and pushed.

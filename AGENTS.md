@@ -12,6 +12,7 @@ The author's instructions for this thread override the remote-publishing rules b
 - Delegated writing is authorised. The author approved the revised scores and retained Kanban with mandatory QA gates on 22 October 2026; Section 2.4 may be completed without further approval.
 - The author subsequently requested a local commit of this work on `writing-experiment-6.1sol`. This commit is authorised; do not push or change `main`.
 - On 23 October 2026 the author asked for the Opus 5.5 replication on `writing-experiment-opus5.5` to be committed and pushed to the matching remote branch. That push is authorised; `main` stays unchanged.
+- On 27 October 2026 the author asked for `writing-experiment-opus5.5` to be merged into `main`. It was fast-forwarded and pushed. Work continues from `main`.
 
 Every change, edit or piece of documentation is pushed straight to `main`. This repo is entirely for my individual assignment, and no coding is involved.
 
