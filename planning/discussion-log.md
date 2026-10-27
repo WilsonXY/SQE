@@ -791,3 +791,7 @@ Writing-tool source note: all three original section writers and the root writer
 - Its points were saved in `04-ivv.md` under "Carried forward to Assignment 2", as candidate risks for the Risk Management Plan and the audit cost for Estimation.
 - Section 4 now has three subsections and is about 1,790 words (was about 2,080).
 - Not changed: the executive summary's IV&V sentence ("Internal review gives technical independence only, and volunteer time and donation funding remain the main limits"). 4.2 still supports it, but the author may want to recheck it now that there is no evaluation subsection.
+
+## 2026-10-27 — Bold labels removed from 4.3
+
+- At the author's request, the bold run-in labels in 4.3 were removed. The goals are now named in each paragraph's opening sentence ("For early defect detection, …"; "For requirements compliance, …"; "The model improves overall quality …"), in the same order as the intro lists them. No other wording changed.
