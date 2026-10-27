@@ -24,15 +24,15 @@ Written from the view of outside analysts, this report covers three topics. Sect
 
 ## 1.2 What Is Actual Budget
 
-Actual Budget ("Actual") is a free, open-source personal finance application released under the MIT licence. It is local-first: the budget is kept on the user's own device, and syncing between devices is optional (Actual Budget, 2026a). It targets privacy-minded budgeters, self-hosters and families, and defines success as users trusting its numbers (Actual Budget, 2026a). By default, Actual uses envelope budgeting, in which people budget the money they already have rather than income they expect to receive (Actual Budget, n.d.-k).
+Actual Budget ("Actual") is a free, open-source personal finance application released under the MIT licence. It is local-first: the budget is kept on the user's own device, and syncing between devices is optional (Actual Budget, 2026a). It targets privacy-minded budgeters, self-hosters and families, and defines success as users trusting its numbers (Actual Budget, 2026a). By default, Actual uses envelope budgeting, in which people budget the money they already have rather than income they expect to receive (Actual Budget, n.d.-j).
 
 Actual was created by James Long, who ran it as a paid product for over four years (Stacoviak & Santo, 2022). In early 2022 he closed the commercial product and released it as open source (Aboltins, 2025). It is now maintained by volunteers, led by a core team that formed after pull requests had waited months for review (Aboltins, 2025).
 
 ## 1.3 Main Features and How It Works
 
-Actual covers budgeting, accounts and transactions, rules, scheduled transactions and reports (Actual Budget, n.d.-k). It runs as a desktop app, through Docker, or on paid hosting from PikaPods or Fly.io (Actual Budget, n.d.-d).
+Actual covers budgeting, accounts and transactions, rules, scheduled transactions and reports (Actual Budget, n.d.-j). It runs as a desktop app, through Docker, or on paid hosting from PikaPods or Fly.io (Actual Budget, n.d.-c).
 
-A server is not required for basic budgeting, but syncing between devices and bank synchronisation both need one (Actual Budget, n.d.-d). Users can optionally turn on end-to-end encryption for synced data, but data on the local device stays unencrypted and bank-sync tokens on the server are not covered (Actual Budget, n.d.-i). Figure 1 shows how the parts connect.
+A server is not required for basic budgeting, but syncing between devices and bank synchronisation both need one (Actual Budget, n.d.-c). Users can optionally turn on end-to-end encryption for synced data, but data on the local device stays unencrypted and bank-sync tokens on the server are not covered (Actual Budget, n.d.-h). Figure 1 shows how the parts connect.
 
 ```text
 +----------------+   optional sync (E2EE optional)   +----------------+
@@ -48,7 +48,7 @@ A server is not required for basic budgeting, but syncing between devices and ba
                                                      +----------------+
 ```
 
-*Figure 1. How Actual Budget works (based on Actual Budget, n.d.-d).*
+*Figure 1. How Actual Budget works (based on Actual Budget, n.d.-c).*
 
 ## 1.4 Who Is Involved
 
@@ -60,7 +60,7 @@ A server is not required for basic budgeting, but syncing between devices and ba
 | Self-hosters | Run their own server and need it secure |
 | Core maintainers | Eight listed main contributors who review and release (Actual Budget, n.d.-a) |
 | Contributors | Volunteers who choose their own work (Actual Budget, n.d.-a) |
-| Donors and hosting partners | Fund the project through Open Collective (Actual Budget, n.d.-f); PikaPods reported over 8,000 users in December 2025 (youngcw, 2025) |
+| Donors and hosting partners | Fund the project through Open Collective (Actual Budget, n.d.-e); PikaPods reported over 8,000 users in December 2025 (youngcw, 2025) |
 
 ## 1.5 Main Challenges
 
@@ -72,19 +72,19 @@ A server is not required for basic budgeting, but syncing between devices and ba
 
 # 2 Software Development Methodology
 
-A software development methodology, also called a software process model, is a framework describing the activities performed at each stage of a software development project. This section recommends one for Actual. Because a methodology can only be judged against the project it must serve, the section first describes how Actual works today (2.1) and what kind of project it is (2.2). It then introduces five candidate methodologies (2.3), tests them against Actual's needs and selects one (2.4), shows how the choice would work in practice (2.5) and examines its weaknesses (2.6).
+A software development methodology, also called a software process model, is a framework describing the activities performed at each stage of a software development project. Because a methodology can only be judged against the project it must serve, this section first describes how Actual works today and what kind of project it is. It then compares five candidates, selects one, shows how it would work in practice and examines its weaknesses.
 
 ## 2.1 Current development process of Actual (as-is)
 
 Actual's contributor documentation does not name any methodology (no evidence found, October 2026). It does, however, describe the same route for every change, shown in Figure 2.
 
-Work starts from users' requests. Feature requests are automatically labelled "needs votes", so the list of planned work is in effect ranked by the number of votes each request receives (Actual Budget, 2026a). Nobody is assigned to a request; contributors choose what they want to work on (Actual Budget, n.d.-a, n.d.-e). A contributor submits a change as a pull request (PR), which asks for the change to be merged into the project's main code on GitHub. Small changes go straight to a PR, while larger features are discussed in an issue first (Actual Budget, n.d.-a).
+Work starts from users' requests. Feature requests are automatically labelled "needs votes", so planned work is in effect ranked by votes (Actual Budget, 2026a). Nobody is assigned to a request; contributors choose what they want to work on and submit it as a pull request (PR), discussing larger features in an issue first (Actual Budget, n.d.-a, n.d.-d).
 
-Every PR then passes two checks. First, continuous integration (CI) automatically builds the code and runs linting, type-checking, unit, end-to-end and visual tests, together with CodeQL security scanning (Actual Budget, 2026a). Second, a core maintainer reviews the change and may merge it straight away if it is uncontroversial (Actual Budget, n.d.-e). Large features are merged behind feature flags, so that they can ship in small parts as experimental features that users choose to switch on (Actual Budget, n.d.-b). Finally, merged work reaches users through a monthly release train. On the 25th of each month a release branch is cut automatically from whatever is ready, two other maintainers approve it, and smoke tests run before the release is announced (Actual Budget, n.d.-c).
+Every PR then passes two checks: automated tests and security scanning through continuous integration (CI) (Actual Budget, 2026a), and review by a core maintainer, who may merge an uncontroversial change straight away (Actual Budget, n.d.-d). Merged work reaches users through a monthly release train: on the 25th of each month a release is cut from whatever is ready and approved by two other maintainers (Actual Budget, n.d.-b).
 
-The step that has caused trouble is review. Only maintainers can approve a PR, and the project lists eight of them (Actual Budget, n.d.-a). After Actual became open source in 2022, PRs waited months because nobody was available to review them (Aboltins, 2025). The project now pays maintainers for review and triage from a USD 2,000 monthly pool funded by donations (Actual Budget, n.d.-f), which shows that review time is its scarcest resource.
+The step that has caused trouble is review. Only maintainers can approve a PR, and the project lists eight of them (Actual Budget, n.d.-a). After Actual became open source in 2022, PRs waited months because nobody was available to review them (Aboltins, 2025). The project now pays maintainers for review and triage from a USD 2,000 monthly pool funded by donations (Actual Budget, n.d.-e), which shows that review time is its scarcest resource.
 
-Actual therefore has **a defined workflow but no deliberate methodology**. The steps are clear, but nothing manages how work moves through them. In particular, nothing limits how many PRs can pile up waiting for the few people able to review them.
+Actual therefore has **a defined workflow but no deliberate methodology**. The steps are clear, but nothing manages how work moves through them, and nothing limits how many PRs can pile up waiting for the few people able to review them.
 
 ```
 Feature request --> "needs votes" backlog (ranked by votes)
@@ -111,101 +111,76 @@ Feature request --> "needs votes" backlog (ranked by votes)
 
 ## 2.2 Project characteristics and selection criteria
 
-To choose fairly between methodologies, Actual's situation must first be described against established selection factors rather than the report's own scoring. This report uses the eight factors commonly considered when selecting a software process model: project requirements, size and complexity, flexibility and adaptability, customer involvement, risk tolerance, time constraints, team expertise and regulatory compliance (GeeksforGeeks, 2025). Each factor points either to an iterative, agile model, suited to changing requirements and close customer involvement, or to a linear model such as Waterfall, suited to stable requirements, fixed deadlines and predictability. Table 2.1 applies the factors to Actual; the last column shows which kind of model each factor points to.
+Actual's situation is first described against the eight factors commonly considered when selecting a software process model (GeeksforGeeks, 2025). Each factor points either to an iterative, agile model, suited to changing requirements and close customer involvement, or to a linear model such as Waterfall, suited to stable requirements, fixed deadlines and predictability. Table 2.1 applies the factors to Actual; the last column shows which kind of model each points to.
 
 *Table 2.1. Actual against the selection factors.*
 
 | Factor | Actual | Points to |
 |---|---|---|
 | Project requirements | Evolving: new requests arrive continuously and are re-ranked by users' votes (Actual Budget, 2026a) | Agile |
-| Size and complexity | A small team of eight core maintainers plus volunteers (Actual Budget, n.d.-a). The common rule favours Waterfall for small projects only when requirements are straightforward, which Actual's are not | Agile |
-| Flexibility and adaptability | Priorities shift with votes, and each monthly release ships whatever is ready (Actual Budget, n.d.-c) | Agile |
+| Size and complexity | Small: eight core maintainers plus volunteers (Actual Budget, n.d.-a). Waterfall suits small projects only when requirements are straightforward, which Actual's are not | Agile |
+| Flexibility and adaptability | Priorities shift with votes, and each monthly release ships whatever is ready (Actual Budget, n.d.-b) | Agile |
 | Customer involvement | Users shape the work continuously through requests and votes (Actual Budget, 2026a) | Agile |
 | Risk tolerance | Low: defects can mislead money decisions and expose financial data (Actual Budget, 2026c) | Linear |
-| Time constraints | A fixed monthly release date, but no feature is promised for it (Actual Budget, n.d.-c) | Agile |
-| Team expertise | Cross-functional: any contributor may work on any issue, and volunteers choose their own work rather than being assigned roles (Actual Budget, n.d.-a, n.d.-e). The few experienced reviewers are already overloaded (Aboltins, 2025) | Agile, but under strain |
+| Time constraints | A fixed monthly release date, but no feature is promised for it (Actual Budget, n.d.-b) | Agile |
+| Team expertise | Cross-functional volunteers who choose their own work (Actual Budget, n.d.-a, n.d.-d); the few experienced reviewers have been overloaded before (Aboltins, 2025) | Agile, but under strain |
 | Regulatory compliance | No regulatory requirements found in Actual's documentation (October 2026) | No constraint |
 
-Most factors point clearly to an agile model, but two need explanation. On team expertise, agile models need an experienced, self-disciplined team (GeeksforGeeks, 2025). Actual has such people, but they are few, they are volunteers, and their review time has already run out once. On risk tolerance, low tolerance and a need for predictability favour linear models (GeeksforGeeks, 2025). Actual's defects cannot endanger anyone's safety, but a wrong balance can lead a household to a poor spending decision, and in 2026 a critical security flaw allowed anyone to read users' bank balances and transactions without logging in (Actual Budget, 2026c). Actual therefore cannot accept much risk.
+Most factors point to an agile model, but two pull against it. Agile models need an experienced, self-disciplined team, and low risk tolerance favours linear models (GeeksforGeeks, 2025). Actual's experienced reviewers are few volunteers whose review time has already run out once, and a wrong balance can lead a household to a poor spending decision; in 2026 a critical security flaw let anyone read users' bank balances and transactions without logging in (Actual Budget, 2026c).
 
-Because the factors do not all point the same way, no single model fits Actual unchanged. The same guidance recommends considering models that combine elements of different approaches to meet a project's specific needs (GeeksforGeeks, 2025). For Actual, this means an agile model at its core, with stricter, written controls added where team expertise and risk tolerance leave it exposed.
-
-Five requirements follow from this profile. Table 2.2 lists them, with the reason Actual needs each one and the part of the brief it answers: Actual's goals, constraints, risks or stakeholder expectations. Section 2.4 tests every candidate against these requirements.
+Actual therefore needs an agile model at its core, with written controls added where team expertise and risk tolerance leave it exposed, as the same guidance recommends combining approaches when a project's needs are mixed (GeeksforGeeks, 2025). Table 2.2 turns this profile into five requirements, each with the reason Actual needs it and the part of the brief it answers. Section 2.4 tests every candidate against them.
 
 *Table 2.2. Requirements for Actual's methodology.*
 
 | Requirement | Why Actual needs it | Brief's lens |
 |---|---|---|
-| Handles changing priorities | Users' votes re-rank the work continuously (project requirements, flexibility) | Stakeholder expectations |
-| Works with self-chosen tasks | Volunteers choose their own work and cannot be assigned it (team expertise) | Constraints |
+| Handles changing priorities | Votes keep re-ranking the work (project requirements, flexibility) | Stakeholder expectations |
+| Works with self-chosen tasks | Volunteers cannot be assigned work (team expertise) | Constraints |
 | Keeps its rules written down | Actual's core team has changed over time (Aboltins, 2025), so practices held only in people's heads would be lost (team expertise) | Risks |
 | Protects review time | Reviewers are the bottleneck, and maintainers link administrative overload to burnout (Salkever, 2023, pp. 26–27) (team expertise) | Constraints, risks |
-| Includes quality and risk controls | Defects affect money and private data (Actual Budget, 2026c), and low risk tolerance calls for the predictability of a more structured process (risk tolerance) | Goals, risks |
+| Includes quality and risk controls | Defects affect money and private data, so low risk tolerance calls for more structure (risk tolerance) | Goals, risks |
 
 ## 2.3 Candidate methodologies
 
-Many methodologies exist, so the comparison focuses on five established ones, each representing a different approach. Linear models such as Waterfall and the V-Model were not shortlisted, because they suit well-defined, stable requirements and leave little room for change (GeeksforGeeks, 2025), whereas Actual's requirements change with every vote. RAD and RUP were also set aside, because both are organised around planned phases and deliverables that assume a team that can be scheduled, whereas Actual's volunteers choose their own work. Spiral is included although it is not agile, because risk tolerance is the one factor on which Actual leans away from agile methods.
+The comparison focuses on five established methodologies, each representing a different approach: Spiral, Scrum, Extreme Programming (XP), Kanban and DevOps. Waterfall and the V-Model were not shortlisted, because they suit stable requirements and leave little room for change (GeeksforGeeks, 2025), whereas Actual's requirements change with every vote. RAD and RUP were set aside because their planned phases and deliverables assume a team that can be scheduled, whereas Actual's volunteers choose their own work. Spiral is included although it is not agile, because risk tolerance is the one factor on which Actual leans away from agile methods.
 
-Table 2.3 summarises what each candidate requires of a team, because Section 2.4 compares those demands with how Actual works. It also gives the situations each is commonly suited to and its main drawback (GeeksforGeeks, 2025).
-
-*Table 2.3. Candidate methodologies.*
-
-| Candidate | Approach | What it requires of the team | Commonly suited to | Main drawback |
-|---|---|---|---|---|
-| Spiral | Risk-driven | Repeated cycles, each starting with expert analysis of the largest remaining risk | High-risk projects | Complex; may require expertise |
-| Scrum | Agile framework | Sprints of up to one month, a Sprint goal the team commits to, a single Product Owner who orders the work, a daily 15-minute meeting | Projects with a clear product backlog | Challenging for large teams |
-| XP | Agile engineering | Weekly planning, test-first development, pair programming, a team that sits together | Rapidly changing requirements (as an agile method) | Needs an experienced, self-disciplined team |
-| Kanban | Flow management | A visible board, work-in-progress (WIP) limits and written rules for moving work, applied on top of an existing process | Continuous delivery; efficient workflow management | Limited for large, complex projects |
-| DevOps | Development and operations | Shared responsibility and automation across building and running the software | Not covered in the common comparison | — |
-
-Actual's current way of working is also kept in the comparison as a reference point. It follows the open-source "bazaar" model, in which many volunteers contribute openly with little central planning (Raymond, 2000; Mockus et al., 2002). It is not a candidate, because the aim is to improve on it, but comparing against it shows whether a change would actually be better than today.
+Actual's current process is also kept in the comparison as a reference point. It is not a candidate, but any change must prove better than today.
 
 ## 2.4 Evaluation and selection
 
-Each candidate is now compared with how Actual works, using the requirements in Table 2.2. The comparison can produce two kinds of finding:
+Each candidate is compared with how Actual works, using the requirements in Table 2.2. The comparison can produce two kinds of finding:
 
 - a **clash**, where the methodology demands something Actual cannot provide. A clash rules the candidate out, because removing it would mean abandoning the methodology itself;
 - a **gap**, where the methodology does not cover one of the requirements. A gap does not rule a candidate out, because a missing practice can be added.
 
-Every candidate is assumed to keep Actual's existing automated checks, review and monthly release, so none is credited for what Actual already does. Table 2.4 summarises the findings, and the paragraphs that follow explain them.
+Every candidate is assumed to keep Actual's existing CI, review and monthly release, so none is credited for what Actual already does. Table 2.3 sets out what each candidate requires of a team and the resulting findings; the paragraphs that follow explain them.
 
-*Table 2.4. Clashes and gaps for each candidate.*
+*Table 2.3. What each candidate requires, and its clashes and gaps.*
 
-| Candidate | Clash with how Actual works | Requirement left uncovered (gap) |
-|---|---|---|
-| Spiral | Needs expert risk analysis every cycle from the overloaded reviewers | Handles changing priorities |
-| Scrum | Needs a committed Sprint goal and a single Product Owner | Protects review time |
-| XP | Needs developers working side by side at the same time | Includes quality and risk controls (security, accessibility) |
-| **Kanban** | None found | Includes quality and risk controls |
-| DevOps | None found | Protects review time |
-| Current process (reference) | None | Protects review time; includes quality and risk controls |
+| Candidate | What it requires of the team | Clash with how Actual works | Requirement left uncovered (gap) |
+|---|---|---|---|
+| Spiral | Repeated cycles, each starting with expert analysis of the largest remaining risk | The analysis would fall on the overloaded reviewers | Handles changing priorities |
+| Scrum | Sprints of up to one month, a Sprint Goal the team commits to, a single Product Owner who orders the work, a daily 15-minute meeting | Needs a committed Sprint Goal and a single Product Owner | Protects review time |
+| XP | Weekly planning, test-first development, pair programming, a team that sits together | Needs developers working side by side at the same time | Includes quality and risk controls (security, accessibility) |
+| **Kanban** | A visible board, work-in-progress (WIP) limits and written rules for moving work, applied on top of an existing process | None found | Includes quality and risk controls |
+| DevOps | Shared responsibility and automation across building and running the software | None found | Protects review time |
+| Current process (reference) | Already in place | None | Protects review time; includes quality and risk controls |
 
 First, three candidates clash with how Actual works. Scrum and XP both assume team members who commit their time together. Scrum's Sprint Goal "is a commitment by the Developers" and its Product Owner "is one person, not a committee" (Schwaber & Sutherland, 2020), while XP's pair programming needs two developers available at once, even when pairs work remotely (Beck & Andres, 2005). Actual's volunteers choose their own work and cannot promise to be available together, and its priorities come from users' votes, so neither assumption holds.
 
 Spiral fits Actual's low risk tolerance best, because every cycle starts with risk analysis. That analysis, however, needs expert judgement (Boehm, 1988), which is why Spiral is usually described as complex and expertise-dependent (GeeksforGeeks, 2025). In Actual the experts are the same few maintainers whose review time is already the bottleneck.
 
-Next, Kanban and DevOps have no clash, so the question becomes which would add more to what Actual already does. DevOps mainly adds automated testing throughout delivery (DORA, n.d.), which Actual's CI already provides, and integration with operations, which has little to attach to because users run the server themselves or through a hosting provider (Actual Budget, n.d.-d). Neither of these addresses Actual's real bottleneck: human review.
+Next, Kanban and DevOps have no clash, so the question is which would add more to what Actual already does. DevOps mainly adds automated testing throughout delivery (DORA, n.d.), which Actual's CI already provides, and integration with operations, which has little to attach to because users run the server themselves or through a hosting provider (Actual Budget, n.d.-c). Neither addresses Actual's real bottleneck: human review.
 
-Kanban, in contrast, fixes the problem identified in Section 2.1: nothing currently limits how many PRs wait for review. It adds three things. First, Kanban limits work in progress (WIP), the number of items allowed in a stage at once (Kanban University, n.d.). This report proposes placing that limit on the review stage, where Actual's bottleneck lies: once the limit is reached, no new PRs enter review until waiting ones are cleared, which protects the maintainers' review time. Second, the rules for moving work from one stage to the next are written down, so they do not depend on who happens to be on the team. Third, contributors still pick tasks from the voted backlog whenever they have time, so nobody has to commit to a fixed amount of work as Scrum would require.
+Kanban, in contrast, targets the problem identified in Section 2.1: nothing limits how many PRs wait for review. It adds three things. First, it limits work in progress (WIP), the number of items allowed in a stage at once (Kanban University, n.d.). This report proposes placing that limit on review: once it is reached, no new PRs enter review until waiting ones are cleared, which protects the maintainers' review time. Second, the rules for moving work from one stage to the next are written down, so they do not depend on who happens to be on the team. Third, contributors still pick tasks from the voted backlog whenever they have time, so nobody has to commit to a fixed amount of work as Scrum would require.
 
-Finally, Kanban has to be better than simply keeping today's process. The gain is modest but real: Actual's process already suits volunteers, and Kanban adds a review limit and written rules on top of it rather than replacing it. Kanban does, however, leave one requirement unmet. It does not say how quality should be checked, for example which tests a change must pass, and this matters because Actual's risk tolerance is low (Table 2.1). The report therefore adds **mandatory quality gates (QA gates)**: checks, defined in Section 3, that every change must pass before it moves to the next stage. **The selected methodology is Kanban, tailored with mandatory QA gates.**
+Finally, Kanban has to be better than keeping today's process. The gain is modest but real: Actual's process already suits volunteers, and Kanban adds a review limit and written rules on top of it rather than replacing it. Kanban does not, however, say how quality should be checked, for example which tests a change must pass, and this matters because Actual's risk tolerance is low. The report therefore adds **mandatory quality gates (QA gates)**: checks, defined in Section 3, that every change must pass before it moves to the next stage. **The selected methodology is Kanban, tailored with mandatory QA gates.**
 
 ## 2.5 Applying Kanban to Actual (to-be)
 
-In practice, Kanban would be added on top of Actual's existing route rather than replacing it (Kanban University, n.d.). Figure 3 shows the proposed board. Each column is a stage that work passes through, and each has an **exit policy**: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98).
+In practice, Kanban would be added on top of Actual's existing route rather than replacing it (Kanban University, n.d.). Figure 3 shows the proposed board. Each piece of work, such as a bug fix or a new feature, is a card that moves left to right through six columns, from triage to operation. Each column has an **exit policy**: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98).
 
-Each piece of work, such as a bug fix or a new feature, is a card that moves left to right through six columns:
-
-- **Requirements/triage:** the request is recorded and its risk is assessed.
-- **Design:** the implementer decides how to build it.
-- **Build/PR:** the implementer writes the code and opens a pull request, and the automated tests (CI) run.
-- **Verify:** another maintainer reviews the pull request.
-- **Release train:** approved work goes out in the monthly release.
-- **Operate/maintain:** users run the release, and their bug and security reports feed back into triage.
-
-The Verify column, where review happens, carries the WIP limit. The limit should be set from the number of reviews the maintainers actually complete, tracked through process metrics such as lead time (from request to delivery) and cycle time (from commit to release), so that new work stops entering once reviews start to pile up. Section 3 adds quality checks for security, reliability and interaction capability to the exit policies, and Section 4 adds independent checks to each column. The monthly release stays as it is, and each release becomes the point at which the team checks whether the limits and policies need adjusting.
-
-Compared with today, three things change: the review queue becomes visible on the board, the number of PRs waiting for review is limited, and the conditions for moving work forward are written down and mandatory.
+The WIP limit proposed in Section 2.4 sits on the Verify column, where review happens. It should be set from the number of reviews the maintainers actually complete, so that new work stops entering once reviews start to pile up. Section 3 adds quality checks to the exit policies, and Section 4 adds independent checks. The monthly release stays as it is, and each release becomes the point at which the team checks whether the limits and policies need adjusting.
 
 ```
 Rule: pull work only when the next column is under its WIP limit
@@ -230,13 +205,13 @@ Rule: pull work only when the next column is under its WIP limit
 
 Kanban's main weakness is that it manages flow but does not improve quality by itself. It is "a relatively basic flow tool that needs to be supported by additional practices" (Ahmad et al., 2018, p. 110), which is why the QA gates are mandatory. Teams also report difficulty setting it up, adapting their culture and training people (Ahmad et al., 2018, p. 106).
 
-The WIP limit is also weaker in a volunteer project. It cannot force anyone to review, and blocked PRs may discourage newcomers (Salkever, 2023). It should therefore act as a signal rather than a hard block, with the paid review pool (Actual Budget, n.d.-f) directed at review.
+The WIP limit is also weaker in a volunteer project. It cannot force anyone to review, and blocked PRs may discourage newcomers (Salkever, 2023). It should therefore act as a signal rather than a hard block, with the paid review pool (Section 2.1) directed at review.
 
 The evidence has limits too. The selection factors come from a practitioner tutorial (GeeksforGeeks, 2025), and Table 2.1 relies on qualitative judgement because Actual publishes no data to measure them. No study shows Kanban improving a project like Actual, so its benefit is plausible but unproven. Tailoring it is still reasonable, since few projects follow any methodology in pure form (Kuhrmann et al., 2022).
 
 Finally, the choice should be revisited if Actual gains paid staff, which would make Scrum's commitments realistic, or runs its own hosted service, which would give DevOps operations to integrate.
 
-<!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S47, S105, S108, S109, S121, S123, S128, S63-m2cq -->
+<!-- Cited: S01, S02, S03, S04, S08, S10, S26, S34, S36, S38, S47, S105, S108, S109, S121, S123, S128, S63-m2cq -->
 
 # 3 Quality Assurance Process
 
@@ -257,18 +232,18 @@ Stakeholders weight these views differently. Users and families want correct, pr
 
 ISO/IEC 25010:2023 defines nine product quality characteristics (International Organization for Standardization & International Electrotechnical Commission, 2023). This report focuses on three of them: Security, Reliability and Interaction capability. Each meets two conditions: a failure would seriously harm users' money, data or access to the app, and public evidence shows that Actual's current checks leave a gap (Section 3.3).
 
-- **Security** is the top priority. Actual stores budgets and, on the server, bank-sync tokens that sit outside end-to-end encryption (Actual Budget, n.d.-i). Access-control flaws in the sync server reached released versions in 2026 (Actual Budget, 2026b, 2026c, 2026d).
-- **Reliability** covers data integrity across devices, database migrations and recovery. Losing both the encryption password and every local copy makes an encrypted budget unrecoverable (Actual Budget, n.d.-i), yet test coverage of this code is not measured.
+- **Security** is the top priority. Actual stores budgets and, on the server, bank-sync tokens that sit outside end-to-end encryption (Actual Budget, n.d.-h). Access-control flaws in the sync server reached released versions in 2026 (Actual Budget, 2026b, 2026c, 2026d).
+- **Reliability** covers data integrity across devices, database migrations and recovery. Losing both the encryption password and every local copy makes an encrypted budget unrecoverable (Actual Budget, n.d.-h), yet test coverage of this code is not measured.
 - **Interaction capability** includes inclusivity and user assistance. Actual targets WCAG 2.1 AA (Actual Budget, 2026a), so accessibility is a stated requirement, not an extra, yet no automated accessibility testing was found.
 
 ## 3.3 Current QA Practices and Gaps
 
-Actual already runs substantial automated QA. Every pull request triggers linting, type checking, Vitest unit tests and a database migration check, and Playwright end-to-end and visual regression tests run on pull requests and in the merge queue (Actual Budget, 2026a, n.d.-j). CodeQL scans run on pull requests, on pushes and weekly (Actual Budget, 2026a). A release needs approval from at least two other maintainers and smoke tests of the Docker server and desktop app (Actual Budget, n.d.-c). A security policy offers private vulnerability reporting and coordinated disclosure (Actual Budget, n.d.-h).
+Actual already runs substantial automated QA. Every pull request triggers linting, type checking, Vitest unit tests and a database migration check, and Playwright end-to-end and visual regression tests run on pull requests and in the merge queue (Actual Budget, 2026a, n.d.-i). CodeQL scans run on pull requests, on pushes and weekly (Actual Budget, 2026a). A release needs approval from at least two other maintainers and smoke tests of the Docker server and desktop app (Actual Budget, n.d.-b). A security policy offers private vulnerability reporting and coordinated disclosure (Actual Budget, n.d.-g).
 
 Comparing these practices with the three attributes shows four gaps. They rest on public evidence only: the repository, documentation and advisories were searched in October 2026, and any checks the team runs privately would not appear there.
 
-- **Security: no proactive check of access control before release.** Critical and high-severity access-control flaws in the sync server were published in 2026 (Actual Budget, 2026b, 2026d). GHSA-m2cq-xjgm-f668, published on 20 February 2026 and rated critical (CVSS 9.2), reported missing authentication on the SimpleFIN and Pluggy AI bank-sync endpoints, although the GoCardless integration had that protection (Actual Budget, 2026c). A check that existed for one bank-sync provider was therefore missing for two others, and the flaw was found only after release. This report proposes an **authorisation test matrix**: an automated test that lists every server endpoint and confirms that each one refuses requests without a valid login or the right permission. Such a test could have caught this inconsistency before release. The security policy also states no response time for reports (Actual Budget, n.d.-h).
-- **Reliability: no coverage measurement.** Reliability defects still reach users. Until September 2026, a large sync could overflow an internal counter in some privacy-focused browsers, so that "the budget never opens"; the faulty code had been in released versions since at least 2023 (Brown, 2026). Yet the sync-server test configuration disables coverage (Actual Budget, 2026a), even though the testing checklist asks for "appropriate test coverage" (Actual Budget, n.d.-j, Testing Checklist section). Without a measure, nobody can tell how much of the sync and migration code the tests actually exercise. Coverage shows only which code is untested, not whether tested code is correct, so it is a starting point rather than proof of reliability.
+- **Security: no proactive check of access control before release.** Critical and high-severity access-control flaws in the sync server were published in 2026 (Actual Budget, 2026b, 2026d). GHSA-m2cq-xjgm-f668, published on 20 February 2026 and rated critical (CVSS 9.2), reported missing authentication on the SimpleFIN and Pluggy AI bank-sync endpoints, although the GoCardless integration had that protection (Actual Budget, 2026c). A check that existed for one bank-sync provider was therefore missing for two others, and the flaw was found only after release. This report proposes an **authorisation test matrix**: an automated test that lists every server endpoint and confirms that each one refuses requests without a valid login or the right permission. Such a test could have caught this inconsistency before release. The security policy also states no response time for reports (Actual Budget, n.d.-g).
+- **Reliability: no coverage measurement.** Reliability defects still reach users. Until September 2026, a large sync could overflow an internal counter in some privacy-focused browsers, so that "the budget never opens"; the faulty code had been in released versions since at least 2023 (Brown, 2026). Yet the sync-server test configuration disables coverage (Actual Budget, 2026a), even though the testing checklist asks for "appropriate test coverage" (Actual Budget, n.d.-i, Testing Checklist section). Without a measure, nobody can tell how much of the sync and migration code the tests actually exercise. Coverage shows only which code is untested, not whether tested code is correct, so it is a starting point rather than proof of reliability.
 - **Interaction capability: no automated accessibility testing** was found, despite the WCAG target (Actual Budget, 2026a).
 - **Process: no written QA plan.** Quality rules are spread across documentation, templates and CI files, so no single place states what must be checked before work moves on.
 
@@ -279,7 +254,7 @@ Performance tests are also absent from CI, but performance efficiency is outside
 A standard is selected only if it passes two tests:
 
 1. **Fit.** It closes one of the gaps in Section 3.3, or, for the quality model, frames the section.
-2. **Cost.** A volunteer team, funded by donations and a USD 2,000 monthly stipend pool for review and administration (Actual Budget, n.d.-f), can apply it without certification or a paid appraisal. If contributors must follow its requirements, its text must also be free to read, so that every volunteer can consult it.
+2. **Cost.** A volunteer team, funded by donations and a USD 2,000 monthly stipend pool for review and administration (Actual Budget, n.d.-e), can apply it without certification or a paid appraisal. If contributors must follow its requirements, its text must also be free to read, so that every volunteer can consult it.
 
 Three standards pass both tests (Table 3.1). ISO/IEC 25010 is sold, but it is used here only to name the three attributes, whose names are widely published; contributors never need to follow its text.
 
@@ -319,7 +294,7 @@ Table 3.2 is the resulting plan, and it is also the written QA plan that Section
 
 ## 3.6 Critical Evaluation
 
-The plan's main cost is volunteer time. Every new exit criterion adds work for a small team. Reviewers are paid from a USD 2,000 monthly stipend pool (Actual Budget, n.d.-f), the project has already had pull requests waiting months for review (Aboltins, 2025), and maintainers identify administrative overhead as a burnout risk (Salkever, 2023). The risk tiers in Section 3.5 limit this cost, because documentation and styling changes skip the security and data criteria. The tier, however, is a judgement made at triage: a change placed in too low a tier passes with fewer checks.
+The plan's main cost is volunteer time. Every new exit criterion adds work for a small team. Reviewers are paid from a USD 2,000 monthly stipend pool (Actual Budget, n.d.-e), the project has already had pull requests waiting months for review (Aboltins, 2025), and maintainers identify administrative overhead as a burnout risk (Salkever, 2023). The risk tiers in Section 3.5 limit this cost, because documentation and styling changes skip the security and data criteria. The tier, however, is a judgement made at triage: a change placed in too low a tier passes with fewer checks.
 
 The plan also adds automation: a coverage report, accessibility checks and the authorisation test matrix. Automation is not free. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests and less discussion (Wessel et al., 2022). These observational studies cannot predict Actual's results, so each new check should be monitored for its effect on review time and tuned or removed if it slows the flow without finding defects.
 
@@ -343,10 +318,10 @@ Table 4.1 tests each of Actual's existing V&V activities against these three kin
 
 | Activity | Performed by | Technical | Managerial | Financial |
 |---|---|---|---|---|
-| PR review | Another core maintainer, who may approve and merge non-controversial PRs straight away (Actual Budget, n.d.-e) | Yes | No | No: reviewers share one stipend pool (Actual Budget, n.d.-f) |
-| Release approval and smoke test | At least two other maintainers approve before tagging; smoke tests run after the builds are published (Actual Budget, n.d.-c) | Yes | No | No |
+| PR review | Another core maintainer, who may approve and merge non-controversial PRs straight away (Actual Budget, n.d.-d) | Yes | No | No: reviewers share one stipend pool (Actual Budget, n.d.-e) |
+| Release approval and smoke test | At least two other maintainers approve before tagging; smoke tests run after the builds are published (Actual Budget, n.d.-b) | Yes | No | No |
 | CI tests and CodeQL scanning | Automated, configured by the team (Actual Budget, 2026a) | Partial | No | No |
-| PR preview and nightly builds | Any community member, voluntarily (Actual Budget, n.d.-g) | Partial | Not established | Not established |
+| PR preview and nightly builds | Any community member, voluntarily (Actual Budget, n.d.-f) | Partial | Not established | Not established |
 | Vulnerability reports | Reporters outside the core team (Actual Budget, 2026c) | Yes | Not established | Not established |
 | External audit | No public evidence found in the documentation and blog (October 2026) | — | — | — |
 
@@ -381,7 +356,7 @@ Each check is written into the exit policy of the board column where it happens 
 | Release train | *Verify* that every High-tier card in the release met its Verify exit policy | Release checklist | One of the two approving maintainers | Evidence confirmed before approval and tagging |
 | Operate/maintain | Triage external reports; for each fixed advisory, add a regression test and re-check the tier of the area involved | Private vulnerability reporting, advisories | External reporters; optional funded auditor; a reviewer other than the code owner for the tier re-check | Advisory published; regression test merged; tier rule corrected if the area was under-tiered |
 
-Standard-tier cards skip the design review and need only preview-build validation; Low-tier cards follow normal review. Preview and nightly web builds have no sync server and are not meant for real budgets (Actual Budget, n.d.-g), hence the separate test server.
+Standard-tier cards skip the design review and need only preview-build validation; Low-tier cards follow normal review. Preview and nightly web builds have no sync server and are not meant for real budgets (Actual Budget, n.d.-f), hence the separate test server.
 
 ## 4.3 How the integration meets the three goals
 
@@ -409,25 +384,23 @@ Actual Budget. (2026d, April 23). *Privilege escalation via 'change-password' en
 
 Actual Budget. (n.d.-a). *Contributing to Actual Budget*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/
 
-Actual Budget. (n.d.-b). *Feature flags (experimental features)*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/project-details/feature-flags/
+Actual Budget. (n.d.-b). *How to cut a release*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/releasing/
 
-Actual Budget. (n.d.-c). *How to cut a release*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/releasing/
+Actual Budget. (n.d.-c). *Installing Actual*. Retrieved October 22, 2026, from https://actualbudget.org/docs/install/
 
-Actual Budget. (n.d.-d). *Installing Actual*. Retrieved October 22, 2026, from https://actualbudget.org/docs/install/
+Actual Budget. (n.d.-d). *New core contributors guide*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/leadership/new-core-contributors-guide/
 
-Actual Budget. (n.d.-e). *New core contributors guide*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/leadership/new-core-contributors-guide/
+Actual Budget. (n.d.-e). *Paying reviewers for administrative work*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/leadership/paying-contributors/
 
-Actual Budget. (n.d.-f). *Paying reviewers for administrative work*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/leadership/paying-contributors/
+Actual Budget. (n.d.-f). *Preview builds*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/preview-builds/
 
-Actual Budget. (n.d.-g). *Preview builds*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/preview-builds/
+Actual Budget. (n.d.-g). *Security policy* [SECURITY.md]. GitHub. Retrieved October 22, 2026, from https://github.com/actualbudget/.github/blob/main/SECURITY.md
 
-Actual Budget. (n.d.-h). *Security policy* [SECURITY.md]. GitHub. Retrieved October 22, 2026, from https://github.com/actualbudget/.github/blob/main/SECURITY.md
+Actual Budget. (n.d.-h). *Syncing across devices*. Retrieved October 22, 2026, from https://actualbudget.org/docs/getting-started/sync/
 
-Actual Budget. (n.d.-i). *Syncing across devices*. Retrieved October 22, 2026, from https://actualbudget.org/docs/getting-started/sync/
+Actual Budget. (n.d.-i). *Testing*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/testing/
 
-Actual Budget. (n.d.-j). *Testing*. Retrieved October 22, 2026, from https://actualbudget.org/docs/contributing/testing/
-
-Actual Budget. (n.d.-k). *A tour of Actual*. Retrieved October 22, 2026, from https://actualbudget.org/docs/tour/
+Actual Budget. (n.d.-j). *A tour of Actual*. Retrieved October 22, 2026, from https://actualbudget.org/docs/tour/
 
 Ahmad, M. O., Dennehy, D., Conboy, K., & Oivo, M. (2018). Kanban in software engineering: A systematic mapping study. *Journal of Systems and Software, 137*, 96–113. https://doi.org/10.1016/j.jss.2017.11.045
 
@@ -459,15 +432,11 @@ Kuhrmann, M., Tell, P., Hebig, R., Klünder, J., Münch, J., Linssen, O., Pfahl,
 
 Lear, R. (2023, April 10). *CMMI updates take performance improvements to the next level*. ISACA. https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2023/cmmi-updates-take-performance-improvements-to-the-next-level
 
-Mockus, A., Fielding, R. T., & Herbsleb, J. D. (2002). Two case studies of open source software development: Apache and Mozilla. *ACM Transactions on Software Engineering and Methodology, 11*(3), 309–346. https://doi.org/10.1145/567793.567795
-
 National Aeronautics and Space Administration. (n.d.). *IV&V overview*. Retrieved October 22, 2026, from https://www.nasa.gov/ivv-overview/
 
 Open Source Technology Improvement Fund. (2026, January 30). *2025 annual report*. https://ostif.org/2025-annual-report/
 
 OWASP Foundation. (2025). *OWASP application security verification standard* (Version 5.0.0). https://owasp.org/www-project-application-security-verification-standard/
-
-Raymond, E. S. (2000). *The cathedral and the bazaar* (Version 3.0). https://web.stanford.edu/class/me228/pdf/cathedral-bazaar.pdf
 
 Salkever, A. (2023). *Open source maintainers: Exploring the people, practices, and constraints facing the world's most critical open source software projects*. The Linux Foundation. https://doi.org/10.70828/lddj8886
 

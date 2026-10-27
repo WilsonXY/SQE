@@ -817,3 +817,11 @@ Writing-tool source note: all three original section writers and the root writer
 
 - 3-7 decided: keep Table 3.1 and drop the bullets after it. The bullets' two reasons (ASVS chapters match the 2026 flaws; W3C does not deprecate WCAG 2.1) move into the table in short form.
 - The author asked whether the non-word-count problems should wait until after trimming. Answer: most are fixed by trim items or depend on the final count. The one to settle first is where the risk tiers are defined, because the 3.5 and 4.2 trims rewrite that text.
+
+## 2026-10-27 — Trim applied: Section 2
+
+- The author approved all A and B items and asked for the risk-tier definition to move to 3.5.
+- Applied in Section 2: 2-1 to 2-17. The roadmap was cut. In 2.1, the PR definition, the feature-flags sentence, the CI test list and the release detail were removed (Figure 2 keeps the steps). 2.2's lead-in and table cells were tightened. The two-exceptions and "combine" paragraphs were shortened. Table 2.3 (candidates) and Table 2.4 (clashes and gaps) were merged into one Table 2.3, and the "suited to" and "drawback" columns were dropped. The bazaar paragraph became one sentence. The 2.5 column bullets and the "Compared with today" paragraph were removed, along with the lead/cycle-time definitions.
+- References: Feature flags (n.d.-b), Raymond (2000) and Mockus et al. (2002) were removed. The remaining n.d. letters were shifted down by one. `sources.md` was updated.
+- 2-18 (folding Table 2.2 into Table 2.1) is held until Sections 3 and 4 are trimmed and the total is measured.
+- Section 2 went from 2,621 to 2,084 words (a consistent count: headings, captions, tables and citations; no figures or References). This is a smaller cut than the plan estimated.
