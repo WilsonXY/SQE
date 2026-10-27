@@ -803,3 +803,12 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Table 4.2 headings all nouns
 
 - At the author's request, "What is checked" became "Checks" and "Who checks" became "Checker". Table 4.2's headings are now: Board column | Checks | Tools | Checker | Exit policy.
+
+## 2026-10-27 — Whole-report trim review (word count)
+
+- The author has finished the clarity reviews of Sections 1–4, written without a word limit, and asked for a critical read of the whole report to find what can be cut to meet the word limit. The cuts must be honest: remove what the reader doesn't need, and never compress sentences into shorthand.
+- Measured: about 7,270 words (headings, captions, tables and citations counted; References, source comments and the three ASCII figures excluded). Target is about 5,000. Section 2 is 2,759 words, 38% of the total, for the same 10 marks as Sections 3 and 4.
+- Main finding: most of the excess is the same content told in several places. Examples: the CI checks list (4 places), the release-train detail (6), the GHSA-m2cq story (6), the board column by column (4), and the volunteer-capacity evidence (10).
+- Proposed in `planning/06-trim-plan.md`: about 45 itemised cuts, marked A (safe: repetition, recaps, roadmaps, generic background) or B (judgement: removes some content, e.g. the bazaar baseline label with Raymond and Mockus, merging Tables 2.3 and 2.4, and the threat note). Estimate: A items reach about 5,450 words; adding the B items reaches about 4,950–5,050.
+- Also flagged: "High-tier" is used in 3.4 and 3.5 but defined only in 4.2; 3.2's Reliability bullet has a non sequitur; 1.1 has a dangling modifier; "Pluggy AI" and "Pluggy.ai" are spelled differently; Section 4 has no introduction.
+- Nothing applied yet; awaiting the author's decisions.
