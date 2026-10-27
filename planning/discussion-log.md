@@ -853,3 +853,14 @@ Writing-tool source note: all three original section writers and the root writer
 - The author asked to move the Kanban selection process to an appendix and go straight to Kanban. **Not applied.** The brief marks "select, justify, and critically evaluate… based on goals, constraints, risks, and stakeholder expectations", so the selection is the justification. Appendices are not marked. AGENTS.md forbids moving content the argument depends on into an appendix to save words.
 - The author asked whether 2.6 and 3.6 are needed. Answer: yes. The brief asks for critical evaluation in both the methodology and QA tasks, unlike the IV&V task (which is why 4.4 was deleted).
 - Total now 5,799. R1–R8 re-evaluated with context for the author; not yet applied.
+
+## 2026-10-27 — 2.6 and 3.6 each made one paragraph; citation check
+
+- At the author's request, 2.6 and 3.6 are each one paragraph.
+  - **2.6 keeps:** Kanban needs added practices (Ahmad et al., 2018, p. 110); the WIP limit as a signal (Salkever, 2023); the evidence limits (GeeksforGeeks, qualitative judgement, no Kanban study); tailoring (Kuhrmann et al., 2022); the revisit triggers. **Dropped:** the set-up and culture difficulty (Ahmad p. 106) and the line about directing the paid review pool.
+  - **3.6 keeps:** the volunteer-time cost and the tier misjudgement risk; automation effects (both Wessel studies), with the monitor-and-remove rule; the accessibility-checks limit. **Dropped:** the burnout citation (Salkever is still cited in 2.2 and 2.6) and the "less discussion" detail.
+  - No reference lost its last citation.
+- APA fix: the first IEEE citation (3.4) now reads "(Institute of Electrical and Electronics Engineers [IEEE], 2026)".
+- Citation check: about 85 parenthetical citations, about 290 words (about 5% of the body). Each one backs a stated fact. Repeated citations (e.g. Aboltins, 2025 six times) come from repeated facts, not over-citing.
+- R7 explained to the author: it is the last paragraph of 3.4, which names the standards that fail the cost test.
+- Total now 5,712.

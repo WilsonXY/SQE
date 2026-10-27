@@ -203,13 +203,7 @@ Rule: pull work only when the next column is under its WIP limit
 
 ## 2.6 Critical evaluation
 
-Kanban's main weakness is that it manages flow but does not improve quality by itself. It is "a relatively basic flow tool that needs to be supported by additional practices" (Ahmad et al., 2018, p. 110), which is why the QA gates are mandatory. Teams also report difficulty setting it up, adapting their culture and training people (Ahmad et al., 2018, p. 106).
-
-The WIP limit is also weaker in a volunteer project. It cannot force anyone to review, and blocked PRs may discourage newcomers (Salkever, 2023). It should therefore act as a signal rather than a hard block, with the paid review pool (Section 2.1) directed at review.
-
-The evidence has limits too. The selection factors come from a practitioner tutorial (GeeksforGeeks, 2025), and Table 2.1 relies on qualitative judgement because Actual publishes no data to measure them. No study shows Kanban improving a project like Actual, so its benefit is plausible but unproven. Tailoring it is still reasonable, since few projects follow any methodology in pure form (Kuhrmann et al., 2022).
-
-Finally, the choice should be revisited if Actual gains paid staff, which would make Scrum's commitments realistic, or runs its own hosted service, which would give DevOps operations to integrate.
+Kanban manages flow but does not improve quality by itself: it is "a relatively basic flow tool that needs to be supported by additional practices" (Ahmad et al., 2018, p. 110), which is why the QA gates are mandatory. Its WIP limit is also weaker in a volunteer project, because it cannot force anyone to review and blocked PRs may discourage newcomers (Salkever, 2023), so it should act as a signal rather than a hard block. The evidence has limits too. The selection factors come from a practitioner tutorial (GeeksforGeeks, 2025), Table 2.1 rests on qualitative judgement because Actual publishes no data to measure them, and no study shows Kanban improving a project like Actual, so its benefit is plausible but unproven. Tailoring it is still reasonable, since few projects follow any methodology in pure form (Kuhrmann et al., 2022). The choice should be revisited if Actual gains paid staff, which would make Scrum's commitments realistic, or runs its own hosted service, which would give DevOps operations to integrate.
 
 <!-- Cited: S01, S02, S03, S04, S08, S10, S26, S34, S36, S38, S47, S105, S108, S109, S121, S123, S128, S63-m2cq -->
 
@@ -266,7 +260,7 @@ Three standards pass both tests (Table 3.1). ISO/IEC 25010 is sold, but it is us
 
 The other two gaps need no standard: the reliability gap is closed by turning on a coverage report, and the missing QA plan by the plan in Section 3.5.
 
-Other well-known standards fail the cost test. IEEE 730-2026, the standard for software QA processes, is available only by purchase or subscription (IEEE, 2026). ISO 9001:2026, ISO/IEC 27001:2022 and CMMI V3.0 assume a formal organisation and deliver their value through certification or an appraisal rating (International Organization for Standardization, 2026; International Organization for Standardization & International Electrotechnical Commission, 2022; Lear, 2023).
+Other well-known standards fail the cost test. IEEE 730-2026, the standard for software QA processes, is available only by purchase or subscription (Institute of Electrical and Electronics Engineers [IEEE], 2026). ISO 9001:2026, ISO/IEC 27001:2022 and CMMI V3.0 assume a formal organisation and deliver their value through certification or an appraisal rating (International Organization for Standardization, 2026; International Organization for Standardization & International Electrotechnical Commission, 2022; Lear, 2023).
 
 ## 3.5 Applying the QA Process within Kanban
 
@@ -295,11 +289,7 @@ Table 3.2 is the resulting plan, and also the written QA plan that Section 3.3 f
 
 ## 3.6 Critical Evaluation
 
-The plan's main cost is volunteer time. Every new exit criterion adds work for a small team whose review time is already its scarcest resource (Section 2.1), and maintainers identify administrative overhead as a burnout risk (Salkever, 2023). The risk tiers limit this cost, because documentation and styling changes skip the security and data criteria. The tier, however, is a judgement made at triage: a change placed in too low a tier passes with fewer checks.
-
-The plan also adds automation (a coverage report, accessibility checks and the authorisation test matrix), and automation is not free. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests and less discussion (Wessel et al., 2022). These observational studies cannot predict Actual's results, so each new check should be monitored for its effect on review time and tuned or removed if it slows the flow without finding defects.
-
-One further limit remains: automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed.
+The plan's main cost is volunteer time: every new exit criterion adds work for a small team whose review time is already scarce (Section 2.1). The risk tiers limit this cost, but a card placed in too low a tier at triage passes with fewer checks. The added automation is not free either. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests (Wessel et al., 2022). Because these studies cannot predict Actual's results, each new check should be monitored and removed if it slows review without finding defects. Finally, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed.
 
 <!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129, S137 -->
 
