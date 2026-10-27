@@ -772,4 +772,4 @@ Writing-tool source note: all three original section writers and the root writer
   - Each paragraph has a bold claim label, explains the mechanism (e.g. release pressure on the same team; CODEOWNERS areas being High-tier), states the mitigation and the residue.
   - A closing sentence ties the limits together.
 - No facts or citations changed; "its cost is estimated in Assignment 2" is kept.
-- 4.4 is about 520 words (was about 340). Section 4 is about 2,290 words.
+- 4.4 is about 570 words (was about 340). Section 4 is about 2,340 words.
