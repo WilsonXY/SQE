@@ -26,7 +26,8 @@ Five things must be visible to the marker:
   - **Security:** advisories [S63], security policy [S62], CodeQL, E2EE [S51]. Standards: **OWASP ASVS** [S58], **OpenSSF** [S60].
   - **Reliability:** data integrity, sync, recovery. Evidence: migration and CRDT checks in CI [S01], backups, E2EE password-loss warning [S51]; **test coverage not measured** (coverage gap). 25010:2023 renamed the reliability subcharacteristic "maturity" to "faultlessness" (per S65, to verify).
   - **Interaction capability** (incl. accessibility/inclusivity): WCAG 2.1 AA target [S01] vs current **WCAG 2.2** [S59]; **no automated accessibility testing**. Standard: **WCAG 2.2**.
-- **Keep the short 9-row rating table** in 3.2 (~120 words: characteristic, one-line reason, High/Medium/Low) to show the 3 were chosen deliberately.
+- ~~**Keep the short 9-row rating table** in 3.2~~ **Superseded 2026-10-27 (author):** 3.2 goes straight to the three attributes; no rating table. The other characteristics get no discussion, except one sentence on why functional suitability is left out.
+- (Original note:) **Keep the short 9-row rating table** in 3.2 (~120 words: characteristic, one-line reason, High/Medium/Low) to show the 3 were chosen deliberately.
 - **Knock-on effects (agreed):**
   - 3.3–3.5 focus only on the 3 chosen attributes;
   - **functional suitability** (calculation correctness) and **performance** (performance testing) drop to a brief mention: one row each in the rating table, plus at most a sentence;
@@ -55,7 +56,7 @@ The author asked for all ten Section 3 review findings to be applied (see `discu
 
 - **QA defined** in a new Section 3 opening paragraph that also signposts 3.1–3.6 (mirrors Section 2's opening).
 - **3.1 uses Garvin's (1984) five approaches** [S129] (Lecture 1's viewpoints). Transcendent is set aside; user, product, manufacturing (process) and value-based views are applied to Actual.
-- **3.2 rating rule made explicit:** two checkable questions, *harm* and *current checks*. Limited harm = Low; serious harm and already covered = Medium; serious harm with a gap = High. Ratings unchanged. "Release baseline" wording removed.
+- **3.2 (superseded the same day; see the rating-table bullet above):** rating rule made explicit: two checkable questions, *harm* and *current checks*. Limited harm = Low; serious harm and already covered = Medium; serious harm with a gap = High. Ratings unchanged. "Release baseline" wording removed.
 - **3.3:** the authorisation test matrix is defined and marked as this report's proposal ("could have caught"). The security policy's broken (404) link is **dropped** as low-value; the missing response time stays. Performance-testing sentence moved out of the QA-plan bullet.
 - **3.4:** two selection tests (fit, cost) and the decision labels are defined before Table 3.2; text after the table no longer repeats it; edition trivia removed.
 - **3.5:** "exit policy" used throughout (no "Definition of Done"; also in the executive summary). Risk tiers (Section 4.3) now decide which criteria apply. OpenSSF Scorecard placed in the Release train exit policy. Owners stated as existing roles. The "separate server with synthetic data" criterion left to Section 4, which gives its reason. New **Table 3.4** maps Lecture 3's SQAP sections to where the plan covers them; IEEE 730-2026 is cited only for its scope.

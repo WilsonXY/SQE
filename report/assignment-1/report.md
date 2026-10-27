@@ -246,43 +246,26 @@ Stakeholders weight these views differently. Users and families want correct, pr
 
 ## 3.2 Key Quality Attributes
 
-ISO/IEC 25010:2023 defines nine product quality characteristics (International Organization for Standardization & International Electrotechnical Commission, 2023). This section concentrates on three of them. Each characteristic was rated with two questions that can be checked against the evidence:
+ISO/IEC 25010:2023 defines nine product quality characteristics (International Organization for Standardization & International Electrotechnical Commission, 2023). This report focuses on three of them: Security, Reliability and Interaction capability. Each meets two conditions: a failure would seriously harm users' money, data or access to the app, and public evidence shows that Actual's current checks leave a gap (Section 3.3).
 
-1. **Harm.** Would a failure seriously hurt users' money, data or access to the app, or the volunteers' ability to keep the project going?
-2. **Current checks.** Do Actual's existing checks already cover the characteristic, or does public evidence show a gap (Section 3.3 sets out these checks)?
+- **Security** is the top priority. Actual stores budgets and, on the server, bank-sync tokens that sit outside end-to-end encryption (Actual Budget, n.d.-i). Access-control flaws in the sync server reached released versions in 2026 (Actual Budget, 2026b, 2026c, 2026d).
+- **Reliability** covers data integrity across devices, database migrations and recovery. Losing both the encryption password and every local copy makes an encrypted budget unrecoverable (Actual Budget, n.d.-i), yet test coverage of this code is not measured.
+- **Interaction capability** includes inclusivity and user assistance. Actual targets WCAG 2.1 AA (Actual Budget, 2026a), so accessibility is a stated requirement, not an extra, yet no automated accessibility testing was found.
 
-A characteristic whose failure does limited harm is rated Low. Of the rest, those already covered are rated Medium and those with a gap are rated High. Table 3.1 gives the answers for each characteristic.
-
-*Table 3.1. ISO/IEC 25010:2023 characteristics rated for Actual.*
-
-| Characteristic | Harm if it fails | Current checks | Priority |
-|---|---|---|---|
-| Functional suitability | Serious: wrong totals mislead budgets | Covered: budget-calculation tests | Medium |
-| Performance efficiency | Limited: personal-scale data volumes | None in CI | Low |
-| Compatibility | Serious: web, desktop and server must work together | Covered: release smoke tests | Medium |
-| Interaction capability | Serious: inaccessible screens exclude users | Gap: no accessibility testing | **High** |
-| Reliability | Serious: sync or migration faults can lose data | Gap: test coverage not measured | **High** |
-| Security | Serious: financial data and bank-sync tokens exposed | Gap: access-control flaws reached releases | **High** |
-| Maintainability | Serious for volunteers: hard-to-change code slows every fix | Covered: linting and type checking | Medium |
-| Flexibility | Limited: several install options already exist | Not assessed | Low |
-| Safety | Limited: no physical harm in scope | Not assessed | Low |
-
-Functional suitability is rated Medium not because correct numbers matter less, but because they are already checked. The repository tests budget recomputation, category totals and the exclusion of off-budget spending (Actual Budget, 2026a), and the advisories published in 2026 concern security, not calculation errors (Actual Budget, 2026b, 2026c, 2026d). These existing tests must keep passing, but this section adds no new checks for this characteristic.
-
-**Security** is the top priority. Actual stores budgets and, on the server, bank-sync tokens that sit outside end-to-end encryption (Actual Budget, n.d.-i). **Reliability** covers data integrity across devices, database migrations and recovery; losing both the encryption password and every local copy makes an encrypted budget unrecoverable (Actual Budget, n.d.-i). **Interaction capability** includes inclusivity and user assistance. Actual targets WCAG 2.1 AA (Actual Budget, 2026a), so accessibility is a stated requirement, not an extra.
+Functional suitability might look like a fourth candidate, since correct totals are central to users' trust. It is left out because it is already checked: the repository tests budget recomputation, category totals and the exclusion of off-budget spending (Actual Budget, 2026a), and the 2026 advisories concern security, not calculation errors.
 
 ## 3.3 Current QA Practices and Gaps
 
 Actual already runs substantial automated QA. Every pull request triggers linting, type checking, Vitest unit tests and a database migration check, and Playwright end-to-end and visual regression tests run on pull requests and in the merge queue (Actual Budget, 2026a, n.d.-j). CodeQL scans run on pull requests, on pushes and weekly (Actual Budget, 2026a). A release needs approval from at least two other maintainers and smoke tests of the Docker server and desktop app (Actual Budget, n.d.-c). A security policy offers private vulnerability reporting and coordinated disclosure (Actual Budget, n.d.-h).
 
-Comparing these practices with the three High attributes shows four gaps. They rest on public evidence only: the repository, documentation and advisories were searched in October 2026, and any checks the team runs privately would not appear there.
+Comparing these practices with the three attributes shows four gaps. They rest on public evidence only: the repository, documentation and advisories were searched in October 2026, and any checks the team runs privately would not appear there.
 
 - **Security: no proactive check of access control before release.** Critical and high-severity access-control flaws in the sync server were published in 2026 (Actual Budget, 2026b, 2026d). GHSA-m2cq-xjgm-f668, published on 20 February 2026 and rated critical (CVSS 9.2), reported missing authentication on the SimpleFIN and Pluggy AI bank-sync endpoints, although the GoCardless integration had that protection (Actual Budget, 2026c). A check that existed for one bank-sync provider was therefore missing for two others, and the flaw was found only after release. This report proposes an **authorisation test matrix**: an automated test that lists every server endpoint and confirms that each one refuses requests without a valid login or the right permission. Such a test could have caught this inconsistency before release. The security policy also states no response time for reports (Actual Budget, n.d.-h).
 - **Reliability: no coverage measurement.** The sync-server test configuration disables coverage (Actual Budget, 2026a), yet the testing checklist asks for "appropriate test coverage" (Actual Budget, n.d.-j, Testing Checklist section). Without a measure, nobody can tell how much of the sync and migration code the tests actually exercise.
 - **Interaction capability: no automated accessibility testing** was found, despite the WCAG target (Actual Budget, 2026a).
 - **Process: no written QA plan.** Quality rules are spread across documentation, templates and CI files, so no single place states what must be checked before work moves on.
 
-Performance tests are also absent from CI, but performance efficiency is rated Low (Table 3.1), so that gap is left out of scope.
+Performance tests are also absent from CI, but performance efficiency is outside the three attributes, so that gap is left out of scope.
 
 ## 3.4 Selecting Standards and Practices
 
@@ -291,13 +274,13 @@ Candidate standards and frameworks were judged with two tests:
 1. **Fit.** Does it help close one of the gaps in Section 3.3?
 2. **Cost.** Can a volunteer team, funded by donations and a USD 2,000 monthly stipend pool for review and administration (Actual Budget, n.d.-f), apply it without certification or a paid appraisal?
 
-Table 3.2 records the decision for each. *Adopt* means it is used as published; *Adopt selectively* means only the parts that match the gaps are used; *Adapt* means its intent is applied in a lighter form; *Borrow principles* means its ideas are used but its certification is not pursued; *Reject* means it is not used; and *Reference only* means it is relevant but applied in a later section.
+Table 3.1 records the decision for each. *Adopt* means it is used as published; *Adopt selectively* means only the parts that match the gaps are used; *Adapt* means its intent is applied in a lighter form; *Borrow principles* means its ideas are used but its certification is not pursued; *Reject* means it is not used; and *Reference only* means it is relevant but applied in a later section.
 
-*Table 3.2. Standards and frameworks selected for Actual's QA process.*
+*Table 3.1. Standards and frameworks selected for Actual's QA process.*
 
 | Standard / framework | Decision | Reason |
 |---|---|---|
-| ISO/IEC 25010:2023 | Adopt | Current product quality model; supplies the characteristics in 3.2 |
+| ISO/IEC 25010:2023 | Adopt | Current product quality model; supplies the attributes in 3.2 |
 | IEEE 730-2026 | Adapt | Current standard for planning and controlling SQA; applied as a light plan in 3.5 |
 | ISO 9001:2026 | Borrow principles | Customer focus fits; certification needs a formal management system |
 | ISO/IEC 27001:2022 | Borrow principles | Risk-based security thinking fits; a certified security management system is too costly |
@@ -317,11 +300,11 @@ Three frameworks are adopted because they close the gaps directly and cost littl
 
 ## 3.5 Applying the QA Process within Kanban
 
-Section 2.5 gave each Kanban column an exit policy: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98). The QA plan is built from these exit policies (Table 3.3), so it sits on the board that volunteers already use instead of in a separate document they may never open.
+Section 2.5 gave each Kanban column an exit policy: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98). The QA plan is built from these exit policies (Table 3.2), so it sits on the board that volunteers already use instead of in a separate document they may never open.
 
 Not every change needs every check. At triage, each item is given a risk tier, which Section 4.3 defines in full: High for work on authentication, bank sync, calculations, migrations, sync and encryption; Low for themes, wording and documentation; Standard for everything else. The security and data criteria apply only to High-tier items, while CI, review and accessibility checks apply to all. A documentation change therefore never waits for an authorisation matrix.
 
-*Table 3.3. QA plan embedded in the Kanban exit policies.*
+*Table 3.2. QA plan embedded in the Kanban exit policies.*
 
 | Kanban stage | Exit policy (QA criteria) | Applies to | Owner |
 |---|---|---|---|
@@ -334,15 +317,15 @@ Not every change needs every check. At triage, each item is given a risk tier, w
 
 The owners are existing maintainers and contributors; the plan assigns duties, not new posts. Triage and review are already paid from the stipend pool (Actual Budget, n.d.-f).
 
-A software quality assurance plan (SQAP) is usually organised into standard sections: management, documentation, standards and metrics, reviews and audits, testing, problem reporting and corrective action, and supporting areas such as tools and risk management. Table 3.4 shows where each is covered, so the board-based plan is complete rather than a list of checks. IEEE 730-2026 sets requirements for planning and controlling SQA processes (IEEE, 2026); this plan applies that intent in a light form and does not claim conformance.
+A software quality assurance plan (SQAP) is usually organised into standard sections: management, documentation, standards and metrics, reviews and audits, testing, problem reporting and corrective action, and supporting areas such as tools and risk management. Table 3.3 shows where each is covered, so the board-based plan is complete rather than a list of checks. IEEE 730-2026 sets requirements for planning and controlling SQA processes (IEEE, 2026); this plan applies that intent in a light form and does not claim conformance.
 
-*Table 3.4. SQAP sections and where Actual's plan covers them.*
+*Table 3.3. SQAP sections and where Actual's plan covers them.*
 
 | SQAP section | Where it is covered |
 |---|---|
-| Management (roles) | Owner column of Table 3.3 |
+| Management (roles) | Owner column of Table 3.2 |
 | Documentation | Exit policies written on the board and in the contributing guide |
-| Standards and metrics | Table 3.2; one measure per attribute (below) |
+| Standards and metrics | Table 3.1; one measure per attribute (below) |
 | Reviews and audits | Verify and Release train stages; independent review and audit in Section 4 |
 | Testing | Build/PR and Verify stages |
 | Problem reporting and corrective action | Operate/maintain stage; security policy with a response-time target |

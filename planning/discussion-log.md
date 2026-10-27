@@ -463,3 +463,13 @@ Writing-tool source note: all three original section writers and the root writer
 - Sources: S129 Garvin (partially verified, official page) is added to References. S130 (Sommerville), S131 (origin of the SQAP sections) and S132 (IEEE QA definition) could not be reached and are logged as unverified. The SQAP section list and the QA definition are used **without a citation** and flagged to the author.
 - Section 3 grew from about 1,550 to about 2,570 words. Clarity came first; the author handles word count.
 - Out of scope, noted for the Section 4 review: the IEEE 1012 reference URL points to `standards.ieee.org/ieee/1800.2/7324/`, a different standard.
+
+## 2026-10-27 — 3.2 cut to the three attributes
+
+- On review, the author asked for 3.2 to focus straight on the three attributes and not write much about the other characteristics.
+- The nine-row rating table (Table 3.1) and the High/Medium/Low rating rule were removed. 3.2 now:
+  - names the three attributes and the two conditions each meets (serious harm, and a public-evidence gap);
+  - gives one bullet each for Security, Reliability and Interaction capability, with harm and gap;
+  - keeps one sentence on why functional suitability is left out, since 3.1's "users trusting the numbers" makes it look like a candidate.
+- Knock-on edits: 3.3 no longer refers to "High" attributes or to Table 3.1; the performance sentence now says it is outside the three attributes. Tables were renumbered: standards = 3.1, QA plan = 3.2, SQAP sections = 3.3.
+- `planning/03-quality-assurance.md`: the "keep the 9-row rating table" decision is marked superseded.
