@@ -495,3 +495,18 @@ Writing-tool source note: all three original section writers and the root writer
   - 730-2026 now supersedes 2014.
   - Pressman's text and the 2002 standard could not be read.
   - No current, readable source for Lecture 3's list exists, so option 2 cannot give Table 3.3 a proper citation. Options were put back to the author.
+
+## 2026-10-27 — Standards trimmed; option 1 for the plan areas
+
+- The author approved the standards trim and chose option 1.
+- 3.4:
+  - The two tests are now inclusion rules.
+  - Table 3.1 lists four adopted standards with the gap each closes and how it is used.
+  - Separate bullets cover ASVS, WCAG 2.2 and IEEE 730-2026; the IEEE 730 bullet says it is applied in intent only.
+  - One line says reliability needs no standard.
+  - One paragraph rejects ISO 9001, ISO/IEC 27001 and CMMI on cost, while linking their ideas to 3.1 and 3.5.
+  - OpenSSF and 29119-1 were removed, along with their three references.
+- 3.5: Scorecard was removed from the Release train exit policy. The "SQAP is usually organised into standard sections" claim was replaced: Table 3.3 now presents the plan's seven areas as the report's own design.
+- 3.6: Scorecard was removed from the automation list. The limits are now two (the OpenSSF self-assessment limit was dropped), and the IEEE 730 caveat now points to 3.4.
+- Executive summary: "and OpenSSF tools" removed.
+- Section 3 is now about 2,160 words (it was about 2,570 after the first review pass).

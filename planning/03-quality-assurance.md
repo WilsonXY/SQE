@@ -64,8 +64,17 @@ The author asked for all ten Section 3 review findings to be applied (see `discu
 
 ## Open questions (from the review, 27 October 2026)
 
-- The SQAP section list (Table 3.4) and the QA definition in the Section 3 opening are **lecture content without a citation**: their original sources (S131, S132) could not be reached. Keep uncited, find the originals, or rephrase?
+- ~~The SQAP section list (Table 3.4)…~~ Resolved 27 October 2026: option 1 (the plan areas are the report's own design). Still open: the QA definition in the Section 3 opening is lecture content without a citation (S132).
 - Section 3 grew from about 1,550 to about 2,570 words (tables included) because clarity came first. Trimming is for the author's word-count pass.
+
+## Agreed: standards trimmed and plan areas reframed (27 October 2026)
+
+- **Adopt four standards, one job each:** ISO/IEC 25010:2023 (frames the section), OWASP ASVS 5.0.0 (security gap), WCAG 2.2 AA (interaction-capability gap), IEEE 730-2026 (missing QA plan; applied in intent only, catalogue entry read). Table 3.1 now has the columns *Gap it closes* and *How it is used*.
+- **Dropped:** the OpenSSF Badge and Scorecard (they overlap ASVS) and ISO/IEC/IEEE 29119-1 (Section 4 never used it). Their references were removed from the report. The 6-label decision vocabulary is gone.
+- **ISO 9001, ISO/IEC 27001 and CMMI:** one paragraph, "considered and rejected on cost". Their ideas are tied to the user-based view (3.1) and the risk tiers (3.5).
+- **Reliability:** one line saying no standard is needed, because its gap is a missing measure (the coverage report).
+- **Option 1 for Table 3.3:** the plan's seven areas are presented as the report's own design ("Areas of Actual's QA plan"). The claim that an SQAP "is usually organised into standard sections" was removed, so no citation is needed. Background: Lecture 3's list is the IEEE 730-2002 outline, and no current readable source was found (S131, S133).
+- This supersedes the earlier "Standards scope: option B" adopt/borrow/reject table and the "OpenSSF: Adopt" row above.
 
 ## Relevant lecture guidance (not cited)
 

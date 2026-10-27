@@ -8,7 +8,7 @@ This report evaluates Actual Budget, a free, open-source, local-first personal f
 
 Actual has a defined workflow but no deliberate methodology. Judged against standard methodology selection factors, Actual suits an agile approach, except that its few reviewers are overloaded and its defects can affect users' money and data. Of five candidates, Kanban fits best because it directly limits the review backlog. Mandatory quality gates are added because Kanban itself prescribes no quality practices.
 
-The QA process focuses on three ISO/IEC 25010:2023 characteristics: Security, Reliability and Interaction capability. Public evidence shows gaps in proactive security verification, coverage measurement and accessibility testing. The proposed QA plan adopts OWASP ASVS 5.0.0, WCAG 2.2 and OpenSSF tools and writes its quality checks into the exit policy of each Kanban stage, scaled by risk.
+The QA process focuses on three ISO/IEC 25010:2023 characteristics: Security, Reliability and Interaction capability. Public evidence shows gaps in proactive security verification, coverage measurement and accessibility testing. The proposed QA plan adopts OWASP ASVS 5.0.0 and WCAG 2.2 and writes its quality checks into the exit policy of each Kanban stage, scaled by risk.
 
 IV&V adds risk-tiered independent review inside the team and external checks through coordinated disclosure and an optional funded audit. Internal review gives technical independence only, and volunteer time and donation funding remain the main limits.
 
@@ -269,34 +269,29 @@ Performance tests are also absent from CI, but performance efficiency is outside
 
 ## 3.4 Selecting Standards and Practices
 
-Candidate standards and frameworks were judged with two tests:
+A standard is selected only if it passes two tests:
 
-1. **Fit.** Does it help close one of the gaps in Section 3.3?
-2. **Cost.** Can a volunteer team, funded by donations and a USD 2,000 monthly stipend pool for review and administration (Actual Budget, n.d.-f), apply it without certification or a paid appraisal?
+1. **Fit.** It closes one of the gaps in Section 3.3, or, for the quality model, frames the section.
+2. **Cost.** A volunteer team, funded by donations and a USD 2,000 monthly stipend pool for review and administration (Actual Budget, n.d.-f), can apply it without certification or a paid appraisal.
 
-Table 3.1 records the decision for each. *Adopt* means it is used as published; *Adopt selectively* means only the parts that match the gaps are used; *Adapt* means its intent is applied in a lighter form; *Borrow principles* means its ideas are used but its certification is not pursued; *Reject* means it is not used; and *Reference only* means it is relevant but applied in a later section.
+Four standards pass both tests (Table 3.1).
 
-*Table 3.1. Standards and frameworks selected for Actual's QA process.*
+*Table 3.1. Standards adopted for Actual's QA process.*
 
-| Standard / framework | Decision | Reason |
+| Standard | Gap it closes | How it is used |
 |---|---|---|
-| ISO/IEC 25010:2023 | Adopt | Current product quality model; supplies the attributes in 3.2 |
-| IEEE 730-2026 | Adapt | Current standard for planning and controlling SQA; applied as a light plan in 3.5 |
-| ISO 9001:2026 | Borrow principles | Customer focus fits; certification needs a formal management system |
-| ISO/IEC 27001:2022 | Borrow principles | Risk-based security thinking fits; a certified security management system is too costly |
-| CMMI V3.0 | Reject | An appraisal rates processes but does not itself remove defects |
-| OWASP ASVS 5.0.0 | Adopt selectively | Authentication, session and authorisation requirements match the 2026 advisories |
-| WCAG 2.2 | Adopt (AA) | Current W3C accessibility standard; a small step from the 2.1 AA target |
-| OpenSSF Badge and Scorecard | Adopt | Free, open-source-specific security checks, largely automated |
-| ISO/IEC/IEEE 29119-1:2022 | Reference only | General testing concepts, applied in Section 4 |
-
-The heavier standards fail the cost test. ISO 9001:2026 sets requirements for an organisation to show that it consistently meets customer requirements (International Organization for Standardization, 2026), and ISO/IEC 27001:2022 covers establishing and improving an information security management system (International Organization for Standardization & International Electrotechnical Commission, 2022). Both assume a formal organisation, so only their customer focus and risk-based thinking transfer. CMMI V3.0 (Lear, 2023) would cost appraisal effort and buy a rating, not fewer defects. ISO/IEC/IEEE 29119-1:2022 supplies general testing concepts (International Organization for Standardization et al., 2022), which Section 4 uses.
-
-Three frameworks are adopted because they close the gaps directly and cost little:
+| ISO/IEC 25010:2023 | Frames the section | Names and defines the three attributes (3.2) |
+| OWASP ASVS 5.0.0 | Security | Selected requirements become acceptance criteria for High-tier work |
+| WCAG 2.2 | Interaction capability | Target moves from 2.1 AA to 2.2 AA; automated checks at review |
+| IEEE 730-2026 | No written QA plan | Its intent is applied as a light plan (3.5) |
 
 - **OWASP ASVS 5.0.0** provides a basis for testing technical security controls (OWASP Foundation, 2025). Its authentication, session management and authorisation chapters cover the same kinds of flaw as the 2026 advisories. This report therefore proposes using selected requirements from those chapters, not a full ASVS verification level, as acceptance criteria for sync-server work.
 - **WCAG 2.2** is recommended for new work, although W3C states that it does not deprecate 2.1 (World Wide Web Consortium, 2024). Moving Actual's target from 2.1 AA to 2.2 AA is therefore a modest step, and automated checks against it close the accessibility gap.
-- **The OpenSSF Best Practices Badge** is a criteria-based self-assessment, and **Scorecard** runs automated checks for risky security practices. No public result for Actual was found on 22 October 2026 (Open Source Security Foundation, n.d.-a, n.d.-b). Both address the proactive-security gap: Scorecard can run automatically, and the badge gives maintainers a checklist to keep up to date.
+- **IEEE 730-2026** sets requirements for planning and controlling software QA processes (IEEE, 2026). Only its official catalogue entry could be read, so the plan in Section 3.5 applies that intent in a light form and does not claim conformance.
+
+No standard is adopted for reliability. Its gap is a missing measure, not a missing practice, and the coverage report in Section 3.5 provides that measure.
+
+Three widely used quality standards were considered and rejected on the cost test. ISO 9001:2026 sets requirements for an organisation to show that it consistently meets customer requirements (International Organization for Standardization, 2026). ISO/IEC 27001:2022 covers establishing and improving an information security management system (International Organization for Standardization & International Electrotechnical Commission, 2022). CMMI V3.0 (Lear, 2023) rates an organisation's process maturity through an appraisal. All three assume a formal organisation and deliver their value through certification or a rating, neither of which would by itself remove a defect from Actual. Their main ideas are still reflected in the plan: customer focus in the user-based view of quality (3.1), and risk-based thinking in the risk tiers (3.5).
 
 ## 3.5 Applying the QA Process within Kanban
 
@@ -312,16 +307,16 @@ Not every change needs every check. At triage, each item is given a risk tier, w
 | Design | Endpoints and permissions listed; migration and sync impact stated | High tier | Author |
 | Build/PR | Existing CI green; coverage report produced; new endpoints added to the authorisation test matrix | All; matrix for High tier | Author |
 | Verify | Reviewer is not the author; automated WCAG 2.2 AA checks pass; selected ASVS requirements checked | All; ASVS for High tier | Reviewer |
-| Release train | Two approvals; smoke tests; Scorecard result reviewed; no open critical or high finding | Every release | Release maintainers |
+| Release train | Two approvals; smoke tests; no open critical or high finding | Every release | Release maintainers |
 | Operate/maintain | Reports handled privately within a stated response time; each escaped defect adds a regression test and a review of the exit policy that missed it | Every report | Maintainers handling security reports |
 
 The owners are existing maintainers and contributors; the plan assigns duties, not new posts. Triage and review are already paid from the stipend pool (Actual Budget, n.d.-f).
 
-A software quality assurance plan (SQAP) is usually organised into standard sections: management, documentation, standards and metrics, reviews and audits, testing, problem reporting and corrective action, and supporting areas such as tools and risk management. Table 3.3 shows where each is covered, so the board-based plan is complete rather than a list of checks. IEEE 730-2026 sets requirements for planning and controlling SQA processes (IEEE, 2026); this plan applies that intent in a light form and does not claim conformance.
+A QA plan needs more than checks. Table 3.3 shows the seven areas this plan covers and where each one sits, so that roles, documentation, measures and problem handling are planned as well as the checks themselves.
 
-*Table 3.3. SQAP sections and where Actual's plan covers them.*
+*Table 3.3. Areas of Actual's QA plan and where each is covered.*
 
-| SQAP section | Where it is covered |
+| Plan area | Where it is covered |
 |---|---|
 | Management (roles) | Owner column of Table 3.2 |
 | Documentation | Exit policies written on the board and in the contributing guide |
@@ -329,7 +324,7 @@ A software quality assurance plan (SQAP) is usually organised into standard sect
 | Reviews and audits | Verify and Release train stages; independent review and audit in Section 4 |
 | Testing | Build/PR and Verify stages |
 | Problem reporting and corrective action | Operate/maintain stage; security policy with a response-time target |
-| Tools and risk management | CI, Scorecard and accessibility checks; risk tiers set at triage |
+| Tools and risk management | CI, coverage report and accessibility checks; risk tiers set at triage |
 
 Each attribute has one measure, defined in Assignment 2: the share of server endpoints covered by the authorisation test matrix (security), test coverage of the core and sync-server packages (reliability), and the number of automated accessibility violations on key screens (interaction capability).
 
@@ -337,11 +332,11 @@ Each attribute has one measure, defined in Assignment 2: the share of server end
 
 The plan's main cost is volunteer time. Every new exit criterion adds work for a small team. Reviewers are paid from a USD 2,000 monthly stipend pool (Actual Budget, n.d.-f), the project has already had pull requests waiting months for review (Aboltins, 2025), and maintainers identify administrative overhead as a burnout risk (Salkever, 2023). The risk tiers in Section 3.5 limit this cost, because documentation and styling changes skip the security and data criteria. The tier, however, is a judgement made at triage: a change placed in too low a tier passes with fewer checks.
 
-The plan also adds automation: a coverage report, accessibility checks, the authorisation test matrix and Scorecard. Automation is not free. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests and less discussion (Wessel et al., 2022). These observational studies cannot predict Actual's results, so each new check should be monitored for its effect on review time and tuned or removed if it slows the flow without finding defects.
+The plan also adds automation: a coverage report, accessibility checks and the authorisation test matrix. Automation is not free. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests and less discussion (Wessel et al., 2022). These observational studies cannot predict Actual's results, so each new check should be monitored for its effect on review time and tuned or removed if it slows the flow without finding defects.
 
-Three limits remain. First, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed. Second, an OpenSSF badge is a self-assessment, not an independent audit; Section 4 adds independent checks. Third, the evidence is public only. The gaps in Section 3.3 may be partly covered by private practices, and only the catalogue entry of IEEE 730-2026 could be read, so the plan follows its intent without claiming conformance.
+Two limits remain. First, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed. Second, the evidence is public only: the gaps in Section 3.3 may be partly covered by private practices, and IEEE 730-2026 is applied in intent only (Section 3.4).
 
-<!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S60-badge, S60-scorecard, S61, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129 -->
+<!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129 -->
 
 # 4 Integrating IV&V with Kanban
 
@@ -471,8 +466,6 @@ International Organization for Standardization & International Electrotechnical 
 
 International Organization for Standardization & International Electrotechnical Commission. (2023). *Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model* (ISO/IEC Standard No. 25010:2023). https://www.iso.org/standard/78176.html
 
-International Organization for Standardization, International Electrotechnical Commission, & Institute of Electrical and Electronics Engineers. (2022). *Software and systems engineering — Software testing — Part 1: General concepts* (ISO/IEC/IEEE Standard No. 29119-1:2022).
-
 Kanban University. (n.d.). *The official guide to the Kanban method*. Retrieved October 22, 2026, from https://kanban.university/kanban-guide/
 
 Kuhrmann, M., Tell, P., Hebig, R., Klünder, J., Münch, J., Linssen, O., Pfahl, D., Felderer, M., Prause, C. R., MacDonell, S. G., Nakatumba-Nabende, J., Raffo, D., Beecham, S., Tüzün, E., López, G., Paez, N., Fontdevila, D., Licorish, S. A., Küpper, S., … Richardson, I. (2022). What makes agile software development agile? *IEEE Transactions on Software Engineering, 48*(9), 3523–3539. https://doi.org/10.1109/TSE.2021.3099532
@@ -484,10 +477,6 @@ Liu, S., Zhou, J., Hu, X., Côgo, F. R., Xia, X., & Yang, X. (2025). An empirica
 Mockus, A., Fielding, R. T., & Herbsleb, J. D. (2002). Two case studies of open source software development: Apache and Mozilla. *ACM Transactions on Software Engineering and Methodology, 11*(3), 309–346. https://doi.org/10.1145/567793.567795
 
 National Aeronautics and Space Administration. (n.d.). *IV&V overview*. Retrieved October 22, 2026, from https://www.nasa.gov/ivv-overview/
-
-Open Source Security Foundation. (n.d.-a). *FLOSS best practices criteria (passing badge)*. Retrieved October 22, 2026, from https://www.bestpractices.dev/en/criteria/0
-
-Open Source Security Foundation. (n.d.-b). *OpenSSF Scorecard*. Retrieved October 22, 2026, from https://scorecard.dev/
 
 Open Source Technology Improvement Fund. (2026, January 30). *2025 annual report*. https://ostif.org/2025-annual-report/
 
