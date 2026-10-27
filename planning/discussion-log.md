@@ -844,3 +844,12 @@ Writing-tool source note: all three original section writers and the root writer
   - In 4.3, the lead-in is one sentence, the flaw is no longer retold (3.3 has it, which also resolves the Pluggy spelling), and the overall-quality paragraph points back to 4.1.
 - 1-1 applied (the dangling modifier in 1.1 is fixed).
 - Measured total: 5,990 words, from 7,037 on the same count. The plan's estimate of about 5,000 was too optimistic by about 1,000 words, because most of the safe cuts saved less than estimated. A second round needs content decisions from the author. See the round-2 list in `06-trim-plan.md`.
+
+## 2026-10-27 — Round 2: C1, C4, C5 applied; selection-to-appendix declined
+
+- C1: the methodology and QA definitions that opened Sections 2 and 3 were removed. QA is still defined as an abbreviation in 1.1.
+- C4: the 3.5 worked example moved to a new **Appendix A** (FYI only). 3.5 points to it in one sentence. 4.3 still walks through the same bank-sync case in the body.
+- C5: the executive summary was shortened (186 to 171).
+- The author asked to move the Kanban selection process to an appendix and go straight to Kanban. **Not applied.** The brief marks "select, justify, and critically evaluate… based on goals, constraints, risks, and stakeholder expectations", so the selection is the justification. Appendices are not marked. AGENTS.md forbids moving content the argument depends on into an appendix to save words.
+- The author asked whether 2.6 and 3.6 are needed. Answer: yes. The brief asks for critical evaluation in both the methodology and QA tasks, unlike the IV&V task (which is why 4.4 was deleted).
+- Total now 5,799. R1–R8 re-evaluated with context for the author; not yet applied.

@@ -4,13 +4,13 @@
 
 # Executive Summary
 
-This report evaluates Actual Budget, a free, open-source, local-first personal finance application run by a small volunteer team. Its users need to trust the numbers it shows and the security of their financial data.
+This report evaluates Actual Budget, a free, open-source, local-first personal finance application run by a small volunteer team, whose users must be able to trust its numbers and the security of their data.
 
-Actual has a defined workflow but no deliberate methodology. Judged against standard methodology selection factors, Actual suits an agile approach, except that its few reviewers are overloaded and its defects can affect users' money and data. Of five candidates, Kanban fits best because it directly limits the review backlog. Mandatory quality gates are added because Kanban itself prescribes no quality practices.
+Actual has a defined workflow but no deliberate methodology. Its profile suits an agile approach, except that its few reviewers are overloaded and its defects can affect money and data. Of five candidates, Kanban fits best because it limits the review backlog; mandatory quality gates are added because Kanban prescribes no quality practices.
 
-The QA process focuses on three ISO/IEC 25010:2023 characteristics: Security, Reliability and Interaction capability. Public evidence shows gaps in proactive security verification, coverage measurement and accessibility testing. The proposed QA plan adopts OWASP ASVS 5.0.0 and WCAG 2.2 and writes its quality checks into the exit policy of each Kanban stage, scaled by risk.
+The QA process focuses on three ISO/IEC 25010:2023 characteristics: Security, Reliability and Interaction capability. Public evidence shows gaps in proactive security verification, coverage measurement and accessibility testing. The plan adopts OWASP ASVS 5.0.0 and WCAG 2.2 and writes risk-scaled checks into the exit policy of each Kanban stage.
 
-IV&V adds risk-tiered independent review inside the team and external checks through coordinated disclosure and an optional funded audit. Internal review gives technical independence only, and volunteer time and donation funding remain the main limits.
+IV&V adds risk-tiered independent review inside the team, plus external checks through coordinated disclosure and an optional funded audit. Internal review gives technical independence only, and volunteer time and donation funding remain the main limits.
 
 # 1 Introduction
 
@@ -72,7 +72,7 @@ A server is not required for basic budgeting, but syncing between devices and ba
 
 # 2 Software Development Methodology
 
-A software development methodology, also called a software process model, is a framework describing the activities performed at each stage of a software development project. Because a methodology can only be judged against the project it must serve, this section first describes how Actual works today and what kind of project it is. It then compares five candidates, selects one, shows how it would work in practice and examines its weaknesses.
+Because a methodology can only be judged against the project it must serve, this section first describes how Actual works today and what kind of project it is. It then compares five candidates, selects one, shows how it would work in practice and examines its weaknesses.
 
 ## 2.1 Current development process of Actual (as-is)
 
@@ -215,7 +215,7 @@ Finally, the choice should be revisited if Actual gains paid staff, which would 
 
 # 3 Quality Assurance Process
 
-Quality assurance (QA) is the planned set of activities that gives confidence that software meets its requirements, by putting suitable processes, procedures and standards in place and making sure they are followed. This section defines what quality means for Actual and which attributes matter most, finds the gaps in current practice, selects standards to close them, builds the resulting plan into the Kanban workflow and examines its weaknesses.
+This section defines what quality means for Actual and which attributes matter most, finds the gaps in current practice, selects standards to close them, builds the resulting plan into the Kanban workflow and examines its weaknesses.
 
 ## 3.1 What Quality Means for Actual
 
@@ -280,7 +280,7 @@ Not every card needs every check: running security and data checks on a wording 
 
 The tiers are this report's own, borrowing only the idea in IEEE 1012-2024 that the verification a component needs depends on its integrity level (IEEE, 2025).
 
-Table 3.2 is the resulting plan, and also the written QA plan that Section 3.3 found missing. Each row is a board column, showing the checks added to its exit policy (with the attribute each protects in brackets), which cards they apply to and who is responsible. Actual's existing checks stay in place, and the people responsible are existing maintainers and contributors, not new posts.
+Table 3.2 is the resulting plan, and also the written QA plan that Section 3.3 found missing. Each row is a board column, showing the checks added to its exit policy (with the attribute each protects in brackets), which cards they apply to and who is responsible. Actual's existing checks stay in place, and the people responsible are existing maintainers and contributors, not new posts. Appendix A follows one card through the plan.
 
 *Table 3.2. QA checks added to each Kanban column.*
 
@@ -292,8 +292,6 @@ Table 3.2 is the resulting plan, and also the written QA plan that Section 3.3 f
 | Verify | Automated WCAG 2.2 AA checks pass (interaction capability); selected ASVS requirements checked (security) | Cards that change the UI; ASVS for High tier | Reviewer |
 | Release train | No open critical or high security finding (security) | Every release | Release maintainers |
 | Operate/maintain | Security reports answered within a stated response time (security); each defect that reached users gets a regression test and a review of the check that missed it (all three) | Every report | Maintainers handling reports |
-
-**Worked example.** Suppose a contributor adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, and an acceptance criterion is written: every new endpoint must refuse requests without a valid login. At design, the implementer lists the new endpoints and who may call each one. At Build/PR, the endpoints are added to the authorisation test matrix. If the login check is missing, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. A typo fix in the documentation, by contrast, is Low tier and passes through the normal checks only.
 
 ## 3.6 Critical Evaluation
 
@@ -451,3 +449,8 @@ World Wide Web Consortium. (2024, December 12). *Web content accessibility guide
 
 youngcw. (2025, December 20). *Roadmap for 2026*. Actual Budget. https://actualbudget.org/blog/roadmap-for-2026/
 
+# Appendix A: Worked Example of the QA Plan
+
+*Supplementary illustration of Table 3.2 (Section 3.5).*
+
+Suppose a contributor adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, and an acceptance criterion is written: every new endpoint must refuse requests without a valid login. At design, the implementer lists the new endpoints and who may call each one. At Build/PR, the endpoints are added to the authorisation test matrix. If the login check is missing, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. A typo fix in the documentation, by contrast, is Low tier and passes through the normal checks only.
