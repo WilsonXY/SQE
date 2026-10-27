@@ -877,3 +877,7 @@ Writing-tool source note: all three original section writers and the root writer
 - R2, R4 and R6 were not applied, because their text is now in the appendix, which is not counted. Appendix A keeps the full text.
 - APA: works cited only in Appendix A (Schwaber & Sutherland; Beck & Andres; Boehm; DORA) stay in References, because APA lists works cited in appendices.
 - Total now 4,639, below the 4,750–5,250 range. About 360 words are free to restore body content.
+
+## 2026-10-27 — Wording: "This assignment proposes placing that limit on review"
+
+- At the author's request, "This report proposes placing that limit on review" became "This assignment proposes…". The change was made in both copies of the sentence: 2.2 and Appendix A.3.
