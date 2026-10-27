@@ -804,6 +804,10 @@ Writing-tool source note: all three original section writers and the root writer
 
 - At the author's request, "What is checked" became "Checks" and "Who checks" became "Checker". Table 4.2's headings are now: Board column | Checks | Tools | Checker | Exit policy.
 
+## 2026-10-27 — Section 4 review branch merged to main
+
+- At the author's request, `claude/section-4-review-tf1qs8` was fast-forwarded into `main` and pushed (`f11907a..a2e48a9`). It carries all of this session's Section 4 review changes.
+
 ## 2026-10-27 — Whole-report trim review (word count)
 
 - The author has finished the clarity reviews of Sections 1–4, written without a word limit, and asked for a critical read of the whole report to find what can be cut to meet the word limit. The cuts must be honest: remove what the reader doesn't need, and never compress sentences into shorthand.
@@ -900,3 +904,7 @@ Writing-tool source note: all three original section writers and the root writer
 - 2.3 heading: "(to-be)" removed at the author's request.
 - 2.4: the evidence-limits sentence was cut to its main point (no study shows Kanban improving a project like Actual). The practitioner-tutorial and qualitative-judgement remarks were dropped at the author's request. GeeksforGeeks (2025) is still cited in 2.2 and Appendix A.
 - 3.1: "manufacturing-based" replaced by Lecture 1's term "process-based" at the author's request. The list is now introduced as "five viewpoints, adapted from Garvin (1984)", because Garvin's own term is manufacturing-based.
+
+## 2026-10-27 — Trim branch merged to main
+
+- At the author's request, `claude/relaxed-turing-xm7oqj` (the whole-report word-count trim, the methodology selection moved to Appendix A, and the follow-up wording fixes) was merged into `main` and pushed. The body is 4,695 words.
