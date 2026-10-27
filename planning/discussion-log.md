@@ -799,3 +799,7 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Table 4.2 last heading made a noun
 
 - At the author's request, Table 4.2's last heading changed from "Card moves on when" to "Exit policy". This is the term Section 2.5 defines and Sections 3 and 4 use throughout.
+
+## 2026-10-27 — Table 4.2 headings all nouns
+
+- At the author's request, "What is checked" became "Checks" and "Who checks" became "Checker". Table 4.2's headings are now: Board column | Checks | Tools | Checker | Exit policy.

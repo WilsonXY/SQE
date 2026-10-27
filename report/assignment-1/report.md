@@ -372,7 +372,7 @@ Each check is written into the exit policy of the board column where it happens 
 
 *Table 4.2. Independent checks at each board column.*
 
-| Board column | What is checked | Tools | Who checks | Exit policy |
+| Board column | Checks | Tools | Checker | Exit policy |
 |---|---|---|---|---|
 | Requirements/triage | *Validate* that acceptance criteria are testable and cover security and data needs; assign the risk tier (all cards) | Issue templates, triage labels | Triager other than the requester | Tier and testable criteria recorded |
 | Design | *Verify* the design note from Table 3.2 (endpoints, permissions, migration and sync impact) and the threat note against the selected ASVS requirements | Decision record, OWASP ASVS 5.0.0 | Independent reviewer | Design and threat note accepted; ASVS requirements selected |
