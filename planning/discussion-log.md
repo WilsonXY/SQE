@@ -727,3 +727,12 @@ Writing-tool source note: all three original section writers and the root writer
   - the preview-build reason for the separate test server.
 - Flagged, not changed: 4.5's "its cost is estimated in Assignment 2" (agreed 2026-10-21, but similar to the 3.5 Assignment 2 mention the author removed).
 - Section 4 is about 1,980 words (was about 2,150).
+
+## 2026-10-27 — 4.3 merged into 4.2
+
+- The author asked what 4.3 was for, given 4.2. Answer: 4.3 held Table 4.2, the column-by-column version of the model in Lecture 6's per-phase format. The table is needed (it covers the brief's "implement", and the next subsection relies on it), but after the cuts its own text was four sentences, and 4.2 already pointed to it. Recommended merging; the author approved.
+- Applied:
+  - the 4.3 heading was removed;
+  - Table 4.2 and its notes now close 4.2;
+  - the table introduction and the threat-note definition were moved to the end of 4.2's exit-policy paragraph, after the WIP-limit sentence, so that "This follows Smith and Hayes" still refers to the exit policies.
+- 4.4 and 4.5 were renumbered 4.3 and 4.4. No cross-reference pointed to them; 3.5's "defined in Section 4.2" is still correct.

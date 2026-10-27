@@ -368,11 +368,7 @@ Second, High-tier changes get an *independent reviewer*: a maintainer who neithe
 
 Third, the other two kinds of independence come from outside Actual's team and budget. One route already exists: outside reporters using private vulnerability reporting (Section 3.3), who found the three advisories examined in Section 4.1. The other is new: an occasional external security audit of the sync server, where those flaws were, paid for by a third party rather than from Actual's donations. The Open Source Technology Improvement Fund (OSTIF) arranges such audits for OSS projects. In 2025 it published 24 audits with money from 10 funding bodies, and it reports that over 98% of the 231 security-relevant findings were fixed (Open Source Technology Improvement Fund, 2026).
 
-Each check is written into the exit policy of the board column where it happens (Section 2.5), so a High-tier card cannot move on until its independent evidence is attached; Table 4.2 lists them column by column. This follows Smith and Hayes (2024, Abstract), who argue that agile "has in no way diminished the need for IV&V" and that IV&V should run in phase with the development cadence. High-tier reviews also count against the Verify column's WIP limit, so if they queue up, new work stops entering and the queue is visible on the board.
-
-## 4.3 IV&V activities across the Kanban workflow
-
-Table 4.2 shows, for each Kanban column, who checks the work independently and what evidence they leave. A *threat note* lists who could misuse each new endpoint or data path, and which check stops them.
+Each check is written into the exit policy of the board column where it happens (Section 2.5), so a High-tier card cannot move on until its independent evidence is attached. This follows Smith and Hayes (2024, Abstract), who argue that agile "has in no way diminished the need for IV&V" and that IV&V should run in phase with the development cadence. High-tier reviews also count against the Verify column's WIP limit, so if they queue up, new work stops entering and the queue is visible on the board. Table 4.2 shows, for each column, who checks the work independently and what evidence they leave; a *threat note* lists who could misuse each new endpoint or data path, and which check stops them.
 
 *Table 4.2. IV&V activities, tools, roles and exit policies per Kanban column (High-tier cards unless stated).*
 
@@ -387,7 +383,7 @@ Table 4.2 shows, for each Kanban column, who checks the work independently and w
 
 Standard-tier cards skip the design review and need only preview-build validation; Low-tier cards follow normal review. Preview and nightly web builds have no sync server and are not meant for real budgets (Actual Budget, n.d.-g), hence the separate test server.
 
-## 4.4 How the integration meets the three goals
+## 4.3 How the integration meets the three goals
 
 **Early defect detection.** Running the critical 2026 advisory through the board shows where it would be caught. The flaw was missing authentication on six SimpleFIN and Pluggy.ai endpoints, although the GoCardless endpoints had it (Actual Budget, 2026c). Under the model, the card that adds those endpoints is High tier because it touches bank sync. At Design, the independent reviewer reads the list of new endpoints and checks each one against the ASVS authentication requirements, so an endpoint with no login check is flagged before any code is written. At Verify, the same reviewer checks the code and confirms that every endpoint is in the authorisation test matrix (Section 3.5). On its own, the matrix depends on the implementer remembering to add each endpoint; the reviewer is a second person checking that they did.
 
@@ -395,7 +391,7 @@ Standard-tier cards skip the design review and need only preview-build validatio
 
 **Overall quality.** The critical and high-severity flaws examined in Section 4.1 were found by outsiders after release. The model moves independent checking before release for the code where those flaws were, without slowing the rest: a theme or wording change still needs only one ordinary review. When a defect does escape, the Operate/maintain column turns it into a regression test and asks whether its area was tiered too low, so the same kind of defect is checked for next time.
 
-## 4.5 Critical evaluation
+## 4.4 Critical evaluation
 
 Internal independence has a hard limit. The independent reviewer and the maintainers who approve each monthly release belong to the same small team and are paid from the same stipend pool. If a release is due and a High-tier card's evidence is incomplete, the people deciding whether to wait are the people who want to ship. Only outsiders are free of that pressure, and their involvement is either voluntary or has to be funded.
 
