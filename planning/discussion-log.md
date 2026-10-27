@@ -795,3 +795,7 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Bold labels removed from 4.3
 
 - At the author's request, the bold run-in labels in 4.3 were removed. The goals are now named in each paragraph's opening sentence ("For early defect detection, …"; "For requirements compliance, …"; "The model improves overall quality …"), in the same order as the intro lists them. No other wording changed.
+
+## 2026-10-27 — Table 4.2 last heading made a noun
+
+- At the author's request, Table 4.2's last heading changed from "Card moves on when" to "Exit policy". This is the term Section 2.5 defines and Sections 3 and 4 use throughout.
