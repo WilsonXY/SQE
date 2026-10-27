@@ -194,7 +194,16 @@ Finally, Kanban has to be better than simply keeping today's process. The gain i
 
 In practice, Kanban would be added on top of Actual's existing route rather than replacing it (Kanban University, n.d.). Figure 3 shows the proposed board. Each column is a stage that work passes through, and each has an **exit policy**: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98).
 
-The Verify column, where review happens, carries the WIP limit. The limit should be set from the number of reviews the maintainers actually complete, tracked through process metrics such as lead time (from request to delivery) and cycle time (from commit to release), so that new work stops entering once reviews start to pile up. Verify's exit policy is the QA gate from Section 3, which covers security, reliability and interaction capability, and Section 4 adds independent checks to each column. The monthly release stays as it is, and each release becomes the point at which the team checks whether the limits and policies need adjusting.
+Each piece of work, such as a bug fix or a new feature, is a card that moves left to right through six columns:
+
+- **Requirements/triage:** the request is recorded and its risk is assessed.
+- **Design:** the author decides how to build it.
+- **Build/PR:** the author writes the code and opens a pull request, and the automated tests (CI) run.
+- **Verify:** another maintainer reviews the pull request.
+- **Release train:** approved work goes out in the monthly release.
+- **Operate/maintain:** users run the release, and their bug and security reports feed back into triage.
+
+The Verify column, where review happens, carries the WIP limit. The limit should be set from the number of reviews the maintainers actually complete, tracked through process metrics such as lead time (from request to delivery) and cycle time (from commit to release), so that new work stops entering once reviews start to pile up. Section 3 adds quality checks for security, reliability and interaction capability to the exit policies, and Section 4 adds independent checks to each column. The monthly release stays as it is, and each release becomes the point at which the team checks whether the limits and policies need adjusting.
 
 Compared with today, three things change: the review queue becomes visible on the board, the number of PRs waiting for review is limited, and the conditions for moving work forward are written down and mandatory.
 
@@ -293,36 +302,26 @@ Other well-known standards fail the cost test. IEEE 730-2026, the standard for s
 
 ## 3.5 Applying the QA Process within Kanban
 
-Section 2.5 gave each Kanban column an exit policy: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98). The QA plan is built from these exit policies (Table 3.2), so it sits on the board that volunteers already use instead of in a separate document they may never open.
+This section turns the gaps found in Section 3.3 into checks that run inside Actual's everyday workflow. Section 2.5 placed all work on a Kanban board: each bug fix or feature is a card that moves from triage through design, build, review and release to operation, and each column has an exit policy that must be met before the card moves on (Ahmad et al., 2018, p. 98). The QA plan adds its checks to these exit policies. Quality is then checked as part of moving work forward, not in a separate document that volunteers may never open.
 
-Not every change needs every check. At triage, each item is given a risk tier, which Section 4.3 defines in full: High for work on authentication, bank sync, calculations, migrations, sync and encryption; Low for themes, wording and documentation; Standard for everything else. The security and data criteria apply only to High-tier items, while CI, review and accessibility checks apply to all. A documentation change therefore never waits for an authorisation matrix.
+Not every change needs every check. At triage, each card is given a risk tier, defined in Section 4.3: *High* for work on authentication, bank sync, calculations, database migrations, sync and encryption; *Low* for themes, wording and documentation; and *Standard* for everything else. The heavier security and data checks apply only to High-tier cards, so volunteers' time goes where failure costs most.
 
-*Table 3.2. QA plan embedded in the Kanban exit policies.*
+Table 3.2 is the resulting plan. Each row is a column of the board. It shows the checks added to that column's exit policy, with the attribute each check protects in brackets, which cards the checks apply to and who is responsible. Actual's existing checks (CI, maintainer review, two release approvals and smoke tests) stay in place and are not repeated.
 
-| Kanban stage | Exit policy (QA criteria) | Applies to | Owner |
+*Table 3.2. QA checks added to each Kanban column.*
+
+| Kanban column | Checks added to the exit policy | Applies to | Who |
 |---|---|---|---|
-| Requirements/triage | Risk tier set; security, data and accessibility acceptance criteria written | All items | Triager |
-| Design | Endpoints and permissions listed; migration and sync impact stated | High tier | Author |
-| Build/PR | Existing CI green; coverage report produced; new endpoints added to the authorisation test matrix | All; matrix for High tier | Author |
-| Verify | Reviewer is not the author; automated WCAG 2.2 AA checks pass; selected ASVS requirements checked | All; ASVS for High tier | Reviewer |
-| Release train | Two approvals; smoke tests; no open critical or high finding | Every release | Release maintainers |
-| Operate/maintain | Reports handled privately within a stated response time; each escaped defect adds a regression test and a review of the exit policy that missed it | Every report | Maintainers handling security reports |
+| Requirements/triage | Risk tier set; acceptance criteria written for security, data and accessibility (all three) | All cards | Triager |
+| Design | Endpoints and permissions listed (security); migration and sync impact stated (reliability) | High tier | Author |
+| Build/PR | Coverage report produced (reliability); new endpoints added to the authorisation test matrix (security) | All; matrix for High tier | Author |
+| Verify | Automated WCAG 2.2 AA checks pass (interaction capability); selected ASVS requirements checked (security) | Cards that change the UI; ASVS for High tier | Reviewer |
+| Release train | No open critical or high security finding (security) | Every release | Release maintainers |
+| Operate/maintain | Security reports answered within a stated response time (security); each defect that reached users gets a regression test and a review of the check that missed it (all three) | Every report | Maintainers handling security reports |
 
-The owners are existing maintainers and contributors; the plan assigns duties, not new posts. Triage and review are already paid from the stipend pool (Actual Budget, n.d.-f).
+The people in the Who column are existing maintainers and contributors; the plan assigns duties, not new posts, and triage and review are already paid from the stipend pool (Actual Budget, n.d.-f). Written into the contributing guide as well as onto the board, Table 3.2 is also the written QA plan that Section 3.3 found missing.
 
-A QA plan needs more than checks. Table 3.3 shows the seven areas this plan covers and where each one sits, so that roles, documentation, measures and problem handling are planned as well as the checks themselves.
-
-*Table 3.3. Areas of Actual's QA plan and where each is covered.*
-
-| Plan area | Where it is covered |
-|---|---|
-| Management (roles) | Owner column of Table 3.2 |
-| Documentation | Exit policies written on the board and in the contributing guide |
-| Standards and metrics | Table 3.1; one measure per attribute (below) |
-| Reviews and audits | Verify and Release train stages; independent review and audit in Section 4 |
-| Testing | Build/PR and Verify stages |
-| Problem reporting and corrective action | Operate/maintain stage; security policy with a response-time target |
-| Tools and risk management | CI, coverage report and accessibility checks; risk tiers set at triage |
+**Worked example.** Suppose a contributor adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, and an acceptance criterion is written: every new endpoint must refuse requests without a valid login. At design, the author lists the new endpoints and who may call each one. At Build/PR, the endpoints are added to the authorisation test matrix. If the login check is missing, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. A typo fix in the documentation, by contrast, is Low tier and passes through the normal checks only.
 
 Each attribute has one measure, defined in Assignment 2: the share of server endpoints covered by the authorisation test matrix (security), test coverage of the core and sync-server packages (reliability), and the number of automated accessibility violations on key screens (interaction capability).
 

@@ -84,6 +84,20 @@ The author asked for all ten Section 3 review findings to be applied (see `discu
 - The missing QA plan is closed by the plan itself; reliability is closed by the coverage measure.
 - This supersedes "IEEE 730-2026 | Adapt" above.
 
+## Agreed: 3.5 rebuilt (27 October 2026)
+
+- The author could not follow 3.5. The diagnosis: it never said what it was for, its table was not linked to the gaps, Table 3.3 was a table about tables, and it used too much jargon at once.
+- New structure:
+  1. an opening that states the purpose and recaps the board;
+  2. the risk tiers (Section 4.3);
+  3. a sentence on how to read the table;
+  4. **Table 3.2 by Kanban column** (the author's choice over by-attribute), listing only the *added* checks, each tagged with the attribute it protects in brackets, plus *Applies to* and *Who*;
+  5. the owners sentence, and Table 3.2 named as the written QA plan;
+  6. a **worked example** (a new bank-sync provider, as in GHSA-m2cq), showing where the 2026 flaw could be stopped, with a Low-tier typo fix as the contrast;
+  7. the measures.
+- **Table 3.3 (plan areas) removed.**
+- Section 2.5 now lists what happens in each of the six columns, because the author found the board model unclear in Section 2. "Verify's exit policy is the QA gate" now reads "Section 3 adds quality checks … to the exit policies".
+
 ## Relevant lecture guidance (not cited)
 
 - L1: views of quality; functional, structural and process quality.

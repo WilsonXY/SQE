@@ -530,3 +530,20 @@ Writing-tool source note: all three original section writers and the root writer
   - It is filed under Reliability because sync, migration and recovery code protects data integrity.
   - Weaknesses flagged: it rests on one config file and missing tooling, it is a missing measure rather than a shown failure, and coverage does not prove correctness.
   - Offered: search Actual's issues and advisories for sync or migration defects that reached users, or state in 3.3 that coverage is an indirect measure. Awaiting the author's decision.
+
+## 2026-10-27 — 3.5 rebuilt; board columns explained in 2.5
+
+- The author could not understand 3.5 or its two tables. Its purpose, the board model and how to read the table were explained in plain words, with a worked example (a new bank-sync provider versus a typo fix).
+- The author found that Section 2 does not explain the board's mental model well, and asked for the 3.5 table to be ordered by Kanban column rather than by attribute.
+- Applied:
+  - 2.5 now has a six-item list of what happens in each column, and its sentence on the Verify QA gate was updated.
+  - 3.5 was rewritten:
+    - a purpose opening with a recap of the board;
+    - the risk tiers;
+    - a how-to-read sentence;
+    - Table 3.2 by column, listing only added checks, each tagged with the attribute it protects;
+    - owners, and Table 3.2 named as the written QA plan;
+    - a worked example ending with where a flaw like GHSA-m2cq could be stopped ("could", in line with 3.3);
+    - the measures.
+  - Table 3.3 was removed.
+- Section 3 is now about 2,210 words.
