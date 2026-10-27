@@ -331,73 +331,77 @@ Two limits remain. First, automated accessibility checks find rule violations bu
 
 ## 4.1 V&V, IV&V and why Actual needs them
 
-IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). It specifies V&V requirements for different integrity levels. Independent V&V (IV&V) adds a condition on who does the checking. NASA, following IEEE, defines independence along three parameters: technical (assessors judge the work independently of the developer), managerial (responsibility for IV&V sits in a separate organisation) and financial (the IV&V budget is controlled by an organisation independent of development) (National Aeronautics and Space Administration, n.d.).
+IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). It specifies V&V requirements for different integrity levels, so the V&V a component needs depends on the level assigned to it. Independent V&V (IV&V) adds a condition on who does the checking. NASA, following IEEE, defines independence along three parameters: technical (assessors judge the work independently of the developer), managerial (responsibility for IV&V sits in a separate organisation) and financial (the IV&V budget is controlled by an organisation independent of development) (National Aeronautics and Space Administration, n.d.).
 
 Agile delivery does not remove the need for IV&V. Smith and Hayes (2024, Abstract) argue that the move to agile "has in no way diminished the need for IV&V", note that security may not be readily demonstrable through user-visible behaviour, and recommend that IV&V runs in phase with the development cadence. This matters for Actual, which holds personal financial data and whose sync server has had critical and high-severity access-control flaws published as advisories in 2026 (Actual Budget, 2026c, 2026d).
 
 ## 4.2 Current V&V in Actual and its independence (as-is)
 
+Table 4.1 rates Actual's existing V&V activities against the three kinds of independence. *Partial* means the check is independent of the implementer but limited: automated tests check only what the team chose to test, and community testing of preview builds is informal. *Not established* means public evidence does not show either way.
+
 *Table 4.1. Independence of Actual's existing V&V activities.*
 
 | Activity | Performed by | Technical | Managerial | Financial |
 |---|---|---|---|---|
-| PR review | Another core maintainer; non-controversial PRs may be merged straight away (Actual Budget, n.d.-e) | Yes | No | No: reviewers share one stipend pool (Actual Budget, n.d.-f) |
-| Release approval and smoke test | At least two other maintainers (Actual Budget, n.d.-c) | Yes | No | No |
+| PR review | Another core maintainer, who may approve and merge non-controversial PRs straight away (Actual Budget, n.d.-e) | Yes | No | No: reviewers share one stipend pool (Actual Budget, n.d.-f) |
+| Release approval and smoke test | At least two other maintainers approve before tagging; smoke tests run after the builds are published (Actual Budget, n.d.-c) | Yes | No | No |
 | CI tests and CodeQL scanning | Automated, configured by the team (Actual Budget, 2026a) | Partial | No | No |
 | PR preview and nightly builds | Any community member, voluntarily (Actual Budget, n.d.-g) | Partial | Not established | Not established |
 | Vulnerability reports | Reporters outside the core team (Actual Budget, 2026c) | Yes | Not established | Not established |
-| External audit | No public evidence found (October 2026) | — | — | — |
+| External audit | No public evidence found in the documentation and blog (October 2026) | — | — | — |
 
-Actual therefore has real independent checking, but it is ad hoc and mostly technical. Internal reviewers share one small team, release goals and donation-funded pool, so they cannot provide managerial or financial independence. The strongest independent findings came after release. The three advisories checked for this report credit iamsilk, Rex50527 and pyuysig, none of whom is a core maintainer, with discovering a critical and two high-severity flaws in released versions (Actual Budget, 2026b, 2026c, 2026d). The credits establish who found the flaws; they do not show the reporters' organisational or funding arrangements, so only technical independence is evidenced.
+Actual therefore has real independent checking, but it is ad hoc and mostly technical: how independently a change is checked depends on who happens to review or report it, not on how risky it is. Internal reviewers share one small team, release goals and donation-funded pool, so they cannot provide managerial or financial independence. The strongest independent findings came after release. The three advisories checked for this report credit iamsilk, Rex50527 and pyuysig, none of whom is a core maintainer, with discovering a critical and two high-severity flaws in released versions (Actual Budget, 2026b, 2026c, 2026d). The credits establish who found the flaws; they do not show the reporters' organisational or funding arrangements, so only technical independence is evidenced.
 
-The disclosure route itself is a strength. Actual asks for private reporting and coordinated disclosure (Actual Budget, n.d.-h), a practice most OSS practitioners support but which only 55% of studied vulnerabilities actually followed (Liu et al., 2025). No public evidence of an external security audit was found in the documentation and blog reviewed (October 2026).
+The disclosure route itself is a strength. Actual asks for private reporting and coordinated disclosure (Actual Budget, n.d.-h), a practice most OSS practitioners support but which only 55% of studied vulnerabilities actually followed (Liu et al., 2025).
 
 ## 4.3 IV&V integration model for Kanban (to-be)
 
-**Achievable independence.** A maintainer review is not full IV&V in the IEEE sense, and the report does not present it as such. Internally, the proposal adds an *independent reviewer* role for high-risk work: a maintainer who is neither the implementer nor the code owner of the affected area. This gives technical independence only. Managerial and financial independence must come from outside: the existing coordinated-disclosure channel and an optional, periodic funded external security audit. The Open Source Technology Improvement Fund (OSTIF) shows this is workable for OSS: it self-reports 24 audits published in 2025, with 231 security-relevant findings and over 98% fixed (Open Source Technology Improvement Fund, 2026). Financial independence is stronger when a third party, not Actual, pays.
+**Achievable independence.** A maintainer review is not full IV&V in the IEEE sense, so this report treats it as a partial measure. For high-risk work, it proposes an *independent reviewer* role: a maintainer who is neither the implementer nor the code owner, meaning the maintainer listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). This gives technical independence only. Managerial and financial independence must come from outside: the existing coordinated-disclosure channel and an optional, periodic funded external security audit. The Open Source Technology Improvement Fund (OSTIF) shows this is workable for OSS: it self-reports 24 audits published in 2025, with 231 security-relevant findings and over 98% fixed (Open Source Technology Improvement Fund, 2026). Financial independence is stronger when a third party, not Actual, pays, because the audit budget then sits outside the project.
 
-**Risk tiers.** Inspired by IEEE 1012's integrity-level concept (IEEE, 2025), this report proposes its own three tiers; they are not IEEE's scheme:
+**Risk tiers.** Inspired by IEEE 1012's integrity-level concept (IEEE, 2025), this report proposes its own three tiers; they are not IEEE's scheme. The triager assigns the tier by the worst plausible failure of the change, and when in doubt the higher tier applies:
 
-- *High*: authentication, authorisation and sessions; bank-sync endpoints; budget and balance calculations; database migrations; sync and encryption.
-- *Standard*: most features, such as reports, rules and UI components.
-- *Low*: themes, wording and documentation.
+- *High*: a failure could expose financial data or credentials, give wrong money figures or lose budget data (authentication, authorisation and sessions; bank sync; budget and balance calculations; database migrations; sync and encryption).
+- *Standard*: a failure would be visible but recoverable without data loss (most features, such as reports, rules and UI components).
+- *Low*: a failure would be cosmetic (themes, wording and documentation).
 
-**Explicit policies.** Kanban makes process policies explicit as entry and exit criteria that determine when an item may be pulled into the next state (Ahmad et al., 2018, p. 98). The tier label set at triage decides which IV&V criteria apply, and independent-reviewer capacity is counted within the WIP limits that the Kanban Method uses to manage flow (Kanban University, n.d.). Checks therefore run per item, in phase with the flow (Smith & Hayes, 2024). Section 3 defines *what* each QA gate checks; Section 4 adds *who* verifies it and what independent evidence is required.
+**Explicit policies.** Section 2.5 gave each board column an exit policy that must be met before work is pulled into the next column (Ahmad et al., 2018, p. 98). The IV&V checks are added to these same exit policies, and the card's tier decides which apply, so the checks run on each card as it moves, in phase with the flow (Smith & Hayes, 2024). This report also proposes that High-tier cards count against the Verify column's WIP limit like any other review, so a queue waiting for an independent reviewer stops new work entering instead of growing unseen.
 
 ## 4.4 IV&V activities across the Kanban workflow
 
-*Table 4.2. IV&V activities, tools, roles and exit criteria per Kanban stage (high-tier items unless stated).*
+Table 4.2 maps the six lifecycle phases onto the Kanban columns of Section 2.5. It builds on Table 3.2 rather than repeating it: Table 3.2 lists each column's quality checks, while Table 4.2 says which of them someone independent must perform or confirm, and what evidence they leave. *Verify* marks a check against requirements and *validate* a check against users' needs (Section 4.1). A *threat note* is a few lines in the decision record listing who could misuse each new endpoint or data path, and which check stops them. *ASVS requirement numbers* identify the ASVS 5.0.0 requirements (Section 3.4) that a reviewer checked.
 
-| Stage (lifecycle phase) | IV&V activities | Tools | Independent role | Exit criterion |
+*Table 4.2. IV&V activities, tools, roles and exit policies per Kanban column (High-tier cards unless stated).*
+
+| Column (lifecycle phase) | IV&V activities | Tools | Independent role | Exit policy added |
 |---|---|---|---|---|
-| Requirements/triage (requirements) | Assign risk tier; validate that acceptance criteria are testable and include security criteria | Issue templates, triage labels | Triager other than the requester | Tier and testable criteria recorded |
-| Design (design) | Review design and a short threat note against access-control requirements | ADR, OWASP ASVS 5.0.0 | Independent reviewer | Threat note accepted; ASVS requirements selected |
-| Build/PR (implementation) | Code review against selected ASVS requirements; check authorisation and regression tests exist | GitHub review, CodeQL, CI | Independent reviewer (not implementer, not code owner) | Approval citing ASVS IDs and tests; CI green |
-| Verify (testing) | Validate behaviour on preview build; run server and security tests on a separate test server with synthetic budgets | Preview builds, Playwright, Vitest | Validator other than the implementer | Evidence attached; no open high findings |
-| Release train (deployment) | Verify the release candidate and that every high-tier item met its exit criteria | Release checklist, Docker and desktop builds | At least two other maintainers; one checks tier evidence | Signed-off evidence before final release |
-| Operate/maintain (maintenance) | Triage reports; add a regression test for each fixed advisory; feed findings back to triage | Private vulnerability reporting, advisories | External reporters; optional funded auditor | Advisory published; regression test merged |
+| Requirements/triage (requirements) | *Validate* that acceptance criteria are testable and cover security and data needs; assign the risk tier (all cards) | Issue templates, triage labels | Triager other than the requester | Tier and testable criteria recorded |
+| Design (design) | *Verify* the design note from Table 3.2 (endpoints, permissions, migration and sync impact) and the threat note against the selected ASVS requirements | Decision record, OWASP ASVS 5.0.0 | Independent reviewer | Design and threat note accepted; ASVS requirements selected |
+| Build/PR (implementation) | *Verify* automatically: CI, CodeQL and the authorisation test matrix run on every PR (all cards) | GitHub Actions, CodeQL, Vitest | None: automated checks configured by the team (partial, Table 4.1) | CI green, including the authorisation test matrix |
+| Verify (testing) | *Verify* the code against the selected ASVS requirements and that each acceptance criterion has a passing test; for migration, sync or calculation changes, *verify* that balances and envelope totals on a synthetic budget match before and after; *validate* behaviour on a preview build (Standard and High) | GitHub review, preview builds, Playwright, separate test server with synthetic budgets | Independent reviewer (not implementer, not code owner); validator other than the implementer | Approval citing ASVS requirement numbers and tests; validation evidence attached; no open high findings |
+| Release train (deployment) | *Verify* that every High-tier card in the release met its Verify exit policy | Release checklist | One of the two approving maintainers | Evidence confirmed before approval and tagging |
+| Operate/maintain (maintenance) | Triage external reports; for each fixed advisory, add a regression test and re-check the tier of the area involved | Private vulnerability reporting, advisories | External reporters; optional funded auditor; a reviewer other than the code owner for the tier re-check | Advisory published; regression test merged; tier rule corrected if the area was under-tiered |
 
-Standard-tier items skip the design threat note and need only preview-build validation; low-tier items follow normal review. The ASVS suits the sync server's advisory history because it provides a basis for testing web application technical security controls (OWASP Foundation, 2025). Preview and nightly web builds include no sync server (Actual Budget, n.d.-g), so the Verify stage needs a separate controlled server. The release row adds evidence before final approval; it does not claim that current smoke testing precedes every publication step (Actual Budget, n.d.-c).
+Standard-tier cards skip the design review and need only preview-build validation; Low-tier cards follow normal review. Preview and nightly web builds have no sync server and are not meant for real budgets (Actual Budget, n.d.-g), hence the separate test server. Actual's smoke tests run only after the builds are published (Actual Budget, n.d.-c), so the evidence check sits at release approval, before tagging.
 
 ## 4.5 How the integration meets the three goals
 
-**Early defect detection.** GHSA-m2cq-xjgm-f668 arose because six SimpleFIN and Pluggy.ai endpoints lacked authentication middleware (Actual Budget, 2026c). Under the model, bank-sync work is high tier, so an independent reviewer applying ASVS authentication requirements, backed by authorisation tests, would have a defined point at the design or PR gate to detect the omission before release.
+**Early defect detection.** GHSA-m2cq-xjgm-f668 was an inconsistency: the GoCardless endpoints had authentication middleware, but six SimpleFIN and Pluggy.ai endpoints did not (Actual Budget, 2026c). The authorisation test matrix (Section 3.5) catches this only if the implementer adds the new endpoints, and an implementer who forgets the middleware may forget the test too. Under the model, bank-sync work is High tier, so a reviewer who neither wrote nor owns the code checks every endpoint against the same ASVS authentication requirements at Design and Verify, and confirms that each is in the matrix. The omission would face two independent checks before release.
 
-**Requirements compliance.** The model links each requirement to its evidence: feature request, testable acceptance criteria, a PR referencing the issue, tests and the release note. Actual already has most of these links; the independent reviewer checks that the chain is complete.
+**Requirements compliance.** Each requirement is linked to its evidence: a feature request, testable acceptance criteria, a PR that references the issue, tests and a release note. Actual's issue and PR templates already capture most of these links (Actual Budget, 2026a). The model adds two independent checks: the triager validates that the criteria are testable, and the independent reviewer confirms that each has a passing test.
 
-**Overall quality.** Tiering concentrates scarce review effort where failure is costliest, aiming to reduce escaped defects. Assignment 2 addresses how to measure this.
+**Overall quality.** Tiering puts scarce review time where failure is costliest, and High-tier work gains an independent assessment before release, whereas Section 4.2 found that the strongest one came after. Escaped defects also improve the process: each gets a regression test and, if the area was under-tiered, a corrected tier rule.
 
 ## 4.6 Critical evaluation
 
 The model cannot deliver full IEEE-style independence internally. The independent reviewer belongs to the same team and stipend pool, so managerial and financial independence still depend on outsiders, whose involvement is voluntary or funded.
 
-Independence also competes with flow. After open-sourcing, PRs waited months for review (Aboltins, 2025), and growing demands on maintainers' time contribute to burnout in OSS projects (Salkever, 2023). Requiring a second, non-owner reviewer for every item would recreate that backlog. Tiering and WIP limits reduce this risk, but tier assignment is a judgement that may understate risk.
+Independence also competes with expertise and flow. Actual's CODEOWNERS file names one maintainer each for the sync server and the server-side budget code (Actual Budget, 2026a). Excluding them leaves reviewers who may know that code less well, so High-tier reviews may be slower or miss subtle flaws, and cards could queue at Verify: a smaller version of the months-long review delays after open-sourcing (Aboltins, 2025). Tiering confines this cost to High-tier work and the WIP limit makes the queue visible, but neither adds reviewers.
 
-Cost is a binding constraint. Actual receives about USD 3,000–3,500 a month in donations, of which USD 2,000 is allocated to review stipends (Actual Budget, n.d.-f), so a funded audit depends on donors or a third-party funder. Its cost is estimated in Assignment 2.
+Cost is a binding constraint. Actual receives about USD 3,000–3,500 a month in donations, and USD 2,000 of that funds a stipend pool for review and administrative work (Actual Budget, n.d.-f), so a funded audit depends on donors or a third-party funder. Its cost is estimated in Assignment 2.
 
-Finally, gates can become ritual. Actual's own payment guide concedes that rubber-stamp reviews to earn points are theoretically possible (Actual Budget, n.d.-f); requiring cited ASVS IDs and named tests makes approval harder to fake but not impossible. ASVS covers technical security controls only (OWASP Foundation, 2025), leaving reliability and interaction capability to Section 3's gates.
+Finally, exit policies can become ritual. Actual pays stipends through points calculated automatically from pull request size, and its payment guide concedes that rubber-stamp reviews to earn points are theoretically possible (Actual Budget, n.d.-f). Citing ASVS requirement numbers and named tests makes approvals harder to fake, not impossible. ASVS also covers technical security controls only (OWASP Foundation, 2025), so the reliability checks rest on synthetic budgets, which find only the problems they happen to exercise.
 
-<!-- Cited: S01, S03, S04, S08, S10, S38, S47, S58, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S70, S72, S109 -->
+<!-- Cited: S01, S03, S04, S08, S10, S38, S58, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S70, S72 -->
 
 # References
 

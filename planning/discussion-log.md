@@ -622,3 +622,22 @@ Writing-tool source note: all three original section writers and the root writer
   10. 4.6 repeats 3.6 (backlog, burnout, tier judgement, stipend).
   11. Two Assignment 2 mentions, while the author removed a similar one from 3.5.
   12. Smaller accuracy checks: NASA's financial-independence wording is not recorded in S68's notes; stipend described differently in 3.4 and 4.6; "merged straight away" wording in Table 4.1.
+
+## 2026-10-27 — Section 4 review findings applied
+
+- The author asked for all twelve findings to be applied, split if needed; they will review the result afterwards.
+- Facts rechecked first (logged in `sources.md`, "Section 4 review: source rechecks"): NASA financial independence [S68], stipend scope, points and the rubber-stamp FAQ [S08], "approve and merge straight away" [S04], release-step order [S03], CODEOWNERS and the issue/PR templates [S01].
+- Applied, by finding:
+  1. Table 4.2 now matches 2.5 and 3.5: review and ASVS at Verify; Build/PR is automated only. A lead-in says how Table 4.2 builds on Table 3.2.
+  2. Reliability check added to the Verify row (synthetic-budget totals before and after migration, sync or calculation changes); 4.6's ASVS sentence now states the limit of that check.
+  3. Tier rule added in 4.3 (worst plausible failure; higher tier when in doubt).
+  4. 4.5 early detection says what the independent reviewer adds beyond the test matrix (the GoCardless/SimpleFIN/Pluggy.ai inconsistency, checked at Design and Verify).
+  5. Release-row disclaimer replaced with a plain statement of the smoke-test order.
+  6. Lead-ins added for Tables 4.1 and 4.2; "Partial" and "Not established" defined; threat note, ASVS requirement numbers, decision record (replacing "ADR"), code owner and points explained; the WIP-limit sentence rewritten.
+  7. "Exit policy" used throughout Section 4.
+  8. The "Section 3 defines what, Section 4 adds who" sentence was removed; the 4.4 lead-in states the actual split.
+  9. The WIP-limit idea is now marked "this report also proposes".
+  10. Stipend described as "review and administrative work"; Table 4.1 says "approve and merge"; the external-audit sentence was merged into the table row.
+  11. 4.6 rewritten to avoid repeating 3.6: independence versus expertise and flow (CODEOWNERS), with Salkever (2023) no longer cited in Section 4 (still cited in 2.6 and 3.6). Kanban University (n.d.) is no longer cited in Section 4 (still cited in 2.5). Both stay in References.
+  12. Assignment 2 mention removed from 4.5; kept in 4.6.
+- Word count: Section 4 went from about 1,480 to about 1,960 words.

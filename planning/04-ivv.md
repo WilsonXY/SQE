@@ -141,6 +141,19 @@ Steps:
    - if it also defines **independence** (technical/managerial/financial), we can cite IEEE directly instead of NASA's summary.
 5. If you see "Purchase" or "Sign in to access" instead, the subscription doesn't include standards. Optionally ask the librarians; otherwise we use our own tiers.
 
+## Review changes (2026-10-27)
+
+Applied at the author's request ("do all"); the author will review the result. See `discussion-log.md`, 2026-10-27.
+
+- **Table 4.2 aligned with Sections 2.5 and 3.5.** Code review and the ASVS check stay at Verify (as in 2.5 and Table 3.2). Build/PR is automated checks only, with no human independent role. Table 4.2 now says which Table 3.2 checks someone independent performs or confirms, and what evidence they leave.
+- **Reliability added to the IV&V model.** The Verify row checks, for migration, sync and calculation changes, that balances and envelope totals on a synthetic budget match before and after the change.
+- **Tier rule.** Tiers are assigned by the worst plausible failure of the change; when in doubt, the higher tier applies.
+- **Terminology.** Section 4 uses "exit policy" (as in 2.5 and 3.5); "QA gate" and "entry and exit criteria" are no longer used in Section 4. Activities are marked *verify* or *validate*.
+- **4.5** now says what the independent reviewer adds beyond the 3.5 authorisation test matrix; the Assignment 2 mention there was removed. The 4.6 audit-cost mention to Assignment 2 is kept, as agreed on 2026-10-21.
+- **4.6** replaces the points it repeated from 3.6 with independence versus expertise (CODEOWNERS lists one owner each for the sync server and budget code [S01]).
+- The awkward sentence about release smoke tests became a plain statement: smoke tests run after publication [S03], so the evidence check sits at approval, before tagging.
+- Section 4 went from about 1,480 to about 1,960 words. Most of the growth is in Table 4.2 and the definitions the review asked for.
+
 ## Open questions
 
 None for planning.

@@ -446,3 +446,16 @@ How found: a read-only, blob-less clone of https://github.com/actualbudget/actua
 Pattern seen: each data or calculation fix above added a regression test in the same commit, so Actual already partly follows the Operate/maintain exit policy in Table 3.2 ("each defect that reached users gets a regression test").
 
 Status update (27 October 2026; append-only): S137 (Brown, 2026; commit for #8706) is now cited in 3.3 for the reliability gap. S134 (Fiddaman, 2026) and S135 (Aboltins, 2026) are **no longer cited** and were removed from References; they stay registered as verified. S138 (Skinner, 2026) was not used, because the author removed the functional suitability discussion from 3.2.
+
+## Section 4 review: source rechecks (27 October 2026; append-only)
+
+How found: live pages fetched with WebFetch and raw GitHub files fetched with curl during the Section 4 review. No new source IDs; all are existing entries.
+
+| ID | What was rechecked | Result | Used in |
+|---|---|---|---|
+| S68 | NASA *IV&V overview*, financial independence | **Verified**: "Financial independence requires that the IV&V budget be vested in an organization independent from the development organization." Supports the 4.1 paraphrase. | 4.1, 4.3 |
+| S08 | Actual *Paying reviewers for administrative work* | **Verified**: the pool pays for "reviewing pull requests, triaging, and managing issues"; USD 2,000 a month; donations "between USD 3,000 and USD 3,500 each month on average"; "Points are automatically calculated for all public members of the Actual Budget organization", using "lines of code changed (LOC) as a proxy for effort"; FAQ on gaming the points: "Theoretically, yes." | 4.2, 4.6 |
+| S04 | Actual *New core contributors guide* | **Verified**: "For non-controversial changes (for example: adding TypeScript types) - feel free to approve and merge straight away." Table 4.1 now says "approve and merge". | 4.2 |
+| S03 | Actual *How to cut a release* | **Verified** order: two other maintainers approve, then merge and tag, then builds are published automatically, then Docker and desktop smoke tests, then the GitHub release is un-drafted and announced. | 4.2, 4.4 |
+| S01 | Actual repo `CODEOWNERS` (master) | **Verified**: one owner each for `/packages/sync-server/` and `/packages/loot-core/src/server/budget`; the file asks people to add their name to "code-paths that you feel especially passionate about. You will be notified for any PRs there." | 4.3, 4.6 |
+| S01 | Actual repo `.github/ISSUE_TEMPLATE/` and `PULL_REQUEST_TEMPLATE.md` (master) | **Verified**: `feature-request.yml` and `bug-report.yml` issue templates; PR template has "Related issue(s)" (e.g. "Fixes #123") and a "Release notes added" checklist item. | 4.5 |
