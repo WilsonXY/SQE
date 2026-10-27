@@ -825,3 +825,22 @@ Writing-tool source note: all three original section writers and the root writer
 - References: Feature flags (n.d.-b), Raymond (2000) and Mockus et al. (2002) were removed. The remaining n.d. letters were shifted down by one. `sources.md` was updated.
 - 2-18 (folding Table 2.2 into Table 2.1) is held until Sections 3 and 4 are trimmed and the total is measured.
 - Section 2 went from 2,621 to 2,084 words (a consistent count: headings, captions, tables and citations; no figures or References). This is a smaller cut than the plan estimated.
+
+## 2026-10-27 — Trim applied: Sections 3, 4 and 1.1
+
+- Section 3: 3-1 to 3-12 applied.
+  - The roadmap was cut.
+  - 3.1's stakeholder paragraph was reduced to its conclusion.
+  - The "yet…" endings were removed from 3.2, which also fixes the Reliability non-sequitur.
+  - The release sentence and the performance sentence were removed from 3.3. The GHSA-m2cq account is now the single full one, including "six endpoints".
+  - In 3.4, Table 3.1 is kept, the bullets are folded into it, and "High-tier work" became "high-risk sync-server work".
+  - The board recap was removed from 3.5.
+  - 3.6 now points back to 2.1, and its "public evidence" duplicate was removed.
+- **The risk-tier definition (High/Standard/Low, with the IEEE 1012 integrity-level note) moved from 4.2 to 3.5**, where Table 3.2 first relies on it. 4.2 now refers back to it. To be checked by the author.
+- Section 4: 4-1 to 4-9 applied.
+  - Table 4.1 cells were shortened, and the 4.1 conclusion no longer restates the table or names the reporters.
+  - The 4.2 lead-in was cut, and the OSTIF figures were reduced to the 98% fixed rate.
+  - The threat note was removed, and the Design row now verifies the Table 3.2 design list against ASVS.
+  - In 4.3, the lead-in is one sentence, the flaw is no longer retold (3.3 has it, which also resolves the Pluggy spelling), and the overall-quality paragraph points back to 4.1.
+- 1-1 applied (the dangling modifier in 1.1 is fixed).
+- Measured total: 5,990 words, from 7,037 on the same count. The plan's estimate of about 5,000 was too optimistic by about 1,000 words, because most of the safe cuts saved less than estimated. A second round needs content decisions from the author. See the round-2 list in `06-trim-plan.md`.
