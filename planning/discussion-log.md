@@ -473,3 +473,25 @@ Writing-tool source note: all three original section writers and the root writer
   - keeps one sentence on why functional suitability is left out, since 3.1's "users trusting the numbers" makes it look like a candidate.
 - Knock-on edits: 3.3 no longer refers to "High" attributes or to Table 3.1; the performance sentence now says it is outside the three attributes. Tables were renumbered: standards = 3.1, QA plan = 3.2, SQAP sections = 3.3.
 - `planning/03-quality-assurance.md`: the "keep the 9-row rating table" decision is marked superseded.
+
+## 2026-10-27 — Standards scope discussed; option 2 search for the SQAP source
+
+- The author asked whether adopting so many standards makes sense. Recommendation: keep four, each with one job.
+  - ISO/IEC 25010:2023 frames the section.
+  - OWASP ASVS 5.0.0 closes the security gap.
+  - WCAG 2.2 AA closes the interaction-capability gap.
+  - IEEE 730, adapted, closes the missing-QA-plan gap.
+  - Drop OpenSSF (it overlaps ASVS) and ISO/IEC/IEEE 29119-1 (Section 4 never uses it).
+  - Shrink ISO 9001, ISO/IEC 27001 and CMMI to a short "considered, rejected" sentence, since Lecture 4 teaches them.
+  - Reliability needs no standard; its gap is closed by the coverage measure.
+  - **Not yet applied.**
+- The author asked what dropping IEEE 730 would cost. Answer:
+  - the SQAP section list in Table 3.3 would be an uncited factual claim;
+  - presenting someone else's structure without attribution is a plagiarism risk;
+  - the plan would lose its only process standard.
+- The author chose option 2: find and verify the original source of Lecture 3's SQAP sections. Result (S133, sources.md):
+  - The list matches the **IEEE 730-2002 and earlier** plan outline.
+  - IEEE 730-2014 replaced that outline. It is "more like a whole new standard", organised into process implementation, product assurance and process assurance, with 16 tasks.
+  - 730-2026 now supersedes 2014.
+  - Pressman's text and the 2002 standard could not be read.
+  - No current, readable source for Lecture 3's list exists, so option 2 cannot give Table 3.3 a proper citation. Options were put back to the author.
