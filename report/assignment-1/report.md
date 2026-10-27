@@ -372,7 +372,7 @@ Each check is written into the exit policy of the board column where it happens 
 
 ## 4.3 IV&V activities across the Kanban workflow
 
-Table 4.2 maps the six lifecycle phases onto the Kanban columns of Section 2.5. It does not repeat Table 3.2's quality checks; it shows who independent performs or confirms them, and what evidence they leave. A *threat note* lists who could misuse each new endpoint or data path, and which check stops them.
+Table 4.2 maps the six lifecycle phases onto the Kanban columns of Section 2.5. It does not repeat Table 3.2's quality checks; it shows which independent person performs or confirms them, and what evidence they leave. A *threat note* lists who could misuse each new endpoint or data path, and which check stops them.
 
 *Table 4.2. IV&V activities, tools, roles and exit policies per Kanban column (High-tier cards unless stated).*
 
