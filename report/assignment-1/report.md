@@ -197,8 +197,8 @@ In practice, Kanban would be added on top of Actual's existing route rather than
 Each piece of work, such as a bug fix or a new feature, is a card that moves left to right through six columns:
 
 - **Requirements/triage:** the request is recorded and its risk is assessed.
-- **Design:** the author decides how to build it.
-- **Build/PR:** the author writes the code and opens a pull request, and the automated tests (CI) run.
+- **Design:** the implementer decides how to build it.
+- **Build/PR:** the implementer writes the code and opens a pull request, and the automated tests (CI) run.
 - **Verify:** another maintainer reviews the pull request.
 - **Release train:** approved work goes out in the monthly release.
 - **Operate/maintain:** users run the release, and their bug and security reports feed back into triage.
@@ -215,7 +215,7 @@ Rule: pull work only when the next column is under its WIP limit
 | 1 Requirements/triage  | Problem, acceptance criteria and risk recorded |
 | 2 Design               | Approach agreed; decision record if high-risk  |
 | 3 Build/PR             | CI green; tests and release note included      |
-| 4 Verify   [WIP limit] | Reviewer is not the author; QA gate passed     |
+| 4 Verify   [WIP limit] | Reviewer is not the implementer; QA gate passed|
 |                        | (Security, Reliability, Interaction capability)|
 | 5 Release train        | Monthly cut (25th); >=2 approvals; smoke test  |
 | 6 Operate/maintain     | User reports and advisories triaged to col. 1  |
@@ -358,7 +358,7 @@ The disclosure route itself is a strength. Actual asks for private reporting and
 
 ## 4.3 IV&V integration model for Kanban (to-be)
 
-**Achievable independence.** A maintainer review is not full IV&V in the IEEE sense, and the report does not present it as such. Internally, the proposal adds an *independent reviewer* role for high-risk work: a maintainer who is neither the author nor the code owner of the affected area. This gives technical independence only. Managerial and financial independence must come from outside: the existing coordinated-disclosure channel and an optional, periodic funded external security audit. The Open Source Technology Improvement Fund (OSTIF) shows this is workable for OSS: it self-reports 24 audits published in 2025, with 231 security-relevant findings and over 98% fixed (Open Source Technology Improvement Fund, 2026). Financial independence is stronger when a third party, not Actual, pays.
+**Achievable independence.** A maintainer review is not full IV&V in the IEEE sense, and the report does not present it as such. Internally, the proposal adds an *independent reviewer* role for high-risk work: a maintainer who is neither the implementer nor the code owner of the affected area. This gives technical independence only. Managerial and financial independence must come from outside: the existing coordinated-disclosure channel and an optional, periodic funded external security audit. The Open Source Technology Improvement Fund (OSTIF) shows this is workable for OSS: it self-reports 24 audits published in 2025, with 231 security-relevant findings and over 98% fixed (Open Source Technology Improvement Fund, 2026). Financial independence is stronger when a third party, not Actual, pays.
 
 **Risk tiers.** Inspired by IEEE 1012's integrity-level concept (IEEE, 2025), this report proposes its own three tiers; they are not IEEE's scheme:
 
@@ -376,8 +376,8 @@ The disclosure route itself is a strength. Actual asks for private reporting and
 |---|---|---|---|---|
 | Requirements/triage (requirements) | Assign risk tier; validate that acceptance criteria are testable and include security criteria | Issue templates, triage labels | Triager other than the requester | Tier and testable criteria recorded |
 | Design (design) | Review design and a short threat note against access-control requirements | ADR, OWASP ASVS 5.0.0 | Independent reviewer | Threat note accepted; ASVS requirements selected |
-| Build/PR (implementation) | Code review against selected ASVS requirements; check authorisation and regression tests exist | GitHub review, CodeQL, CI | Independent reviewer (not author, not code owner) | Approval citing ASVS IDs and tests; CI green |
-| Verify (testing) | Validate behaviour on preview build; run server and security tests on a separate test server with synthetic budgets | Preview builds, Playwright, Vitest | Validator other than the author | Evidence attached; no open high findings |
+| Build/PR (implementation) | Code review against selected ASVS requirements; check authorisation and regression tests exist | GitHub review, CodeQL, CI | Independent reviewer (not implementer, not code owner) | Approval citing ASVS IDs and tests; CI green |
+| Verify (testing) | Validate behaviour on preview build; run server and security tests on a separate test server with synthetic budgets | Preview builds, Playwright, Vitest | Validator other than the implementer | Evidence attached; no open high findings |
 | Release train (deployment) | Verify the release candidate and that every high-tier item met its exit criteria | Release checklist, Docker and desktop builds | At least two other maintainers; one checks tier evidence | Signed-off evidence before final release |
 | Operate/maintain (maintenance) | Triage reports; add a regression test for each fixed advisory; feed findings back to triage | Private vulnerability reporting, advisories | External reporters; optional funded auditor | Advisory published; regression test merged |
 

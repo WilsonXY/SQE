@@ -558,3 +558,7 @@ Writing-tool source note: all three original section writers and the root writer
 - The author asked whether the risk-tier paragraph was needed, and whether the table-intro and owners paragraphs could be merged.
 - Answer: the tiers are needed, because Table 3.2's "Applies to" column and the worked example use "High tier". The full definition is not needed, because Section 4.3 already gives it.
 - Applied: three paragraphs (risk tiers, how to read the table, owners) became one paragraph before Table 3.2, of about 100 words instead of about 190. It names Table 3.2 as the written QA plan, says how to read it, says the heavier checks apply only to High-tier cards (defined in 4.3), and says existing checks and people stay. The stipend citation in 3.5 was dropped; Actual Budget (n.d.-f) is still cited in 3.4 and 3.6.
+
+## 2026-10-27 — "Implementer" used throughout
+
+- At the author's request, the remaining uses of "author" for the person who builds a change were changed to "implementer": the 2.5 column list (Design, Build/PR), Figure 3 (Verify row; the ASCII alignment was kept), 4.3 (independent reviewer definition) and Table 4.2 (Build/PR and Verify roles). No body uses of "author" in that sense remain.
