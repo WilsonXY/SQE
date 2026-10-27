@@ -641,3 +641,14 @@ Writing-tool source note: all three original section writers and the root writer
   11. 4.6 rewritten to avoid repeating 3.6: independence versus expertise and flow (CODEOWNERS), with Salkever (2023) no longer cited in Section 4 (still cited in 2.6 and 3.6). Kanban University (n.d.) is no longer cited in Section 4 (still cited in 2.5). Both stay in References.
   12. Assignment 2 mention removed from 4.5; kept in 4.6.
 - Word count: Section 4 went from about 1,480 to about 1,960 words.
+
+## 2026-10-27 — Section 4.1 merged into the as-is subsection
+
+- The author felt 4.1 (V&V, IV&V and why Actual needs them) was unnecessary. Answer: the independence definitions are needed (they are Table 4.1's columns), and so is verification versus validation (Table 4.2 marks activities that way). The rest was background in the wrong place or a repeat of 3.2 and 3.3. Recommended merging the definitions into the as-is subsection; the author approved.
+- Applied:
+  - 4.1 as a separate subsection was removed. Its two definition sentences now open the as-is subsection, followed by the Table 4.1 lead-in.
+  - The integrity-level sentence moved to the risk-tier paragraph (now 4.2).
+  - The Smith and Hayes (2024) argument (agile still needs IV&V; run it in phase with the cadence) moved to the explicit-policies paragraph (now 4.2). Its security point was dropped.
+  - "This matters for Actual…" deleted (repeats 3.2/3.3; the advisories are still cited in 4.1).
+  - Subsections renumbered 4.1–4.5. Cross-references updated: 3.5 now says the tiers are defined in Section 4.2, and the overall-quality paragraph now refers to Section 4.1. Table 4.2's "(Section 4.1)" still points to the definitions.
+- No reference lost its last citation. Section 4 is now about 1,910 words (was about 1,960).

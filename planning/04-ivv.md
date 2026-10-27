@@ -154,6 +154,8 @@ Applied at the author's request ("do all"); the author will review the result. S
 - The awkward sentence about release smoke tests became a plain statement: smoke tests run after publication [S03], so the evidence check sits at approval, before tagging.
 - Section 4 went from about 1,480 to about 1,960 words. Most of the growth is in Table 4.2 and the definitions the review asked for.
 
+- **4.1 merged into the as-is subsection (2026-10-27, author approved).** The separate concepts subsection was removed. The V&V and independence definitions now open the as-is subsection, right before Table 4.1. The integrity-level sentence moved to the risk-tier paragraph, and the Smith & Hayes agile argument moved to the explicit-policies paragraph. The "this matters for Actual" sentence was deleted because 3.2 and 3.3 already make that point. Section 4 now has five subsections (4.1 as-is, 4.2 model, 4.3 activities table, 4.4 three goals, 4.5 critical evaluation), about 1,910 words.
+
 ## Open questions
 
 None for planning.
