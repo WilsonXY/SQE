@@ -703,3 +703,8 @@ Writing-tool source note: all three original section writers and the root writer
 - Removed:
   - the verify/validate sentence (the terms are defined in 4.1, and the table still marks activities);
   - the "ASVS requirement numbers" definition. The Verify exit policy now reads "Approval names the ASVS requirements and tests checked", which needs no definition and matches 4.5's wording.
+
+## 2026-10-27 — 4.3 lead-in reduced to what the table shows
+
+- The author asked why the lead-in focused on mapping phases and on not repeating Table 3.2. Answer: those sentences were defensive. They answered the earlier overlap finding for the writer's benefit, and the table's first column already shows the phase mapping. The reader only needs to know what the table shows.
+- Applied: the lead-in now says "Table 4.2 shows, for each Kanban column, who checks the work independently and what evidence they leave", followed by the threat-note definition (about 30 words).
