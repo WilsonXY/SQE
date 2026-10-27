@@ -352,8 +352,6 @@ Table 4.1 tests each of Actual's existing V&V activities against these three kin
 
 Actual therefore has real independent checking, but it is ad hoc and mostly technical: how independently a change is checked depends on who happens to review or report it, not on how risky it is. Internal reviewers share one small team, release goals and donation-funded pool, so they cannot provide managerial or financial independence. The strongest independent findings came after release. The three advisories checked for this report credit iamsilk, Rex50527 and pyuysig, none of whom is a core maintainer, with discovering a critical and two high-severity flaws in released versions (Actual Budget, 2026b, 2026c, 2026d). The credits establish who found the flaws; they do not show the reporters' organisational or funding arrangements, so only technical independence is evidenced.
 
-The disclosure route itself is a strength. Actual asks for private reporting and coordinated disclosure (Actual Budget, n.d.-h), a practice most OSS practitioners support but which only 55% of studied vulnerabilities actually followed (Liu et al., 2025).
-
 ## 4.2 IV&V integration model for Kanban (to-be)
 
 **Achievable independence.** A maintainer review is not full IV&V in the IEEE sense, so this report treats it as a partial measure. For high-risk work, it proposes an *independent reviewer* role: a maintainer who is neither the implementer nor the code owner, meaning the maintainer listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). This gives technical independence only. Managerial and financial independence must come from outside: the existing coordinated-disclosure channel and an optional, periodic funded external security audit. The Open Source Technology Improvement Fund (OSTIF) shows this is workable for OSS: it self-reports 24 audits published in 2025, with 231 security-relevant findings and over 98% fixed (Open Source Technology Improvement Fund, 2026). Financial independence is stronger when a third party, not Actual, pays, because the audit budget then sits outside the project.
@@ -401,7 +399,7 @@ Cost is a binding constraint. Actual receives about USD 3,000–3,500 a month in
 
 Finally, exit policies can become ritual. Actual pays stipends through points calculated automatically from pull request size, and its payment guide concedes that rubber-stamp reviews to earn points are theoretically possible (Actual Budget, n.d.-f). Citing ASVS requirement numbers and named tests makes approvals harder to fake, not impossible. ASVS also covers technical security controls only (OWASP Foundation, 2025), so the reliability checks rest on synthetic budgets, which find only the problems they happen to exercise.
 
-<!-- Cited: S01, S03, S04, S08, S10, S38, S58, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S70, S72 -->
+<!-- Cited: S01, S03, S04, S08, S10, S38, S58, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S72 -->
 
 # References
 
@@ -466,8 +464,6 @@ Kanban University. (n.d.). *The official guide to the Kanban method*. Retrieved 
 Kuhrmann, M., Tell, P., Hebig, R., Klünder, J., Münch, J., Linssen, O., Pfahl, D., Felderer, M., Prause, C. R., MacDonell, S. G., Nakatumba-Nabende, J., Raffo, D., Beecham, S., Tüzün, E., López, G., Paez, N., Fontdevila, D., Licorish, S. A., Küpper, S., … Richardson, I. (2022). What makes agile software development agile? *IEEE Transactions on Software Engineering, 48*(9), 3523–3539. https://doi.org/10.1109/TSE.2021.3099532
 
 Lear, R. (2023, April 10). *CMMI updates take performance improvements to the next level*. ISACA. https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2023/cmmi-updates-take-performance-improvements-to-the-next-level
-
-Liu, S., Zhou, J., Hu, X., Côgo, F. R., Xia, X., & Yang, X. (2025). An empirical study on vulnerability disclosure management of open source software systems. *ACM Transactions on Software Engineering and Methodology*. Advance online publication. https://doi.org/10.1145/3716822
 
 Mockus, A., Fielding, R. T., & Herbsleb, J. D. (2002). Two case studies of open source software development: Apache and Mozilla. *ACM Transactions on Software Engineering and Methodology, 11*(3), 309–346. https://doi.org/10.1145/567793.567795
 

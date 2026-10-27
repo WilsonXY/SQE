@@ -657,3 +657,8 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked what Table 4.1's Technical, Managerial and Financial columns were for, then asked for the definitions not to be hidden in the first paragraph.
 - Applied: the three NASA/IEEE independence parameters are now a three-item bulleted list, set apart from the V&V definitions. The Table 4.1 lead-in says the table tests each activity against them, one column each. The column headings now carry a short gloss: "Technical (not the developer)", "Managerial (separate organisation)" and "Financial (separate budget)". The wording still paraphrases S68, and the citation is unchanged.
+
+## 2026-10-27 — Disclosure-route paragraph removed from 4.1
+
+- The author asked whether the paragraph "The disclosure route itself is a strength…" was needed. Answer: no. Section 3.3 already says Actual offers private reporting and coordinated disclosure (same citation), and Table 4.1 shows the route. The 55% comparison was not built on anywhere.
+- Removed at the author's request. Liu et al. (2025) had no other citation, so it was removed from References (S70 marked no longer cited in `sources.md`). Section 4 is about 45 words shorter.
