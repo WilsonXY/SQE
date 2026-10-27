@@ -370,12 +370,12 @@ Third, the other two kinds of independence come from outside Actual's team and b
 
 Each check is written into the exit policy of the board column where it happens (Section 2.5), so a High-tier card cannot move on until its independent evidence is attached. This follows Smith and Hayes (2024, Abstract), who argue that agile "has in no way diminished the need for IV&V" and that IV&V should run in phase with the development cadence. High-tier reviews also count against the Verify column's WIP limit, so if they queue up, new work stops entering and the queue is visible on the board. Table 4.2 shows, for each column, who checks the work independently and what evidence they leave; a *threat note* lists who could misuse each new endpoint or data path, and which check stops them.
 
-*Table 4.2. IV&V activities, tools, roles and exit policies per Kanban column (High-tier cards unless stated).*
+*Table 4.2. Independent checks at each board column (High-tier cards unless stated).*
 
-| Column (lifecycle phase) | IV&V activities | Tools | Independent role | Exit policy added |
+| Board column | What is checked | Tools | Who checks | Card moves on when |
 |---|---|---|---|---|
-| Requirements/triage (requirements) | *Validate* that acceptance criteria are testable and cover security and data needs; assign the risk tier (all cards) | Issue templates, triage labels | Triager other than the requester | Tier and testable criteria recorded |
-| Design (design) | *Verify* the design note from Table 3.2 (endpoints, permissions, migration and sync impact) and the threat note against the selected ASVS requirements | Decision record, OWASP ASVS 5.0.0 | Independent reviewer | Design and threat note accepted; ASVS requirements selected |
+| Requirements/triage | *Validate* that acceptance criteria are testable and cover security and data needs; assign the risk tier (all cards) | Issue templates, triage labels | Triager other than the requester | Tier and testable criteria recorded |
+| Design | *Verify* the design note from Table 3.2 (endpoints, permissions, migration and sync impact) and the threat note against the selected ASVS requirements | Decision record, OWASP ASVS 5.0.0 | Independent reviewer | Design and threat note accepted; ASVS requirements selected |
 | Build/PR (implementation) | *Verify* automatically: CI, CodeQL and the authorisation test matrix run on every PR (all cards) | GitHub Actions, CodeQL, Vitest | None (automated) | CI green, including the authorisation test matrix |
 | Verify (testing) | *Verify* the code against the selected ASVS requirements and that each acceptance criterion has a passing test; for migration, sync or calculation changes, *verify* that balances and envelope totals on a synthetic budget match before and after; *validate* behaviour on a preview build (Standard and High) | GitHub review, preview builds, Playwright, separate test server with synthetic budgets | Independent reviewer (not implementer, not code owner); validator other than the implementer | Approval names the ASVS requirements and tests checked; validation evidence attached; no open high findings |
 | Release train (deployment) | *Verify* that every High-tier card in the release met its Verify exit policy | Release checklist | One of the two approving maintainers | Evidence confirmed before approval and tagging |

@@ -736,3 +736,9 @@ Writing-tool source note: all three original section writers and the root writer
   - Table 4.2 and its notes now close 4.2;
   - the table introduction and the threat-note definition were moved to the end of 4.2's exit-policy paragraph, after the WIP-limit sentence, so that "This follows Smith and Hayes" still refers to the exit policies.
 - 4.4 and 4.5 were renumbered 4.3 and 4.4. No cross-reference pointed to them; 3.5's "defined in Section 4.2" is still correct.
+
+## 2026-10-27 — Table 4.2 headings renamed
+
+- The author found Table 4.2's headings badly named. They now use plain words for Lecture 6's activities / tools / roles / outcome: "Board column | What is checked | Tools | Who checks | Card moves on when" (was "Column (lifecycle phase) | IV&V activities | Tools | Independent role | Exit policy added").
+- The redundant phase labels "(requirements)" and "(design)" were dropped from the first column. The others stay, because they name a different phase: Build/PR (implementation), Verify (testing), Release train (deployment) and Operate/maintain (maintenance).
+- Caption: "Independent checks at each board column (High-tier cards unless stated)."
