@@ -604,3 +604,21 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Section 3 review branch merged to main
 
 - At the author's request, `claude/great-shannon-hm15ak` was fast-forwarded into `main` and pushed. It carries all of this session's Section 3 review changes.
+
+## 2026-10-27 — Section 4 review started
+
+- New branch `claude/section-4-review-tf1qs8` created from the latest `main` (which includes the merged Section 2 and 3 reviews).
+- Section 4 (about 1,480 words) was read in full against the six problem areas in `.claude/skills/report-review/SKILL.md`, Sections 2.5 and 3.5, and Lecture 6's IV&V slides (phases with activities, tools, roles and outcome).
+- Findings presented to the author, most serious first; nothing changed in the report yet:
+  1. Tables 3.2 and 4.2 overlap and disagree on the same columns (where ASVS review happens; what Verify means; Section 2.5 says Verify is the PR review).
+  2. The IV&V model is almost all security, although High tier also covers calculations, migrations and sync.
+  3. Risk tiers are listed with no rule for assigning them.
+  4. 4.5 repeats the 3.5 worked example and does not say what the independent check adds.
+  5. Release-row disclaimer sentence in 4.4 is written for the writer.
+  6. Tables 4.1 and 4.2 have no lead-in; "Partial" and "Not established" are not defined; insider terms (ADR, threat note, ASVS IDs, points, "independent-reviewer capacity counted within the WIP limits").
+  7. Terminology drift: exit policy / entry and exit criteria / exit criterion / QA gate.
+  8. Report proposals that read as if sourced (WIP-limit capacity sentence).
+  9. "Section 3 defines what; Section 4 adds who" is not what the tables do.
+  10. 4.6 repeats 3.6 (backlog, burnout, tier judgement, stipend).
+  11. Two Assignment 2 mentions, while the author removed a similar one from 3.5.
+  12. Smaller accuracy checks: NASA's financial-independence wording is not recorded in S68's notes; stipend described differently in 3.4 and 4.6; "merged straight away" wording in Table 4.1.
