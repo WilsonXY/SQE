@@ -356,17 +356,17 @@ Actual therefore has real independent checking, but it is ad hoc and mostly tech
 
 Section 4.1 found that how independently a change is checked depends on who happens to review it, and that the strongest independent findings came from outsiders after release. The model makes three changes.
 
-First, High-tier changes (defined below) get an *independent reviewer*: a maintainer who neither wrote the change nor is listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, both the implementer and the sync server's listed owner are excluded, so someone else on the team must check it. The reviewer is still a colleague paid from the same stipend pool, so this gives technical independence only and is not full IV&V in the IEEE sense.
-
-Second, the other two kinds of independence come from outside Actual's team and budget. One route already exists: outside reporters using private vulnerability reporting (Section 3.3), who found the three advisories examined in Section 4.1. The other is new: an occasional external security audit of the sync server, where those flaws were, paid for by a third party rather than from Actual's donations. The Open Source Technology Improvement Fund (OSTIF) arranges such audits for OSS projects. In 2025 it published 24 audits with money from 10 funding bodies, and it reports that over 98% of the 231 security-relevant findings were fixed (Open Source Technology Improvement Fund, 2026).
-
-Third, risk tiers decide which cards get the extra checks, because independent review of every card would overload the few reviewers that Section 2 identified as the bottleneck. The triager tiers each card by the worst plausible failure of the change, and chooses the higher tier when unsure:
+First, risk tiers decide which cards get extra checks, because independent review of every card would overload the few reviewers that Section 2 identified as the bottleneck. The triager tiers each card by the worst plausible failure of the change, and chooses the higher tier when unsure:
 
 - *High*: a failure could expose financial data or credentials, give wrong money figures or lose budget data (authentication, authorisation and sessions; bank sync; budget and balance calculations; database migrations; sync and encryption).
 - *Standard*: a failure would be visible but recoverable without data loss (most features, such as reports, rules and UI components).
 - *Low*: a failure would be cosmetic (themes, wording and documentation).
 
 The tiers are this report's own design. They borrow the idea in IEEE 1012-2024 that the V&V a component needs depends on its integrity level (IEEE, 2025), but they do not reproduce IEEE's levels.
+
+Second, High-tier changes get an *independent reviewer*: a maintainer who neither wrote the change nor is listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, both the implementer and the sync server's listed owner are excluded, so someone else on the team must check it. The reviewer is still a colleague paid from the same stipend pool, so this gives technical independence only and is not full IV&V in the IEEE sense.
+
+Third, the other two kinds of independence come from outside Actual's team and budget. One route already exists: outside reporters using private vulnerability reporting (Section 3.3), who found the three advisories examined in Section 4.1. The other is new: an occasional external security audit of the sync server, where those flaws were, paid for by a third party rather than from Actual's donations. The Open Source Technology Improvement Fund (OSTIF) arranges such audits for OSS projects. In 2025 it published 24 audits with money from 10 funding bodies, and it reports that over 98% of the 231 security-relevant findings were fixed (Open Source Technology Improvement Fund, 2026).
 
 Each check is written into the exit policy of the board column where it happens (Section 2.5), so a High-tier card cannot move on until its independent evidence is attached; Table 4.2 lists them column by column. This follows Smith and Hayes (2024, Abstract), who argue that agile "has in no way diminished the need for IV&V" and that IV&V should run in phase with the development cadence. High-tier reviews also count against the Verify column's WIP limit, so if they queue up, new work stops entering and the queue is visible on the board.
 

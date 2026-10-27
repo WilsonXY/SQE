@@ -688,3 +688,8 @@ Writing-tool source note: all three original section writers and the root writer
   - Expertise, audit money, rubber stamps, then the ASVS blind spot (now its own paragraph).
   - No citation added or removed.
 - Word count: 4.4 is about 350 (was about 225) and 4.5 about 340 (was about 265). Section 4 is now about 2,150 words.
+
+## 2026-10-27 — 4.2 order: tiers first
+
+- The author asked to swap the first and third changes in 4.2, and why the independent reviewer said "(defined below)". Answer: it pointed forward to the tiers, which came last. Putting the tiers first removes the need for it.
+- Applied: the order is now (1) risk tiers, with the bullets and the IEEE disclaimer; (2) the independent reviewer for High-tier changes, with "(defined below)" removed; (3) outside checks. "the extra checks" became "extra checks", since nothing has been introduced yet. No wording changed otherwise.
