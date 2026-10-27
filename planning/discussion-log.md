@@ -397,3 +397,17 @@ Writing-tool source note: all three original section writers and the root writer
 - Flagged to the author:
   - DevOps is not in the lecture comparison.
   - The RAD and RUP screening sentence draws on lecture content and has no citation.
+
+## 2026-10-27 — Boehm & Turner removed
+
+- The author asked to remove Boehm & Turner (2004) as backing entirely, because Section 2 is now tailored to the lecture material.
+- Removed every citation and dependency:
+  - the exec summary clause;
+  - the 2.2 framework sentence and the culture factor (its volunteer-choice point moved into the team expertise row);
+  - the team-expertise and risk-tolerance explanations, now grounded in the lecture's own rules (GeeksforGeeks, 2025);
+  - the "mix of methods" paragraph, now resting on GeeksforGeeks's advice to consider hybrid models;
+  - the requirement rationales;
+  - the Waterfall/V-Model screening;
+  - the 2.4 verdict wording;
+  - the 2.6 evidence-limits sentence.
+- Removed the reference. Boehm (1988), the Spiral paper, stays cited.

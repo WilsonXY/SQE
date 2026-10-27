@@ -42,6 +42,12 @@ Scope: `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` only.
 - DevOps is not in Lecture 2's comparison. It stays because the author chose it (studied last semester).
 - Context: Lecture 9's risk-management slides use Boehm's risk-driven spiral and tailoring material, so Boehm is not unfamiliar to the module.
 
+**Agreed (author, 27 Oct 2026): Boehm & Turner removed entirely.** Section 2 now relies on the lecture material alone for the selection framework (Lecture 2 factors and comparison table, cited to GeeksforGeeks, 2025 [S128]).
+- Culture was folded into the team expertise row.
+- The "combine approaches" justification for tailoring now cites GeeksforGeeks's advice to consider hybrid models.
+- The requirement rationales no longer cite Boehm & Turner.
+- Boehm & Turner (2004) [S126] was removed from the References; it stays registered in `sources.md`.
+
 **Open questions:**
 - Is the five-factor framework acceptable as the selection basis, or would the author prefer another established framework?
 - The document sits at 5,246 of the 5,250 maximum, above the author's preferred "slightly under 5,000". Should other sections be trimmed?
