@@ -304,9 +304,7 @@ Other well-known standards fail the cost test. IEEE 730-2026, the standard for s
 
 This section turns the gaps found in Section 3.3 into checks that run inside Actual's everyday workflow. Section 2.5 placed all work on a Kanban board: each bug fix or feature is a card that moves from triage through design, build, review and release to operation, and each column has an exit policy that must be met before the card moves on (Ahmad et al., 2018, p. 98). The QA plan adds its checks to these exit policies. Quality is then checked as part of moving work forward, not in a separate document that volunteers may never open.
 
-Not every change needs every check. At triage, each card is given a risk tier, defined in Section 4.3: *High* for work on authentication, bank sync, calculations, database migrations, sync and encryption; *Low* for themes, wording and documentation; and *Standard* for everything else. The heavier security and data checks apply only to High-tier cards, so volunteers' time goes where failure costs most.
-
-Table 3.2 is the resulting plan. Each row is a column of the board. It shows the checks added to that column's exit policy, with the attribute each check protects in brackets, which cards the checks apply to and who is responsible. Actual's existing checks (CI, maintainer review, two release approvals and smoke tests) stay in place and are not repeated.
+Table 3.2 is the resulting plan, and it is also the written QA plan that Section 3.3 found missing. Each row is a board column, showing the checks added to its exit policy (with the attribute each protects in brackets), which cards they apply to and who is responsible. The heavier security and data checks apply only to High-tier cards, using the risk tier set at triage and defined in Section 4.3, so a documentation or wording change skips them. Actual's existing checks, such as CI, review and release approvals, stay in place, and the people responsible are existing maintainers and contributors, not new posts.
 
 *Table 3.2. QA checks added to each Kanban column.*
 
@@ -318,8 +316,6 @@ Table 3.2 is the resulting plan. Each row is a column of the board. It shows the
 | Verify | Automated WCAG 2.2 AA checks pass (interaction capability); selected ASVS requirements checked (security) | Cards that change the UI; ASVS for High tier | Reviewer |
 | Release train | No open critical or high security finding (security) | Every release | Release maintainers |
 | Operate/maintain | Security reports answered within a stated response time (security); each defect that reached users gets a regression test and a review of the check that missed it (all three) | Every report | Maintainers handling security reports |
-
-The people in the Who column are existing maintainers and contributors; the plan assigns duties, not new posts, and triage and review are already paid from the stipend pool (Actual Budget, n.d.-f). Written into the contributing guide as well as onto the board, Table 3.2 is also the written QA plan that Section 3.3 found missing.
 
 **Worked example.** Suppose a contributor adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, and an acceptance criterion is written: every new endpoint must refuse requests without a valid login. At design, the implementer lists the new endpoints and who may call each one. At Build/PR, the endpoints are added to the authorisation test matrix. If the login check is missing, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. A typo fix in the documentation, by contrast, is Low tier and passes through the normal checks only.
 

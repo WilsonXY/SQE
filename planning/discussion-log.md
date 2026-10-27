@@ -552,3 +552,9 @@ Writing-tool source note: all three original section writers and the root writer
 
 - At the author's request, the Who column of Table 3.2 (Design and Build/PR rows) now says "Implementer" instead of "Author". The worked example in 3.5 was changed to match ("the implementer lists the new endpoints").
 - Not changed (flagged to the author): Section 2.5's column list ("the author decides…", "the author writes the code…"), Figure 3 ("Reviewer is not the author") and Section 4 ("not author, not code owner"; "Validator other than the author").
+
+## 2026-10-27 — 3.5 paragraphs merged
+
+- The author asked whether the risk-tier paragraph was needed, and whether the table-intro and owners paragraphs could be merged.
+- Answer: the tiers are needed, because Table 3.2's "Applies to" column and the worked example use "High tier". The full definition is not needed, because Section 4.3 already gives it.
+- Applied: three paragraphs (risk tiers, how to read the table, owners) became one paragraph before Table 3.2, of about 100 words instead of about 190. It names Table 3.2 as the written QA plan, says how to read it, says the heavier checks apply only to High-tier cards (defined in 4.3), and says existing checks and people stay. The stipend citation in 3.5 was dropped; Actual Budget (n.d.-f) is still cited in 3.4 and 3.6.
