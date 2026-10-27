@@ -109,7 +109,7 @@ Feature request --> "needs votes" backlog (ranked by votes)
 
 ## 2.2 Why Kanban fits Actual
 
-A software process model is commonly chosen by weighing eight factors about the project, such as how stable its requirements are, how much risk it can tolerate and how expert its team is (GeeksforGeeks, 2025). For Actual, most of these factors point to an agile model rather than a linear one such as Waterfall: requirements change continuously as users vote, users shape the work directly, and each monthly release ships whatever is ready. Two factors pull the other way. On team expertise, the few experienced reviewers are volunteers whose time has already run out once (Aboltins, 2025). On risk tolerance, Actual can accept little risk, because defects can mislead money decisions and expose financial data (Actual Budget, 2026c).
+A software process model is commonly chosen by weighing eight factors about the project, such as how stable its requirements are, how much risk it can tolerate and how expert its team is (GeeksforGeeks, 2025). For Actual, most of these factors point to an agile model rather than a linear one such as Waterfall: requirements change continuously as users vote, users shape the work directly, and each monthly release ships whatever is ready. Two factors pull the other way. On team expertise, the few experienced reviewers are volunteers whose time has already run out once (Aboltins, 2025). On risk tolerance, Actual can afford few mistakes: a wrong balance could lead a household to a poor spending decision, and a security flaw can expose private financial data. In 2026, a critical flaw let anyone read users' bank balances and transactions without logging in (Actual Budget, 2026c).
 
 From this profile, the methodology has to meet five needs: handle changing priorities, work with tasks that volunteers choose themselves, keep its rules written down, protect review time, and include quality and risk controls.
 
@@ -398,7 +398,7 @@ Actual's situation is first described against the eight factors commonly conside
 | Size and complexity | Small: eight core maintainers plus volunteers (Actual Budget, n.d.-a). Waterfall suits small projects only when requirements are straightforward, which Actual's are not | Agile |
 | Flexibility and adaptability | Priorities shift with votes, and each monthly release ships whatever is ready (Actual Budget, n.d.-b) | Agile |
 | Customer involvement | Users shape the work continuously through requests and votes (Actual Budget, 2026a) | Agile |
-| Risk tolerance | Low: defects can mislead money decisions and expose financial data (Actual Budget, 2026c) | Linear |
+| Risk tolerance | Low: a wrong balance can lead to a poor spending decision, and a security flaw can expose financial data (Actual Budget, 2026c) | Linear |
 | Time constraints | A fixed monthly release date, but no feature is promised for it (Actual Budget, n.d.-b) | Agile |
 | Team expertise | Cross-functional volunteers who choose their own work (Actual Budget, n.d.-a, n.d.-d); the few experienced reviewers have been overloaded before (Aboltins, 2025) | Agile, but under strain |
 | Regulatory compliance | No regulatory requirements found in Actual's documentation (October 2026) | No constraint |

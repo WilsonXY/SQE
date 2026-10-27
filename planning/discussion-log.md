@@ -891,3 +891,8 @@ Writing-tool source note: all three original section writers and the root writer
   - The five needs are now their own sentence.
   - The Kanban paragraph names each need it meets; the QA-gate paragraph names the fifth.
 - 2.2 grew by about 60 words. Total is about 4,700.
+
+## 2026-10-27 — 2.2 risk-tolerance sentence made concrete
+
+- The author queried "Actual can accept little risk, because defects can mislead money decisions and expose financial data".
+- Rewritten to state the two concrete harms (a wrong balance leading to a poor spending decision; a security flaw exposing financial data). The 2026 critical-flaw example is restored as the evidence (Actual Budget, 2026c). Table A.1's risk row was reworded to match.
