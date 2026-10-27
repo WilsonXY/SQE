@@ -375,3 +375,9 @@ Writing-tool source note: all three original section writers and the root writer
 
 - Merged the Scrum and XP clash paragraphs into one summary: both assume team members who commit their time together, which Actual's self-selecting volunteers and vote-driven priorities cannot provide. The Boehm & Turner p. 35 point was dropped from this paragraph; it is still cited in Table 2.2.
 - Simplified the DevOps paragraph to its SQE point. DevOps adds automated testing, which Actual's CI already provides, and operations integration, which has little to attach to. Neither of these addresses human review. DORA (2024) [S40] is no longer cited and was removed from the References; DORA (n.d.) [S123] is still cited.
+
+## 2026-10-27 — Lecture selection factors checked
+
+- The author asked whether the lecture slides cover how to choose a methodology, preferring material the lecturer is familiar with over a less familiar theory.
+- Lecture 2 has "how to choose" slides with eight factor pairs: requirements clarity; size and complexity; flexibility; customer involvement; risk tolerance; time constraints; team expertise; regulatory compliance. Their text matches GeeksforGeeks (2025), *How to choose the best SDLC model for your project*, logged as S128 (low credibility; not yet cited).
+- Options presented to the author. Decision pending.
