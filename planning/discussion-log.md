@@ -864,3 +864,16 @@ Writing-tool source note: all three original section writers and the root writer
 - Citation check: about 85 parenthetical citations, about 290 words (about 5% of the body). Each one backs a stated fact. Repeated citations (e.g. Aboltins, 2025 six times) come from repeated facts, not over-citing.
 - R7 explained to the author: it is the last paragraph of 3.4, which names the standards that fail the cost test.
 - Total now 5,712.
+
+## 2026-10-27 — Methodology selection moved to Appendix A; R1 and R5 applied
+
+- **Author's decision, applied after the risk was stated (selection is marked; appendices are not; AGENTS.md rule):**
+  - The selection process (old 2.2–2.4) is now Appendix A.
+  - A new 2.2 "Why Kanban fits Actual" (~330 words) keeps the core justification in the body and points to Appendix A.
+  - 2.5 and 2.6 became 2.3 and 2.4; cross-references were updated (3.5 now points to Section 2.3).
+  - The worked example became Appendix B, because the selection appendix is referred to first.
+- R1 applied: the 2.1 route paragraphs became one sentence, with Figure 2 carrying the steps.
+- R5 applied: 2.3 no longer repeats "added on top of the existing process"; that point and its citation now sit in 2.2.
+- R2, R4 and R6 were not applied, because their text is now in the appendix, which is not counted. Appendix A keeps the full text.
+- APA: works cited only in Appendix A (Schwaber & Sutherland; Beck & Andres; Boehm; DORA) stay in References, because APA lists works cited in appendices.
+- Total now 4,639, below the 4,750–5,250 range. About 360 words are free to restore body content.

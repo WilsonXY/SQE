@@ -170,3 +170,14 @@ None for planning.
 | Screening only | Scrumban S18 (recent) · Shape Up S22, S23 |
 
 Still to do before writing: see `sources.md` → section D.
+
+## Decision 2026-10-27: selection process moved to Appendix A (author's decision)
+
+- **Agreed (author):** Section 2's body focuses on Kanban. The factor profile, the requirements table, the candidate screening and the clash/gap evaluation (formerly 2.2–2.4, Tables 2.1–2.3) are now **Appendix A** (A.1–A.3, Tables A.1–A.3).
+- The body keeps a short justification in the new **2.2 "Why Kanban fits Actual"**:
+  - Actual's profile and the five requirements;
+  - how Kanban meets four of them;
+  - QA gates for the fifth;
+  - one line on why Spiral, Scrum, XP and DevOps lost, pointing to Appendix A.
+- Old 2.5 and 2.6 are now 2.3 and 2.4.
+- **Risk noted to the author before applying:** the brief marks "select, justify, and critically evaluate", appendices are not marked, and AGENTS.md says not to move argument into appendices. The author chose to proceed.
