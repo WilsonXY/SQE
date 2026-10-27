@@ -773,3 +773,13 @@ Writing-tool source note: all three original section writers and the root writer
   - A closing sentence ties the limits together.
 - No facts or citations changed; "its cost is estimated in Assignment 2" is kept.
 - 4.4 is about 570 words (was about 340). Section 4 is about 2,340 words.
+
+## 2026-10-27 — 4.4 rewritten again: no bold labels, shorter
+
+- The author rejected the previous 4.4: bold claim labels made it worse, and it had become far too long.
+- Applied: plain paragraphs, each opening with its point as a normal sentence, and linked by transitions ("also", "Money limits…", "The checks themselves have two weaknesses. First… Second…").
+  - The intro and closing summary were removed.
+  - The rubber-stamp and ASVS blind-spot points were merged into one paragraph.
+  - No facts or citations changed.
+- 4.4 is about 300 words (was about 570 in the rejected version, and about 340 before that). Section 4 is about 2,070 words.
+- Lesson for later sections: guide the reader with topic sentences and transitions, not bold run-in labels, and don't let guidance add length.
