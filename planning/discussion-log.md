@@ -521,3 +521,12 @@ Writing-tool source note: all three original section writers and the root writer
 - The author asked to trim the rejected-standards paragraph in 3.4, since those standards are not used, and offered to remove them entirely.
 - Recommendation: keep them, but cut them to two sentences. Lecture 4 teaches ISO 9001, ISO/IEC 27001 and CMMI, so naming them and the reason for rejecting each shows they were considered.
 - Applied: the "no standard for the other two gaps" paragraph and the rejected-standards paragraph went from about 210 to about 100 words. The per-standard descriptions and the "ideas still reflected" sentence were removed. One sentence now covers IEEE 730 (paid access), and one covers ISO 9001, ISO/IEC 27001 and CMMI together (formal organisation; certification or appraisal). All four references stay cited.
+
+## 2026-10-27 — 3.4 "other two gaps" sentence rewritten; coverage gap explained
+
+- The author did not follow "No standard is adopted for the other two gaps…". It made the reader count the four gaps from 3.3, and "needs a measure" and "closed by the plan itself" were shorthand. It was rewritten to name the four gaps, say that only security and accessibility need a standard, say that reliability's fix is turning on a coverage report, and say that the missing QA plan is filled by the plan in 3.5.
+- The author asked what the reliability gap is. Explained:
+  - `packages/sync-server/vitest.config.ts` sets `coverage: { enabled: false }`, the root config has no coverage setting, and no coverage tooling was found, yet the PR checklist asks for "appropriate test coverage".
+  - It is filed under Reliability because sync, migration and recovery code protects data integrity.
+  - Weaknesses flagged: it rests on one config file and missing tooling, it is a missing measure rather than a shown failure, and coverage does not prove correctness.
+  - Offered: search Actual's issues and advisories for sync or migration defects that reached users, or state in 3.3 that coverage is an indirect measure. Awaiting the author's decision.

@@ -287,7 +287,7 @@ Three standards pass both tests (Table 3.1). ISO/IEC 25010 is sold, but it is us
 - **OWASP ASVS 5.0.0** provides a basis for testing technical security controls (OWASP Foundation, 2025). Its authentication, session management and authorisation chapters cover the same kinds of flaw as the 2026 advisories. This report therefore proposes using selected requirements from those chapters, not a full ASVS verification level, as acceptance criteria for sync-server work.
 - **WCAG 2.2** is recommended for new work, although W3C states that it does not deprecate 2.1 (World Wide Web Consortium, 2024). Moving Actual's target from 2.1 AA to 2.2 AA is therefore a modest step, and automated checks against it close the accessibility gap.
 
-No standard is adopted for the other two gaps. Reliability needs a measure, which the coverage report in Section 3.5 provides, and the missing QA plan is closed by the plan in Section 3.5 itself.
+Section 3.3 found four gaps, but only the security and accessibility gaps need a standard. The reliability gap is that test coverage is not measured; the fix is to turn on a coverage report (Section 3.5), not to adopt a standard. The remaining gap, the lack of a written QA plan, is filled by the plan this report sets out in Section 3.5.
 
 Other well-known standards fail the cost test. IEEE 730-2026, the standard for software QA processes, is available only by purchase or subscription (IEEE, 2026). ISO 9001:2026, ISO/IEC 27001:2022 and CMMI V3.0 assume a formal organisation and deliver their value through certification or an appraisal rating (International Organization for Standardization, 2026; International Organization for Standardization & International Electrotechnical Commission, 2022; Lear, 2023).
 
