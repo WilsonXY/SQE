@@ -803,3 +803,7 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Table 4.2 headings all nouns
 
 - At the author's request, "What is checked" became "Checks" and "Who checks" became "Checker". Table 4.2's headings are now: Board column | Checks | Tools | Checker | Exit policy.
+
+## 2026-10-27 — Section 4 review branch merged to main
+
+- At the author's request, `claude/section-4-review-tf1qs8` was fast-forwarded into `main` and pushed (`f11907a..a2e48a9`). It carries all of this session's Section 4 review changes.
