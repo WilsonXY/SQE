@@ -341,7 +341,7 @@ Table 4.1 tests each of Actual's existing V&V activities against these three kin
 
 *Table 4.1. Independence of Actual's existing V&V activities.*
 
-| Activity | Performed by | Technical (not the developer) | Managerial (separate organisation) | Financial (separate budget) |
+| Activity | Performed by | Technical | Managerial | Financial |
 |---|---|---|---|---|
 | PR review | Another core maintainer, who may approve and merge non-controversial PRs straight away (Actual Budget, n.d.-e) | Yes | No | No: reviewers share one stipend pool (Actual Budget, n.d.-f) |
 | Release approval and smoke test | At least two other maintainers approve before tagging; smoke tests run after the builds are published (Actual Budget, n.d.-c) | Yes | No | No |
@@ -354,15 +354,21 @@ Actual therefore has real independent checking, but it is ad hoc and mostly tech
 
 ## 4.2 IV&V integration model for Kanban (to-be)
 
-**Achievable independence.** A maintainer review is not full IV&V in the IEEE sense, so this report treats it as a partial measure. For high-risk work, it proposes an *independent reviewer* role: a maintainer who is neither the implementer nor the code owner, meaning the maintainer listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). This gives technical independence only. Managerial and financial independence must come from outside: the existing coordinated-disclosure channel and an optional, periodic funded external security audit. The Open Source Technology Improvement Fund (OSTIF) shows this is workable for OSS: it self-reports 24 audits published in 2025, with 231 security-relevant findings and over 98% fixed (Open Source Technology Improvement Fund, 2026). Financial independence is stronger when a third party, not Actual, pays, because the audit budget then sits outside the project.
+Section 4.1 found that how independently a change is checked depends on who happens to review it, and that the strongest independent findings came from outsiders after release. The model makes three changes.
 
-**Risk tiers.** IEEE 1012-2024 specifies V&V requirements for different integrity levels, so the V&V a component needs depends on the level assigned to it (IEEE, 2025). Inspired by this concept, this report proposes its own three tiers; they are not IEEE's scheme. The triager assigns the tier by the worst plausible failure of the change, and when in doubt the higher tier applies:
+First, High-tier changes (defined below) get an *independent reviewer*: a maintainer who neither wrote the change nor is listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, both the implementer and the sync server's listed owner are excluded, so someone else on the team must check it. The reviewer is still a colleague paid from the same stipend pool, so this gives technical independence only and is not full IV&V in the IEEE sense.
+
+Second, the other two kinds of independence come from outside Actual's team and budget. One route already exists: outside reporters using private vulnerability reporting (Section 3.3), who found the three advisories examined in Section 4.1. The other is new: an occasional external security audit of the sync server, where those flaws were, paid for by a third party rather than from Actual's donations. The Open Source Technology Improvement Fund (OSTIF) arranges such audits for OSS projects. In 2025 it published 24 audits with money from 10 funding bodies, and it reports that over 98% of the 231 security-relevant findings were fixed (Open Source Technology Improvement Fund, 2026).
+
+Third, risk tiers decide which cards get the extra checks, because independent review of every card would overload the few reviewers that Section 2 identified as the bottleneck. The triager tiers each card by the worst plausible failure of the change, and chooses the higher tier when unsure:
 
 - *High*: a failure could expose financial data or credentials, give wrong money figures or lose budget data (authentication, authorisation and sessions; bank sync; budget and balance calculations; database migrations; sync and encryption).
 - *Standard*: a failure would be visible but recoverable without data loss (most features, such as reports, rules and UI components).
 - *Low*: a failure would be cosmetic (themes, wording and documentation).
 
-**Explicit policies.** Agile delivery does not remove the need for IV&V: Smith and Hayes (2024, Abstract) argue that the move to agile "has in no way diminished the need for IV&V" and recommend running it in phase with the development cadence. Section 2.5 gave each board column an exit policy that must be met before work is pulled into the next column (Ahmad et al., 2018, p. 98). The IV&V checks are added to these same exit policies, and the card's tier decides which apply, so the checks run on each card as it moves, in phase with the flow. This report also proposes that High-tier cards count against the Verify column's WIP limit like any other review, so a queue waiting for an independent reviewer stops new work entering instead of growing unseen.
+The tiers are this report's own design. They borrow the idea in IEEE 1012-2024 that the V&V a component needs depends on its integrity level (IEEE, 2025), but they do not reproduce IEEE's levels.
+
+Each check is written into the exit policy of the board column where it happens (Section 2.5), so a High-tier card cannot move on until its independent evidence is attached; Table 4.2 lists them column by column. This follows Smith and Hayes (2024, Abstract), who argue that agile "has in no way diminished the need for IV&V" and that IV&V should run in phase with the development cadence. High-tier reviews also count against the Verify column's WIP limit, so if they queue up, new work stops entering and the queue is visible on the board.
 
 ## 4.3 IV&V activities across the Kanban workflow
 
@@ -399,7 +405,7 @@ Cost is a binding constraint. Actual receives about USD 3,000–3,500 a month in
 
 Finally, exit policies can become ritual. Actual pays stipends through points calculated automatically from pull request size, and its payment guide concedes that rubber-stamp reviews to earn points are theoretically possible (Actual Budget, n.d.-f). Citing ASVS requirement numbers and named tests makes approvals harder to fake, not impossible. ASVS also covers technical security controls only (OWASP Foundation, 2025), so the reliability checks rest on synthetic budgets, which find only the problems they happen to exercise.
 
-<!-- Cited: S01, S03, S04, S08, S10, S38, S58, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S72 -->
+<!-- Cited: S01, S03, S04, S08, S10, S58, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S72 -->
 
 # References
 

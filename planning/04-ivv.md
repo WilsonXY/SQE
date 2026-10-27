@@ -156,6 +156,8 @@ Applied at the author's request ("do all"); the author will review the result. S
 
 - **4.1 merged into the as-is subsection (2026-10-27, author approved).** The separate concepts subsection was removed. The V&V and independence definitions now open the as-is subsection, right before Table 4.1. The integrity-level sentence moved to the risk-tier paragraph, and the Smith & Hayes agile argument moved to the explicit-policies paragraph. The "this matters for Actual" sentence was deleted because 3.2 and 3.3 already make that point. Section 4 now has five subsections (4.1 as-is, 4.2 model, 4.3 activities table, 4.4 three goals, 4.5 critical evaluation), about 1,910 words.
 
+- **4.2 rewritten (2026-10-27, author approved).** It opens with 4.1's finding, then makes three changes (independent reviewer; outside checks via private reporting and a third-party-funded sync-server audit; risk tiers), then states where the checks sit. Table 4.1 headings are plain (Technical / Managerial / Financial), with the definitions as bullets above the table.
+
 ## Open questions
 
 None for planning.

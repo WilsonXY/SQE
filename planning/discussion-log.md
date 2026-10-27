@@ -662,3 +662,13 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked whether the paragraph "The disclosure route itself is a strength…" was needed. Answer: no. Section 3.3 already says Actual offers private reporting and coordinated disclosure (same citation), and Table 4.1 shows the route. The 55% comparison was not built on anywhere.
 - Removed at the author's request. Liu et al. (2025) had no other citation, so it was removed from References (S70 marked no longer cited in `sources.md`). Section 4 is about 45 words shorter.
+
+## 2026-10-27 — 4.2 rewritten in concrete terms; Table 4.1 headings plain again
+
+- The author said 4.2 read as abstract filler ("reading air"). Diagnosis given: abstract labels instead of actions, no link back to 4.1's finding, filler sentences restating each other, a vague audit, and a final paragraph that mostly repeated 2.5. A draft was shown; the author approved it.
+- Applied: 4.2 now opens with 4.1's finding and makes three numbered changes ("First / Second / Third"):
+  - an independent reviewer, with a bank-sync example of who is excluded;
+  - outside checks, namely existing private reporting plus a third-party-funded audit scoped to the sync server, using OSTIF's 2025 figures including its 10 funding bodies [S72];
+  - risk tiers, linked to Section 2's reviewer bottleneck.
+- The IEEE integrity-level disclaimer is now stated once. A closing paragraph places the checks in exit policies, cites Smith and Hayes (2024), and states the WIP-limit rule. The Ahmad et al. (2018) citation was dropped from 4.2; it is still cited in 2.5 and 3.5. 4.2 is about 480 words (was about 405).
+- At the author's request, the bracketed glosses were removed from Table 4.1's headings, which are back to Technical / Managerial / Financial. The bulleted definitions above the table stay.
