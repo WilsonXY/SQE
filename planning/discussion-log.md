@@ -584,3 +584,11 @@ Writing-tool source note: all three original section writers and the root writer
   - (2) The 26.8.0 migration-protection CI check is missing from 3.3. The impact is low; it is a fairness point.
 - Findings (S137–S139): the strongest reliability example is #8706 (26.10.0). A large sync could overflow a timestamp counter in privacy-focused browsers, so "the budget never opens", and the faulty loop had been in released code since at least April 2023. A core budget calculation bug (#7272, covering overspending from leftover balances, v26.4.0) was fixed with regression tests. The data and calculation fixes all added regression tests.
 - Wording for 3.2 and 3.3 was proposed to the author; not yet applied.
+
+## 2026-10-27 — Reliability example applied; functional suitability removed
+
+- The author approved edit (A) and declined (B). They asked for every mention of functional suitability to be removed, since the section focuses on three attributes only.
+- Applied:
+  - the 3.3 reliability bullet now cites #8706 (Brown, 2026) instead of the release-note examples;
+  - the functional suitability paragraph in 3.2 was deleted, and there are no other mentions;
+  - References: Brown (2026) added; Fiddaman (2026) and Aboltins (2026) removed.

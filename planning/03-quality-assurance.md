@@ -98,6 +98,12 @@ The author asked for all ten Section 3 review findings to be applied (see `discu
 - **Table 3.3 (plan areas) removed.**
 - Section 2.5 now lists what happens in each of the six columns, because the author found the board model unclear in Section 2. "Verify's exit policy is the QA gate" now reads "Section 3 adds quality checks … to the exit policies".
 
+## Agreed: functional suitability removed (27 October 2026)
+
+- The author decided that 3.2 covers only the three attributes. The functional suitability sentence was removed entirely, and with it the earlier "writing-thread caution" requirement to justify leaving it out.
+- The 3.3 reliability gap now opens with the #8706 sync counter-overflow defect ("the budget never opens"; faulty code released since at least 2023) [S137].
+- The migration-protection CI check (26.8.0) is **not** added (author decision).
+
 ## Relevant lecture guidance (not cited)
 
 - L1: views of quality; functional, structural and process quality.

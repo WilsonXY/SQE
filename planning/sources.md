@@ -444,3 +444,5 @@ How found: a read-only, blob-less clone of https://github.com/actualbudget/actua
 | — | Other shortlisted commits read but not used: 7732fac8 "Fix sync server migrations (#6346)" (v26.3.0; ESM loader); 5629e238 "Budget can't be balanced when 'Hide decimal places'…" (#6274, Dec 2025); a15ff85c "Fix tags not syncing properly" (#5387, Jul 2025); 37481535 server sync file download fix (#6010). | Read · not cited | — | — |
 
 Pattern seen: each data or calculation fix above added a regression test in the same commit, so Actual already partly follows the Operate/maintain exit policy in Table 3.2 ("each defect that reached users gets a regression test").
+
+Status update (27 October 2026; append-only): S137 (Brown, 2026; commit for #8706) is now cited in 3.3 for the reliability gap. S134 (Fiddaman, 2026) and S135 (Aboltins, 2026) are **no longer cited** and were removed from References; they stay registered as verified. S138 (Skinner, 2026) was not used, because the author removed the functional suitability discussion from 3.2.
