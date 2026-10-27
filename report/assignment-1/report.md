@@ -313,15 +313,15 @@ Table 3.2 is the resulting plan. Each row is a column of the board. It shows the
 | Kanban column | Checks added to the exit policy | Applies to | Who |
 |---|---|---|---|
 | Requirements/triage | Risk tier set; acceptance criteria written for security, data and accessibility (all three) | All cards | Triager |
-| Design | Endpoints and permissions listed (security); migration and sync impact stated (reliability) | High tier | Author |
-| Build/PR | Coverage report produced (reliability); new endpoints added to the authorisation test matrix (security) | All; matrix for High tier | Author |
+| Design | Endpoints and permissions listed (security); migration and sync impact stated (reliability) | High tier | Implementer |
+| Build/PR | Coverage report produced (reliability); new endpoints added to the authorisation test matrix (security) | All; matrix for High tier | Implementer |
 | Verify | Automated WCAG 2.2 AA checks pass (interaction capability); selected ASVS requirements checked (security) | Cards that change the UI; ASVS for High tier | Reviewer |
 | Release train | No open critical or high security finding (security) | Every release | Release maintainers |
 | Operate/maintain | Security reports answered within a stated response time (security); each defect that reached users gets a regression test and a review of the check that missed it (all three) | Every report | Maintainers handling security reports |
 
 The people in the Who column are existing maintainers and contributors; the plan assigns duties, not new posts, and triage and review are already paid from the stipend pool (Actual Budget, n.d.-f). Written into the contributing guide as well as onto the board, Table 3.2 is also the written QA plan that Section 3.3 found missing.
 
-**Worked example.** Suppose a contributor adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, and an acceptance criterion is written: every new endpoint must refuse requests without a valid login. At design, the author lists the new endpoints and who may call each one. At Build/PR, the endpoints are added to the authorisation test matrix. If the login check is missing, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. A typo fix in the documentation, by contrast, is Low tier and passes through the normal checks only.
+**Worked example.** Suppose a contributor adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, and an acceptance criterion is written: every new endpoint must refuse requests without a valid login. At design, the implementer lists the new endpoints and who may call each one. At Build/PR, the endpoints are added to the authorisation test matrix. If the login check is missing, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. A typo fix in the documentation, by contrast, is Low tier and passes through the normal checks only.
 
 Each attribute has one measure, defined in Assignment 2: the share of server endpoints covered by the authorisation test matrix (security), test coverage of the core and sync-server packages (reliability), and the number of automated accessibility violations on key screens (interaction capability).
 

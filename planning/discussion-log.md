@@ -547,3 +547,8 @@ Writing-tool source note: all three original section writers and the root writer
     - the measures.
   - Table 3.3 was removed.
 - Section 3 is now about 2,210 words.
+
+## 2026-10-27 — "Author" renamed "Implementer" in Table 3.2
+
+- At the author's request, the Who column of Table 3.2 (Design and Build/PR rows) now says "Implementer" instead of "Author". The worked example in 3.5 was changed to match ("the implementer lists the new endpoints").
+- Not changed (flagged to the author): Section 2.5's column list ("the author decides…", "the author writes the code…"), Figure 3 ("Reviewer is not the author") and Section 4 ("not author, not code owner"; "Validator other than the author").
