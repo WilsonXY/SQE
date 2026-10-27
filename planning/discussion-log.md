@@ -812,3 +812,8 @@ Writing-tool source note: all three original section writers and the root writer
 - Proposed in `planning/06-trim-plan.md`: about 45 itemised cuts, marked A (safe: repetition, recaps, roadmaps, generic background) or B (judgement: removes some content, e.g. the bazaar baseline label with Raymond and Mockus, merging Tables 2.3 and 2.4, and the threat note). Estimate: A items reach about 5,450 words; adding the B items reaches about 4,950–5,050.
 - Also flagged: "High-tier" is used in 3.4 and 3.5 but defined only in 4.2; 3.2's Reliability bullet has a non sequitur; 1.1 has a dangling modifier; "Pluggy AI" and "Pluggy.ai" are spelled differently; Section 4 has no introduction.
 - Nothing applied yet; awaiting the author's decisions.
+
+## 2026-10-27 — Trim plan: first decisions
+
+- 3-7 decided: keep Table 3.1 and drop the bullets after it. The bullets' two reasons (ASVS chapters match the 2026 flaws; W3C does not deprecate WCAG 2.1) move into the table in short form.
+- The author asked whether the non-word-count problems should wait until after trimming. Answer: most are fixed by trim items or depend on the final count. The one to settle first is where the risk tiers are defined, because the 3.5 and 4.2 trims rewrite that text.
