@@ -751,3 +751,12 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Table 4.2 Verify tools trimmed
 
 - At the author's request, "with synthetic budgets" was removed from the Verify row's Tools cell, which now reads "separate test server". The synthetic budget is already named in the same row's "What is checked" cell.
+
+## 2026-10-27 — 4.3 rewritten to guide the reader
+
+- The author said 4.3 read like notes rather than guiding the reader. Diagnosis: no intro saying how the goals would be judged; paragraphs opened with evidence rather than the claim; facts were stacked without connectives.
+- Applied:
+  - A short intro names the three goals and the evidence used for each (the critical advisory, the templates, the escaped flaws from 4.1).
+  - Each goal paragraph now opens with its claim ("two chances to be caught before release"; "checks that what users asked for is what was built and tested"; "moves independent checking … to before release"), walks through the steps with signposts ("The first time… The second…"; "at both ends of the board"), and closes by tying back to the goal.
+  - No facts or citations changed.
+- 4.3 is about 490 words (was about 330). Section 4 is about 2,110 words.
