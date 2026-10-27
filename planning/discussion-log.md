@@ -747,3 +747,7 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked why the first column named each stage twice (the column name plus a bracketed lifecycle phase). Answer: the brackets mapped the columns to Lecture 6's six phases, but each column name already says the same thing. The author's screenshot predated the previous push, which had already removed "(requirements)" and "(design)".
 - Applied: the remaining four labels were removed, so the column holds plain board-column names only.
+
+## 2026-10-27 — Table 4.2 Verify tools trimmed
+
+- At the author's request, "with synthetic budgets" was removed from the Verify row's Tools cell, which now reads "separate test server". The synthetic budget is already named in the same row's "What is checked" cell.
