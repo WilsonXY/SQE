@@ -652,3 +652,8 @@ Writing-tool source note: all three original section writers and the root writer
   - "This matters for Actual…" deleted (repeats 3.2/3.3; the advisories are still cited in 4.1).
   - Subsections renumbered 4.1–4.5. Cross-references updated: 3.5 now says the tiers are defined in Section 4.2, and the overall-quality paragraph now refers to Section 4.1. Table 4.2's "(Section 4.1)" still points to the definitions.
 - No reference lost its last citation. Section 4 is now about 1,910 words (was about 1,960).
+
+## 2026-10-27 — Independence definitions made visible in 4.1
+
+- The author asked what Table 4.1's Technical, Managerial and Financial columns were for, then asked for the definitions not to be hidden in the first paragraph.
+- Applied: the three NASA/IEEE independence parameters are now a three-item bulleted list, set apart from the V&V definitions. The Table 4.1 lead-in says the table tests each activity against them, one column each. The column headings now carry a short gloss: "Technical (not the developer)", "Managerial (separate organisation)" and "Financial (separate budget)". The wording still paraphrases S68, and the citation is unchanged.

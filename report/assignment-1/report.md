@@ -331,13 +331,17 @@ Two limits remain. First, automated accessibility checks find rule violations bu
 
 ## 4.1 Current V&V in Actual and its independence (as-is)
 
-IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). Independent V&V (IV&V) adds a condition on who does the checking. NASA, following IEEE, defines independence along three parameters: technical (assessors judge the work independently of the developer), managerial (responsibility for IV&V sits in a separate organisation) and financial (the IV&V budget is controlled by an organisation independent of development) (National Aeronautics and Space Administration, n.d.).
+IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). Independent V&V (IV&V) adds a condition on who does the checking. NASA, following IEEE, defines independence along three parameters (National Aeronautics and Space Administration, n.d.):
 
-Table 4.1 rates Actual's existing V&V activities against these three kinds of independence. *Partial* means the check is independent of the implementer but limited: automated tests check only what the team chose to test, and community testing of preview builds is informal. *Not established* means public evidence does not show either way.
+- **Technical:** the checker assesses the work independently of the developer.
+- **Managerial:** responsibility for the checking sits in an organisation separate from the one building the software.
+- **Financial:** the budget for the checking is controlled by an organisation independent of development.
+
+Table 4.1 tests each of Actual's existing V&V activities against these three kinds of independence, one column each. *Partial* means the check is independent of the implementer but limited: automated tests check only what the team chose to test, and community testing of preview builds is informal. *Not established* means public evidence does not show either way.
 
 *Table 4.1. Independence of Actual's existing V&V activities.*
 
-| Activity | Performed by | Technical | Managerial | Financial |
+| Activity | Performed by | Technical (not the developer) | Managerial (separate organisation) | Financial (separate budget) |
 |---|---|---|---|---|
 | PR review | Another core maintainer, who may approve and merge non-controversial PRs straight away (Actual Budget, n.d.-e) | Yes | No | No: reviewers share one stipend pool (Actual Budget, n.d.-f) |
 | Release approval and smoke test | At least two other maintainers approve before tagging; smoke tests run after the builds are published (Actual Budget, n.d.-c) | Yes | No | No |
