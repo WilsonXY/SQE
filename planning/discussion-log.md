@@ -908,3 +908,17 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Trim branch merged to main
 
 - At the author's request, `claude/relaxed-turing-xm7oqj` (the whole-report word-count trim, the methodology selection moved to Appendix A, and the follow-up wording fixes) was merged into `main` and pushed. The body is 4,695 words.
+
+## 2026-10-27 — Whole-report consistency check started
+
+- New session on `claude/epic-hopper-qv9pib`, fast-forwarded to the latest `main` (`fe94b77`, after the trim merge). The git history and log were read to recap the Section 2–4 reviews and the word-count trim.
+- The author asked for an inconsistency check of the report, section by section. The report was read in full against itself (text, tables, figures, appendices, References) and against the research notes.
+- Main findings reported to the author (nothing changed in the report yet):
+  - **WIP limit:** 2.2, 2.3, Figure 3 and 4.2 describe a hard stop ("no new PRs enter review"), but 2.4 says it should be "a signal rather than a hard block".
+  - **QA gates:** 2.2 and A.3 say every change must pass them, and Figure 3 puts the gate only at Verify; Section 3 tiers the checks ("not every card needs every check"), spreads them over all six columns, and never uses the term "QA gate".
+  - **Authorisation test matrix:** 3.3 and Appendix B say it would have caught GHSA-m2cq; Table 3.2 makes adding endpoints a manual step and 4.3 says an implementer could forget it.
+  - **High tier only?** 4.2 says only High-tier cards get extra independent checks, but Table 4.2 has all-card and Standard-tier independent checks. 4.3 claims no requirement can reach a release without evidence, but the criterion-to-test check is done by the High-tier independent reviewer only.
+  - **Reliability evidence:** the overflow bug was in `loot-core` client sync code [S137], but 3.3 links it to the sync-server coverage setting; the research note says no coverage is configured anywhere, which fits better. 3.2's Reliability bullet uses a different example (password loss) from 3.3.
+  - Other items: 2.2 says team expertise pulls against agile, but Table A.1 says "Agile, but under strain"; Table A.3 doesn't list "keeps its rules written down" as a gap of the current process; Figure 2 shows feature flags, but their source was removed; ASVS scope differs (Table 3.1, 3.2 and 4.2); 4.3's Verify matrix check isn't in Table 4.2; executive summary's "donation funding remain the main limits" (still open from the 4.4 deletion); Section 4 has no intro; heading case, "(as-is)/(to-be)", "exit criterion", "developer", "OSS", approval counts, cross-reference loop (3.3/4.1).
+- Checked and consistent: every reference is cited and every citation has a reference; the IEEE 1012 URL with the 1800.2 path is the verified official page [S67]; "review and triage" matches the stipend source [S08]; Pluggy spelling; the 2.2 wording of the critical flaw matches the advisory.
+- Awaiting the author's decisions on which fixes to apply.
