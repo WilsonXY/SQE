@@ -881,3 +881,13 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-27 — Wording: "This assignment proposes placing that limit on review"
 
 - At the author's request, "This report proposes placing that limit on review" became "This assignment proposes…". The change was made in both copies of the sentence: 2.2 and Appendix A.3.
+
+## 2026-10-27 — 2.2: unexplained "two factors" and "first four" fixed
+
+- The author found "Two factors" and "the first four" used without context: the selection factors now live in Appendix A, and the needs were a run-on list.
+- Applied:
+  - 2.2 now opens by saying what the factors are: eight factors for choosing a process model, with examples (GeeksforGeeks, 2025).
+  - It names the two that pull against agile (team expertise and risk tolerance).
+  - The five needs are now their own sentence.
+  - The Kanban paragraph names each need it meets; the QA-gate paragraph names the fifth.
+- 2.2 grew by about 60 words. Total is about 4,700.
