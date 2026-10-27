@@ -421,3 +421,7 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked where the WIP-limit sentence comes from. The answer: limiting WIP is a core Kanban practice (Kanban University, n.d. [S109]; Ahmad et al., 2018, pp. 97–98 [S38]). Placing the limit on review is this report's proposal, based on Actual's review bottleneck (S02, S08, S10).
 - The sentence now defines WIP, cites the Kanban guide and states that placing the limit on review is the report's proposal.
+
+## 2026-10-27 — 2.6 simplified
+
+- The author found 2.6 verbose. It was cut to four short paragraphs with the same points and citations: Kanban's weakness and why the QA gates are mandatory; the WIP limit in a volunteer project; the limits of the evidence; when to revisit the choice. The stray "Second, …" opener without a "First" was fixed.

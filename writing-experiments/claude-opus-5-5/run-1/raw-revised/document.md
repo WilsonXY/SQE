@@ -219,13 +219,13 @@ Rule: pull work only when the next column is under its WIP limit
 
 ## 2.6 Critical evaluation
 
-Kanban's main weakness is the gap identified in Section 2.4. A mapping study of Kanban in software engineering concludes that it is "a relatively basic flow tool that needs to be supported by additional practices" (Ahmad et al., 2018, p. 110). Without the QA gates and Actual's existing automated tests, the board would only display the queue rather than improve the work passing through it. The same study also reports difficulties with setting up and maintaining Kanban, organisational culture, missing supporting practices and training (Ahmad et al., 2018, p. 106).
+Kanban's main weakness is that it manages flow but does not improve quality by itself. It is "a relatively basic flow tool that needs to be supported by additional practices" (Ahmad et al., 2018, p. 110), which is why the QA gates are mandatory. Teams also report difficulty setting it up, adapting their culture and training people (Ahmad et al., 2018, p. 106).
 
-Second, volunteering limits what a WIP limit can achieve. A limit cannot force anyone to review, and holding back new PRs may discourage newcomers, just as unanswered PRs do (Salkever, 2023). The limit should therefore act as a signal to the team rather than a hard block, and the paid review pool (Actual Budget, n.d.-f) should be directed at the Verify column.
+The WIP limit is also weaker in a volunteer project. It cannot force anyone to review, and blocked PRs may discourage newcomers (Salkever, 2023). It should therefore act as a signal rather than a hard block, with the paid review pool (Actual Budget, n.d.-f) directed at review.
 
-Third, the evidence behind the choice has limits. The selection factors come from a practitioner tutorial that maps each factor to a model in one line, without supporting evidence (GeeksforGeeks, 2025). Actual also publishes no figures that would allow the factors to be measured, such as how often its requirements change, so Table 2.1 rests on qualitative judgement from the cited evidence. No study was found showing Kanban improving a project like Actual, so its benefit over today's process is plausible but unproven. Adapting one named methodology, rather than following it exactly, is still reasonable: a large international survey found that few projects follow a single approach in pure form, and that the practices a team uses shape how agile it is more than the methodology's name does (Kuhrmann et al., 2022).
+The evidence has limits too. The selection factors come from a practitioner tutorial (GeeksforGeeks, 2025), and Table 2.1 relies on qualitative judgement because Actual publishes no data to measure them. No study shows Kanban improving a project like Actual, so its benefit is plausible but unproven. Tailoring it is still reasonable, since few projects follow any methodology in pure form (Kuhrmann et al., 2022).
 
-Finally, the recommendation depends on Actual's present situation. If Actual gained paid staff, the strain on personnel would ease and Scrum's commitments could become realistic. If it began running its own hosted service, DevOps would have operations to integrate. Either change would mean repeating the comparison.
+Finally, the choice should be revisited if Actual gains paid staff, which would make Scrum's commitments realistic, or runs its own hosted service, which would give DevOps operations to integrate.
 
 <!-- Cited: S01, S02, S03, S04, S07, S08, S10, S25, S26, S34, S36, S38, S47, S105, S108, S109, S121, S123, S128, S63-m2cq -->
 
