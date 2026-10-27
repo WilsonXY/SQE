@@ -693,3 +693,13 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked to swap the first and third changes in 4.2, and why the independent reviewer said "(defined below)". Answer: it pointed forward to the tiers, which came last. Putting the tiers first removes the need for it.
 - Applied: the order is now (1) risk tiers, with the bullets and the IEEE disclaimer; (2) the independent reviewer for High-tier changes, with "(defined below)" removed; (3) outside checks. "the extra checks" became "extra checks", since nothing has been introduced yet. No wording changed otherwise.
+
+## 2026-10-27 — 4.3 lead-in shortened
+
+- The author found the 4.3 lead-in wordy. It went from about 95 words to about 50 and now:
+  - maps the phases to the columns;
+  - says Table 4.2 shows who independent performs or confirms Table 3.2's checks, and what evidence they leave;
+  - defines the threat note.
+- Removed:
+  - the verify/validate sentence (the terms are defined in 4.1, and the table still marks activities);
+  - the "ASVS requirement numbers" definition. The Verify exit policy now reads "Approval names the ASVS requirements and tests checked", which needs no definition and matches 4.5's wording.
