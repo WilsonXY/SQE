@@ -21,9 +21,9 @@ Every change, edit or piece of documentation is pushed straight to the remote. T
 | `planning/sources.md` | Register of **every** source consulted (APA 7), with status and where it's used |
 | `planning/discussion-log.md` | Dated log of what was discussed and decided in each session |
 | `planning/05-writing-handoff.md` | **Start here for writing:** structure, word budget, rules, section briefs, workflow |
-| `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` | **Current working report** (Assignment 1). All further edits go here |
+| `report/assignment-1/report.md` | **Current working report** (Assignment 1). The only version; all edits go here |
 | `.claude/skills/report-review/SKILL.md` | Review-stage checklist (six problem areas found in Section 2). Use **only** when the author says they are reviewing the report, never while writing |
-| `archived/` | Superseded versions and experiment records (former `report/`, the other `writing-experiments/` material, `WRITING-EXPERIMENT-PROTOCOL.md`). Reference only |
+| `archived/` | Superseded versions and writing-experiment records (earlier drafts, model-comparison runs, `WRITING-EXPERIMENT-PROTOCOL.md`). Reference only |
 
 ## Start here
 

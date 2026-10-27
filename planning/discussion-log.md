@@ -439,3 +439,9 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked to remove the "Current writing-thread instructions (22 October 2026)" block. Those rules applied only to the multi-model writing experiment (raw/Humanizer/pstack versions, the 6.1sol and Opus 5.5 branches and their push restrictions). From now on the author works on one version only.
 - The block was removed. "Use British English", a standing author decision, moved to "Report writing rules". "Commit and push straight to `main`" became "Commit and push straight to the remote", both in the intro sentence and in rule 7.
+
+## 2026-10-27 — Working report moved to a neutral path
+
+- At the author's request, the single working report moved from `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` to `report/assignment-1/report.md`. Its experiment header line ("raw condition (run claude-opus-5-5/run-1) …") was replaced with the plain working-title note.
+- The Section 2 revision notes were moved to `archived/writing-experiments/claude-opus-5-5/run-1/raw-revised/revision-notes.md`. The empty `writing-experiments/` folder is gone, and its `.gitattributes` rule was removed.
+- Pointers updated in `AGENTS.md`, `README.md`, `planning/README.md` and the report-review skill. Older log entries keep their original paths as history.

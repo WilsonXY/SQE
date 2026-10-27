@@ -2,7 +2,7 @@
 
 ## Current working version — 24 October 2026
 
-The author is continuing from one version only: [`writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md`](../writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md). Everything else was moved to [`archived/`](../archived/), so the links in the 22 October note below now resolve under `archived/` (for example, `../archived/report/assignment-1/...`).
+The author is continuing from one version only: [`report/assignment-1/report.md`](../report/assignment-1/report.md). Everything else was moved to [`archived/`](../archived/), so the links in the 22 October note below now resolve under `archived/` (for example, `../archived/report/assignment-1/...`).
 
 ## Writing completed — 22 October 2026
 

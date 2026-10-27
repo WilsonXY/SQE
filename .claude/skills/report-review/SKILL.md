@@ -9,7 +9,7 @@ The author is reviewing report prose that has already been written. Use this che
 
 **Scope:** review stage only. Do not apply it while drafting; writing follows `planning/05-writing-handoff.md` and `AGENTS.md`.
 
-**Working report:** `writing-experiments/claude-opus-5-5/run-1/raw-revised/document.md` (see `AGENTS.md`).
+**Working report:** `report/assignment-1/report.md` (see `AGENTS.md`).
 
 ## How to run a review
 

@@ -1,5 +1,3 @@
 # Preserve experiment artifact bytes so recorded hashes survive checkouts.
 archived/** -text
 
-# Same protection for the current working version's folder.
-writing-experiments/** -text
