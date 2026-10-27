@@ -337,7 +337,7 @@ IEEE 1012-2024 describes verification as checking whether the products of an act
 - **Managerial:** responsibility for the checking sits in an organisation separate from the one building the software.
 - **Financial:** the budget for the checking is controlled by an organisation independent of development.
 
-Table 4.1 tests each of Actual's existing V&V activities against these three kinds of independence, one column each. *Partial* means the check is independent of the implementer but limited: automated tests check only what the team chose to test, and community testing of preview builds is informal. *Not established* means public evidence does not show either way.
+Table 4.1 tests each of Actual's existing V&V activities against these three kinds of independence. *Partial* means the check is independent of the implementer but limited: automated tests check only what the team chose to test, and community testing of preview builds is informal. *Not established* means public evidence does not show either way.
 
 *Table 4.1. Independence of Actual's existing V&V activities.*
 
@@ -350,7 +350,7 @@ Table 4.1 tests each of Actual's existing V&V activities against these three kin
 | Vulnerability reports | Reporters outside the core team (Actual Budget, 2026c) | Yes | Not established | Not established |
 | External audit | No public evidence found in the documentation and blog (October 2026) | — | — | — |
 
-Actual therefore has real independent checking, but it is ad hoc and mostly technical: how independently a change is checked depends on who happens to review or report it, not on how risky it is. Internal reviewers share one small team, release goals and donation-funded pool, so they cannot provide managerial or financial independence. The strongest independent findings came after release. The three advisories checked for this report credit iamsilk, Rex50527 and pyuysig, none of whom is a core maintainer, with discovering a critical and two high-severity flaws in released versions (Actual Budget, 2026b, 2026c, 2026d). The credits establish who found the flaws; they do not show the reporters' organisational or funding arrangements, so only technical independence is evidenced.
+Actual therefore has real independent checking, but it is ad hoc and mostly technical: how independently a change is checked depends on who happens to review or report it, not on how risky it is. Internal reviewers share one small team, release goals and donation-funded pool, so they cannot provide managerial or financial independence. The strongest independent findings came after release. The critical and two high-severity advisories cited in Section 3.2 credit iamsilk, Rex50527 and pyuysig, none of whom is a core maintainer, with discovering the flaws in released versions (Actual Budget, 2026b, 2026c, 2026d).
 
 ## 4.2 IV&V integration model for Kanban (to-be)
 
@@ -362,9 +362,9 @@ First, risk tiers decide which cards get extra checks, because independent revie
 - *Standard*: a failure would be visible but recoverable without data loss (most features, such as reports, rules and UI components).
 - *Low*: a failure would be cosmetic (themes, wording and documentation).
 
-The tiers are this report's own design. They borrow the idea in IEEE 1012-2024 that the V&V a component needs depends on its integrity level (IEEE, 2025), but they do not reproduce IEEE's levels.
+The tiers are this report's own, borrowing only the idea in IEEE 1012-2024 that the V&V a component needs depends on its integrity level (IEEE, 2025).
 
-Second, High-tier changes get an *independent reviewer*: a maintainer who neither wrote the change nor is listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, both the implementer and the sync server's listed owner are excluded, so someone else on the team must check it. The reviewer is still a colleague paid from the same stipend pool, so this gives technical independence only and is not full IV&V in the IEEE sense.
+Second, High-tier changes get an *independent reviewer*: a maintainer who neither wrote the change nor is listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, both the implementer and the sync server's listed owner are excluded, so someone else on the team must check it. The reviewer is still a colleague paid from the same stipend pool, so this gives technical independence only.
 
 Third, the other two kinds of independence come from outside Actual's team and budget. One route already exists: outside reporters using private vulnerability reporting (Section 3.3), who found the three advisories examined in Section 4.1. The other is new: an occasional external security audit of the sync server, where those flaws were, paid for by a third party rather than from Actual's donations. The Open Source Technology Improvement Fund (OSTIF) arranges such audits for OSS projects. In 2025 it published 24 audits with money from 10 funding bodies, and it reports that over 98% of the 231 security-relevant findings were fixed (Open Source Technology Improvement Fund, 2026).
 
@@ -380,16 +380,14 @@ Table 4.2 shows, for each Kanban column, who checks the work independently and w
 |---|---|---|---|---|
 | Requirements/triage (requirements) | *Validate* that acceptance criteria are testable and cover security and data needs; assign the risk tier (all cards) | Issue templates, triage labels | Triager other than the requester | Tier and testable criteria recorded |
 | Design (design) | *Verify* the design note from Table 3.2 (endpoints, permissions, migration and sync impact) and the threat note against the selected ASVS requirements | Decision record, OWASP ASVS 5.0.0 | Independent reviewer | Design and threat note accepted; ASVS requirements selected |
-| Build/PR (implementation) | *Verify* automatically: CI, CodeQL and the authorisation test matrix run on every PR (all cards) | GitHub Actions, CodeQL, Vitest | None: automated checks configured by the team (partial, Table 4.1) | CI green, including the authorisation test matrix |
+| Build/PR (implementation) | *Verify* automatically: CI, CodeQL and the authorisation test matrix run on every PR (all cards) | GitHub Actions, CodeQL, Vitest | None (automated) | CI green, including the authorisation test matrix |
 | Verify (testing) | *Verify* the code against the selected ASVS requirements and that each acceptance criterion has a passing test; for migration, sync or calculation changes, *verify* that balances and envelope totals on a synthetic budget match before and after; *validate* behaviour on a preview build (Standard and High) | GitHub review, preview builds, Playwright, separate test server with synthetic budgets | Independent reviewer (not implementer, not code owner); validator other than the implementer | Approval names the ASVS requirements and tests checked; validation evidence attached; no open high findings |
 | Release train (deployment) | *Verify* that every High-tier card in the release met its Verify exit policy | Release checklist | One of the two approving maintainers | Evidence confirmed before approval and tagging |
 | Operate/maintain (maintenance) | Triage external reports; for each fixed advisory, add a regression test and re-check the tier of the area involved | Private vulnerability reporting, advisories | External reporters; optional funded auditor; a reviewer other than the code owner for the tier re-check | Advisory published; regression test merged; tier rule corrected if the area was under-tiered |
 
-Standard-tier cards skip the design review and need only preview-build validation; Low-tier cards follow normal review. Preview and nightly web builds have no sync server and are not meant for real budgets (Actual Budget, n.d.-g), hence the separate test server. Actual's smoke tests run only after the builds are published (Actual Budget, n.d.-c), so the evidence check sits at release approval, before tagging.
+Standard-tier cards skip the design review and need only preview-build validation; Low-tier cards follow normal review. Preview and nightly web builds have no sync server and are not meant for real budgets (Actual Budget, n.d.-g), hence the separate test server.
 
 ## 4.4 How the integration meets the three goals
-
-This section tests the model against the three goals of IV&V: early defect detection, requirements compliance and overall software quality.
 
 **Early defect detection.** Running the critical 2026 advisory through the board shows where it would be caught. The flaw was missing authentication on six SimpleFIN and Pluggy.ai endpoints, although the GoCardless endpoints had it (Actual Budget, 2026c). Under the model, the card that adds those endpoints is High tier because it touches bank sync. At Design, the independent reviewer reads the list of new endpoints and checks each one against the ASVS authentication requirements, so an endpoint with no login check is flagged before any code is written. At Verify, the same reviewer checks the code and confirms that every endpoint is in the authorisation test matrix (Section 3.5). On its own, the matrix depends on the implementer remembering to add each endpoint; the reviewer is a second person checking that they did.
 

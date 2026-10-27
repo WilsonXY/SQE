@@ -708,3 +708,22 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked why the lead-in focused on mapping phases and on not repeating Table 3.2. Answer: those sentences were defensive. They answered the earlier overlap finding for the writer's benefit, and the table's first column already shows the phase mapping. The reader only needs to know what the table shows.
 - Applied: the lead-in now says "Table 4.2 shows, for each Kanban column, who checks the work independently and what evidence they leave", followed by the threat-note definition (about 30 words).
+
+## 2026-10-27 — Section 4 rescanned for defensive and meta text
+
+- The author asked for the whole of Section 4 to be rescanned for the same issue as the 4.3 lead-in: text that answers an objection the reader never raised, or describes the report instead of Actual.
+- Removed or simplified:
+  - 4.1: "one column each" (obvious from the table).
+  - 4.1: the sentence saying reporter credits do not show organisational or funding arrangements. The table's "Not established" and its definition already say this.
+  - 4.1: "The three advisories checked for this report" became "The critical and two high-severity advisories cited in Section 3.2".
+  - 4.2: the two-sentence IEEE disclaimer became one: "The tiers are this report's own, borrowing only the idea in IEEE 1012-2024 that…". The agreed honesty about not using IEEE's scheme is kept.
+  - 4.2: "and is not full IV&V in the IEEE sense" was cut. "Technical independence only" and 4.5 already make the point.
+  - Table 4.2, Build/PR role: "None: automated checks configured by the team (partial, Table 4.1)" became "None (automated)".
+  - 4.3: the smoke-test placement sentence (a leftover of the earlier disclaimer). Table 4.1 already notes that smoke tests run after publication, and the release row says "before approval and tagging".
+  - 4.4: the intro sentence restating the heading.
+- Kept on purpose:
+  - the 4.2 opening recap of 4.1 (it links the model to the problem);
+  - the Smith and Hayes support;
+  - the preview-build reason for the separate test server.
+- Flagged, not changed: 4.5's "its cost is estimated in Assignment 2" (agreed 2026-10-21, but similar to the 3.5 Assignment 2 mention the author removed).
+- Section 4 is about 1,980 words (was about 2,150).
