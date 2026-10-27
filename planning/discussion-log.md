@@ -575,3 +575,12 @@ Writing-tool source note: all three original section writers and the root writer
 - Flagged to the author, not changed:
   - 26.7.0 and 26.8.0 also fixed Balance Forecast double-counting and running-balance refresh bugs. This weakens 3.2's claim that functional suitability is "already checked".
   - 26.8.0 added a CI check that protects shipped migration files. This is an existing reliability practice that 3.3 could mention.
+
+## 2026-10-27 — Commit-history search for reliability evidence
+
+- The author asked how to give the session access to Actual's GitHub issues. Answer: issues need the Claude GitHub App installed on actualbudget/actual, which only that organisation's owners can do. The public code and commit history can be read without it. The author chose the commit-history search.
+- The author also asked what the two flagged points were and how big their impact is. Answer:
+  - (1) The calculation fixes undercut the 3.2 phrase "already checked". The impact is moderate for credibility, and the fix is one sentence.
+  - (2) The 26.8.0 migration-protection CI check is missing from 3.3. The impact is low; it is a fairness point.
+- Findings (S137–S139): the strongest reliability example is #8706 (26.10.0). A large sync could overflow a timestamp counter in privacy-focused browsers, so "the budget never opens", and the faulty loop had been in released code since at least April 2023. A core budget calculation bug (#7272, covering overspending from leftover balances, v26.4.0) was fixed with regression tests. The data and calculation fixes all added regression tests.
+- Wording for 3.2 and 3.3 was proposed to the author; not yet applied.
