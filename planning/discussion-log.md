@@ -515,3 +515,9 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author asked whether IEEE 730 being paywalled is a problem. Answer: yes, by the report's own cost test. Volunteers cannot consult a standard they are meant to follow, and the report could only claim "intent only". ASVS and WCAG are free; ISO/IEC 25010 is paid but is used only for attribute names.
 - Applied: the cost test now requires standards that contributors must follow to be free to read. IEEE 730-2026 moved to the rejected paragraph, citing the official catalogue for its scope and its purchase/subscription-only access (rechecked today). Table 3.1 now has three standards. The missing QA plan is closed by the report's own plan in 3.5. "Intent only" was removed from 3.4 and 3.6.
+
+## 2026-10-27 — Rejected-standards paragraph trimmed
+
+- The author asked to trim the rejected-standards paragraph in 3.4, since those standards are not used, and offered to remove them entirely.
+- Recommendation: keep them, but cut them to two sentences. Lecture 4 teaches ISO 9001, ISO/IEC 27001 and CMMI, so naming them and the reason for rejecting each shows they were considered.
+- Applied: the "no standard for the other two gaps" paragraph and the rejected-standards paragraph went from about 210 to about 100 words. The per-standard descriptions and the "ideas still reflected" sentence were removed. One sentence now covers IEEE 730 (paid access), and one covers ISO 9001, ISO/IEC 27001 and CMMI together (formal organisation; certification or appraisal). All four references stay cited.
