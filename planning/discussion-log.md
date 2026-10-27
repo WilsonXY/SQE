@@ -411,3 +411,8 @@ Writing-tool source note: all three original section writers and the root writer
   - the 2.4 verdict wording;
   - the 2.6 evidence-limits sentence.
 - Removed the reference. Boehm (1988), the Spiral paper, stays cited.
+
+## 2026-10-27 — 2.4 Kanban and verdict paragraphs rewritten
+
+- The author found the last two paragraphs of 2.4 unclear ("talking to yourself").
+- They were rewritten as plain statements. The Kanban paragraph now names the problem it fixes, then lists its three additions (review WIP limit, written stage rules, self-chosen tasks) with "first, second, third". The verdict paragraph now separates three things: the comparison with today's process, the one unmet requirement (no quality checks) and why it matters (low risk tolerance), and the QA gates that fill it.
