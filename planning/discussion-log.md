@@ -742,3 +742,8 @@ Writing-tool source note: all three original section writers and the root writer
 - The author found Table 4.2's headings badly named. They now use plain words for Lecture 6's activities / tools / roles / outcome: "Board column | What is checked | Tools | Who checks | Card moves on when" (was "Column (lifecycle phase) | IV&V activities | Tools | Independent role | Exit policy added").
 - The redundant phase labels "(requirements)" and "(design)" were dropped from the first column. The others stay, because they name a different phase: Build/PR (implementation), Verify (testing), Release train (deployment) and Operate/maintain (maintenance).
 - Caption: "Independent checks at each board column (High-tier cards unless stated)."
+
+## 2026-10-27 — Phase labels removed from Table 4.2
+
+- The author asked why the first column named each stage twice (the column name plus a bracketed lifecycle phase). Answer: the brackets mapped the columns to Lecture 6's six phases, but each column name already says the same thing. The author's screenshot predated the previous push, which had already removed "(requirements)" and "(design)".
+- Applied: the remaining four labels were removed, so the column holds plain board-column names only.
