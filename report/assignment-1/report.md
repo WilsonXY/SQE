@@ -272,9 +272,9 @@ Performance tests are also absent from CI, but performance efficiency is outside
 A standard is selected only if it passes two tests:
 
 1. **Fit.** It closes one of the gaps in Section 3.3, or, for the quality model, frames the section.
-2. **Cost.** A volunteer team, funded by donations and a USD 2,000 monthly stipend pool for review and administration (Actual Budget, n.d.-f), can apply it without certification or a paid appraisal.
+2. **Cost.** A volunteer team, funded by donations and a USD 2,000 monthly stipend pool for review and administration (Actual Budget, n.d.-f), can apply it without certification or a paid appraisal. If contributors must follow its requirements, its text must also be free to read, so that every volunteer can consult it.
 
-Four standards pass both tests (Table 3.1).
+Three standards pass both tests (Table 3.1). ISO/IEC 25010 is sold, but it is used here only to name the three attributes, whose names are widely published; contributors never need to follow its text.
 
 *Table 3.1. Standards adopted for Actual's QA process.*
 
@@ -283,15 +283,13 @@ Four standards pass both tests (Table 3.1).
 | ISO/IEC 25010:2023 | Frames the section | Names and defines the three attributes (3.2) |
 | OWASP ASVS 5.0.0 | Security | Selected requirements become acceptance criteria for High-tier work |
 | WCAG 2.2 | Interaction capability | Target moves from 2.1 AA to 2.2 AA; automated checks at review |
-| IEEE 730-2026 | No written QA plan | Its intent is applied as a light plan (3.5) |
 
 - **OWASP ASVS 5.0.0** provides a basis for testing technical security controls (OWASP Foundation, 2025). Its authentication, session management and authorisation chapters cover the same kinds of flaw as the 2026 advisories. This report therefore proposes using selected requirements from those chapters, not a full ASVS verification level, as acceptance criteria for sync-server work.
 - **WCAG 2.2** is recommended for new work, although W3C states that it does not deprecate 2.1 (World Wide Web Consortium, 2024). Moving Actual's target from 2.1 AA to 2.2 AA is therefore a modest step, and automated checks against it close the accessibility gap.
-- **IEEE 730-2026** sets requirements for planning and controlling software QA processes (IEEE, 2026). Only its official catalogue entry could be read, so the plan in Section 3.5 applies that intent in a light form and does not claim conformance.
 
-No standard is adopted for reliability. Its gap is a missing measure, not a missing practice, and the coverage report in Section 3.5 provides that measure.
+No standard is adopted for the other two gaps. Reliability's gap is a missing measure, not a missing practice, and the coverage report in Section 3.5 provides it. The missing QA plan is closed by the plan itself (Section 3.5).
 
-Three widely used quality standards were considered and rejected on the cost test. ISO 9001:2026 sets requirements for an organisation to show that it consistently meets customer requirements (International Organization for Standardization, 2026). ISO/IEC 27001:2022 covers establishing and improving an information security management system (International Organization for Standardization & International Electrotechnical Commission, 2022). CMMI V3.0 (Lear, 2023) rates an organisation's process maturity through an appraisal. All three assume a formal organisation and deliver their value through certification or a rating, neither of which would by itself remove a defect from Actual. Their main ideas are still reflected in the plan: customer focus in the user-based view of quality (3.1), and risk-based thinking in the risk tiers (3.5).
+Four widely used quality standards were considered and rejected on the cost test. IEEE 730-2026 sets requirements for initiating, planning, controlling and executing software QA processes, so it would fit the missing QA plan. However, its text is available only by purchase or subscription (IEEE, 2026), so volunteers could not consult the requirements they were meant to follow. The plan in Section 3.5 is therefore this report's own lightweight design. ISO 9001:2026 sets requirements for an organisation to show that it consistently meets customer requirements (International Organization for Standardization, 2026). ISO/IEC 27001:2022 covers establishing and improving an information security management system (International Organization for Standardization & International Electrotechnical Commission, 2022). CMMI V3.0 (Lear, 2023) rates an organisation's process maturity through an appraisal. These three assume a formal organisation and deliver their value through certification or a rating, neither of which would by itself remove a defect from Actual. Their main ideas are still reflected in the plan: customer focus in the user-based view of quality (3.1), and risk-based thinking in the risk tiers (3.5).
 
 ## 3.5 Applying the QA Process within Kanban
 
@@ -334,7 +332,7 @@ The plan's main cost is volunteer time. Every new exit criterion adds work for a
 
 The plan also adds automation: a coverage report, accessibility checks and the authorisation test matrix. Automation is not free. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests and less discussion (Wessel et al., 2022). These observational studies cannot predict Actual's results, so each new check should be monitored for its effect on review time and tuned or removed if it slows the flow without finding defects.
 
-Two limits remain. First, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed. Second, the evidence is public only: the gaps in Section 3.3 may be partly covered by private practices, and IEEE 730-2026 is applied in intent only (Section 3.4).
+Two limits remain. First, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed. Second, the evidence is public only: the gaps in Section 3.3 may be partly covered by private practices.
 
 <!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129 -->
 

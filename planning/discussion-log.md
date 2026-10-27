@@ -510,3 +510,8 @@ Writing-tool source note: all three original section writers and the root writer
 - 3.6: Scorecard was removed from the automation list. The limits are now two (the OpenSSF self-assessment limit was dropped), and the IEEE 730 caveat now points to 3.4.
 - Executive summary: "and OpenSSF tools" removed.
 - Section 3 is now about 2,160 words (it was about 2,570 after the first review pass).
+
+## 2026-10-27 — IEEE 730 rejected because its text is paywalled
+
+- The author asked whether IEEE 730 being paywalled is a problem. Answer: yes, by the report's own cost test. Volunteers cannot consult a standard they are meant to follow, and the report could only claim "intent only". ASVS and WCAG are free; ISO/IEC 25010 is paid but is used only for attribute names.
+- Applied: the cost test now requires standards that contributors must follow to be free to read. IEEE 730-2026 moved to the rejected paragraph, citing the official catalogue for its scope and its purchase/subscription-only access (rechecked today). Table 3.1 now has three standards. The missing QA plan is closed by the report's own plan in 3.5. "Intent only" was removed from 3.4 and 3.6.

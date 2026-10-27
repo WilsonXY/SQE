@@ -76,6 +76,14 @@ The author asked for all ten Section 3 review findings to be applied (see `discu
 - **Option 1 for Table 3.3:** the plan's seven areas are presented as the report's own design ("Areas of Actual's QA plan"). The claim that an SQAP "is usually organised into standard sections" was removed, so no citation is needed. Background: Lecture 3's list is the IEEE 730-2002 outline, and no current readable source was found (S131, S133).
 - This supersedes the earlier "Standards scope: option B" adopt/borrow/reject table and the "OpenSSF: Adopt" row above.
 
+## Agreed: IEEE 730 rejected (27 October 2026)
+
+- The author pointed out that IEEE 730 is behind a paywall. The cost test now adds: if contributors must follow a standard's requirements, its text must be free to read.
+- **IEEE 730-2026 moved to the rejected paragraph.** It fits the missing-QA-plan gap, but it is available only by purchase or subscription (official catalogue rechecked 27 October 2026 [S82]). The plan in 3.5 is now stated as the report's own lightweight design. The "intent only" wording was removed from 3.4 and 3.6.
+- Table 3.1 now has **three** adopted standards: ISO/IEC 25010:2023, OWASP ASVS 5.0.0 and WCAG 2.2. ISO/IEC 25010 is also sold; one sentence explains that it is used only to name the attributes, so contributors never need its text.
+- The missing QA plan is closed by the plan itself; reliability is closed by the coverage measure.
+- This supersedes "IEEE 730-2026 | Adapt" above.
+
 ## Relevant lecture guidance (not cited)
 
 - L1: views of quality; functional, structural and process quality.
