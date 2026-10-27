@@ -156,11 +156,11 @@ This section defines what quality means for Actual and which attributes matter m
 
 ## 3.1 What Quality Means for Actual
 
-Quality can be defined from several viewpoints. Garvin (1984) distinguishes five approaches: transcendent, product-based, user-based, manufacturing-based and value-based. The transcendent approach, quality as something recognised but hard to describe, gives a QA process nothing to check against. The other four each describe part of what quality means for Actual:
+Quality can be defined from five viewpoints, adapted from Garvin (1984): transcendent, product-based, user-based, process-based and value-based. The transcendent approach, quality as something recognised but hard to describe, gives a QA process nothing to check against. The other four each describe part of what quality means for Actual:
 
 - **User-based.** Actual's product documentation defines success as "users trusting the numbers" (Actual Budget, 2026a, Product Purpose section). For users, quality means balances and envelope totals that are correct, private and easy to understand.
 - **Product-based.** Quality lies in properties of the software itself, such as access control on the sync server and the integrity of budget data. Section 3.2 names these properties using ISO/IEC 25010.
-- **Manufacturing-based.** In software, this is the process view: a workflow that follows its own standards and so produces those properties every time, not only when an experienced maintainer reviews the change.
+- **Process-based.** Quality comes from a workflow that follows its own standards and so produces those properties every time, not only when an experienced maintainer reviews the change.
 - **Value-based.** Actual is free and funded by donations, so quality work must be affordable in volunteer time.
 
 Users care most about the first view and volunteer maintainers about the last, so a QA process for Actual must protect financial data without stalling a volunteer workflow.

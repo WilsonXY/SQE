@@ -899,3 +899,4 @@ Writing-tool source note: all three original section writers and the root writer
 - Follow-up: the author pointed out that "can accept little risk" / "can afford few mistakes" reads as if Actual can accept *some* risk, which contradicts the harms that follow. Now: "Actual cannot accept much risk, because a wrong balance could lead… and a security flaw can expose…".
 - 2.3 heading: "(to-be)" removed at the author's request.
 - 2.4: the evidence-limits sentence was cut to its main point (no study shows Kanban improving a project like Actual). The practitioner-tutorial and qualitative-judgement remarks were dropped at the author's request. GeeksforGeeks (2025) is still cited in 2.2 and Appendix A.
+- 3.1: "manufacturing-based" replaced by Lecture 1's term "process-based" at the author's request. The list is now introduced as "five viewpoints, adapted from Garvin (1984)", because Garvin's own term is manufacturing-based.
