@@ -249,7 +249,7 @@ Standard-tier cards skip the design review and only need checking on a preview b
 
 ## 4.3 How the Integration Meets the Three Goals
 
-The model is tested here against the three goals named at the start of Section 4, using Actual's own evidence.
+This section shows how the model meets the three goals named at the start of Section 4, using Actual's own evidence.
 
 Early defect detection is easiest to see with the critical 2026 bank-sync flaw, which was only found after release (Section 3.3). Under the model, a card that adds bank-sync endpoints is High tier, so the independent reviewer would have looked at it twice before release. At Design, they would have flagged an endpoint planned without a login check. At Verify, they would have checked that every endpoint was in the authorisation test matrix, because an implementer who forgets a login check can easily forget its test too.
 
