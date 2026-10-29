@@ -985,3 +985,7 @@ Writing-tool source note: all three original section writers and the root writer
   - Figure 3: the feedback loop is a dashed arrow from column 6 back to column 1, and Verify (the WIP-limit column) is highlighted.
 - Rendered with the `mermaid` npm package (11.4.1) in headless Chromium; the render script was kept in the session scratchpad, not the repo.
 - The word count is unchanged at 4,791, because figures are not counted.
+
+## 2026-10-29 — Consistency-check branch merged to main
+
+- At the author's request, `claude/epic-hopper-qv9pib` was fast-forwarded into `main` and pushed. It carries the whole-report consistency fixes, the Figure 3 loop redraw and the Mermaid figures.
