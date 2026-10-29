@@ -1100,3 +1100,7 @@ Writing-tool source note: all three original section writers and the root writer
 - At the author's request, the bracketed parts of the figure captions were removed in both files: "(based on Actual Budget, n.d.-c)" (Figure 1), "(compiled from the sources cited in 2.1)" (Figure 2) and "(to-be)" (Figure 3). Actual Budget (n.d.-c) is still cited in the body of 1.3, so the reference stays.
 - At the author's request, the Word reference list is numbered (1–32) and every URL is a clickable link. Flagged to the author: APA 7 reference lists are normally unnumbered and alphabetical; numbering is the author's choice. `report.md` is unchanged here.
 - Table captions sit below tables in Word at the author's request (APA 7 normally puts table titles above).
+
+## 2026-10-30 — Five needs in 2.2 as a list
+
+- At the author's request, the five methodology needs in 2.2 are now a bullet list (handle changing priorities; work with self-chosen tasks; keep rules written down; protect review time; include quality and risk controls), in both `report.md` and the Word version. Wording unchanged apart from dropping "and also".
