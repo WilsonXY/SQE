@@ -202,7 +202,7 @@ The plan's main cost is volunteer time. Each check added to an exit policy is mo
 
 # 4 Integrating IV&V with Kanban
 
-This section examines how independently Actual's work is checked today, proposes an IV&V model built into the Kanban board from Section 2 and the QA plan from Section 3, and shows how the model meets the brief's three goals, which are early defect detection, requirements compliance and overall quality.
+This section examines how independently Actual's work is checked today, proposes an IV&V model built into the Kanban board from Section 2 and the QA plan from Section 3, and shows how the model meets the assignment's three goals, which are early defect detection, requirements compliance and overall quality.
 
 ## 4.1 Current V&V in Actual and Its Independence
 
@@ -249,11 +249,11 @@ Standard-tier cards skip the design review and only need checking on a preview b
 
 ## 4.3 How the Integration Meets the Three Goals
 
-This section shows how the model meets the three goals named at the start of Section 4, using Actual's own evidence.
+This section will shows how the proposed model would meets the three goals named at the start of Section 4 by using Actual's own evidence.
 
-Early defect detection is easiest to see with the critical 2026 bank-sync flaw, which was only found after release (Section 3.3). Under the model, a card that adds bank-sync endpoints is High tier, so the independent reviewer would have looked at it twice before release. At Design, they would have flagged an endpoint planned without a login check. At Verify, they would have checked that every endpoint was in the authorisation test matrix, because an implementer who forgets a login check can easily forget its test too.
+Early defect detection is most obvious one to see with the critical 2026 bank-sync flaw, which was only found after release (Section 3.3). Under the model, a card that adds bank-sync endpoints will be counted as High tier, so the independent reviewer would have looked at it twice before release. One is at Design stage, they would have flagged an endpoint planned without a login check. While the second one at Verify stage, which they would have checked that every endpoint was in the authorisation test matrix, because an implementer who forgets a login check might also forget its test too.
 
-Requirements compliance is mostly about matching up records Actual already keeps. A feature request starts as an issue, the PR template asks for the related issue and a release note describes the result (Actual Budget, 2026a), but nobody checks that they line up. Under the model, someone other than the requester makes sure at triage that each acceptance criterion can be tested, and the reviewer only approves at Verify once every criterion has a passing test.
+Requirements compliance is mostly about matching up records Actual already keeps. A feature request starts as an issue, the PR template asks for the related issue and a release note describes the result (Actual Budget, 2026a), but nobody checks that they line up. Under the proposed model, someone other than the requester makes sure that at triage, each acceptance criterion can be tested, and the reviewer only approves at Verify once every criterion has a passing test.
 
 Overall quality improves because the riskiest code is checked independently before release, while small changes still go through a single review. Any defect that still gets through becomes a regression test, and the tier of its area is checked again.
 
