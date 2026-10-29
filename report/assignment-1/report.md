@@ -36,7 +36,7 @@ Basic budgeting does not require a server, but syncing between devices and bank 
 
 ![Figure 1: user device, sync server and bank-sync provider](figures/figure-1.png)
 
-*Figure 1. How Actual Budget works (based on Actual Budget, n.d.-c).*
+*Figure 1. How Actual Budget works.*
 
 ## 1.4 Who Is Involved
 
@@ -74,7 +74,7 @@ Therefore, Actual has a defined workflow, but no deliberate methodology. The ste
 
 ![Figure 2: Actual's as-is development workflow](figures/figure-2.png)
 
-*Figure 2. Actual's as-is development workflow (compiled from the sources cited in 2.1).*
+*Figure 2. Actual's as-is development workflow.*
 
 ## 2.2 Why Kanban Fits Actual
 
@@ -96,7 +96,7 @@ The WIP limit proposed in Section 2.2 sits on the Verify column, where review ha
 
 ![Figure 3: proposed Kanban board with exit policies and feedback loop](figures/figure-3.png)
 
-*Figure 3. Proposed (to-be) Kanban workflow for Actual with explicit exit policies.*
+*Figure 3. Proposed Kanban workflow for Actual with explicit exit policies.*
 
 ## 2.4 Critical Evaluation
 

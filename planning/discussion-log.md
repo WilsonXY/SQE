@@ -1093,3 +1093,10 @@ Writing-tool source note: all three original section writers and the root writer
   - Actual Budget references reordered so the n.d. entries precede the dated 2026 entries (APA 7);
   - hidden `<!-- Cited -->` comments rebuilt from the actual in-text citations per section, with a new one for Appendix A (stale IDs such as S26, S34, S36, S43, S44, S55, S57, S82, S85, S108 dropped from section lists where no longer cited).
 - Every remaining reference (32) is cited at least once; every in-text citation has a reference.
+
+## 2026-10-30 — Word version of Assignment 1 and caption edits
+
+- Built `report/assignment-1/Assignment-1-Report.docx` from `report.md` with the APU Assignment 1 cover page, Word's automatic table of contents, Times New Roman, justified body text, Word heading numbering (X.0 / X.Y), each main section on a new page and captions centred below figures and tables.
+- At the author's request, the bracketed parts of the figure captions were removed in both files: "(based on Actual Budget, n.d.-c)" (Figure 1), "(compiled from the sources cited in 2.1)" (Figure 2) and "(to-be)" (Figure 3). Actual Budget (n.d.-c) is still cited in the body of 1.3, so the reference stays.
+- At the author's request, the Word reference list is numbered (1–32) and every URL is a clickable link. Flagged to the author: APA 7 reference lists are normally unnumbered and alphabetical; numbering is the author's choice. `report.md` is unchanged here.
+- Table captions sit below tables in Word at the author's request (APA 7 normally puts table titles above).
