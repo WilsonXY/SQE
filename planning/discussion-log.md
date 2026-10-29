@@ -1063,3 +1063,8 @@ Writing-tool source note: all three original section writers and the root writer
 - The author found Table 4.2 unclear, off-topic and written as notes. Rewritten around independence: columns are now *Board column / Who checks / What they check / The card moves on when*; cells are plain sentences.
 - Removed: the Tools column, the Build/PR row (no independent checker; the note points to Table 3.2), "Decision record" and the semicolon-chained detail. Kept every check 4.3 relies on (Design ASVS check, Verify authorisation-matrix check, balance comparison, Operate/maintain regression test and tier re-check).
 - Added a two-sentence lead-in that refers to Table 4.2 and states the Kanban link (a card cannot leave a column until its condition is met), restoring what the removed exit-policy paragraph covered. Caption now says the table covers High-tier cards unless stated.
+
+## 2026-10-30 — Table 4.2 repaired and Verify cell shortened
+
+- The author's Windows copy of Table 4.2 had been damaged while editing (cells cut mid-word, Verify row's two cells merged with stray text). Committed as-is, then repaired keeping the author's wording ("Checks if…", "Exit policy" heading, "release version").
+- Verify "What they check" cell made generic at the author's request (about 60 to 33 words). The authorisation test matrix stays (4.3 relies on it); the preview-build validation was restored so the cell matches its "validation" checker.
