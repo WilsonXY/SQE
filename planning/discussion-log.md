@@ -1057,3 +1057,9 @@ Writing-tool source note: all three original section writers and the root writer
 
 - Author's local edit to the outside-checks paragraph committed first.
 - At the author's request, the exit-policy paragraph before Table 4.2 was removed. Knock-on: Smith and Hayes (2024) [S69] was cited only there, so it was removed from References and the cited list, and marked no longer cited in `sources.md`. Table 4.2 now has no in-text callout (to resolve with the author).
+
+## 2026-10-30 — Table 4.2 rewritten for readers
+
+- The author found Table 4.2 unclear, off-topic and written as notes. Rewritten around independence: columns are now *Board column / Who checks / What they check / The card moves on when*; cells are plain sentences.
+- Removed: the Tools column, the Build/PR row (no independent checker; the note points to Table 3.2), "Decision record" and the semicolon-chained detail. Kept every check 4.3 relies on (Design ASVS check, Verify authorisation-matrix check, balance comparison, Operate/maintain regression test and tier re-check).
+- Added a two-sentence lead-in that refers to Table 4.2 and states the Kanban link (a card cannot leave a column until its condition is met), restoring what the removed exit-policy paragraph covered. Caption now says the table covers High-tier cards unless stated.
