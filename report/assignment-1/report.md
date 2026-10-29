@@ -255,7 +255,7 @@ Early defect detection is most obvious one to see with the critical 2026 bank-sy
 
 Requirements compliance means showing that what users asked for was built and tested. In Actual, a feature request starts as an issue, the PR template asks the contributor to link that issue, and a release note describes what shipped (Actual Budget, 2026a). However, no step checks that the finished PR actually does what the issue asked for. Under the proposed model, someone other than the requester makes sure that at triage, each acceptance criterion can be tested, and the reviewer only approves at Verify once every criterion has a passing test.
 
-Overall quality improves because the riskiest code is checked independently before release, while small changes still go through a single review. And any defect that still gets through will becomes a regression test, and the tier of its area is checked again.
+Lastly, the overall quality will improves because the riskiest code is being checked independently before releases, while small changes still go through a single review. And any defect that still gets through will becomes a regression test, and the tier of its area will be checked again.
 
 <!-- Cited: S01, S03, S04, S08, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S72 -->
 
