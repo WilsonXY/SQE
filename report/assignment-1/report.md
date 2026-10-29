@@ -244,7 +244,7 @@ Table 4.2 shows where each independent check sits on the Kanban board. A card ca
 | Release train       | One of the approving maintainers                                                | Checks if every High-tier card in the release passed Verify                                                                                                                                                          | The evidence is confirmed before the release version is tagged                                  |
 | Operate/maintain    | Outside reporters and the optional funded auditor                               | Check released code for flaws that the team missed. For each fixed flaw, a reviewer other than the code owner also checks whether its area was tiered too low                                                        | The advisory is published, a regression test is merged and the tier rule is corrected if needed |
 
-Standard-tier cards skip the design review and only need checking on a preview build, while Low-tier cards follow normal review. Build/PR has no row because its checks are automated (Table 3.2). Preview builds have no sync server and are not meant for real budgets (Actual Budget, n.d.-f), so migration and sync checks need a separate test server.
+Standard-tier cards skip the design review and only need checking on a preview build, while Low-tier cards follow normal review. Build/PR is left out because its checks are automated (Table 3.2).
 
 ## 4.3 How the Integration Meets the Three Goals
 

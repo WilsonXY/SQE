@@ -1068,3 +1068,7 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author's Windows copy of Table 4.2 had been damaged while editing (cells cut mid-word, Verify row's two cells merged with stray text). Committed as-is, then repaired keeping the author's wording ("Checks if…", "Exit policy" heading, "release version").
 - Verify "What they check" cell made generic at the author's request (about 60 to 33 words). The authorisation test matrix stays (4.3 relies on it); the preview-build validation was restored so the cell matches its "validation" checker.
+
+## 2026-10-30 — Table 4.2 note shortened
+
+- At the author's request, the note under Table 4.2 now keeps only the Standard/Low-tier sentence and a short Build/PR sentence. The separate-test-server sentence was removed because the Verify cell no longer mentions a test server. Actual Budget (n.d.-f) is still cited in Table 4.1.
