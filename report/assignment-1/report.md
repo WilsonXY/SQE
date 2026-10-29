@@ -226,15 +226,13 @@ Actual already has some independent checking, but it is ad hoc. Nobody other tha
 
 ## 4.2 IV&V Integration Model for Kanban
 
-The proposed IV&V model makes independent checking depend on a change's risk instead of on whoever happens to review it, and it does this in three ways.
+The proposed IV&V model makes independent checking depend on a change's risk instead of on whoever happens to review it.
 
-It starts with the risk tiers set at triage (Section 3.5). Only High-tier cards get an independent reviewer, because reviewing every card independently would overload the few reviewers that Section 2 found to already be the bottleneck for the team.
+Only High-tier cards (Section 3.5) get an independent reviewer: a maintainer who neither wrote the change nor owns that area in Actual's CODEOWNERS file (Actual Budget, 2026a). Keeping this to High-tier cards protects the few reviewers that Section 2 found to be the bottleneck.
 
-The independent reviewer is a maintainer who did not write the change and is not listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, this rules out both the implementer and the sync server's listed owner, so another team member has to check it.
+That reviewer is still on the same small team, so the model also keeps checks from outside it, as all three 2026 advisories were found by outside reporters after release (Section 3.3). Private vulnerability reporting already provides one such check. The model adds an occasional external security audit of the sync server, funded by a third party so that it costs neither volunteer time nor Actual's donations. The Open Source Technology Improvement Fund (2026) arranges audits like this for open-source projects with money from outside funders.
 
-That reviewer still belongs to the same small team, so the model also adds checks from outside it. Actual's own record shows why. All three 2026 advisories were in released code and were found by reporters outside the core team (Section 3.3). Private vulnerability reporting already lets outsiders report flaws like these. The model adds an occasional external security audit of the sync server, where those flaws were. A third party would pay for it, so it would cost neither volunteer review time nor Actual's donations. The Open Source Technology Improvement Fund (OSTIF) arranges audits like this for open-source projects using money from outside funders, and reports that over 98% of the security-relevant findings from its 2025 audits were fixed (Open Source Technology Improvement Fund, 2026).
-
-Each check goes into the exit policy of the board column where it happens, so a High-tier card cannot move on until its independent evidence is attached. This follows Smith and Hayes (2024, Abstract), who argue that agile "has in no way diminished the need for IV&V" and that IV&V should run in phase with the development cadence. High-tier reviews and independent design reviews draw on the same reviewers, so both count against the Verify column's WIP limit. If they queue up, new work stops entering and the queue shows on the board. Table 4.2 shows who checks a High-tier card independently at each column, and what evidence they leave.
+Each check is written into the exit policy of its board column, so a High-tier card cannot move on until its evidence is attached. This keeps IV&V in step with the development cadence, as Smith and Hayes (2024) recommend for agile projects. Independent reviews also count against the Verify column's WIP limit, so if they pile up, new work stops entering. Table 4.2 lists the checks at each column.
 
 *Table 4.2. Independent checks at each board column.*
 

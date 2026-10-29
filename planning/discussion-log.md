@@ -1036,3 +1036,9 @@ Writing-tool source note: all three original section writers and the root writer
 
 - Author's own edits to 4.1 and the 4.2 opener committed first.
 - At the author's request, the 4.2 prose (not Table 4.2) was humanized: First/Second/Third scaffolding removed, colon set-ups split into plain sentences, "One route already exists: … The other is new:" reworded, the two WIP-limit sentences merged. The opener's grammar ("those who happens", "the model have") was fixed in the rewrite. Facts, citations and the Smith and Hayes quote unchanged.
+
+## 2026-10-30 — 4.2 prose trimmed
+
+- The author found 4.2 bloated. Prose cut from 354 to 219 words; Table 4.2 unchanged.
+- Removed: "it does this in three ways", the bank-sync CODEOWNERS example (4.3 has its own), "Actual's own record shows why" (4.1 already shows it), OSTIF's 98% fix-rate statistic, the Smith and Hayes direct quote (now a paraphrase), and the separate sentence on design reviews sharing the WIP limit (folded into "independent reviews").
+- Kept: tiering, the independent-reviewer definition, the outside-checks reason and audit, exit policies and the WIP limit. All citations still present (OSTIF, Smith and Hayes, CODEOWNERS source).
