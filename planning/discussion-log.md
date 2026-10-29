@@ -1076,3 +1076,9 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-30 — Build/PR row restored to Table 4.2
 
 - At the author's request, the Build/PR row is back: automated CI checks set up by the team, running Table 3.2's tests and scans including the authorisation test matrix (all cards), exit when all checks pass. Consistent with Table 4.1 rating CI as *Partial*. The note's "Build/PR is left out" sentence was removed.
+
+## 2026-10-30 — Section 4.3 trimmed and humanized
+
+- The author asked what 4.3 is for: it answers the brief's IV&V outcomes (early defect detection, requirements compliance, overall quality), named in the Section 4 intro.
+- Author's Windows edit to the Table 4.2 Build/PR row committed first.
+- 4.3 cut from 344 to 223 words and humanized: each paragraph now opens with its goal; removed the colon set-ups, "before any code exists", the "page should feel fast" example, the restating "A high-risk requirement therefore…" sentence, the theme/wording example and the repeated regression-test clause. The opener no longer says "the brief"; it points to the start of Section 4. Citations unchanged.
