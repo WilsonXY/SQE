@@ -1082,3 +1082,14 @@ Writing-tool source note: all three original section writers and the root writer
 - The author asked what 4.3 is for: it answers the brief's IV&V outcomes (early defect detection, requirements compliance, overall quality), named in the Section 4 intro.
 - Author's Windows edit to the Table 4.2 Build/PR row committed first.
 - 4.3 cut from 344 to 223 words and humanized: each paragraph now opens with its goal; removed the colon set-ups, "before any code exists", the "page should feel fast" example, the restating "A high-risk requirement therefore…" sentence, the theme/wording example and the repeated regression-test clause. The opener no longer says "the brief"; it points to the start of Section 4. Citations unchanged.
+
+## 2026-10-30 — Citation consistency check
+
+- Author's manual edits committed and pushed first.
+- Whole-report scan of in-text citations against References. Fixed:
+  - removed three uncited references: Kuhrmann et al. (2022), Wessel et al. (2022), Wessel et al. (2023);
+  - added section locators to the two Scrum Guide quotes in A.3 (verified against the live Guide);
+  - 4.2 OSTIF sentence: "we can get The … to arranges" → "the … arranges" (third person, narrative-citation capitalisation, grammar);
+  - Actual Budget references reordered so the n.d. entries precede the dated 2026 entries (APA 7);
+  - hidden `<!-- Cited -->` comments rebuilt from the actual in-text citations per section, with a new one for Appendix A (stale IDs such as S26, S34, S36, S43, S44, S55, S57, S82, S85, S108 dropped from section lists where no longer cited).
+- Every remaining reference (32) is cited at least once; every in-text citation has a reference.
