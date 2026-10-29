@@ -1031,3 +1031,8 @@ Writing-tool source note: all three original section writers and the root writer
 
 - Author's own edits committed: Table 4.1 "PR author" → "Implementer", release-approval wording, *Partial* definition reworded, "therefore" removed from the closing paragraph.
 - At the author's request, the 4.1 closing paragraph was humanized: colon chains split into plain sentences, the "not on how risky it is" contrast and the "strongest independent findings came after release" opener removed. Facts and citations unchanged.
+
+## 2026-10-30 — Humanizer pass on 4.2 prose
+
+- Author's own edits to 4.1 and the 4.2 opener committed first.
+- At the author's request, the 4.2 prose (not Table 4.2) was humanized: First/Second/Third scaffolding removed, colon set-ups split into plain sentences, "One route already exists: … The other is new:" reworded, the two WIP-limit sentences merged. The opener's grammar ("those who happens", "the model have") was fixed in the rewrite. Facts, citations and the Smith and Hayes quote unchanged.
