@@ -226,11 +226,11 @@ Actual already has some independent checking, but it is ad hoc. Nobody other tha
 
 ## 4.2 IV&V Integration Model for Kanban
 
-The proposed IV&V model makes independent checking depend on a change's risk instead of on whoever happens to review it.
+The proposed IV&V model makes independent checking depend on a change's risk instead of on whoever happens to review it. Some of these checks happen inside the team and some come from outside it.
 
-Only High-tier cards (Section 3.5) get an independent reviewer, which is the maintainer who neither wrote the change nor owns that area in Actual's CODEOWNERS file (Actual Budget, 2026a). Keeping this to High-tier cards only protects the few reviewers that Section 2 found to be the bottleneck already.
+Within the team, High-tier cards (Section 3.5) get an independent reviewer. This is a maintainer who did not write the change and does not own that area in Actual's CODEOWNERS file (Actual Budget, 2026a). Other cards keep the usual review, which protects the few reviewers that Section 2 found to be the bottleneck.
 
-That reviewer is still on the same small team, so the model also need to keep checks from outside the team, as all three 2026 advisories were found by outside reporters after release (Section 3.3). Private vulnerability reporting already provides one such check. The model adds an occasional external security audit of the sync server, funded by a third party so that it costs neither volunteer time nor Actual's donations. The Open Source Technology Improvement Fund (2026) arranges audits like this for open-source projects with money from outside funders.
+The team's own review can still miss things. All three 2026 advisories were in released code and were found by people outside the core team (Section 3.3). Private vulnerability reporting already lets outsiders report flaws like these, but only once the code has shipped. The model adds an occasional external security audit of the sync server, the high-risk area where those flaws were. A third party would pay for it, so it would not use volunteer time or Actual's donations. The Open Source Technology Improvement Fund (2026), for example, arranges audits like this for open-source projects, paid for by outside funders.
 
 Each check is written into the exit policy of its board column, so a High-tier card cannot move on until its evidence is attached. This keeps IV&V in step with the development cadence, as Smith and Hayes (2024) recommend for agile projects. Independent reviews also count against the Verify column's WIP limit, so if they pile up, new work stops entering. Table 4.2 lists the checks at each column.
 

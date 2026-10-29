@@ -1042,3 +1042,8 @@ Writing-tool source note: all three original section writers and the root writer
 - The author found 4.2 bloated. Prose cut from 354 to 219 words; Table 4.2 unchanged.
 - Removed: "it does this in three ways", the bank-sync CODEOWNERS example (4.3 has its own), "Actual's own record shows why" (4.1 already shows it), OSTIF's 98% fix-rate statistic, the Smith and Hayes direct quote (now a paraphrase), and the separate sentence on design reviews sharing the WIP limit (folded into "independent reviews").
 - Kept: tiering, the independent-reviewer definition, the outside-checks reason and audit, exit policies and the WIP limit. All citations still present (OSTIF, Smith and Hayes, CODEOWNERS source).
+
+## 2026-10-30 — 4.2 flow fix
+
+- The author felt the 4.2 paragraphs on the internal reviewer and outside checks clashed. Cause: the outside-checks paragraph opened by undercutting the reviewer ("still on the same small team"), wasn't tied to risk, and leaned on after-release reporting.
+- Author's local edits committed first, then the opening three paragraphs rewritten and humanized: the opener now says checks happen inside and outside the team; the outside paragraph opens with what internal review can miss, notes reporting works only after release, and ties the audit to the high-risk sync server. Citations unchanged.
