@@ -222,13 +222,13 @@ Table 4.1 applies this test to each of Actual's existing V&V activities, from re
 | Vulnerability reports           | Maintenance             | Core team                        | Reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d)                          | Yes, but only after release    |
 | External audit                  | Maintenance             | —                                | No public evidence found in the documentation and blog (October 2026)                         | —                              |
 
-Actual already has some independent checking, but it is ad hoc. Nobody other than the contributor checks requirements or design, and how closely a change is checked depends on who happens to review it, whatever its risk is. Some of the checking also comes late in the stage. All three 2026 advisories in Section 3.3 were found in released versions, by reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d).
+Actual already has some independent checking, but it is ad hoc. Nobody other than the contributor checks requirements or design, and how closely a change is checked depends on who happens to review it, whatever its risk is. Some of the checking also comes late after release, such as the three 2026 advisories in Section 3.3 which were found in released versions, by reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d).
 
 ## 4.2 IV&V Integration Model for Kanban
 
-The model makes independent checking depend on a change's risk instead of on whoever happens to review it. It does this in three ways.
+The model makes independent checking depend on a change's risk instead of on whoever happens to review it, and it does this in three ways.
 
-It starts with the risk tiers set at triage (Section 3.5). Only High-tier cards get an independent reviewer, because reviewing every card independently would overload the few reviewers that Section 2 found to be the bottleneck.
+It starts with the risk tiers set at triage (Section 3.5). Only High-tier cards get an independent reviewer, because reviewing every card independently would overload the few reviewers that Section 2 found to already be the bottleneck for the team.
 
 The independent reviewer is a maintainer who did not write the change and is not listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, this rules out both the implementer and the sync server's listed owner, so another team member has to check it.
 
