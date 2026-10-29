@@ -206,19 +206,19 @@ This section examines how independently Actual's work is checked today, proposes
 
 ## 4.1 Current V&V in Actual and Its Independence
 
-IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). Independent V&V (IV&V) adds a condition on who does the checking: the work of each phase is checked by someone other than the person who built it. Table 4.1 applies this test to Actual's existing V&V activities, phase by phase from requirements to maintenance. *Partial* means someone other than the builder is involved but the check is limited: automated tests check only what the team chose to test, and community testing of preview builds is informal.
+IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). Independent V&V (IV&V) adds a condition on who does the checking, the work of each phase is checked by someone other than the person who built it. Table 4.1 applies this test to Actual's existing V&V activities, phase by phase from requirements to maintenance. *Partial* means someone other than the builder is involved but the check is limited: automated tests check only what the team chose to test, and community testing of preview builds is informal.
 
 *Table 4.1. Independence of Actual's existing V&V activities.*
 
-| Activity | Phase | Built by | Checked by | Checker separate from builder? |
-|---|---|---|---|---|
-| Requirements and design check | Requirements, design | Contributor proposing the change | None found in the documentation (October 2026) | — |
-| PR review | Implementation | PR author | Another core maintainer (Actual Budget, n.d.-d) | Yes |
-| CI tests and CodeQL scanning | Implementation, testing | PR author | Automated checks configured by the team (Actual Budget, 2026a) | Partial |
-| PR preview and nightly builds | Testing | PR author | Any community member, voluntarily (Actual Budget, n.d.-f) | Partial |
-| Release approval and smoke test | Deployment | Maintainer cutting the release | At least two other maintainers approve; smoke tests follow (Actual Budget, n.d.-b) | Yes |
-| Vulnerability reports | Maintenance | Core team | Reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d) | Yes, but only after release |
-| External audit | Maintenance | — | No public evidence found in the documentation and blog (October 2026) | — |
+| Activity                        | Phase                   | Built by                         | Checked by                                                                         | Checker separate from builder? |
+| ------------------------------- | ----------------------- | -------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------ |
+| Requirements and design check   | Requirements, design    | Contributor proposing the change | None found in the documentation (October 2026)                                     | —                              |
+| PR review                       | Implementation          | PR author                        | Another core maintainer                                                            | Yes                            |
+| CI tests and CodeQL scanning    | Implementation, testing | PR author                        | Automated checks configured by the team (Actual Budget, 2026a)                     | Partial                        |
+| PR preview and nightly builds   | Testing                 | PR author                        | Any community member, voluntarily (Actual Budget, n.d.-f)                          | Partial                        |
+| Release approval and smoke test | Deployment              | Maintainer cutting the release   | At least two other maintainers approve; smoke tests follow (Actual Budget, n.d.-b) | Yes                            |
+| Vulnerability reports           | Maintenance             | Core team                        | Reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d)               | Yes, but only after release    |
+| External audit                  | Maintenance             | —                                | No public evidence found in the documentation and blog (October 2026)              | —                              |
 
 Actual therefore has real independent checking, but it is ad hoc and starts late: nobody but the contributor checks requirements or design, and how independently a change is checked depends on who happens to review or report it, not on how risky it is. The strongest independent findings came after release: the three 2026 advisories described in Section 3.3 credit reporters outside the core team with finding the flaws in released versions (Actual Budget, 2026b, 2026c, 2026d).
 
