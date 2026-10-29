@@ -463,3 +463,6 @@ How found: live pages fetched with WebFetch and raw GitHub files fetched with cu
 Status update (27 October 2026; append-only): **S70 (Liu et al., 2025) is no longer cited.** The author removed the 4.1 paragraph praising Actual's disclosure route, since 3.3 already states the route exists. Liu et al. (2025) was removed from References. The entry stays registered; its "[volume/issue/article no. to verify]" item no longer needs chasing. S62 (Actual's security policy) is still cited in 3.3.
 
 Status update (27 October 2026; append-only): after the Section 2 word-count trim (`planning/06-trim-plan.md`, items 2-2 and 2-10), **S07 (Feature flags page), S24/S107 (Raymond, *The cathedral and the bazaar*) and S25 (Mockus et al., 2002) are no longer cited**, and they were removed from References. The remaining "Actual Budget (n.d.)" references were re-lettered (old -c to -k became -b to -j) so the suffixes have no gap. All three entries stay registered.
+
+Status update (29 October 2026; append-only): the rejected-standards paragraph was removed from 3.4, so **S82 (IEEE 730-2026), S76 (ISO 9001:2026), S84 (ISO/IEC 27001:2022) and S85 (Lear, 2023) are no longer cited** and were removed from the Assignment 1 References. The entries stay registered. The first IEEE citation is now IEEE 1012-2024 in 3.5, which carries the "[IEEE]" abbreviation.
+

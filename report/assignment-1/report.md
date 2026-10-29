@@ -151,22 +151,21 @@ Comparing these practices with the three attributes shows four gaps. They rest o
 - Process: 
 	No written QA plan. Quality rules are spread across documentation, templates and CI files, so there's no a single place that states what must be checked before work moves on.
 
-## 3.4 Selecting Standards and Practices
+## 3.4 Selected Standards and Practices
 
-Two standards are adopted (Table 3.1). Each closes a gap from Section 3.3 and is free for a volunteer team to use, with no certification or paid appraisal.
+Table 3.1 shows what closes each gap from Section 3.3. Two are published standards that a volunteer team can use for free; the rest are practices this report proposes.
 
-*Table 3.1. Standards adopted for Actual's QA process.*
+*Table 3.1. How each gap is closed.*
 
-| Standard           | Gap it closes          | How it is used                                                                                                                                                                                                                                                                                  |
-| ------------------ | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ISO/IEC 25010:2023 | Frames the section     | Names and defines the three attributes (3.2)                                                                                                                                                                                                                                                    |
-| OWASP ASVS 5.0.0   | Security               | Its authentication, session and authorisation chapters cover the same kinds of flaw as the 2026 advisories (OWASP Foundation, 2025). Selected requirements from them, not a full verification level, become acceptance criteria for high-risk changes to authentication, sessions and bank sync |
-| WCAG 2.2           | Interaction capability | Target moves from 2.1 AA to 2.2 AA, a modest step because 2.2 does not deprecate 2.1 (World Wide Web Consortium, 2024); automated checks at review                                                                                                                                              |
-ASVS sets the requirements, but nothing checks them on every change yet. Therefore, this report also proposes an authorisation test matrix, which is an automated test that lists the server's endpoints and confirms that each one refuses requests without a valid login or the right permission. If the six bank-sync endpoints been in the test, the 2026 flaw would have been caught before release.
+| Gap | Standard or practice | How it is used |
+|---|---|---|
+| Security | OWASP ASVS 5.0.0 | Its authentication, session and authorisation chapters cover the same kinds of flaw as the 2026 advisories (OWASP Foundation, 2025). Selected requirements, not a full verification level, become acceptance criteria for high-risk changes to authentication, sessions and bank sync |
+| Security | Authorisation test matrix (proposed) | An automated test lists the server's endpoints and confirms that each refuses requests without a valid login or the right permission |
+| Reliability | Coverage report | Turned on in CI, so that untested sync and migration code becomes visible |
+| Interaction capability | WCAG 2.2 AA | Target moves from 2.1 AA, a modest step because 2.2 does not deprecate 2.1 (World Wide Web Consortium, 2024); automated checks at review |
+| Process | Written QA plan | Set out in Section 3.5 |
 
-The other two gaps need no standard: turning on a coverage report closes the coverage gap, and Section 3.5 provides the missing QA plan.
-
-Other well-known standards fail the cost test. IEEE 730-2026, the standard for software QA processes, is available only by purchase or subscription (Institute of Electrical and Electronics Engineers [IEEE], 2026). ISO 9001:2026, ISO/IEC 27001:2022 and CMMI V3.0 assume a formal organisation and rely on certification or an appraisal rating (International Organization for Standardization, 2026; International Organization for Standardization & International Electrotechnical Commission, 2022; Lear, 2023).
+ASVS sets the requirements, but nothing yet checks them on every change; the authorisation test matrix does. Had the six bank-sync endpoints been in it, the 2026 flaw would have been caught before release.
 
 ## 3.5 Applying the QA Process within Kanban
 
@@ -178,7 +177,7 @@ Not every card needs every check: running security and data checks on a wording 
 - *Standard*: a failure would be visible but recoverable without data loss (most features, such as reports, rules and UI components).
 - *Low*: a failure would be cosmetic (themes, wording and documentation).
 
-The tiers are this report's own, borrowing only the idea in IEEE 1012-2024 that the verification a component needs depends on its integrity level (IEEE, 2025).
+The tiers are this report's own, borrowing only the idea in IEEE 1012-2024 that the verification a component needs depends on its integrity level (Institute of Electrical and Electronics Engineers [IEEE], 2025).
 
 Table 3.2 is the resulting plan, and also the written QA plan that Section 3.3 found missing. Each row is a board column, showing the checks added to its exit policy (with the attribute each protects in brackets), which cards they apply to and who is responsible. Actual's existing checks stay in place, and the people responsible are existing maintainers and contributors, not new posts. Appendix B follows one card through the plan.
 
@@ -255,7 +254,7 @@ Standard-tier cards skip the design review and need only preview-build validatio
 
 Each goal is tested below against Actual's own evidence.
 
-For early defect detection, the model would have given the critical 2026 bank-sync flaw (Section 3.3) two independent chances to be caught before release; in practice it was found only afterwards. A card that adds bank-sync endpoints is High tier, so it meets the independent reviewer twice. The first time is at Design, before any code exists: the reviewer checks each planned endpoint against the ASVS authentication requirements, so an endpoint planned without a login check is flagged there. The second is at Verify, where the reviewer confirms that every endpoint is in the authorisation test matrix (Section 3.5). This second check matters because the matrix tests only the endpoints someone adds to it, and an implementer who forgot the login check could easily forget the test as well.
+For early defect detection, the model would have given the critical 2026 bank-sync flaw (Section 3.3) two independent chances to be caught before release; in practice it was found only afterwards. A card that adds bank-sync endpoints is High tier, so it meets the independent reviewer twice. The first time is at Design, before any code exists: the reviewer checks each planned endpoint against the ASVS authentication requirements, so an endpoint planned without a login check is flagged there. The second is at Verify, where the reviewer confirms that every endpoint is in the authorisation test matrix (Section 3.4). This second check matters because the matrix tests only the endpoints someone adds to it, and an implementer who forgot the login check could easily forget the test as well.
 
 For requirements compliance, the model checks that what users asked for is what was built and tested. Actual already records most of the evidence: a feature request starts as an issue, the PR template asks for the related issue, and a release note describes the result (Actual Budget, 2026a). What it lacks is anyone checking that these pieces match, and the model adds that check at both ends of the board. At triage, someone other than the requester confirms that each acceptance criterion can be tested, so a vague criterion such as "the page should feel fast" is sent back to be made measurable. At Verify, the independent reviewer does not approve until every criterion has a passing test. A high-risk requirement therefore cannot reach a release without evidence that it was met.
 
@@ -311,19 +310,11 @@ GeeksforGeeks. (2025, July 23). *How to choose the best SDLC model for your proj
 
 Institute of Electrical and Electronics Engineers. (2025). *IEEE standard for system, software, and hardware verification and validation* (IEEE Std 1012-2024). https://standards.ieee.org/ieee/1800.2/7324/
 
-Institute of Electrical and Electronics Engineers. (2026). *IEEE standard for software quality assurance processes* (IEEE Std 730-2026). https://standards.ieee.org/ieee/730/10854/
-
-International Organization for Standardization. (2026). *Quality management systems — Requirements* (ISO Standard No. 9001:2026). https://www.evs.ee/en/iso-9001-2026
-
-International Organization for Standardization & International Electrotechnical Commission. (2022). *Information security, cybersecurity and privacy protection — Information security management systems — Requirements* (ISO/IEC Standard No. 27001:2022). https://www.iso.org/standard/27001
-
 International Organization for Standardization & International Electrotechnical Commission. (2023). *Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — Product quality model* (ISO/IEC Standard No. 25010:2023). https://www.iso.org/standard/78176.html
 
 Kanban University. (n.d.). *The official guide to the Kanban method*. Retrieved October 22, 2026, from https://kanban.university/kanban-guide/
 
 Kuhrmann, M., Tell, P., Hebig, R., Klünder, J., Münch, J., Linssen, O., Pfahl, D., Felderer, M., Prause, C. R., MacDonell, S. G., Nakatumba-Nabende, J., Raffo, D., Beecham, S., Tüzün, E., López, G., Paez, N., Fontdevila, D., Licorish, S. A., Küpper, S., … Richardson, I. (2022). What makes agile software development agile? *IEEE Transactions on Software Engineering, 48*(9), 3523–3539. https://doi.org/10.1109/TSE.2021.3099532
-
-Lear, R. (2023, April 10). *CMMI updates take performance improvements to the next level*. ISACA. https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2023/cmmi-updates-take-performance-improvements-to-the-next-level
 
 National Aeronautics and Space Administration. (n.d.). *IV&V overview*. Retrieved October 22, 2026, from https://www.nasa.gov/ivv-overview/
 

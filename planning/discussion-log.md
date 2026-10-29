@@ -997,3 +997,14 @@ Writing-tool source note: all three original section writers and the root writer
 - Every output was machine-checked against its input (citations, numbers, quotes, headings, tables, figures, word count, dashes, pronouns) and then reviewed sentence by sentence. The children reported 28 changes; 15 edits were kept and the rest rejected because they changed meaning, dropped a qualifier, added an "-ing" rider, altered the author's own voice in 1.1, or fixed nothing.
 - One rejected edit in 3.5 would have assigned Actual's *existing* checks to maintainers, misstating who is responsible for the new checks.
 - No facts, citations or sources were added or removed. Report shortened by 33 words (7,478 to 7,445 incl. references and appendices).
+
+## 2026-10-29 — Section 3.4 restructured
+
+- The author reviewed the report line by line and pushed their own edits (Executive Summary, Sections 1–3.4). Recommendations were given in chat only; the author applied them by hand.
+- At the author's request, 3.4 was then restructured to focus on the selected standards and practices:
+  - heading renamed to *Selected Standards and Practices*;
+  - selection criteria and the rejected-standards paragraph removed;
+  - Table 3.1 now maps each 3.3 gap to what closes it (ASVS and the authorisation test matrix, coverage report, WCAG 2.2 AA, written QA plan); ISO/IEC 25010 removed from the table;
+  - grammar fix in the matrix sentence ("Had … been").
+- Knock-on changes: 4.3 now points to Section 3.4 for the matrix; IEEE 730-2026, ISO 9001:2026, ISO/IEC 27001:2022 and Lear (2023) removed from References; "[IEEE]" abbreviation moved to the first remaining IEEE citation in 3.5.
+

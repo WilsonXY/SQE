@@ -178,3 +178,12 @@ None for planning.
 - Reliability evidence: 3.3 says no coverage setting or report was found in the repository, and the sync-server configuration explicitly disables it (the overflow bug was in `loot-core`, not the sync server) [S01, S137]. 3.2's Reliability bullet now points to that defect instead of the password-loss example.
 - ASVS scope: high-risk changes to authentication, sessions and bank sync (Table 3.1); "High-tier security changes" (Table 3.2).
 - Release approvals: "at least two other maintainers", as in the release guide [S03].
+
+## Agreed: 3.4 refocused on the selected standards and practices (29 October 2026)
+
+- The author asked for 3.4 to focus on what was selected, not on how it was selected.
+- Heading is now **3.4 Selected Standards and Practices**. The fit/cost criteria list and the rejected-standards paragraph (IEEE 730-2026, ISO 9001:2026, ISO/IEC 27001:2022, CMMI V3.0) were removed.
+- **Table 3.1 now has one row per gap from 3.3:** Security (OWASP ASVS 5.0.0; authorisation test matrix, proposed), Reliability (coverage report), Interaction capability (WCAG 2.2 AA), Process (written QA plan, Section 3.5). ISO/IEC 25010 is no longer in the table; it is still cited in 3.2.
+- The authorisation test matrix is now defined in 3.4 (moved out of the 3.3 Security bullet by the author). 4.3's cross-reference changed from Section 3.5 to Section 3.4.
+- Trade-off accepted by the author: the brief says "critically select", and the rejected standards showed that selection. The author judged it not to be the section's focus.
+
