@@ -1072,3 +1072,7 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-30 — Table 4.2 note shortened
 
 - At the author's request, the note under Table 4.2 now keeps only the Standard/Low-tier sentence and a short Build/PR sentence. The separate-test-server sentence was removed because the Verify cell no longer mentions a test server. Actual Budget (n.d.-f) is still cited in Table 4.1.
+
+## 2026-10-30 — Build/PR row restored to Table 4.2
+
+- At the author's request, the Build/PR row is back: automated CI checks set up by the team, running Table 3.2's tests and scans including the authorisation test matrix (all cards), exit when all checks pass. Consistent with Table 4.1 rating CI as *Partial*. The note's "Build/PR is left out" sentence was removed.
