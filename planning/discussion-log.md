@@ -1052,3 +1052,8 @@ Writing-tool source note: all three original section writers and the root writer
 
 - Author's local edits to the outside-checks paragraph committed first.
 - At the author's request, the exit-policy paragraph was cut from 69 to 50 words: the WIP-limit sentence was removed (Section 2.3 already places the WIP limit on the Verify column), and "in step with the development cadence" became "inside the normal flow of work". Smith and Hayes (2024) still cited.
+
+## 2026-10-30 — 4.2 exit-policy paragraph removed
+
+- Author's local edit to the outside-checks paragraph committed first.
+- At the author's request, the exit-policy paragraph before Table 4.2 was removed. Knock-on: Smith and Hayes (2024) [S69] was cited only there, so it was removed from References and the cited list, and marked no longer cited in `sources.md`. Table 4.2 now has no in-text callout (to resolve with the author).

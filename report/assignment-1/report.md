@@ -232,8 +232,6 @@ Within the team, High-tier cards (Section 3.5) get an independent reviewer. This
 
 The team's own review can still miss things, as the three 2026 advisories that were in the released code and were found by people outside of the core team (Section 3.3). The project's own private vulnerability reporting policy already lets outsiders to report flaws like these, but it only happens once the code has already shipped. Therefore, the proposed model adds an occasional external security audit to the sync server and other high-risk area. For example, we can get The Open Source Technology Improvement Fund (2026) to arranges audits like this for the open-source projects, which are paid for by outside funders, so it wouldn't use volunteer time or Actual's donations.
 
-Each check is written into the exit policy of its board column, so a High-tier card cannot move on until its evidence is attached. This keeps IV&V inside the normal flow of work, as Smith and Hayes (2024) recommend for agile projects. Table 4.2 lists the checks at each column.
-
 *Table 4.2. Independent checks at each board column.*
 
 | Board column        | Checks                                                                                                                                                                                                                                                                                                                                                                         | Tools                                                           | Checker                                                                                                 | Exit policy                                                                                                             |
@@ -257,7 +255,7 @@ For requirements compliance, the model checks that what users asked for is what 
 
 The model improves overall quality by moving independent checking for the code where Actual's worst 2026 flaws were (Section 3.3) to before release, while a theme or wording change still needs only one ordinary review. Defects that still escape are put to use: the Operate/maintain column turns each one into a regression test and asks whether its area was tiered too low, so the process checks for that kind of defect next time.
 
-<!-- Cited: S01, S03, S04, S08, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S69, S72 -->
+<!-- Cited: S01, S03, S04, S08, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S72 -->
 
 # References
 
@@ -320,8 +318,6 @@ OWASP Foundation. (2025). *OWASP application security verification standard* (Ve
 Salkever, A. (2023). *Open source maintainers: Exploring the people, practices, and constraints facing the world's most critical open source software projects*. The Linux Foundation. https://doi.org/10.70828/lddj8886
 
 Schwaber, K., & Sutherland, J. (2020). *The Scrum guide*. https://scrumguides.org/scrum-guide.html
-
-Smith, J., & Hayes, W. (2024). Independent verification & validation (IV&V) for agile developed projects. In *2024 IEEE Aerospace Conference* (pp. 1–10). IEEE. https://doi.org/10.1109/AERO58975.2024.10521415
 
 Stacoviak, A., & Santo, J. (Hosts). (2022, July 1). *Actual(ly) opening up with James Long* (No. 495) [Audio podcast episode]. In *The Changelog*. Changelog Media. https://changelog.com/podcast/495
 
