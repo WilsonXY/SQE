@@ -206,7 +206,7 @@ This section examines how independently Actual's work is checked today, proposes
 
 ## 4.1 Current V&V in Actual and Its Independence
 
-IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). Independent V&V (IV&V) adds a condition on who does the checking, the work of each phase is checked by someone other than the person who built it. Table 4.1 applies this test to Actual's existing V&V activities, phase by phase from requirements to maintenance. *Partial* means someone other than the builder is involved but the check is limited: automated tests check only what the team chose to test, and community testing of preview builds is informal.
+IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). In independent V&V (IV&V), the work of each phase is checked by someone other than the person who built it. Table 4.1 applies this test to each of Actual's existing V&V activities, from requirements through to maintenance. A check marked *Partial* involves someone other than the builder but is limited, as automated tests only check what the team chose to test, and community testing of preview builds is informal.
 
 *Table 4.1. Independence of Actual's existing V&V activities.*
 

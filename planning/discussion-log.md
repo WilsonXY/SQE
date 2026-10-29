@@ -1021,3 +1021,8 @@ Writing-tool source note: all three original section writers and the root writer
 - The author chose to drop NASA [S68] entirely and justify outside checks from Actual's own evidence (option 1 of three offered).
 - Applied: 4.1 bullets and NASA sentence removed; Table 4.1 rebuilt as activity / phase / built by / checked by / checker separate from builder? (adds a requirements-and-design row showing no check found); closing paragraph now says checking is "ad hoc and starts late". 4.2's second and third changes reworded: outside checks rest on all three 2026 advisories being found by outsiders after release [S63]; third-party audit funding framed as saving volunteer time and donations. Executive summary sentence rewritten to match. NASA removed from References and the cited list; S68 marked no longer cited.
 - IEEE 1012-2024 V&V definitions kept, since they match Lecture 6's definitions.
+
+## 2026-10-30 — Humanizer pass on 4.1 opening paragraph
+
+- At the author's request, the 4.1 opening paragraph was humanized: "adds a condition on who does the checking" was cut so IV&V is stated directly, "phase by phase" was simplified, and the *Partial* definition now reads as a sentence. The IEEE 1012 definitions and citation are unchanged.
+- The author's own local edits (comma in 4.1, Table 4.1 formatting, the PR review citation removed from the table) were committed first.
