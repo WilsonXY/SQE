@@ -1008,3 +1008,8 @@ Writing-tool source note: all three original section writers and the root writer
   - grammar fix in the matrix sentence ("Had … been").
 - Knock-on changes: 4.3 now points to Section 3.4 for the matrix; IEEE 730-2026, ISO 9001:2026, ISO/IEC 27001:2022 and Lear (2023) removed from References; "[IEEE]" abbreviation moved to the first remaining IEEE citation in 3.5.
 
+
+## 2026-10-29 — Humanizer pass on Section 3.4
+
+- At the author's request, one Gemini 3.8 Flash (low) child ran the Humanizer skill over the restructured 3.4 (Table 3.1 third column editable). Output was checked for citations, numbers and structure, then reviewed by hand.
+- Kept 1 of 4 proposed changes: the Reliability row now reads "Enabled in CI to make untested sync and migration code visible". Rejected "how each gap is closed" (left "Two are…" without a referent) and "without cost" (not a tell).

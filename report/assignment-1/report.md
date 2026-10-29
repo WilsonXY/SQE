@@ -161,7 +161,7 @@ Table 3.1 shows what closes each gap from Section 3.3. Two are published standar
 |---|---|---|
 | Security | OWASP ASVS 5.0.0 | Its authentication, session and authorisation chapters cover the same kinds of flaw as the 2026 advisories (OWASP Foundation, 2025). Selected requirements, not a full verification level, become acceptance criteria for high-risk changes to authentication, sessions and bank sync |
 | Security | Authorisation test matrix (proposed) | An automated test lists the server's endpoints and confirms that each refuses requests without a valid login or the right permission |
-| Reliability | Coverage report | Turned on in CI, so that untested sync and migration code becomes visible |
+| Reliability | Coverage report | Enabled in CI to make untested sync and migration code visible |
 | Interaction capability | WCAG 2.2 AA | Target moves from 2.1 AA, a modest step because 2.2 does not deprecate 2.1 (World Wide Web Consortium, 2024); automated checks at review |
 | Process | Written QA plan | Set out in Section 3.5 |
 
