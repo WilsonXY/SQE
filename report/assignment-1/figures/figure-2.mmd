@@ -1,0 +1,24 @@
+%% Figure 2. Actual's as-is development workflow (compiled from the sources cited in 2.1)
+flowchart TD
+  FR["Feature request"] --> BL["<b>'needs votes' backlog</b><br/>ranked by votes"]
+  BL -- "small change" --> PR["<b>Pull request</b>"]
+  BL -- "larger feature" --> ID["Issue discussion first"] --> PR
+  PR --> CI["<b>CI</b><br/>lint, typecheck, unit,<br/>E2E, visual, CodeQL"]
+  CI --> MR["<b>Maintainer review</b><br/>then merge"]
+  MR --> RC["<b>Monthly release cut</b><br/>25th, 17:00 UTC"]
+  RC --> REL
+  subgraph REL[" "]
+    direction LR
+    AP["≥2 other maintainers<br/>approve"] --> TP["Tag and<br/>publish"] --> ST["Smoke<br/>test"] --> AN["Announce"]
+  end
+
+  classDef intake fill:#F1ECF9,stroke:#A894C9,color:#352A4D
+  classDef build fill:#E6F0FA,stroke:#7BA3CC,color:#24384D
+  classDef review fill:#FFF3DF,stroke:#D9AE6A,color:#4D3814
+  classDef release fill:#EAF5EC,stroke:#82B48C,color:#24402A
+  class FR,BL,ID intake
+  class PR,CI build
+  class MR review
+  class RC,AP,TP,ST,AN release
+  style REL fill:#FFFFFF,stroke:#B8BEC7,stroke-dasharray:4 3
+  linkStyle default stroke:#8A94A3,stroke-width:1.5px

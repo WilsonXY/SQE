@@ -1,0 +1,15 @@
+%% Figure 1. How Actual Budget works (based on Actual Budget, n.d.-c)
+flowchart LR
+  U["<b>User device</b><br/>local budget<br/>works offline"]
+  S["<b>Sync server</b><br/>self-hosted or hosted"]
+  B["<b>Bank-sync provider</b>"]
+  U <-- "optional sync<br/>(E2EE optional)" --> S
+  S --> B
+
+  classDef device fill:#E6F0FA,stroke:#7BA3CC,color:#24384D
+  classDef server fill:#EAF5EC,stroke:#82B48C,color:#24402A
+  classDef bank fill:#FFF3DF,stroke:#D9AE6A,color:#4D3814
+  class U device
+  class S server
+  class B bank
+  linkStyle default stroke:#8A94A3,stroke-width:1.5px

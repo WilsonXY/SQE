@@ -34,19 +34,7 @@ Actual covers budgeting, accounts and transactions, rules, scheduled transaction
 
 A server is not required for basic budgeting, but syncing between devices and bank synchronisation both need one (Actual Budget, n.d.-c). Users can optionally turn on end-to-end encryption for synced data, but data on the local device stays unencrypted and bank-sync tokens on the server are not covered (Actual Budget, n.d.-h). Figure 1 shows how the parts connect.
 
-```text
-+----------------+   optional sync (E2EE optional)   +----------------+
-|  User device   | <-------------------------------> |  Sync server   |
-|  local budget  |                                   |  (self-hosted  |
-|  works offline |                                   |   or hosted)   |
-+----------------+                                   +----------------+
-                                                             |
-                                                             v
-                                                     +----------------+
-                                                     |  Bank-sync     |
-                                                     |  provider      |
-                                                     +----------------+
-```
+![Figure 1: user device, sync server and bank-sync provider](figures/figure-1.png)
 
 *Figure 1. How Actual Budget works (based on Actual Budget, n.d.-c).*
 
@@ -84,26 +72,7 @@ The step that has caused trouble is review. Only maintainers can approve a PR, a
 
 Actual therefore has **a defined workflow but no deliberate methodology**. The steps are clear, but nothing manages how work moves through them, and nothing limits how many PRs can pile up waiting for the few people able to review them.
 
-```
-Feature request --> "needs votes" backlog (ranked by votes)
-                           |
-  small change             | larger feature: issue discussion first
-        \                  v
-         +--------> Pull request
-                           |
-                           v
-          CI: lint, typecheck, unit, E2E, visual, CodeQL
-                           |
-                           v
-          Maintainer review --> merge
-                           |
-                           v
-          Monthly release cut (25th, 17:00 UTC)
-                           |
-                           v
-          >=2 other maintainers approve --> tag and publish
-          --> smoke test --> announce
-```
+![Figure 2: Actual's as-is development workflow](figures/figure-2.png)
 
 *Figure 2. Actual's as-is development workflow (compiled from the sources cited in 2.1).*
 
@@ -125,20 +94,7 @@ Figure 3 shows the proposed board. Each piece of work, such as a bug fix or a ne
 
 The WIP limit proposed in Section 2.2 sits on the Verify column, where review happens. It should be set from the number of reviews the maintainers actually complete, so that new work stops entering once reviews start to pile up. Section 3 adds quality checks to the exit policies, and Section 4 adds independent checks. The monthly release stays as it is, and each release becomes the point at which the team checks whether the limits and policies need adjusting.
 
-```
-Rule: pull work only when the next column is under its WIP limit
-QA gates (Section 3) apply to every exit policy
-    +------------------------+------------------------------------------------+
-    | Column                 | Exit policy (pull criterion)                   |
-    +------------------------+------------------------------------------------+
- +->| 1 Requirements/triage  | Problem, acceptance criteria and risk recorded |
- |  | 2 Design               | Approach agreed; decision record if high-risk  |
- |  | 3 Build/PR             | CI green; tests and release note included      |
- |  | 4 Verify   [WIP limit] | Reviewer is not the implementer                |
- |  | 5 Release train        | Monthly cut (25th); >=2 approvals; smoke test  |
- +--| 6 Operate/maintain     | User reports and advisories triaged to col. 1  |
-    +------------------------+------------------------------------------------+
-```
+![Figure 3: proposed Kanban board with exit policies and feedback loop](figures/figure-3.png)
 
 *Figure 3. Proposed (to-be) Kanban workflow for Actual with explicit exit policies.*
 

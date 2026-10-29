@@ -1,0 +1,25 @@
+%% Figure 3. Proposed (to-be) Kanban workflow for Actual with explicit exit policies
+%%{init: {"flowchart": {"wrappingWidth": 560}}}%%
+flowchart TD
+  R["<b>Rule:</b> pull work only when the next column is under its WIP limit<br/><b>QA gates</b> (Section 3) apply to every exit policy"]
+  C1["<b>1 Requirements/triage</b><br/>Exit: problem, acceptance criteria and risk recorded"]
+  C2["<b>2 Design</b><br/>Exit: approach agreed; decision record if high-risk"]
+  C3["<b>3 Build/PR</b><br/>Exit: CI green; tests and release note included"]
+  C4["<b>4 Verify</b> · WIP limit<br/>Exit: reviewer is not the implementer"]
+  C5["<b>5 Release train</b><br/>Exit: monthly cut (25th); ≥2 approvals; smoke test"]
+  C6["<b>6 Operate/maintain</b><br/>Exit: user reports and advisories triaged to column 1"]
+  R ~~~ C1
+  C1 --> C2 --> C3 --> C4 --> C5 --> C6
+  C6 -- "feedback loop" --> C1
+
+  classDef rule fill:#FAFAFA,stroke:#B8BEC7,stroke-dasharray:4 3,color:#3A3F47
+  classDef col fill:#E6F0FA,stroke:#7BA3CC,color:#24384D
+  classDef wip fill:#FFF3DF,stroke:#D9AE6A,stroke-width:2px,color:#4D3814
+  classDef ops fill:#EAF5EC,stroke:#82B48C,color:#24402A
+  class R rule
+  class C1,C2,C3,C5 col
+  class C4 wip
+  class C6 ops
+  linkStyle default stroke:#8A94A3,stroke-width:1.5px
+  linkStyle 0 stroke:transparent,stroke-width:0
+  linkStyle 6 stroke:#82B48C,stroke-width:2px,stroke-dasharray:5 4

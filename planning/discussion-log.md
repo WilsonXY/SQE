@@ -975,3 +975,13 @@ Writing-tool source note: all three original section writers and the root writer
   - the loop is now drawn on the left edge, from row 6 up to row 1;
   - 2.3 now says "moves through six columns in order".
 - The body word count is unchanged at 4,791, because figures are not counted.
+
+## 2026-10-29 — Figures 1–3 converted to Mermaid images
+
+- At the author's request, the three ASCII figures were redrawn in Mermaid with a pale pastel palette ("pele" in the request was taken to mean "pale").
+- Sources are in `report/assignment-1/figures/figure-N.mmd`, with rendered `.svg` and high-resolution `.png` files next to them. The report now embeds the PNGs; the figure captions are unchanged.
+- Content is the same as the ASCII versions, with these layout changes:
+  - Figure 2: "Maintainer review" and "merge" share one box, and the four release steps sit in one row.
+  - Figure 3: the feedback loop is a dashed arrow from column 6 back to column 1, and Verify (the WIP-limit column) is highlighted.
+- Rendered with the `mermaid` npm package (11.4.1) in headless Chromium; the render script was kept in the session scratchpad, not the repo.
+- The word count is unchanged at 4,791, because figures are not counted.
