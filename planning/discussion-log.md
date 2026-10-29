@@ -963,3 +963,15 @@ Writing-tool source note: all three original section writers and the root writer
 - Decisions recorded in `02-methodology.md`, `03-quality-assurance.md` and `04-ivv.md`.
 - No reference lost its last citation (Actual Budget, n.d.-h is still cited in 1.3 and 3.2).
 - The body grew by about 96 words, to about 4,790 on the earlier count, within the 4,750–5,250 range.
+
+## 2026-10-29 — Figure 3 feedback loop redrawn
+
+- The author asked what the arrow loop under Figure 3 meant. Answer: it is the feedback from Operate/maintain to Requirements/triage. User reports and advisories become new cards, which also triggers the regression-test and tier re-check steps in Tables 3.2 and 4.2.
+- Three problems with the old loop:
+  - the 2.3 bullet that explained it was cut in the trim;
+  - it hung below the table instead of joining row 6 to row 1;
+  - 2.3 said cards move "left to right", while the figure lists the columns top to bottom.
+- Applied at the author's request:
+  - the loop is now drawn on the left edge, from row 6 up to row 1;
+  - 2.3 now says "moves through six columns in order".
+- The body word count is unchanged at 4,791, because figures are not counted.

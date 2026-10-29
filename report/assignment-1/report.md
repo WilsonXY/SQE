@@ -121,25 +121,23 @@ Appendix A sets out how this choice was reached: Actual was profiled against eig
 
 ## 2.3 Applying Kanban to Actual
 
-Figure 3 shows the proposed board. Each piece of work, such as a bug fix or a new feature, is a card that moves left to right through six columns, from triage to operation. Each column has an **exit policy**: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98).
+Figure 3 shows the proposed board. Each piece of work, such as a bug fix or a new feature, is a card that moves through six columns in order, from triage to operation. Each column has an **exit policy**: a written condition that must be met before work can be pulled into the next column (Ahmad et al., 2018, p. 98).
 
 The WIP limit proposed in Section 2.2 sits on the Verify column, where review happens. It should be set from the number of reviews the maintainers actually complete, so that new work stops entering once reviews start to pile up. Section 3 adds quality checks to the exit policies, and Section 4 adds independent checks. The monthly release stays as it is, and each release becomes the point at which the team checks whether the limits and policies need adjusting.
 
 ```
 Rule: pull work only when the next column is under its WIP limit
 QA gates (Section 3) apply to every exit policy
-+------------------------+------------------------------------------------+
-| Column                 | Exit policy (pull criterion)                   |
-+------------------------+------------------------------------------------+
-| 1 Requirements/triage  | Problem, acceptance criteria and risk recorded |
-| 2 Design               | Approach agreed; decision record if high-risk  |
-| 3 Build/PR             | CI green; tests and release note included      |
-| 4 Verify   [WIP limit] | Reviewer is not the implementer                |
-| 5 Release train        | Monthly cut (25th); >=2 approvals; smoke test  |
-| 6 Operate/maintain     | User reports and advisories triaged to col. 1  |
-+------------------------+------------------------------------------------+
-        ^                                                      |
-        +------------------- feedback loop --------------------+
+    +------------------------+------------------------------------------------+
+    | Column                 | Exit policy (pull criterion)                   |
+    +------------------------+------------------------------------------------+
+ +->| 1 Requirements/triage  | Problem, acceptance criteria and risk recorded |
+ |  | 2 Design               | Approach agreed; decision record if high-risk  |
+ |  | 3 Build/PR             | CI green; tests and release note included      |
+ |  | 4 Verify   [WIP limit] | Reviewer is not the implementer                |
+ |  | 5 Release train        | Monthly cut (25th); >=2 approvals; smoke test  |
+ +--| 6 Operate/maintain     | User reports and advisories triaged to col. 1  |
+    +------------------------+------------------------------------------------+
 ```
 
 *Figure 3. Proposed (to-be) Kanban workflow for Actual with explicit exit policies.*
