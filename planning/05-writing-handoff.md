@@ -198,7 +198,7 @@ The two are **not interchangeable**:
 
 - **4.1 Concepts:**
   - V&V definition [S67, IEEE 1012-2024 abstract; 2016 superseded];
-  - **three kinds of independence** (technical, managerial, financial) [S68];
+  - ~~**three kinds of independence** (technical, managerial, financial) [S68]~~ superseded 2026-10-30: use Lecture 6's checker-separate-from-builder test (see `04-ivv.md`);
   - integrity levels [S67];
   - agile still needs IV&V, especially for security [S69].
 - **4.2 As-is independence table:** maintainer review (technical only); 2-maintainer release approval [S03]; CI; preview and nightly builds [S66]; **external reporters iamsilk, Rex50527, pyuysig (all three kinds of independence)** [S63]; CVD good practice [S70, S62]; **no evidence of an external audit**.

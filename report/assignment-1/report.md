@@ -10,7 +10,7 @@ Actual has a defined workflow but no deliberate methodology. Its profile suits a
 
 Furthermore, The QA process focuses on three ISO/IEC 25010:2023 characteristics: Security, Reliability and Interaction capability. Public evidence shows no written QA plan and gaps in proactive security verification, coverage measurement and accessibility testing. The plan also adopts OWASP ASVS 5.0.0 and WCAG 2.2 and writes risk-scaled checks into the exit policy of each Kanban column.
 
-Lastly, IV&V adds risk-tiered independent review inside the team, plus external checks through coordinated disclosure and an optional funded audit. As internal review gives technical independence only, therefore managerial and financial independence should come from outside reporters and a third-party-funded audit.
+Lastly, IV&V adds risk-tiered independent review inside the team, plus external checks through coordinated disclosure and an optional funded audit. The outside checks are kept because all three 2026 security flaws were found by reporters outside the team, after release.
 
 # 1 Introduction
 
@@ -204,26 +204,21 @@ This section examines how independently Actual's work is checked today, proposes
 
 ## 4.1 Current V&V in Actual and Its Independence
 
-IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). Independent V&V (IV&V) adds a condition on who does the checking. NASA, following IEEE, defines independence along three parameters (National Aeronautics and Space Administration, n.d.):
-
-- **Technical:** the checker assesses the work independently of the implementer.
-- **Managerial:** responsibility for the checking sits in an organisation separate from the one building the software.
-- **Financial:** the budget for the checking is controlled by an organisation independent of development.
-
-Table 4.1 tests each of Actual's existing V&V activities against these three kinds of independence. *Partial* means the check is independent of the implementer but limited: automated tests check only what the team chose to test, and community testing of preview builds is informal. *Not established* means public evidence does not show either way.
+IEEE 1012-2024 describes verification as checking whether the products of an activity conform to that activity's requirements, and validation as checking whether the product satisfies its intended use and user needs (IEEE, 2025). Independent V&V (IV&V) adds a condition on who does the checking: the work of each phase is checked by someone other than the person who built it. Table 4.1 applies this test to Actual's existing V&V activities, phase by phase from requirements to maintenance. *Partial* means someone other than the builder is involved but the check is limited: automated tests check only what the team chose to test, and community testing of preview builds is informal.
 
 *Table 4.1. Independence of Actual's existing V&V activities.*
 
-| Activity | Performed by | Technical | Managerial | Financial |
+| Activity | Phase | Built by | Checked by | Checker separate from builder? |
 |---|---|---|---|---|
-| PR review | Another core maintainer (Actual Budget, n.d.-d) | Yes | No | No: reviewers share one stipend pool (Actual Budget, n.d.-e) |
-| Release approval and smoke test | At least two other maintainers approve; smoke tests follow (Actual Budget, n.d.-b) | Yes | No | No |
-| CI tests and CodeQL scanning | Automated, configured by the team (Actual Budget, 2026a) | Partial | No | No |
-| PR preview and nightly builds | Any community member, voluntarily (Actual Budget, n.d.-f) | Partial | Not established | Not established |
-| Vulnerability reports | Reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d) | Yes | Not established | Not established |
-| External audit | No public evidence found in the documentation and blog (October 2026) | — | — | — |
+| Requirements and design check | Requirements, design | Contributor proposing the change | None found in the documentation (October 2026) | — |
+| PR review | Implementation | PR author | Another core maintainer (Actual Budget, n.d.-d) | Yes |
+| CI tests and CodeQL scanning | Implementation, testing | PR author | Automated checks configured by the team (Actual Budget, 2026a) | Partial |
+| PR preview and nightly builds | Testing | PR author | Any community member, voluntarily (Actual Budget, n.d.-f) | Partial |
+| Release approval and smoke test | Deployment | Maintainer cutting the release | At least two other maintainers approve; smoke tests follow (Actual Budget, n.d.-b) | Yes |
+| Vulnerability reports | Maintenance | Core team | Reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d) | Yes, but only after release |
+| External audit | Maintenance | — | No public evidence found in the documentation and blog (October 2026) | — |
 
-Actual therefore has real independent checking, but it is ad hoc and mostly technical: how independently a change is checked depends on who happens to review or report it, not on how risky it is. The strongest independent findings came after release: the three 2026 advisories described in Section 3.3 credit reporters outside the core team with finding the flaws in released versions (Actual Budget, 2026b, 2026c, 2026d).
+Actual therefore has real independent checking, but it is ad hoc and starts late: nobody but the contributor checks requirements or design, and how independently a change is checked depends on who happens to review or report it, not on how risky it is. The strongest independent findings came after release: the three 2026 advisories described in Section 3.3 credit reporters outside the core team with finding the flaws in released versions (Actual Budget, 2026b, 2026c, 2026d).
 
 ## 4.2 IV&V Integration Model for Kanban
 
@@ -231,9 +226,9 @@ To make independent checking depend on risk rather than on who happens to review
 
 First, it uses the risk tiers set at triage (Section 3.5), so that only High-tier cards get an independent reviewer. Independent review of every card would overload the few reviewers that Section 2 identified as the bottleneck.
 
-Second, High-tier changes get an *independent reviewer*: a maintainer who neither wrote the change nor is listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, both the implementer and the sync server's listed owner are excluded, so someone else on the team must check it. The reviewer is still a colleague paid from the same stipend pool, so this gives technical independence only.
+Second, High-tier changes get an *independent reviewer*: a maintainer who neither wrote the change nor is listed for that area in Actual's CODEOWNERS file (Actual Budget, 2026a). For a new bank-sync endpoint, both the implementer and the sync server's listed owner are excluded, so someone else on the team must check it. The reviewer is still a member of the same small team, which is why the third change adds checks from outside it.
 
-Third, the other two kinds of independence come from outside Actual's team and budget. One route already exists: outside reporters using private vulnerability reporting, who found the three 2026 advisories (Section 3.3). The other is new: an occasional external security audit of the sync server, where those flaws were, paid for by a third party rather than from Actual's donations. The Open Source Technology Improvement Fund (OSTIF) arranges such audits for open-source projects with money from outside funding bodies, and reports that over 98% of the security-relevant findings from its 2025 audits were fixed (Open Source Technology Improvement Fund, 2026).
+Third, it adds checks from outside the team, because Actual's own record shows that outsiders find what the team's review misses: all three 2026 advisories were in released code and were found by reporters outside the core team (Section 3.3). One route already exists: outside reporters using private vulnerability reporting. The other is new: an occasional external security audit of the sync server, where those flaws were, paid for by a third party so that it costs neither volunteer review time nor Actual's donations. The Open Source Technology Improvement Fund (OSTIF) arranges such audits for open-source projects with money from outside funding bodies, and reports that over 98% of the security-relevant findings from its 2025 audits were fixed (Open Source Technology Improvement Fund, 2026).
 
 Each check is written into the exit policy of the board column where it happens, so a High-tier card cannot move on until its independent evidence is attached. This follows Smith and Hayes (2024, Abstract), who argue that agile "has in no way diminished the need for IV&V" and that IV&V should run in phase with the development cadence. High-tier reviews also count against the Verify column's WIP limit, so if they queue up, new work stops entering and the queue is visible on the board. Independent design reviews count towards the same limit, because they draw on the same reviewers. Table 4.2 shows, for each column, who checks a High-tier card independently and what evidence they leave.
 
@@ -260,7 +255,7 @@ For requirements compliance, the model checks that what users asked for is what 
 
 The model improves overall quality by moving independent checking for the code where Actual's worst 2026 flaws were (Section 3.3) to before release, while a theme or wording change still needs only one ordinary review. Defects that still escape are put to use: the Operate/maintain column turns each one into a regression test and asks whether its area was tiered too low, so the process checks for that kind of defect next time.
 
-<!-- Cited: S01, S03, S04, S08, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S72 -->
+<!-- Cited: S01, S03, S04, S08, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S69, S72 -->
 
 # References
 
@@ -315,8 +310,6 @@ International Organization for Standardization & International Electrotechnical 
 Kanban University. (n.d.). *The official guide to the Kanban method*. Retrieved October 22, 2026, from https://kanban.university/kanban-guide/
 
 Kuhrmann, M., Tell, P., Hebig, R., Klünder, J., Münch, J., Linssen, O., Pfahl, D., Felderer, M., Prause, C. R., MacDonell, S. G., Nakatumba-Nabende, J., Raffo, D., Beecham, S., Tüzün, E., López, G., Paez, N., Fontdevila, D., Licorish, S. A., Küpper, S., … Richardson, I. (2022). What makes agile software development agile? *IEEE Transactions on Software Engineering, 48*(9), 3523–3539. https://doi.org/10.1109/TSE.2021.3099532
-
-National Aeronautics and Space Administration. (n.d.). *IV&V overview*. Retrieved October 22, 2026, from https://www.nasa.gov/ivv-overview/
 
 Open Source Technology Improvement Fund. (2026, January 30). *2025 annual report*. https://ostif.org/2025-annual-report/
 

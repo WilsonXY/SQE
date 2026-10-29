@@ -1014,3 +1014,10 @@ Writing-tool source note: all three original section writers and the root writer
 - At the author's request, one Gemini 3.8 Flash (low) child ran the Humanizer skill over the restructured 3.4 (Table 3.1 third column editable). Output was checked for citations, numbers and structure, then reviewed by hand.
 - Kept 1 of 4 proposed changes: the Reliability row now reads "Enabled in CI to make untested sync and migration code visible". Rejected "how each gap is closed" (left "Two are…" without a referent) and "without cost" (not a tell).
 - Follow-up (same day): the author wanted a real rewrite, so a second Gemini 3.8 Flash (low) child ran a full Humanizer pass on 3.4. It removed the "not a full verification level" contrast and the closing staged reveal, dropped the semicolons and made each Table 3.1 cell a full sentence. Citations, numbers and claims unchanged. At the author's choice the ASVS scope was kept as "Selected requirements, rather than a full verification level, …".
+
+## 2026-10-30 — NASA independence model dropped from Section 4
+
+- The author asked whether 4.1's technical/managerial/financial independence parameters come from the lecture slides. A text search of all 12 decks found they do not; Lecture 6 frames IV&V as phase-by-phase roles where an independent checker reviews work built by another role.
+- The author chose to drop NASA [S68] entirely and justify outside checks from Actual's own evidence (option 1 of three offered).
+- Applied: 4.1 bullets and NASA sentence removed; Table 4.1 rebuilt as activity / phase / built by / checked by / checker separate from builder? (adds a requirements-and-design row showing no check found); closing paragraph now says checking is "ad hoc and starts late". 4.2's second and third changes reworded: outside checks rest on all three 2026 advisories being found by outsiders after release [S63]; third-party audit funding framed as saving volunteer time and donations. Executive summary sentence rewritten to match. NASA removed from References and the cited list; S68 marked no longer cited.
+- IEEE 1012-2024 V&V definitions kept, since they match Lecture 6's definitions.
