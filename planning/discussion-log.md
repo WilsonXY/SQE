@@ -1047,3 +1047,8 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author felt the 4.2 paragraphs on the internal reviewer and outside checks clashed. Cause: the outside-checks paragraph opened by undercutting the reviewer ("still on the same small team"), wasn't tied to risk, and leaned on after-release reporting.
 - Author's local edits committed first, then the opening three paragraphs rewritten and humanized: the opener now says checks happen inside and outside the team; the outside paragraph opens with what internal review can miss, notes reporting works only after release, and ties the audit to the high-risk sync server. Citations unchanged.
+
+## 2026-10-30 — 4.2 exit-policy paragraph trimmed
+
+- Author's local edits to the outside-checks paragraph committed first.
+- At the author's request, the exit-policy paragraph was cut from 65 to 47 words: the WIP-limit sentence was removed (Section 2.3 already places the WIP limit on the Verify column), and "in step with the development cadence" became "inside the normal flow of work". Smith and Hayes (2024) still cited.

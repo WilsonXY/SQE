@@ -232,7 +232,7 @@ Within the team, High-tier cards (Section 3.5) get an independent reviewer. This
 
 The team's own review can still miss things, as the three 2026 advisories that were in the released code and were found by people outside of the core team (Section 3.3). Private vulnerability reporting already lets outsiders to report flaws like these, but it only happens once the code has already shipped. Therefore, the proposed model adds an occasional external security audit to the sync server and other high-risk area. For example, we can get The Open Source Technology Improvement Fund (2026) to arranges audits like this for the open-source projects, which are paid for by outside funders, so it wouldn't use volunteer time or Actual's donations.
 
-Each check is written into the exit policy of its board column, so a High-tier card cannot move on until its evidence is attached. This keeps IV&V in step with the development cadence, as Smith and Hayes (2024) recommend for agile projects. Independent reviews also count against the Verify column's WIP limit, so if they pile up, new work stops entering. Table 4.2 lists the checks at each column.
+Each check is written into the exit policy of its board column, so a High-tier card cannot move on until its evidence is attached. This keeps IV&V inside the normal flow of work, as Smith and Hayes (2024) recommend for agile projects. Table 4.2 lists the checks at each column.
 
 *Table 4.2. Independent checks at each board column.*
 
