@@ -1026,3 +1026,8 @@ Writing-tool source note: all three original section writers and the root writer
 
 - At the author's request, the 4.1 opening paragraph was humanized: "adds a condition on who does the checking" was cut so IV&V is stated directly, "phase by phase" was simplified, and the *Partial* definition now reads as a sentence. The IEEE 1012 definitions and citation are unchanged.
 - The author's own local edits (comma in 4.1, Table 4.1 formatting, the PR review citation removed from the table) were committed first.
+
+## 2026-10-30 — 4.1 edits (continued)
+
+- Author's own edits committed: Table 4.1 "PR author" → "Implementer", release-approval wording, *Partial* definition reworded, "therefore" removed from the closing paragraph.
+- At the author's request, the 4.1 closing paragraph was humanized: colon chains split into plain sentences, the "not on how risky it is" contrast and the "strongest independent findings came after release" opener removed. Facts and citations unchanged.

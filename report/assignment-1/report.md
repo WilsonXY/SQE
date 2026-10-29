@@ -222,7 +222,7 @@ Table 4.1 applies this test to each of Actual's existing V&V activities, from re
 | Vulnerability reports           | Maintenance             | Core team                        | Reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d)                          | Yes, but only after release    |
 | External audit                  | Maintenance             | —                                | No public evidence found in the documentation and blog (October 2026)                         | —                              |
 
-Actual has real independent checking, but it is ad hoc and starts late: nobody but the contributor checks requirements or design, and how independently a change is checked depends on who happens to review or report it, not on how risky it is. The strongest independent findings came after release: the three 2026 advisories described in Section 3.3 credit reporters outside the core team with finding the flaws in released versions (Actual Budget, 2026b, 2026c, 2026d).
+Actual already has some independent checking, but it is ad hoc. Nobody other than the contributor checks requirements or design, and how closely a change is checked depends on who happens to review it, whatever its risk. The checking also comes late. All three 2026 advisories in Section 3.3 were found in released versions, by reporters outside the core team (Actual Budget, 2026b, 2026c, 2026d).
 
 ## 4.2 IV&V Integration Model for Kanban
 
