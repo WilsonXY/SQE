@@ -110,7 +110,7 @@ This section defines what quality means for Actual and which attributes matter t
 
 ## 3.1 What Quality Means for Actual
 
-Quality can be defined from five viewpoints, adapted from Garvin (1984): transcendent, product-based, user-based, process-based and value-based. The transcendent view sees quality as something people recognise but cannot define. It gives QA nothing to test, so this report leaves it out. The other four each describe part of what quality means for Actual:
+Quality can be defined from five viewpoints, adapted from Garvin (1984). And each of them describes what quality means for Actual:
 
 - User-based: 
 	For users, quality means balances and envelope totals that are correct, private and easy to understand.
@@ -120,6 +120,8 @@ Quality can be defined from five viewpoints, adapted from Garvin (1984): transce
 	For Actual, quality means every change passes the same written checks, no matter who reviews it.
 - Value-based: 
 	Actual is free and funded by donations, so the quality work must be affordable in volunteer time.
+- Transcendent:
+	In terms of transcendent view, quality refer to the sense that the app can be trusted with one's money. Users recognise it through daily use, and it will also be built up when the other four views above are met.
 
 Together, these views give Actual's QA process one aim, which is to keep users' financial data correct and private, through checks that apply to every change but cost little volunteer time.
 
@@ -128,24 +130,23 @@ Together, these views give Actual's QA process one aim, which is to keep users' 
 ISO/IEC 25010:2023 defines nine product quality characteristics (International Organization for Standardization & International Electrotechnical Commission, 2023). This report focuses on three of them: Security, Reliability and Interaction capability. Each was chosen because it meets two criteria, a failure would seriously harm users, by risking their money or data or locking them out of the app, and public evidence shows that Actual's current checks leave a gap (Section 3.3).
 
 - Security: 
-	Actual holds sensitive financial data and its defences have already failed before. Bank-sync tokens on the server also sit outside end-to-end encryption (Actual Budget, n.d.-h), so a flaw in the server's access control can expose them.
+	Actual stores user's transactions, balances and bank connections, which is some of the most private data a person has. If that data leaks or is changed without any permission, the users could face fraud or lose control of their finances.
 - Reliability: 
-	keeps budget data synced and accurate, even when the app recovers from a failure. If it fails, users can be locked out of their own budget.
+	Users decide what to spend based on the balances Actual shows, so budget data must stay correct and in sync across devices, including after the app recovers from a failure. If it fails, users may stop trusting their numbers or be locked out of their own budget.
 - Interaction capability: 
-	includes inclusivity and user assistance. Actual targets WCAG 2.1 AA (Actual Budget, 2026a), so accessibility is a stated requirement.
+	Actual is used by normal people to manage their own money, so it must be usable by people with different abilities and help them understand envelope budgeting. Actual already targets WCAG 2.1 AA (Actual Budget, 2026a), so accessibility is already a stated requirement.
 
 ## 3.3 Current QA Practices and Gaps
 
 Actual already runs substantial automated QA. Every pull request triggers linting, type checking, Vitest unit tests and a database migration check, Playwright end-to-end and visual regression tests run on pull requests or in the merge queue (Actual Budget, 2026a, n.d.-i). 
 
-CodeQL scans also run on pull requests, on pushes and weekly (Actual Budget, 2026a). Releases will need approval from at least two other maintainers and smoke tests (Actual Budget, n.d.-b). Actual's own security policy also asks for private vulnerability reporting and coordinated disclosure (Actual Budget, n.d.-g).
+It also uses a semantic code analysis engine (CodeQL) to scan every pull requests and pushes (Actual Budget, 2026a). Moreover, releases will need approval from at least two other maintainers and do smoke tests (Actual Budget, n.d.-b). Actual's own security policy also asks for private vulnerability reporting and coordinated disclosure (Actual Budget, n.d.-g).
 
-Comparing these practices with the three attributes shows four gaps. They rest on public evidence only: the repository, documentation and advisories were searched in October 2026, and any checks the team runs privately would not appear there.
-
+There are also four gaps that are discovered or happened from the research:
 - Security: 
-	No proactive check of access control before release. Three access-control flaws in the sync server feature were published in 2026 (Actual Budget, 2026b, 2026c, 2026d). The critical one, GHSA-m2cq-xjgm-f668 (CVSS 9.2), was missing authentication on six SimpleFIN and Pluggy AI bank-sync endpoints, although the GoCardless endpoints had it (Actual Budget, 2026c). This is a check that existed for one provider but was missing for two others, and the flaw was only been found after release. The security policy also states no response time for reports (Actual Budget, n.d.-g).
+	No proactive check of access control before release. Three access-control flaws in the sync server feature were published in 2026 (Actual Budget, 2026b, 2026c, 2026d). The most critical one was about missing authentication on six of the SimpleFIN and Pluggy AI bank-sync endpoints, which the GoCardless endpoints had it (Actual Budget, 2026c). This shows inconsistent authentication across bank-sync providers, and the flaw was only found after release. The security policy also states no response time for reports (Actual Budget, n.d.-g).
 - Reliability: 
-	No coverage measurement. Test coverage would not prove that code is correct, but it would at least show what is untested. And reliability defects still reach users, like a sync defect that stopped some budgets opening and it's stayed in released versions for years (Brown, 2026). There's also no coverage report found in the repository, and the sync-server tests have coverage switched off (Actual Budget, 2026a), although Actual's testing checklist asks for "appropriate test coverage" (Actual Budget, n.d.-i, Testing Checklist section). Therefore, nobody can tell how much of the sync and migration code is actually tested.
+	There is no test coverage measurement. Test coverage would not prove that the code is correct, but it would at least show what is untested. And reliability defects still reach users, like a sync defect that stopped some budgets from opening and it's stayed in released versions for years (Brown, 2026). Although Actual's testing checklist asks for "appropriate test coverage" (Actual Budget, n.d.-i, Testing Checklist section), there's no coverage report found in the repository, and sync-server tests have coverage switched off (Actual Budget, 2026a). Therefore, nobody can tell how much of the sync and migration code is actually tested and actually safe.
 - Interaction capability: 
 	No automated accessibility testing was found, despite the WCAG target (Actual Budget, 2026a).
 - Process: 
@@ -153,54 +154,55 @@ Comparing these practices with the three attributes shows four gaps. They rest o
 
 ## 3.4 Selected Standards and Practices
 
-Table 3.1 lists the measures closing each gap from Section 3.3. Two measures are published standards that a volunteer team can use for free, while the rest are practices proposed in this report.
+Table 3.1 lists the standard that closes each gap from Section 3.3. Two standard are published standards that a volunteer team can use for free, while the rest are practices proposed in this report.
 
 *Table 3.1. How each gap is closed.*
 
-| Gap | Standard or practice | How it is used |
-|---|---|---|
-| Security | OWASP ASVS 5.0.0 | The authentication, session and authorisation chapters cover the same kinds of flaw as the 2026 advisories (OWASP Foundation, 2025). Selected requirements, rather than a full verification level, become acceptance criteria for high-risk changes to authentication, sessions and bank sync. |
-| Security | Authorisation test matrix (proposed) | An automated test lists the server's endpoints and confirms that each refuses requests without a valid login or the right permission. |
-| Reliability | Coverage report | Enabling coverage reports in CI makes untested sync and migration code visible. |
-| Interaction capability | WCAG 2.2 AA | The target moves from 2.1 AA, a modest step because 2.2 does not deprecate 2.1 (World Wide Web Consortium, 2024). Automated checks run at review. |
-| Process | Written QA plan | Section 3.5 sets out this plan. |
-
-The authorisation test matrix checks ASVS requirements on every change, which nothing currently does. Had the six bank-sync endpoints been in the matrix, the 2026 flaw would have been caught before release.
+| Gap                    | Standard or practice                 | How it is used                                                                                                                                                |
+| ---------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Security               | OWASP ASVS 5.0.0                     | The ASVS chapters on authentication, sessions and authorisation cover the same kinds of flaw that was found in the 2026 advisories (OWASP Foundation, 2025).  |
+| Security               | Authorisation test matrix (proposed) | An automated test goes through every server endpoint and checks that each one rejects requests that lack a valid login or the right permission.               |
+| Reliability            | Coverage report                      | Coverage reports are switched on in the CI, so the team can see which parts of the sync and migration code have no tests.                                     |
+| Interaction capability | WCAG 2.2 AA                          | Actual's accessibility target moves from WCAG 2.1 AA to 2.2 AA, the version that W3C recommends for new accessibility work (World Wide Web Consortium, 2024). |
+| Process                | Written QA plan                      | Section 3.5 will sets out this plan.                                                                                                                          |
 
 ## 3.5 Applying the QA Process within Kanban
 
-This section turns the gaps found in Section 3.3 into the QA gates of Section 2.2, by adding them to the exit policies of the Kanban board (Section 2.3). Quality is then checked as part of moving a card forward, not in a separate document that volunteers may never open.
+This section turns the gaps found in Section 3.3 into the QA gates of Section 2.2, by adding them to the exit policies of the Kanban board (Section 2.3). As a result, a card can only move to the next column once its quality checks have passed.
 
-Not every card needs every check: running security and data checks on a wording change would waste the review time that Section 2.1 found scarce. At triage, each card is therefore given a risk tier according to the worst plausible failure of the change, choosing the higher tier when unsure:
+When a change only touches wording or documents, running security and data checks on it would waste the review time that Section 2.1 already found scarce. Each card or task is therefore given a risk tier at triage stage, where it decides which QA checks the card must pass before it can move along the board. The tier is based on the most serious failure the change could cause:
 
-- *High*: a failure could expose financial data or credentials, give wrong money figures or lose budget data (authentication, authorisation and sessions; bank sync; budget and balance calculations; database migrations; sync and encryption).
-- *Standard*: a failure would be visible but recoverable without data loss (most features, such as reports, rules and UI components).
-- *Low*: a failure would be cosmetic (themes, wording and documentation).
+- High: 
+	a failure that could expose financial data or credentials, give wrong money figures or lose budget data. Such as authentication & authorisation, bank integration, budget and balance calculations or sync and encryption).
+- Standard:
+	a failure would be visible but recoverable without data loss. Most of the features, such as reports, rules and UI components.
+- Low: 
+	a failure would be cosmetic like themes, wording and documentation.
 
-The tiers are this report's own, borrowing only the idea in IEEE 1012-2024 that the verification a component needs depends on its integrity level (Institute of Electrical and Electronics Engineers [IEEE], 2025).
+These tiers were created for this report. They borrow the one idea from IEEE 1012-2024 standard: the more serious a component's possible failure, the more verification it needs (Institute of Electrical and Electronics Engineers [IEEE], 2025).
 
-Table 3.2 is the resulting plan, and also the written QA plan that Section 3.3 found missing. Each row is a board column, showing the checks added to its exit policy (with the attribute each protects in brackets), which cards they apply to and who is responsible. Actual's existing checks stay in place, and the people responsible are existing maintainers and contributors, not new posts. Appendix B follows one card through the plan.
+Table 3.2 shows the resulting QA plan, it explains the checks that are added to each Kanban column's exit policy, which cards they apply to, and who is responsible for what.
 
 *Table 3.2. QA checks added to each Kanban column.*
 
-| Kanban column | Checks added to the exit policy | Applies to | Who |
-|---|---|---|---|
-| Requirements/triage | Risk tier set; acceptance criteria written for security, data and accessibility where the change affects them (all three) | All cards | Triager |
-| Design | Endpoints and permissions listed (security); migration and sync impact stated (reliability) | High tier | Implementer |
-| Build/PR | Coverage report produced (reliability); new endpoints added to the authorisation test matrix (security) | All; matrix for High tier | Implementer |
-| Verify | Automated WCAG 2.2 AA checks pass (interaction capability); selected ASVS requirements checked (security) | Cards that change the UI; ASVS for High-tier security changes | Reviewer |
-| Release train | No open critical or high security finding (security) | Every release | Release maintainers |
-| Operate/maintain | Security reports answered within a stated response time (security); each defect that reached users gets a regression test and a review of the check that missed it (all three) | Every report | Maintainers handling reports |
+| Kanban column       | Checks added to the exit policy                                                                                                           | Applies to                                                        | Who                          |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ---------------------------- |
+| Requirements/triage | The card is given a risk tier, and acceptance criteria are written for security, data and accessibility wherever the change affects them. | All cards                                                         | Triager                      |
+| Design              | The endpoints and permissions the change touches are listed, and its effect on migrations and sync is stated.                             | High tier                                                         | Implementer                  |
+| Build/PR            | A coverage report is produced so untested code is visible, and any new endpoint is added to the authorisation test matrix.                | All, except the matrix is for High tier                           | Implementer                  |
+| Verify              | Automated WCAG 2.2 AA checks must pass, and the selected ASVS requirements are checked against the change.                                | Cards that change the UI. And ASVS for High-tier security changes | Reviewer                     |
+| Release train       | A release cannot go out while any critical or high security finding is still open.                                                        | Every release                                                     | Release maintainers          |
+| Operate/maintain    | Security reports are answered. Each defect that reaches users gets a regression test, and the check that missed it is being reviewed.     | Every report                                                      | Maintainers handling reports |
 
 ## 3.6 Critical Evaluation
 
-The plan's main cost is volunteer time: every check added to an exit policy adds work for a small team whose review time is already scarce (Section 2.1). The risk tiers limit this cost, but a card placed in too low a tier at triage passes with fewer checks. Added automation also carries costs. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests (Wessel et al., 2022). Because these studies cannot predict Actual's results, each new check should be monitored and removed if it slows review without finding defects. Finally, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed.
+The plan's main cost is volunteer time. Each check added to an exit policy is more work for a small team that already has little time for review (Section 2.1). The risk tiers keep this cost under control, since only High-tier cards go through the full set of checks. However, the tiers depend on judgement at triage, and a card given too low a tier will skip checks it needed. This matters most for security and data changes, where a missed check could reach users unnoticed.
 
 <!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129, S137 -->
 
 # 4 Integrating IV&V with Kanban
 
-This section examines how independently Actual's work is checked today, proposes an IV&V model built into the Kanban board from Section 2 and the QA plan from Section 3, and shows how the model meets the brief's three goals: early defect detection, requirements compliance and overall quality.
+This section examines how independently Actual's work is checked today, proposes an IV&V model built into the Kanban board from Section 2 and the QA plan from Section 3, and shows how the model meets the brief's three goals, which are early defect detection, requirements compliance and overall quality.
 
 ## 4.1 Current V&V in Actual and Its Independence
 
