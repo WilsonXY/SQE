@@ -153,19 +153,19 @@ Comparing these practices with the three attributes shows four gaps. They rest o
 
 ## 3.4 Selected Standards and Practices
 
-Table 3.1 shows what closes each gap from Section 3.3. Two are published standards that a volunteer team can use for free; the rest are practices this report proposes.
+Table 3.1 lists the measures closing each gap from Section 3.3. Two measures are published standards that a volunteer team can use for free, while the rest are practices proposed in this report.
 
 *Table 3.1. How each gap is closed.*
 
 | Gap | Standard or practice | How it is used |
 |---|---|---|
-| Security | OWASP ASVS 5.0.0 | Its authentication, session and authorisation chapters cover the same kinds of flaw as the 2026 advisories (OWASP Foundation, 2025). Selected requirements, not a full verification level, become acceptance criteria for high-risk changes to authentication, sessions and bank sync |
-| Security | Authorisation test matrix (proposed) | An automated test lists the server's endpoints and confirms that each refuses requests without a valid login or the right permission |
-| Reliability | Coverage report | Enabled in CI to make untested sync and migration code visible |
-| Interaction capability | WCAG 2.2 AA | Target moves from 2.1 AA, a modest step because 2.2 does not deprecate 2.1 (World Wide Web Consortium, 2024); automated checks at review |
-| Process | Written QA plan | Set out in Section 3.5 |
+| Security | OWASP ASVS 5.0.0 | The authentication, session and authorisation chapters cover the same kinds of flaw as the 2026 advisories (OWASP Foundation, 2025). Selected requirements, rather than a full verification level, become acceptance criteria for high-risk changes to authentication, sessions and bank sync. |
+| Security | Authorisation test matrix (proposed) | An automated test lists the server's endpoints and confirms that each refuses requests without a valid login or the right permission. |
+| Reliability | Coverage report | Enabling coverage reports in CI makes untested sync and migration code visible. |
+| Interaction capability | WCAG 2.2 AA | The target moves from 2.1 AA, a modest step because 2.2 does not deprecate 2.1 (World Wide Web Consortium, 2024). Automated checks run at review. |
+| Process | Written QA plan | Section 3.5 sets out this plan. |
 
-ASVS sets the requirements, but nothing yet checks them on every change; the authorisation test matrix does. Had the six bank-sync endpoints been in it, the 2026 flaw would have been caught before release.
+The authorisation test matrix checks ASVS requirements on every change, which nothing currently does. Had the six bank-sync endpoints been in the matrix, the 2026 flaw would have been caught before release.
 
 ## 3.5 Applying the QA Process within Kanban
 
