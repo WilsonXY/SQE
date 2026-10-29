@@ -989,3 +989,11 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-29 — Consistency-check branch merged to main
 
 - At the author's request, `claude/epic-hopper-qv9pib` was fast-forwarded into `main` and pushed. It carries the whole-report consistency fixes, the Figure 3 loop redraw and the Mermaid figures.
+
+## 2026-10-29 — Humanizer pass on the Assignment 1 report
+
+- At the author's request, the Humanizer skill (blader/humanizer v3.1.0) was installed and run over the report body and appendices; References were excluded.
+- Five Gemini 3.8 Flash (low) children each rewrote one chunk into a separate file: Executive Summary and Section 1, Section 2, Section 3, Section 4, Appendices A–B. None edited the report directly.
+- Every output was machine-checked against its input (citations, numbers, quotes, headings, tables, figures, word count, dashes, pronouns) and then reviewed sentence by sentence. The children reported 28 changes; 15 edits were kept and the rest rejected because they changed meaning, dropped a qualifier, added an "-ing" rider, altered the author's own voice in 1.1, or fixed nothing.
+- One rejected edit in 3.5 would have assigned Actual's *existing* checks to maintainers, misstating who is responsible for the new checks.
+- No facts, citations or sources were added or removed. Report shortened by 33 words (7,478 to 7,445 incl. references and appendices).

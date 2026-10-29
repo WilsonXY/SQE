@@ -18,7 +18,7 @@ IV&V adds risk-tiered independent review inside the team, plus external checks t
 
 Personal finance applications help people record spending and plan a budget. Because they hold balances, transactions and sometimes bank connections, their quality matters: a wrong total can lead to a poor financial decision, and a security flaw can expose private data.
 
-I chose Actual Budget because I was looking for an open-source personal finance application that I could self-host on an old laptop at home to manage and keep track of my finances. This assignment gave me the opportunity to examine it in depth.
+I chose Actual Budget because I was looking for an open-source personal finance application that I could self-host on an old laptop at home to manage and keep track of my finances. This assignment allowed me to examine it in depth.
 
 Written from the view of outside analysts, this report covers three topics. Section 2 selects a software development methodology for the project, Section 3 sets out a quality assurance (QA) process, and Section 4 integrates independent verification and validation (IV&V) into the selected methodology.
 
@@ -32,7 +32,7 @@ Actual was created by James Long, who ran it as a paid product for over four yea
 
 Actual covers budgeting, accounts and transactions, rules, scheduled transactions and reports (Actual Budget, n.d.-j). It runs as a desktop app, through Docker, or on paid hosting from PikaPods or Fly.io (Actual Budget, n.d.-c).
 
-A server is not required for basic budgeting, but syncing between devices and bank synchronisation both need one (Actual Budget, n.d.-c). Users can optionally turn on end-to-end encryption for synced data, but data on the local device stays unencrypted and bank-sync tokens on the server are not covered (Actual Budget, n.d.-h). Figure 1 shows how the parts connect.
+Basic budgeting does not require a server, but syncing between devices and bank synchronisation both need one (Actual Budget, n.d.-c). Users can enable end-to-end encryption for synced data, but data on the local device stays unencrypted and bank-sync tokens on the server are not covered (Actual Budget, n.d.-h). Figure 1 shows how the parts connect.
 
 ![Figure 1: user device, sync server and bank-sync provider](figures/figure-1.png)
 
@@ -82,7 +82,7 @@ A software process model is commonly chosen by weighing eight factors about the 
 
 From this profile, the methodology has to meet five needs: handle changing priorities, work with tasks that volunteers choose themselves, keep its rules written down, protect review time, and include quality and risk controls.
 
-Kanban meets the first four needs. It protects review time by limiting work in progress (WIP), the number of items allowed in a stage at once (Kanban University, n.d.). This assignment proposes placing that limit on review: once it is reached, no new PRs enter review until waiting ones are cleared. It keeps its rules written down, because the conditions for moving work between stages are explicit and do not depend on who happens to be on the team. It also handles changing priorities and self-chosen tasks, because contributors still pull work from the voted backlog whenever they have time, and nobody has to commit to a fixed amount of work. Finally, Kanban is applied on top of an existing process rather than replacing it (Kanban University, n.d.), so Actual keeps the workflow that already suits its volunteers.
+Kanban meets the first four needs. It protects review time by limiting work in progress (WIP), the number of items allowed in a stage at once (Kanban University, n.d.). This assignment proposes placing that limit on review: once it is reached, no new PRs enter review until waiting ones are cleared. It keeps its rules written down, because the conditions for moving work between stages are explicit and do not depend on who happens to be on the team. It also handles changing priorities and self-chosen tasks, because contributors still pull work from the voted backlog whenever they have time, and nobody has to commit to a fixed amount of work. Finally, Kanban is applied on top of an existing process without replacing it (Kanban University, n.d.), so Actual keeps the workflow that already suits its volunteers.
 
 Kanban does not, however, meet the fifth need: it does not say how quality should be checked, and this matters because Actual's risk tolerance is low. The report therefore adds **mandatory quality gates (QA gates)**: risk-scaled checks, defined in Section 3, added to each column's exit policy. **The selected methodology is Kanban, tailored with mandatory QA gates.**
 
@@ -125,7 +125,7 @@ ISO/IEC 25010:2023 defines nine product quality characteristics (International O
 
 - **Security** is the top priority. Actual stores budgets and, on the server, bank-sync tokens that sit outside end-to-end encryption (Actual Budget, n.d.-h). Access-control flaws in the sync server reached released versions in 2026 (Actual Budget, 2026b, 2026c, 2026d).
 - **Reliability** covers data integrity across devices, database migrations and recovery. A sync defect that stopped large budgets opening reached released versions (Section 3.3).
-- **Interaction capability** includes inclusivity and user assistance. Actual targets WCAG 2.1 AA (Actual Budget, 2026a), so accessibility is a stated requirement, not an extra.
+- **Interaction capability** includes inclusivity and user assistance. Actual targets WCAG 2.1 AA (Actual Budget, 2026a), so accessibility is a stated requirement.
 
 ## 3.3 Current QA Practices and Gaps
 
@@ -133,7 +133,7 @@ Actual already runs substantial automated QA. Every pull request triggers lintin
 
 Comparing these practices with the three attributes shows four gaps. They rest on public evidence only: the repository, documentation and advisories were searched in October 2026, and any checks the team runs privately would not appear there.
 
-- **Security: no proactive check of access control before release.** Three access-control flaws in the sync server, one critical and two high-severity, were published in 2026 (Actual Budget, 2026b, 2026c, 2026d). The critical one, GHSA-m2cq-xjgm-f668 (CVSS 9.2), was missing authentication on six SimpleFIN and Pluggy AI bank-sync endpoints, although the GoCardless endpoints had it (Actual Budget, 2026c). A check that existed for one provider was missing for two others, and the flaw was found only after release. This report proposes an **authorisation test matrix**: an automated test that lists the server's endpoints and confirms that each one refuses requests without a valid login or the right permission. Had the six endpoints been listed, it would have caught this inconsistency before release. The security policy also states no response time for reports (Actual Budget, n.d.-g).
+- **Security: no proactive check of access control before release.** Three access-control flaws in the sync server, one critical and two high-severity, were published in 2026 (Actual Budget, 2026b, 2026c, 2026d). The critical one, GHSA-m2cq-xjgm-f668 (CVSS 9.2), was missing authentication on six SimpleFIN and Pluggy AI bank-sync endpoints, although the GoCardless endpoints had it (Actual Budget, 2026c). A check that existed for one provider was missing for two others, and the flaw was found only after release. This report proposes an **authorisation test matrix**: an automated test that lists the server's endpoints and confirms that each one refuses requests without a valid login or the right permission. Listing the six endpoints in this matrix would have caught the inconsistency before release. The security policy also states no response time for reports (Actual Budget, n.d.-g).
 - **Reliability: no coverage measurement.** Reliability defects still reach users. Until September 2026, a large sync could overflow an internal counter in some privacy-focused browsers, so that "the budget never opens"; the faulty code had been in released versions since at least 2023 (Brown, 2026). Yet no coverage setting or report was found in the repository, and the sync-server test configuration explicitly disables it (Actual Budget, 2026a), even though the testing checklist asks for "appropriate test coverage" (Actual Budget, n.d.-i, Testing Checklist section), so nobody can tell how much of the sync and migration code the tests exercise. Coverage shows only which code is untested, not whether tested code is correct, so it is a starting point rather than proof of reliability.
 - **Interaction capability: no automated accessibility testing** was found, despite the WCAG target (Actual Budget, 2026a).
 - **Process: no written QA plan.** Quality rules are spread across documentation, templates and CI files, so no single place states what must be checked before work moves on.
@@ -155,9 +155,9 @@ Three standards pass both tests (Table 3.1). ISO/IEC 25010 is sold, but it is us
 | OWASP ASVS 5.0.0 | Security | Its authentication, session and authorisation chapters cover the same kinds of flaw as the 2026 advisories (OWASP Foundation, 2025). Selected requirements from them, not a full verification level, become acceptance criteria for high-risk changes to authentication, sessions and bank sync |
 | WCAG 2.2 | Interaction capability | Target moves from 2.1 AA to 2.2 AA, a modest step because 2.2 does not deprecate 2.1 (World Wide Web Consortium, 2024); automated checks at review |
 
-The other two gaps need no standard: the coverage gap is closed by turning on a coverage report, and the missing QA plan by the plan in Section 3.5.
+The other two gaps need no standard: turning on a coverage report closes the coverage gap, and Section 3.5 provides the missing QA plan.
 
-Other well-known standards fail the cost test. IEEE 730-2026, the standard for software QA processes, is available only by purchase or subscription (Institute of Electrical and Electronics Engineers [IEEE], 2026). ISO 9001:2026, ISO/IEC 27001:2022 and CMMI V3.0 assume a formal organisation and deliver their value through certification or an appraisal rating (International Organization for Standardization, 2026; International Organization for Standardization & International Electrotechnical Commission, 2022; Lear, 2023).
+Other well-known standards fail the cost test. IEEE 730-2026, the standard for software QA processes, is available only by purchase or subscription (Institute of Electrical and Electronics Engineers [IEEE], 2026). ISO 9001:2026, ISO/IEC 27001:2022 and CMMI V3.0 assume a formal organisation and rely on certification or an appraisal rating (International Organization for Standardization, 2026; International Organization for Standardization & International Electrotechnical Commission, 2022; Lear, 2023).
 
 ## 3.5 Applying the QA Process within Kanban
 
@@ -186,7 +186,7 @@ Table 3.2 is the resulting plan, and also the written QA plan that Section 3.3 f
 
 ## 3.6 Critical Evaluation
 
-The plan's main cost is volunteer time: every check added to an exit policy adds work for a small team whose review time is already scarce (Section 2.1). The risk tiers limit this cost, but a card placed in too low a tier at triage passes with fewer checks. The added automation is not free either. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests (Wessel et al., 2022). Because these studies cannot predict Actual's results, each new check should be monitored and removed if it slows review without finding defects. Finally, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed.
+The plan's main cost is volunteer time: every check added to an exit policy adds work for a small team whose review time is already scarce (Section 2.1). The risk tiers limit this cost, but a card placed in too low a tier at triage passes with fewer checks. Added automation also carries costs. After adopting GitHub Actions, projects saw more rejected pull requests and longer acceptance times (Wessel et al., 2023), whereas code review bots were associated with more merged pull requests (Wessel et al., 2022). Because these studies cannot predict Actual's results, each new check should be monitored and removed if it slows review without finding defects. Finally, automated accessibility checks find rule violations but cannot judge whether an envelope-budgeting task is understandable, so manual review is still needed.
 
 <!-- Cited: S01, S03, S08, S09, S10, S38, S43, S44, S47, S51, S53, S55, S57, S58, S59, S62, S63-m2cq, S63-prp4, S63-cq9c, S82, S85, S129, S137 -->
 
@@ -248,9 +248,9 @@ Each goal is tested below against Actual's own evidence.
 
 For early defect detection, the model would have given the critical 2026 bank-sync flaw (Section 3.3) two independent chances to be caught before release; in practice it was found only afterwards. A card that adds bank-sync endpoints is High tier, so it meets the independent reviewer twice. The first time is at Design, before any code exists: the reviewer checks each planned endpoint against the ASVS authentication requirements, so an endpoint planned without a login check is flagged there. The second is at Verify, where the reviewer confirms that every endpoint is in the authorisation test matrix (Section 3.5). This second check matters because the matrix tests only the endpoints someone adds to it, and an implementer who forgot the login check could easily forget the test as well.
 
-For requirements compliance, the model checks that what users asked for is what was built and tested. Actual already records most of the evidence: a feature request starts as an issue, the PR template asks for the related issue, and a release note describes the result (Actual Budget, 2026a). What it lacks is anyone checking that these pieces match, and the model adds that check at both ends of the board. At triage, someone other than the requester confirms that each acceptance criterion can actually be tested, so a vague criterion such as "the page should feel fast" is sent back to be made measurable. At Verify, the independent reviewer does not approve until every criterion has a passing test. A high-risk requirement therefore cannot reach a release without evidence that it was met.
+For requirements compliance, the model checks that what users asked for is what was built and tested. Actual already records most of the evidence: a feature request starts as an issue, the PR template asks for the related issue, and a release note describes the result (Actual Budget, 2026a). What it lacks is anyone checking that these pieces match, and the model adds that check at both ends of the board. At triage, someone other than the requester confirms that each acceptance criterion can be tested, so a vague criterion such as "the page should feel fast" is sent back to be made measurable. At Verify, the independent reviewer does not approve until every criterion has a passing test. A high-risk requirement therefore cannot reach a release without evidence that it was met.
 
-The model improves overall quality by moving independent checking to the code where Actual's worst 2026 flaws were (Section 3.3), and to before release rather than after, while a theme or wording change still needs only one ordinary review. Defects that still escape are put to use: the Operate/maintain column turns each one into a regression test and asks whether its area was tiered too low, so the process checks for that kind of defect next time.
+The model improves overall quality by moving independent checking for the code where Actual's worst 2026 flaws were (Section 3.3) to before release, while a theme or wording change still needs only one ordinary review. Defects that still escape are put to use: the Operate/maintain column turns each one into a regression test and asks whether its area was tiered too low, so the process checks for that kind of defect next time.
 
 <!-- Cited: S01, S03, S04, S08, S62, S63-m2cq, S63-prp4, S63-cq9c, S66, S67, S68, S69, S72 -->
 
@@ -361,7 +361,7 @@ Actual's situation is first described against the eight factors commonly conside
 
 Most factors point to an agile model, but two complicate it. Agile models need an experienced, self-disciplined team, and low risk tolerance favours linear models (GeeksforGeeks, 2025). Actual's experienced reviewers are few volunteers whose review time has already run out once, and a wrong balance can lead a household to a poor spending decision; in 2026 a critical security flaw let anyone read users' bank balances and transactions without logging in (Actual Budget, 2026c).
 
-Actual therefore needs an agile model at its core, with written controls added where team expertise and risk tolerance leave it exposed, as the same guidance recommends combining approaches when a project's needs are mixed (GeeksforGeeks, 2025). Table A.2 turns this profile into five requirements, each with the reason Actual needs it and the part of the brief it answers. Section A.3 tests every candidate against them.
+Actual therefore needs an agile model with written controls added where team expertise and risk tolerance leave it exposed, as the same guidance recommends combining approaches when a project's needs are mixed (GeeksforGeeks, 2025). Table A.2 turns this profile into five requirements, each with the reason Actual needs it and the part of the brief it answers. Section A.3 tests every candidate against them.
 
 *Table A.2. Requirements for Actual's methodology.*
 
@@ -375,7 +375,7 @@ Actual therefore needs an agile model at its core, with written controls added w
 
 ## A.2 Candidate Methodologies
 
-The comparison focuses on five established methodologies, each representing a different approach: Spiral, Scrum, Extreme Programming (XP), Kanban and DevOps. Waterfall and the V-Model were not shortlisted, because they suit stable requirements and leave little room for change (GeeksforGeeks, 2025), whereas Actual's requirements change with every vote. RAD and RUP were set aside because their planned phases and deliverables assume a team that can be scheduled, whereas Actual's volunteers choose their own work. Spiral is included although it is not agile, because risk tolerance is the one factor on which Actual leans away from agile methods.
+The comparison focuses on five established methodologies, each representing a different approach: Spiral, Scrum, Extreme Programming (XP), Kanban and DevOps. Waterfall and the V-Model were not shortlisted, because they suit stable requirements and leave little room for change (GeeksforGeeks, 2025), whereas Actual's requirements change with every vote. RAD and RUP were set aside because their planned phases and deliverables assume a team that can be scheduled, while Actual's volunteers choose their own work. Spiral is included although it is not agile, because risk tolerance is the one factor on which Actual leans away from agile methods.
 
 Actual's current process is also kept in the comparison as a reference point. It is not a candidate, but any change must prove better than today.
 
@@ -386,7 +386,7 @@ Each candidate is compared with how Actual works, using the requirements in Tabl
 - a **clash**, where the methodology demands something Actual cannot provide. A clash rules the candidate out, because removing it would mean abandoning the methodology itself;
 - a **gap**, where the methodology does not cover one of the requirements. A gap does not rule a candidate out, because a missing practice can be added.
 
-Every candidate is assumed to keep Actual's existing CI, review and monthly release, so none is credited for what Actual already does. Table A.3 sets out what each candidate requires of a team and the resulting findings; the paragraphs that follow explain them.
+Every candidate is assumed to keep Actual's existing CI, review and monthly release, so none is credited for what Actual already does. Table A.3 sets out what each candidate requires of a team and the resulting findings.
 
 *Table A.3. What each candidate requires, and its clashes and gaps.*
 
@@ -407,7 +407,7 @@ Next, Kanban and DevOps have no clash, so the question is which would add more t
 
 Kanban, in contrast, targets the problem identified in Section 2.1: nothing limits how many PRs wait for review. It adds three things. First, it limits work in progress (WIP), the number of items allowed in a stage at once (Kanban University, n.d.). This assignment proposes placing that limit on review: once it is reached, no new PRs enter review until waiting ones are cleared, which protects the maintainers' review time. Second, the rules for moving work from one stage to the next are written down, so they do not depend on who happens to be on the team. Third, contributors still pick tasks from the voted backlog whenever they have time, so nobody has to commit to a fixed amount of work as Scrum would require.
 
-Finally, Kanban has to be better than keeping today's process. The gain is modest but real: Actual's process already suits volunteers, and Kanban adds a review limit and written rules on top of it rather than replacing it. Kanban does not, however, say how quality should be checked, for example which tests a change must pass, and this matters because Actual's risk tolerance is low. The report therefore adds **mandatory quality gates (QA gates)**: risk-scaled checks, defined in Section 3, added to each column's exit policy. **The selected methodology is Kanban, tailored with mandatory QA gates.**
+Finally, Kanban has to be better than keeping today's process. The gain is modest but real: Actual's process already suits volunteers, and Kanban adds a review limit and written rules on top of it without replacing it. Kanban does not, however, say how quality should be checked, for example which tests a change must pass, and this matters because Actual's risk tolerance is low. The report therefore adds **mandatory quality gates (QA gates)**: risk-scaled checks, defined in Section 3, added to each column's exit policy. **The selected methodology is Kanban, tailored with mandatory QA gates.**
 
 # Appendix B: Worked Example of the QA Plan
 
