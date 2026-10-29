@@ -226,7 +226,7 @@ Actual already has some independent checking, but it is ad hoc. Nobody other tha
 
 ## 4.2 IV&V Integration Model for Kanban
 
-The model makes independent checking depend on a change's risk instead of on whoever happens to review it, and it does this in three ways.
+The proposed IV&V model makes independent checking depend on a change's risk instead of on whoever happens to review it, and it does this in three ways.
 
 It starts with the risk tiers set at triage (Section 3.5). Only High-tier cards get an independent reviewer, because reviewing every card independently would overload the few reviewers that Section 2 found to already be the bottleneck for the team.
 
