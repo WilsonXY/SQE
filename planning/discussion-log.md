@@ -1126,3 +1126,10 @@ Writing-tool source note: all three original section writers and the root writer
 - The feedback loop now has an arrowhead into Triage and reads "Escaped defects return to Triage as new cards" (Figure 3's loop; Table 3.2 Operate row).
 - The author asked why Design was empty for every card. Option 1 was chosen: a grey "Approach agreed" cell, keyed "Existing exit policy (Figure 3)", shows that every card still passes Design while Figure 4 shows only the checks 3.5 adds.
 - Applied to `figures/figure-4.*` and the Word version.
+
+## 2026-10-30 — Student details page and cover dates (Word)
+
+- At the author's request, a details page was added as page 2 of the Word file (after the APU cover, before the table of contents): the APU logo and a bordered table with Module Code, Intake Code, Lecturer Name, Hand-In-Date, Hand-Out-Date, Student Name and Student ID. The author's example said "Lecture Name"; it is labelled "Lecturer Name" here.
+- The cover's `dd-mm-yyyy` placeholders were filled: hand out 11-09-2026, hand in 30-10-2026.
+- The cover footer ("Version 1.2 UCTI AssCv 2007-10-23") now shows on the cover page only.
+- Rendered with LibreOffice on the author's machine to check pages 1–3. `report.md` is unchanged (Word-only front matter).
