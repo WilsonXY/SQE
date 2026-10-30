@@ -1119,3 +1119,10 @@ Writing-tool source note: all three original section writers and the root writer
 - Appendix C now holds only the SQAP plan sections. Its intro line was updated.
 - Both images were trimmed to short labels (no section numbers, subtitle or footer). Images are now cropped to their content.
 - Applied to `report.md` and the Word version. The Word table of contents and figure list still need a field update.
+
+## 2026-10-30 — Figure 4 redrawn as swimlanes
+
+- The author found the All/UI/High tags confusing and the green loop unclear. Figure 4 is now two rows per column: "Every card" (blue) and "High tier also" (red), with an owner row. Standard and Low share a row because Table 3.2 gives them the same checks. Only "(UI changes)" on WCAG stays as a condition in words.
+- The feedback loop now has an arrowhead into Triage and reads "Escaped defects return to Triage as new cards" (Figure 3's loop; Table 3.2 Operate row).
+- The author asked why Design was empty for every card. Option 1 was chosen: a grey "Approach agreed" cell, keyed "Existing exit policy (Figure 3)", shows that every card still passes Design while Figure 4 shows only the checks 3.5 adds.
+- Applied to `figures/figure-4.*` and the Word version.
