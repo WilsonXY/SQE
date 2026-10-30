@@ -187,3 +187,10 @@ None for planning.
 - The authorisation test matrix is now defined in 3.4 (moved out of the 3.3 Security bullet by the author). 4.3's cross-reference changed from Section 3.5 to Section 3.4.
 - Trade-off accepted by the author: the brief says "critically select", and the rejected standards showed that selection. The author judged it not to be the section's focus.
 
+
+## Agreed: SQAP summary poster in Appendix C (30 October 2026)
+
+- The author asked for an SQAP in diagram/poster form in the appendix. This revisits the 20 October "no full SQAP in the appendix" rule: the poster is allowed because it only **summarises** Table 3.2 (3.5) and Table 4.2 (4.2), and 3.5 and 4.2 still stand alone without it.
+- Structure: Lecture 3's SQAP sections (management; documentation; standards, practices and conventions; reviews and audits; test; problem reporting and corrective action; other, shown as "Risk management and change control"), around the six Kanban columns with their gates and the three risk tiers. Headings are used as module content and are **not** presented as an IEEE 730 outline (S131, S133).
+- Every item on the poster comes from the body. Lecture 3's "other" items the report does not cover (training, response-time targets, extra metrics) are left out so the appendix adds no new content.
+- Files: `report/assignment-1/figures/appendix-c-sqap.html` (source) and `appendix-c-sqap.png` (rendered at A4 text width). Added to `report.md` and the Word version as **Appendix C: SQAP Summary Poster**, Figure C.1.

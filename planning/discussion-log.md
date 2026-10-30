@@ -1104,3 +1104,10 @@ Writing-tool source note: all three original section writers and the root writer
 ## 2026-10-30 — Five needs in 2.2 as a list
 
 - At the author's request, the five methodology needs in 2.2 are now a bullet list (handle changing priorities; work with self-chosen tasks; keep rules written down; protect review time; include quality and risk controls), in both `report.md` and the Word version. Wording unchanged apart from dropping "and also".
+
+## 2026-10-30 — SQAP poster added as Appendix C
+
+- The author asked what an SQAP poster in the appendix would contain. Lecture 3 was read again: an SQAP is defined by its sections (management, documentation, standards/practices/conventions, reviews and audits, test, problem reporting and corrective action, other), plus a 10-step preparation process.
+- Proposed and accepted ("go for it"): a one-page poster with Lecture 3's sections around the six Kanban columns, their QA gates and the risk tiers, using only content already in Sections 3.1, 3.2, 3.3, 3.5, 4.2 and 3.6. Nothing new; training and response-time targets left out because the body does not cover them.
+- Built as HTML and rendered to PNG (`figures/appendix-c-sqap.*`). Added as Appendix C (Figure C.1) to `report.md` and to the Word file after Appendix B. The Word table of contents needs a field update (right-click → Update Field) to list Appendix C.
+- Revisits the 20 October decision of "no full SQAP in the appendix"; recorded in `03-quality-assurance.md`. No new sources.

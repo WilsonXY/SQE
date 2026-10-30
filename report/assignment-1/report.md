@@ -409,3 +409,10 @@ Finally, Kanban has to be better than keeping today's process. The gain is modes
 *Supplementary illustration of Table 3.2 (Section 3.5).*
 
 Suppose a contributor adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, and an acceptance criterion is written: every new endpoint must refuse requests without a valid login. At design, the implementer lists the new endpoints and who may call each one. At Build/PR, the endpoints are added to the authorisation test matrix. If the login check is missing, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. A typo fix in the documentation, by contrast, is Low tier and passes through the normal checks only.
+# Appendix C: SQAP Summary Poster
+
+*Supplementary one-page summary of the QA plan (Section 3.5, Table 3.2) and the IV&V model (Section 4.2, Table 4.2). It adds no new checks.*
+
+![Figure C.1: one-page SQAP summary poster for Actual](figures/appendix-c-sqap.png)
+
+*Figure C.1. Software Quality Assurance Plan for Actual Budget, summarised as a poster.*
