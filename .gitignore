@@ -3,3 +3,4 @@ Tutorials/
 
 # Office temporary lock files
 ~$*
+.~lock.*#

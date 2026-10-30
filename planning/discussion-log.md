@@ -1133,3 +1133,9 @@ Writing-tool source note: all three original section writers and the root writer
 - The cover's `dd-mm-yyyy` placeholders were filled: hand out 11-09-2026, hand in 30-10-2026.
 - The cover footer ("Version 1.2 UCTI AssCv 2007-10-23") now shows on the cover page only.
 - Rendered with LibreOffice on the author's machine to check pages 1–3. `report.md` is unchanged (Word-only front matter).
+
+## 2026-10-30 — Word table of contents updated
+
+- The author works in LibreOffice on Linux and asked for help updating the table of contents. Edited directly in the Word XML instead of saving through LibreOffice, so Word formatting stays intact.
+- Page numbers measured from a LibreOffice render (printed page = physical page − 3): 3.6 → 13, 4.0/4.1 → 14, 4.2 → 15, 4.3 → 16, References → 18, Appendix A/A.1 → 21, A.2/A.3 → 22, Appendix B → 25. New entry: Appendix C: SQAP Summary Poster → 26 (bookmark added to its heading). All 30 entries checked against the render.
+- LibreOffice lock files (`.~lock.*#`) added to `.gitignore`.
