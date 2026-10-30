@@ -1139,3 +1139,9 @@ Writing-tool source note: all three original section writers and the root writer
 - The author works in LibreOffice on Linux and asked for help updating the table of contents. Edited directly in the Word XML instead of saving through LibreOffice, so Word formatting stays intact.
 - Page numbers measured from a LibreOffice render (printed page = physical page − 3): 3.6 → 13, 4.0/4.1 → 14, 4.2 → 15, 4.3 → 16, References → 18, Appendix A/A.1 → 21, A.2/A.3 → 22, Appendix B → 25. New entry: Appendix C: SQAP Summary Poster → 26 (bookmark added to its heading). All 30 entries checked against the render.
 - LibreOffice lock files (`.~lock.*#`) added to `.gitignore`.
+
+## 2026-10-30 — PDF export
+
+- At the author's request, the Word report was exported to `report/assignment-1/Assignment-1-Report.pdf` (29 A4 pages) with LibreOffice on the author's laptop.
+- The first export showed fragments of the old UCTI logo, which the APU cover template hides behind the APU logo, sticking out at its left edge. That hidden logo was removed from the cover; the APU logo is unchanged.
+- Re-export this PDF after any further edits to the Word file.
