@@ -202,3 +202,9 @@ None for planning.
 - Appendix C keeps only the SQAP plan sections (Figure C.1).
 - At the author's request, both images were cut to short labels: no section references, subtitle, footer or filler words.
 - Files: `figures/figure-4.html` / `.png` and `figures/appendix-c-sqap.html` / `.png`.
+
+## Agreed: worked example back in 3.5; poster becomes Appendix B (30 October 2026)
+
+- At the author's request, the worked example (new bank-sync provider vs a documentation typo fix) moved from Appendix B back into the body as the last paragraph of 3.5, after Figure 4. This reverses trim item C4 (27 October). The body grows by about 115 words.
+- Before the move, the paragraph was rewritten by a Gemini 3.8 Flash (High) subagent with the humanizer skill, then checked: same facts, same hedge ("could be stopped"), no new claims.
+- The SQAP poster is now **Appendix B** (Figure B.1); files renamed to `figures/appendix-b-sqap.html` / `.png`.
