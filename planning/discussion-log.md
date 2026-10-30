@@ -1111,3 +1111,11 @@ Writing-tool source note: all three original section writers and the root writer
 - Proposed and accepted ("go for it"): a one-page poster with Lecture 3's sections around the six Kanban columns, their QA gates and the risk tiers, using only content already in Sections 3.1, 3.2, 3.3, 3.5, 4.2 and 3.6. Nothing new; training and response-time targets left out because the body does not cover them.
 - Built as HTML and rendered to PNG (`figures/appendix-c-sqap.*`). Added as Appendix C (Figure C.1) to `report.md` and to the Word file after Appendix B. The Word table of contents needs a field update (right-click → Update Field) to list Appendix C.
 - Revisits the 20 October decision of "no full SQAP in the appendix"; recorded in `03-quality-assurance.md`. No new sources.
+
+## 2026-10-30 — Poster split: Figure 4 in 3.5, plan sections in Appendix C
+
+- At the author's request, the top half of the poster (aim, objectives, QA checks per column, risk tiers) moved into the body as **Figure 4** in 3.5, after Table 3.2. Section 3 had no figures. New sentence: "Figure 4 shows these checks on the board, together with the aim and quality objectives they serve." (+18 words)
+- Figure 4 was aligned to Table 3.2. The Table 4.2 details (independent reviewer, preview build) were removed because they belong to Section 4.
+- Appendix C now holds only the SQAP plan sections. Its intro line was updated.
+- Both images were trimmed to short labels (no section numbers, subtitle or footer). Images are now cropped to their content.
+- Applied to `report.md` and the Word version. The Word table of contents and figure list still need a field update.

@@ -200,6 +200,12 @@ Table 3.2 shows the resulting QA plan, it explains the checks that are added to 
 | Release train       | A release cannot go out while any critical or high security finding is still open.                                                        | Every release                                                     | Release maintainers          |
 | Operate/maintain    | Security reports are answered. Each defect that reaches users gets a regression test, and the check that missed it is being reviewed.     | Every report                                                      | Maintainers handling reports |
 
+Figure 4 shows these checks on the board, together with the aim and quality objectives they serve.
+
+![Figure 4: QA checks per Kanban exit policy and risk tiers](figures/figure-4.png)
+
+*Figure 4. QA checks on the Kanban board, by risk tier.*
+
 ## 3.6 Critical Evaluation
 
 The plan's main cost is volunteer time. Each check added to an exit policy is more work for a small team that already has little time for review (Section 2.1). The risk tiers keep this cost under control, since only High-tier cards go through the full set of checks. However, the tiers depend on judgement at triage, and a card given too low a tier will skip checks it needed. This matters most for security and data changes, where a missed check could reach users unnoticed.
@@ -409,10 +415,11 @@ Finally, Kanban has to be better than keeping today's process. The gain is modes
 *Supplementary illustration of Table 3.2 (Section 3.5).*
 
 Suppose a contributor adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, and an acceptance criterion is written: every new endpoint must refuse requests without a valid login. At design, the implementer lists the new endpoints and who may call each one. At Build/PR, the endpoints are added to the authorisation test matrix. If the login check is missing, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. A typo fix in the documentation, by contrast, is Low tier and passes through the normal checks only.
+
 # Appendix C: SQAP Summary Poster
 
-*Supplementary one-page summary of the QA plan (Section 3.5, Table 3.2) and the IV&V model (Section 4.2, Table 4.2). It adds no new checks.*
+*Supplementary summary of Sections 3 and 4, arranged by SQAP section. It adds no new checks.*
 
-![Figure C.1: one-page SQAP summary poster for Actual](figures/appendix-c-sqap.png)
+![Figure C.1: SQAP summary poster for Actual](figures/appendix-c-sqap.png)
 
 *Figure C.1. Software Quality Assurance Plan for Actual Budget, summarised as a poster.*

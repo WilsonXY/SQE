@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Figure 4. QA plan on the Kanban board (Section 3.5; matches Table 3.2). Rendered to figure-4.png at 602 px wide (A4 text width). -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 602px; font: 10.5px/1.35 Arial, Helvetica, sans-serif; color: #24384D; background: #fff; padding: 10px; }
+  .aim { display: flex; gap: 6px; margin-bottom: 8px; }
+  .aim > div { border: 1px solid #B8BEC7; background: #FAFAFA; border-radius: 4px; padding: 5px 7px; }
+  .aim > div:first-child { flex: 1.6; }
+  .aim > div:last-child { flex: 1; }
+  .lbl { font-weight: bold; text-transform: uppercase; font-size: 9px; letter-spacing: .04em; color: #5A6675; display: block; margin-bottom: 1px; }
+  h2 { font-size: 11.5px; margin: 6px 0 4px; color: #1B2B3C; }
+  .board { display: grid; grid-template-columns: repeat(6, 1fr); gap: 9px; }
+  .col { border: 1px solid #7BA3CC; background: #E6F0FA; border-radius: 4px; padding: 5px; position: relative; font-size: 9.6px; display: flex; flex-direction: column; }
+  .col b { display: block; font-size: 10px; margin-bottom: 2px; }
+  .col.verify { border: 2px solid #D9AE6A; background: #FFF3DF; color: #4D3814; }
+  .col.ops { border-color: #82B48C; background: #EAF5EC; color: #24402A; }
+  .col:not(:last-child)::after { content: "\25B6"; position: absolute; right: -10px; top: 40%; color: #8A94A3; font-size: 8px; }
+  .tag { display: inline-block; align-self: flex-start; margin: 3px 0 0; padding: 0 4px; border-radius: 2px; font-size: 8.8px; font-weight: bold; background: #fff; border: 1px solid #B8BEC7; }
+  .tag.hi { border-color: #C0504D; color: #8C2E2B; }
+  .who { margin-top: auto; padding-top: 3px; border-top: 1px dashed rgba(0,0,0,.2); font-style: italic; }
+  .gap { flex: 1; min-height: 4px; }
+  .loop { margin-top: 3px; text-align: center; color: #3F7A4B; font-size: 9.5px; border: 1.5px dashed #82B48C; border-top: none; border-radius: 0 0 6px 6px; padding: 1px 0 2px; }
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 6px; }
+  .tier { border-left: 5px solid; border-radius: 3px; padding: 3px 6px; background: #FAFAFA; font-size: 9.6px; }
+  .tier.hi { border-color: #C0504D; } .tier.st { border-color: #D9AE6A; } .tier.lo { border-color: #8A94A3; }
+</style>
+</head>
+<body>
+  <div class="aim">
+    <div><span class="lbl">Aim</span>Correct, private financial data at low volunteer cost</div>
+    <div><span class="lbl">Quality objectives</span>Security · Reliability · Interaction capability</div>
+  </div>
+
+  <h2>QA checks per exit policy</h2>
+  <div class="board">
+    <div class="col"><b>1 Triage</b>Risk tier; acceptance criteria<span class="tag">All</span><span class="gap"></span><span class="who">Triager</span></div>
+    <div class="col"><b>2 Design</b>Endpoints, permissions, sync impact<span class="tag hi">High</span><span class="gap"></span><span class="who">Implementer</span></div>
+    <div class="col"><b>3 Build/PR</b>Coverage report; authorisation test matrix<span class="tag">All</span><span class="tag hi">Matrix: High</span><span class="gap"></span><span class="who">Implementer</span></div>
+    <div class="col verify"><b>4 Verify</b>WCAG 2.2 AA; OWASP ASVS<span class="tag">UI</span><span class="tag hi">ASVS: High</span><span class="gap"></span><span class="who">Reviewer</span></div>
+    <div class="col"><b>5 Release</b>No open critical or high finding<span class="tag">All</span><span class="gap"></span><span class="who">Release maintainers</span></div>
+    <div class="col ops"><b>6 Operate</b>Answer reports; regression test per escaped defect<span class="tag">All</span><span class="gap"></span><span class="who">Maintainers</span></div>
+  </div>
+  <div class="loop">escaped defect → triage</div>
+
+  <h2>Risk tiers</h2>
+  <div class="tiers">
+    <div class="tier hi"><b>High</b>: data or credential exposure, wrong money figures, data loss</div>
+    <div class="tier st"><b>Standard</b>: visible, recoverable</div>
+    <div class="tier lo"><b>Low</b>: cosmetic</div>
+  </div>
+</body>
+</html>

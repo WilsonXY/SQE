@@ -1,12 +1,12 @@
 <!doctype html>
-<!-- Appendix C. SQAP summary poster for Actual (summarises Tables 3.2 and 4.2). Rendered to appendix-c-sqap.png at 602 px wide (A4 text width). -->
+<!-- Appendix C. SQAP summary poster for Actual (plan sections). Rendered to appendix-c-sqap.png at 602 px wide (A4 text width). -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { width: 602px; font: 10.5px/1.35 Arial, Helvetica, sans-serif; color: #24384D; background: #fff; padding: 10px; }
-  h1 { font-size: 17px; text-align: center; color: #1B2B3C; }
+  h1 { font-size: 17px; text-align: center; color: #1B2B3C; margin-bottom: 8px; }
   .sub { text-align: center; color: #5A6675; margin: 2px 0 8px; }
   .aim { display: flex; gap: 6px; margin-bottom: 8px; }
   .aim > div { border: 1px solid #B8BEC7; background: #FAFAFA; border-radius: 4px; padding: 5px 7px; }
@@ -36,74 +36,49 @@
 </style>
 </head>
 <body>
-  <h1>Software Quality Assurance Plan for Actual Budget</h1>
-  <p class="sub">One-page summary of the QA plan (Section 3.5) and the IV&amp;V model (Section 4.2)</p>
-
-  <div class="aim">
-    <div><span class="lbl">Aim (3.1)</span>Keep users' financial data correct and private, through checks that apply to every change but cost little volunteer time.</div>
-    <div><span class="lbl">Quality objectives (3.2)</span>Security · Reliability · Interaction capability (ISO/IEC 25010:2023)</div>
-  </div>
-
-  <h2>QA gates in each column's exit policy (Tables 3.2 and 4.2)</h2>
-  <div class="board">
-    <div class="col"><b>1 Triage</b>Risk tier set; testable acceptance criteria for security, data and accessibility.<span class="who">Triager who did not request it</span></div>
-    <div class="col"><b>2 Design</b>Endpoints, permissions and sync or migration effect listed; checked against ASVS.<span class="who">Implementer; independent reviewer (High)</span></div>
-    <div class="col"><b>3 Build/PR</b>All CI checks pass; coverage report; new endpoints added to the authorisation test matrix.<span class="who">Implementer; CI</span></div>
-    <div class="col verify"><b>4 Verify</b>WCAG 2.2 AA checks (UI cards); ASVS, matrix and acceptance criteria; preview build tried.<span class="who">Independent reviewer</span></div>
-    <div class="col"><b>5 Release train</b>No open critical or high finding; Verify evidence of every High-tier card confirmed.<span class="who">Release maintainers</span></div>
-    <div class="col ops"><b>6 Operate/maintain</b>Security reports answered; escaped defect gets a regression test; tier rule corrected.<span class="who">Maintainers; outside reporters; auditor</span></div>
-  </div>
-  <div class="loop">feedback loop: each escaped defect returns to triage</div>
-
-  <div class="tiers">
-    <div class="tier hi"><b>High</b>: could expose data or credentials, give wrong money figures or lose budget data. Full checks and an independent reviewer.</div>
-    <div class="tier st"><b>Standard</b>: visible but recoverable without data loss. No design review; checked on a preview build.</div>
-    <div class="tier lo"><b>Low</b>: cosmetic (themes, wording, documentation). Normal review only.</div>
-  </div>
-
-  <h2>Plan sections</h2>
+  <h1>Software Quality Assurance Plan: Actual Budget</h1>
   <div class="grid">
     <div class="card"><h3>Management</h3><ul>
-      <li>QA is carried by existing roles through the exit policies</li>
-      <li>Triager, implementer, reviewer, release maintainers, maintainers handling reports</li>
-      <li>High tier: independent reviewer who did not write the change and does not own its area in CODEOWNERS</li>
+      <li>Existing roles own the exit policies</li>
+      <li>Triager, implementer, reviewer, release maintainers</li>
+      <li>High tier: independent reviewer (not author, not code owner)</li>
     </ul></div>
     <div class="card"><h3>Documentation</h3><ul>
-      <li>This written QA plan (Table 3.2)</li>
-      <li>Each card records its tier and acceptance criteria</li>
-      <li>High tier: endpoints, permissions and sync effect listed at design</li>
-      <li>Coverage report; approval lists what was checked; published advisory</li>
+      <li>Written QA plan</li>
+      <li>Risk tier and acceptance criteria per card</li>
+      <li>Design note (High tier)</li>
+      <li>Coverage report; review approval; advisories</li>
     </ul></div>
     <div class="card"><h3>Standards, practices and conventions</h3><ul>
-      <li>ISO/IEC 25010:2023 quality model</li>
-      <li>OWASP ASVS 5.0.0 (authentication, sessions, authorisation)</li>
-      <li>WCAG 2.2 AA, up from 2.1 AA</li>
-      <li>IEEE 1012-2024: more serious failure, more verification (risk tiers)</li>
-      <li>Measure: test coverage</li>
+      <li>ISO/IEC 25010:2023</li>
+      <li>OWASP ASVS 5.0.0</li>
+      <li>WCAG 2.2 AA</li>
+      <li>IEEE 1012-2024 (risk tiers)</li>
+      <li>Metric: test coverage</li>
     </ul></div>
     <div class="card"><h3>Reviews and audits</h3><ul>
-      <li>Triage check by someone other than the requester</li>
-      <li>Design review and independent Verify review (High tier)</li>
-      <li>PR review by another maintainer</li>
-      <li>Release check of Verify evidence</li>
-      <li>Occasional external security audit, funded from outside (OSTIF)</li>
+      <li>Triage check</li>
+      <li>PR review</li>
+      <li>Design and Verify review (High tier)</li>
+      <li>Release evidence check</li>
+      <li>External security audit (OSTIF)</li>
     </ul></div>
     <div class="card"><h3>Test</h3><ul>
-      <li><b>Existing:</b> linting, type checking, Vitest unit tests, migration check, Playwright end-to-end and visual regression, CodeQL</li>
-      <li><b>Added:</b> coverage report, authorisation test matrix, automated WCAG 2.2 AA checks, a regression test for each escaped defect</li>
+      <li><b>Existing:</b> lint, type check, Vitest, migration check, Playwright E2E and visual, CodeQL</li>
+      <li><b>Added:</b> coverage, authorisation test matrix, WCAG 2.2 AA checks, regression tests</li>
     </ul></div>
     <div class="card"><h3>Problem reporting and corrective action</h3><ul>
-      <li>Private vulnerability reporting and coordinated disclosure</li>
-      <li>No release while a critical or high finding is open</li>
-      <li>Each escaped defect: regression test, review of the check that missed it, tier of its area checked again</li>
+      <li>Private vulnerability reporting</li>
+      <li>Coordinated disclosure</li>
+      <li>Open critical or high finding blocks release</li>
+      <li>Escaped defect: regression test, check review, tier review</li>
     </ul></div>
     <div class="card wide"><h3>Risk management and change control</h3><ul>
-      <li>Risk tier set at triage decides which checks a card must pass</li>
-      <li>Tier set too low is the main risk; corrected after each escaped defect</li>
-      <li>Every change moves through the board, a pull request and CI</li>
-      <li>Tools: GitHub, CI, CodeQL, Vitest, Playwright</li>
+      <li>Risk tier decides checks</li>
+      <li>Tiers corrected after escaped defects</li>
+      <li>Board → pull request → CI</li>
+      <li>Tools: GitHub, CodeQL, Vitest, Playwright</li>
     </ul></div>
   </div>
-  <p class="foot">Summary only: the plan is set out in Sections 3.5 and 4.2, and this poster adds no new checks.</p>
 </body>
 </html>

@@ -194,3 +194,11 @@ None for planning.
 - Structure: Lecture 3's SQAP sections (management; documentation; standards, practices and conventions; reviews and audits; test; problem reporting and corrective action; other, shown as "Risk management and change control"), around the six Kanban columns with their gates and the three risk tiers. Headings are used as module content and are **not** presented as an IEEE 730 outline (S131, S133).
 - Every item on the poster comes from the body. Lecture 3's "other" items the report does not cover (training, response-time targets, extra metrics) are left out so the appendix adds no new content.
 - Files: `report/assignment-1/figures/appendix-c-sqap.html` (source) and `appendix-c-sqap.png` (rendered at A4 text width). Added to `report.md` and the Word version as **Appendix C: SQAP Summary Poster**, Figure C.1.
+
+## Agreed: poster split; Figure 4 added to 3.5 (30 October 2026)
+
+- The author asked to split the poster. The top half (aim, quality objectives, QA checks per Kanban column, risk tiers) is now **Figure 4** in the body of 3.5, after Table 3.2, with one introducing sentence. This reverses the earlier "no figures for Section 3" decision.
+- Figure 4 follows Table 3.2 and the 3.5 tier text only. Table 4.2 items (independent reviewer, preview build, release evidence check) were taken out because 3.5 comes before Section 4.
+- Appendix C keeps only the SQAP plan sections (Figure C.1).
+- At the author's request, both images were cut to short labels: no section references, subtitle, footer or filler words.
+- Files: `figures/figure-4.html` / `.png` and `figures/appendix-c-sqap.html` / `.png`.
