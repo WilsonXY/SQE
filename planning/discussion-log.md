@@ -1145,3 +1145,8 @@ Writing-tool source note: all three original section writers and the root writer
 - At the author's request, the Word report was exported to `report/assignment-1/Assignment-1-Report.pdf` (29 A4 pages) with LibreOffice on the author's laptop.
 - The first export showed fragments of the old UCTI logo, which the APU cover template hides behind the APU logo, sticking out at its left edge. That hidden logo was removed from the cover; the APU logo is unchanged.
 - Re-export this PDF after any further edits to the Word file.
+
+## 2026-10-30 — Bullets fixed in the PDF
+
+- The author found empty boxes instead of bullets in the PDF. Cause: all 22 bullet list levels used the private Symbol-font character U+F0B7, and the Symbol font is not installed on the author's Linux laptop.
+- Every bullet level now uses a normal "•" (U+2022) in Times New Roman, marked as a bullet format. It looks the same in Word and works in LibreOffice. The PDF was re-exported (29 pages, no Symbol font) and the table of contents rechecked against it.
