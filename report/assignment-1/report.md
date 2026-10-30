@@ -408,7 +408,7 @@ Neither Kanban nor DevOps clashes with Actual's working model, shifting the eval
 
 Kanban directly addresses the bottleneck identified in Section 2.1, where nothing limits how many pull requests wait for review. By capping work in progress (WIP), Kanban restricts the number of active items permitted in any workflow stage (Kanban University, n.d.). Applying this limit to the review column ensures that once the threshold is reached, new submissions cannot enter review until pending requests are processed, thereby protecting maintainer time. Furthermore, establishing explicit, written policies for transitioning work between stages preserves process knowledge despite changes in team membership. Contributors can continue selecting issues from the voted backlog whenever their availability permits, preserving volunteer flexibility without requiring fixed sprint commitments.
 
-Compared to maintaining the status quo, Kanban introduces structured WIP limits and explicit transition rules while preserving the autonomy volunteer contributors require. However, core Kanban does not define technical quality verification or prescribe required test standards. Because Actual operates with low risk tolerance regarding financial accuracy and privacy, process oversight must be strengthened. This report therefore incorporates **mandatory quality gates (QA gates)**, embedding the risk-scaled verification criteria detailed in Section 3 into each column's exit policy. **The selected methodology is Kanban, tailored with mandatory QA gates.**
+Compared to maintaining the status quo, Kanban introduces structured WIP limits and explicit transition rules while preserving the autonomy volunteer contributors require. However, core Kanban does not define technical quality verification or prescribe required test standards. Because Actual operates with low risk tolerance regarding financial accuracy and privacy, process oversight must be strengthened. This report therefore incorporates mandatory quality gates (QA gates), embedding the risk-scaled verification criteria detailed in Section 3 into each column's exit policy. The selected methodology is Kanban, tailored with mandatory QA gates.
 
 <!-- Cited: S01, S02, S03, S04, S10, S26, S34, S47, S63-m2cq, S105, S109, S121, S123, S128 -->
 
@@ -416,4 +416,4 @@ Compared to maintaining the status quo, Kanban introduces structured WIP limits 
 
 ![Figure B.1: SQAP summary poster for Actual](figures/appendix-b-sqap.png)
 
-*Figure B.1. Software Quality Assurance Plan for Actual Budget, summarised as a poster.*
+*Figure B.1. Software Quality Assurance Plan for Actual Budget.*
