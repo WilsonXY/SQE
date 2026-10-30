@@ -1150,3 +1150,10 @@ Writing-tool source note: all three original section writers and the root writer
 
 - The author found empty boxes instead of bullets in the PDF. Cause: all 22 bullet list levels used the private Symbol-font character U+F0B7, and the Symbol font is not installed on the author's Linux laptop.
 - Every bullet level now uses a normal "•" (U+2022) in Times New Roman, marked as a bullet format. It looks the same in Word and works in LibreOffice. The PDF was re-exported (29 pages, no Symbol font) and the table of contents rechecked against it.
+
+## 2026-10-30 — Appendix A humanized (Gemini 3.8)
+
+- At the author's request, Appendix A was rewritten by a Gemini 3.8 Flash (High) subagent (T3 delegate, Antigravity provider) using the humanizer skill from https://github.com/blader/humanizer (`SKILL.md`, "humanizer" v3.1.0, fetched by the subagent). The subagent returned text only and made no file edits.
+- Checked against the original before applying: all citations and both Scrum Guide quotes kept verbatim; all three tables identical cell for cell; headings, captions and the hidden cited-sources comment unchanged; no first person, dashes or US spellings; prose 930 → 846 words. One citation added: (Aboltins, 2025) on the reviewers-overloaded sentence, which Table A.1 already cites for the same point.
+- Four corrections by the parent before applying: removed the added claim "software vulnerabilities carry severe consequences" (restored "a wrong balance can lead a household to a poor spending decision"); "leading literature to classify Spiral" → "which is why Spiral is usually described" (the source is one website); "exit criteria" → "exit policy" (the report's term); "accumulate indefinitely" → "nothing limits how many pull requests wait for review" (the original claim).
+- Synced to `report.md`, the Word file (14 paragraphs replaced in place; formatting, tables and captions untouched) and the PDF (re-exported, 29 pages, table of contents still correct). No new sources.
