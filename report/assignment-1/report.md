@@ -414,8 +414,6 @@ Compared to maintaining the status quo, Kanban introduces structured WIP limits 
 
 # Appendix B: SQAP Summary Poster
 
-*Supplementary summary of Sections 3 and 4, arranged by SQAP section. It adds no new checks.*
-
 ![Figure B.1: SQAP summary poster for Actual](figures/appendix-b-sqap.png)
 
 *Figure B.1. Software Quality Assurance Plan for Actual Budget, summarised as a poster.*
