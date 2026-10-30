@@ -206,7 +206,7 @@ Figure 4 shows these checks on the board, together with the aim and quality obje
 
 *Figure 4. QA checks on the Kanban board, by risk tier.*
 
-As an example of a card moving through the plan in Table 3.2, consider a contributor who adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, with an acceptance criterion that every new endpoint must refuse requests without a valid login. In Design, the implementer lists the new endpoints and who may call each one; at Build/PR, those endpoints are added to the authorisation test matrix. Without the login check, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. By contrast, a documentation typo fix is Low tier and passes through the normal checks only.
+As an example of a card moving through the plan in Table 3.2, consider a contributor who adds a new bank-sync provider, the kind of change behind GHSA-m2cq-xjgm-f668 (Section 3.3). At triage, the card is marked High tier because it touches bank sync, with an acceptance criterion that every new endpoint must refuse requests without a valid login. In Design, the implementer lists the new endpoints and who may call each one. At Build/PR, those endpoints are added to the authorisation test matrix. Without the login check, that test fails and the card cannot move to Verify, so a flaw like the 2026 one could be stopped before release. By contrast, a documentation typo fix is Low tier and passes through the normal checks only.
 
 ## 3.6 Critical Evaluation
 
